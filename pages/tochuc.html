@@ -346,37 +346,6 @@
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // kiểm tra Bootstrap có load đúng không
-  if (typeof bootstrap === 'undefined') {
-    console.error('Bootstrap JS chưa load. Đảm bảo có <script src=".../bootstrap.bundle.min.js"></script> trước đoạn này.');
-    return;
-  }
-
-  var el = document.getElementById('myCarousel');
-  if (!el) {
-    console.warn('Không tìm thấy #myCarousel');
-    return;
-  }
-
-  // nếu có instance cũ thì dispose (phòng trường hợp bị khởi tạo 2 lần)
-  try {
-    var inst = bootstrap.Carousel.getInstance(el);
-    if (inst) inst.dispose();
-  } catch (e) { /* ignore */ }
-
-  // tạo mới, interval 3000ms, không pause on hover
-  new bootstrap.Carousel(el, {
-    interval: 3000,
-    ride: 'carousel',
-    pause: false,
-    touch: true
-  });
-
-  // debug nhanh: in ra để you biết instance đã tạo
-  console.log('Bootstrap Carousel initialized for #myCarousel');
-});
-</script>
 
 <!-- optional CSS fix nếu nút vẫn bị che -->
 <style>
@@ -867,6 +836,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 </section> -->
+
 
 
 
