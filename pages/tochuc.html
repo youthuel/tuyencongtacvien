@@ -220,7 +220,7 @@
                     <p class="text-slate-700 leading-relaxed font-medium">Nâng cao nhận thức chính trị, bồi dưỡng lý tưởng cách mạng và giáo dục truyền thống cho đoàn viên, thanh niên thông qua các buổi sinh hoạt, tọa đàm ý nghĩa.</p>
 
 <!-- Carousel (thay thế block cũ) -->
-<div id="myCarousel" class="carousel slide rounded-xl  shadow-lg w-full max-w-4xl relative z-20"
+<div id="myCarousel" class="carousel slide rounded-xl overflow-hidden shadow-lg w-full max-w-4xl relative z-20"
      data-bs-ride="carousel" data-bs-interval="3000">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -349,26 +349,48 @@
 
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  // kiểm tra Bootstrap có load đúng không
+  if (typeof bootstrap === 'undefined') {
+    console.error('Bootstrap JS chưa load. Đảm bảo có <script src=".../bootstrap.bundle.min.js"></script> trước đoạn này.');
+    return;
+  }
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-<!-- <script>
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    autoplay: {
-      delay: 3000, // 3s đổi hình
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+  var el = document.getElementById('myCarousel');
+  if (!el) {
+    console.warn('Không tìm thấy #myCarousel');
+    return;
+  }
+
+  // nếu có instance cũ thì dispose (phòng trường hợp bị khởi tạo 2 lần)
+  try {
+    var inst = bootstrap.Carousel.getInstance(el);
+    if (inst) inst.dispose();
+  } catch (e) { /* ignore */ }
+
+  // tạo mới, interval 3000ms, không pause on hover
+  new bootstrap.Carousel(el, {
+    interval: 3000,
+    ride: 'carousel',
+    pause: false,
+    touch: true
   });
-</script> -->
-    
+
+  // debug nhanh: in ra để you biết instance đã tạo
+  console.log('Bootstrap Carousel initialized for #myCarousel');
+});
+</script>
+
+<!-- optional CSS fix nếu nút vẫn bị che -->
+<style>
+/* đảm bảo nút điều hướng nằm trên cùng */
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-next {
+  z-index: 40 !important;
+}
+</style>
+
     </div>
 </section>
 
@@ -849,6 +871,7 @@
         </div>
     </div>
 </section> -->
+
 
 
 
