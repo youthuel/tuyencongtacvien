@@ -245,11 +245,11 @@
         }
 
 .carousel-item {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* = 9/16 = 56.25% => giữ khung 16:9 */
-  overflow: hidden;
-  border-radius: 16px;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9; /* giữ khung ảnh 16:9 */
+      overflow: hidden;
+      border-radius: 12px;
 }
 
 .carousel-item img {
@@ -602,6 +602,7 @@
   </div>
 </footer>
 </html>
+
 
 
 
