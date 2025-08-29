@@ -244,6 +244,19 @@
             to { opacity: 1; transform: translateY(0); } 
         }
 
+    .carousel-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9; /* giữ khung ảnh 16:9 */
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* hoặc contain nếu bạn không muốn crop */
+    }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -586,6 +599,7 @@
   </div>
 </footer>
 </html>
+
 
 
 
