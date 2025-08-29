@@ -314,13 +314,13 @@
               <div class="mt-6">
                 <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg w-full max-w-4xl"">
                   <div class="swiper-wrapper">
-                    <div class="carousel-item">
+                    <div class="cswiper-slide">
                       <img src="pic/tochuc/TG1.jpg" class="w-full aspect-video object-cover" />
                     </div>
-                    <div class="carousel-item">
+                    <div class="cswiper-slide">
                       <img src="pic/tochuc/TG2.jpg" class="w-full aspect-video object-cover" />
                     </div>
-                    <div class="carousel-item">
+                    <div class="swiper-slide">
                       <img src="pic/tochuc/TG3.jpg" class="w-full aspect-video object-cover" />
                     </div>
                   </div>
@@ -440,6 +440,10 @@
 <script>
   var swiper = new Swiper(".mySwiper", {
     loop: true,
+    autoplay: {
+      delay: 3000, // 3s đổi hình
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -857,6 +861,7 @@
     </div>
 
 </div> -->
+
 
 
 
