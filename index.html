@@ -553,43 +553,51 @@
     });
     </script>
 </body>
-<footer class="bg-blue-900 text-white mt-8">
-  <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<footer class="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white mt-12">
+  <div class="absolute inset-0 opacity-10">
+    <div class="w-full h-full bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble-outline.png')]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
     
-    <!-- Giới thiệu -->
-    <div>
-      <h3 class="text-lg font-semibold mb-3">Đoàn Trường Đại học Kinh tế - Luật</h3>
-      <p class="text-sm leading-relaxed">
-        Là tổ chức chính trị - xã hội của sinh viên Trường Đại học Kinh tế - Luật, trực thuộc Thành Đoàn TP. Hồ Chí Minh. 
-        Đoàn Trường luôn đồng hành cùng sinh viên trong học tập, nghiên cứu khoa học, rèn luyện và cống hiến.
+    <!-- Logo + Giới thiệu -->
+    <div class="space-y-3">
+      <div class="flex items-center space-x-3">
+        <img src="pic/logo/logodt.png" alt="Logo Đoàn UEL" class="h-12 w-auto">
+        <span class="text-xl font-extrabold tracking-tight">ĐOÀN TRƯỜNG UEL</span>
+      </div>
+      <p class="text-sm leading-relaxed text-gray-200">
+        Tổ chức chính trị - xã hội của sinh viên Trường Đại học Kinh tế - Luật, 
+        đồng hành cùng sinh viên trong học tập, nghiên cứu khoa học, rèn luyện và cống hiến.
       </p>
     </div>
 
     <!-- Liên hệ -->
     <div>
-      <h3 class="text-lg font-semibold mb-3">Liên hệ</h3>
-      <ul class="text-sm space-y-2">
-        <li>📍 Văn phòng Đoàn - Hội (A.210)</li>
-        <li>📞 Điện thoại: (028) 37244 555</li>
-        <li>✉️ Email: doanthanhnien@uel.edu.vn</li>
+      <h3 class="text-lg font-semibold mb-3 text-yellow-300">Liên hệ</h3>
+      <ul class="text-sm space-y-2 text-gray-200">
+        <li>📍 Khu phố 3, phường Linh Xuân, TP. Thủ Đức, TP.HCM</li>
+        <li>📞 (028) 37244 555</li>
+        <li>✉️ doantruong@uel.edu.vn</li>
       </ul>
     </div>
 
     <!-- Mạng xã hội -->
     <div>
-      <h3 class="text-lg font-semibold mb-3">Kết nối</h3>
+      <h3 class="text-lg font-semibold mb-3 text-yellow-300">Kết nối</h3>
       <div class="flex space-x-4">
-        <a href="#" class="hover:text-yellow-300">🌐 Website</a>
-        <a href="#" class="hover:text-yellow-300">📘 Facebook</a>
-        <a href="#" class="hover:text-yellow-300">📸 Instagram</a>
-        <a href="#" class="hover:text-yellow-300">▶️ YouTube</a>
+        <a href="#" class="hover:text-yellow-300 transition">🌐 Website</a>
+        <a href="https://www.facebook.com/youth.uel" target="_blank" class="hover:text-yellow-300 transition">📘 Facebook</a>
+        <a href="#" class="hover:text-yellow-300 transition">📸 Instagram</a>
+        <a href="#" class="hover:text-yellow-300 transition">▶️ YouTube</a>
       </div>
     </div>
   </div>
 
   <!-- Copyright -->
-  <div class="bg-blue-950 text-center py-3 text-sm">
+  <div class="relative bg-blue-950/90 text-center py-4 text-sm text-gray-300">
     © 2025 Đoàn Trường Đại học Kinh tế - Luật. All rights reserved.
   </div>
 </footer>
 </html>
+
