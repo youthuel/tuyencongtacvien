@@ -219,8 +219,8 @@
                     <h3 class="text-3xl font-bold text-slate-800 mb-3">Bộ phận Tuyên giáo</h3>
                     <p class="text-slate-700 leading-relaxed font-medium">Nâng cao nhận thức chính trị, bồi dưỡng lý tưởng cách mạng và giáo dục truyền thống cho đoàn viên, thanh niên thông qua các buổi sinh hoạt, tọa đàm ý nghĩa.</p>
 
-<!-- Carousel (thay thế block cũ) -->
-<div id="myCarousel" class="carousel slide rounded-xl overflow-hidden shadow-lg w-full max-w-4xl relative z-20"
+<!-- Carousel cho bộ phận Tuyên giáo -->
+<div id="carouselTuyenGiao" class="carousel slide rounded-xl overflow-hidden shadow-lg w-full max-w-4xl relative z-20"
      data-bs-ride="carousel" data-bs-interval="3000">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -234,16 +234,17 @@
     </div>
   </div>
 
-  <!-- Nút điều hướng (thêm z-index để không bị che) -->
-  <button class="carousel-control-prev z-30" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <!-- Nút điều hướng (chú ý target đổi theo id mới) -->
+  <button class="carousel-control-prev z-30" type="button" data-bs-target="#carouselTuyenGiao" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next z-30" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <button class="carousel-control-next z-30" type="button" data-bs-target="#carouselTuyenGiao" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
 
               </div>
             </div>
@@ -871,6 +872,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 </section> -->
+
 
 
 
