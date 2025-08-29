@@ -277,32 +277,26 @@
                     </div>
                     <p class="text-slate-700 leading-relaxed font-medium">Nâng cao nhận thức chính trị, bồi dưỡng lý tưởng cách mạng và giáo dục truyền thống cho đoàn viên, thanh niên thông qua các buổi sinh hoạt, tọa đàm ý nghĩa.</p>
 
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="pic/tochuc/TG1.jpg" class="d-block w-100" alt="TG1">
-    </div>
-    <div class="carousel-item">
-      <img src="pic/tochuc/TG2.jpg" class="d-block w-100" alt="TG2">
-    </div>
-    <div class="carousel-item">
-      <img src="pic/tochuc/TG3.jpg" class="d-block w-100" alt="TG3">
-    </div>
+<div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
+  <!-- Container -->
+  <div id="customCarousel" class="flex transition-transform duration-700 ease-in-out">
+    <img src="pic/tochuc/TG1.jpg" class="w-full flex-shrink-0 aspect-video object-cover" />
+    <img src="pic/tochuc/TG2.jpg" class="w-full flex-shrink-0 aspect-video object-cover" />
+    <img src="pic/tochuc/TG3.jpg" class="w-full flex-shrink-0 aspect-video object-cover" />
   </div>
 </div>
 
+<script>
+  const carousel = document.getElementById("customCarousel");
+  const slides = carousel.children;
+  const totalSlides = slides.length;
+  let index = 0;
 
-
-<!-- Nút điều hướng -->
-<!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-<span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-<span class="carousel-control-next-icon" aria-hidden="true"></span>
-<span class="visually-hidden">Next</span>
-</button>
-</div> -->
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000); // 3s đổi ảnh
+</script>
 
               </div>
             </div>
@@ -949,6 +943,7 @@
         </div>
     </div>
 </section> -->
+
 
 
 
