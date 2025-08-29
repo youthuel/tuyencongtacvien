@@ -246,7 +246,7 @@
 </head>
 <body class="flex flex-col min-h-screen">
     
-    <header id="header" class="bg-white/90 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
+    <header id="header" class="fixed top-0 bg-white/90 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-2 flex justify-between items-center">
             <a href="#home" class="nav-trigger flex items-center space-x-2 z-20" data-page="home">
                 <img src="pic/logo/logodt.png" alt="Logo Đoàn Trường UEL" class="h-10 w-auto">
@@ -268,7 +268,7 @@
         </div>
     </header>
 
-    <main id="app-container"></main>
+    <main id="app-container"class="pt-20"></main>
 
     <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
         <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60"></div>
@@ -554,11 +554,7 @@
     </script>
 </body>
 <footer class="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white mt-12">
-  <div class="absolute inset-0 opacity-10">
-    <div class="w-full h-full bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble-outline.png')]"></div>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="relative max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
     
     <!-- Logo + Giới thiệu -->
     <div class="space-y-3">
@@ -581,17 +577,6 @@
         <li>✉️ doantruong@uel.edu.vn</li>
       </ul>
     </div>
-
-    <!-- Mạng xã hội -->
-    <div>
-      <h3 class="text-lg font-semibold mb-3 text-yellow-300">Kết nối</h3>
-      <div class="flex space-x-4">
-        <a href="#" class="hover:text-yellow-300 transition">🌐 Website</a>
-        <a href="https://www.facebook.com/youth.uel" target="_blank" class="hover:text-yellow-300 transition">📘 Facebook</a>
-        <a href="#" class="hover:text-yellow-300 transition">📸 Instagram</a>
-        <a href="#" class="hover:text-yellow-300 transition">▶️ YouTube</a>
-      </div>
-    </div>
   </div>
 
   <!-- Copyright -->
@@ -600,4 +585,5 @@
   </div>
 </footer>
 </html>
+
 
