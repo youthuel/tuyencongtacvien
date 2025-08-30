@@ -664,6 +664,21 @@ z-index: 50; /* tránh bị che */
         document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
     });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper(".gallerySwiper", {
+    slidesPerView: 2,
+    spaceBetween: 16,
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768: { slidesPerView: 3 } }
+  });
+  new Swiper(".gallerySwiper2", {
+    slidesPerView: 2,
+    spaceBetween: 16,
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: { 768: { slidesPerView: 3 } }
+  });
+</script>
 </body>
 <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -780,6 +795,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
