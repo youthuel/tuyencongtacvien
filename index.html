@@ -678,22 +678,26 @@ z-index: 50; /* tránh bị che */
     breakpoints: { 768: { slidesPerView: 3 } }
   });
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Swiper + Tabs Script -->
 <script>
-  // Tabs chuyển đổi
+  // Tabs
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
+      // đổi active button
       document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
       btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+
+      // ẩn/hiện nội dung
       document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
       document.querySelector(btn.dataset.target).classList.remove("hidden");
     });
   });
 
-  // Swiper galleries
-  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  // Swipers
+  new Swiper(".gallerySwiper-xuan", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-xuan", prevEl: ".prev-xuan"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper-mhx", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-mhx", prevEl: ".prev-mhx"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper-tsmt", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-tsmt", prevEl: ".prev-tsmt"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper-hmtn", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-hmtn", prevEl: ".prev-hmtn"}, breakpoints:{768:{slidesPerView:3}} });
 </script>
 </body>
 <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
@@ -811,6 +815,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
