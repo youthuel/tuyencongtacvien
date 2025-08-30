@@ -55,7 +55,7 @@
           </div>
           <h3 class="text-l font-bold text-slate-800">Phát Triển Học Thuật</h3>
           <p class="mt-2 text-slate-700 font-medium">Nâng cao kiến thức và kỹ năng qua các buổi tọa đàm, workshop, cuộc thi học thuật chuyên ngành.</p>
-          <button data-modal-target="#modal-tinh-nguyen" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
+          <button data-modal-target="#modal-hoc-thuat" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
         </div>
       </div>
       <!-- Văn - Thể - Mỹ -->
@@ -91,7 +91,63 @@
   </div>
 </div>
 </section>
+ <!-- Modal -->
+  <div id="modal-hoc-thuat" class="bg-white rounded-3xl max-w-3xl w-full p-8 shadow-xl relative">
 
+    <!-- Tabs -->
+    <div class="flex justify-center mb-6 flex-wrap gap-3"> 
+      <button class="tab-btn bg-pink-500 text-white px-4 py-2 rounded-full font-semibold" data-target="tab-xuan">🌸 Xuân TN</button> 
+      <button class="tab-btn bg-gray-200 text-slate-700 px-4 py-2 rounded-full font-semibold" data-target="tab-mhx">☀️ Mùa Hè Xanh</button> 
+      <button class="tab-btn bg-gray-200 text-slate-700 px-4 py-2 rounded-full font-semibold" data-target="tab-tsmt">📘 Tiếp Sức Mùa Thi</button> 
+      <button class="tab-btn bg-gray-200 text-slate-700 px-4 py-2 rounded-full font-semibold" data-target="tab-hmtn">💉 Hiến Máu TN</button> 
+    </div> 
+
+    <!-- Nội dung Tabs -->
+    <div id="tab-xuan" class="tab-content">
+      <h2 class="text-2xl font-bold">Chiến Dịch Xuân Tình Nguyện</h2>
+      <p class="mt-2">🌸 Đây là nội dung Xuân Tình Nguyện.</p>
+    </div>
+
+    <div id="tab-mhx" class="tab-content hidden">
+      <h2 class="text-2xl font-bold">Chiến Dịch Mùa Hè Xanh</h2>
+      <p class="mt-2">☀️ Đây là nội dung Mùa Hè Xanh.</p>
+    </div>
+
+    <div id="tab-tsmt" class="tab-content hidden">
+      <h2 class="text-2xl font-bold">Chương Trình Tiếp Sức Mùa Thi</h2>
+      <p class="mt-2">📘 Đây là nội dung Tiếp Sức Mùa Thi.</p>
+    </div>
+
+    <div id="tab-hmtn" class="tab-content hidden">
+      <h2 class="text-2xl font-bold">Chương Trình Hiến Máu Tình Nguyện</h2>
+      <p class="mt-2">💉 Đây là nội dung Hiến Máu Tình Nguyện.</p>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+
+        // Ẩn hết tab
+        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+
+        // Hiện tab được chọn
+        document.getElementById(target).classList.remove("hidden");
+
+        // Reset style nút
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.remove("bg-pink-500","text-white");
+          b.classList.add("bg-gray-200","text-slate-700");
+        });
+
+        // Active cho nút hiện tại
+        btn.classList.remove("bg-gray-200","text-slate-700");
+        btn.classList.add("bg-pink-500","text-white");
+      });
+    });
+  </script>
 
 <!-- JS xử lý -->
 <script>
@@ -854,6 +910,7 @@ function closeModal() {
     </div>
 
 </div> -->
+
 
 
 
