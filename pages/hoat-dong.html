@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
      <!-- Bồi đắp lý tưởng -->
-      <div class="category-card p-8 rounded-3xl shadow-xl shadow-amber-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 scroll-animate" style="transition-delay: 400ms;">
+      <div onclick="openModal(activityData.tinhNguyen)"  class="category-card p-8 rounded-3xl shadow-xl shadow-amber-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 scroll-animate" style="transition-delay: 400ms;">
         <div class="absolute -top-8 -left-12 w-28 h-28 bg-amber-300/50 rounded-full filter blur-xl"></div>
         <div class="absolute -bottom-14 -right-10 w-24 h-24 bg-orange-300/50 rounded-full filter blur-xl"></div>
         <div class="relative z-10">
@@ -71,6 +71,86 @@
     </div>
   </div>
 </section>
+
+<!-- MODAL -->
+<div id="dynamicModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-6 relative animate-fadeIn">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+    <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+    <div id="modalContent" class="space-y-4 max-h-[70vh] overflow-y-auto"></div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const activityData = {
+    tinhNguyen: {
+      title: "Tình Nguyện Cộng Đồng",
+      content: `
+        <div>
+          <img src="pic/hoatdong/muahe.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Mùa hè xanh:</b> Sinh viên đến vùng quê, lan tỏa tri thức và năng lượng tích cực.</p>
+        </div>
+        <div>
+          <img src="pic/hoatdong/xuan.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Xuân tình nguyện:</b> Mang Tết ấm áp cho bà con khó khăn.</p>
+        </div>
+        <div>
+          <img src="pic/hoatdong/hienmau.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Hiến máu nhân đạo:</b> Chia sẻ giọt máu đào – trao đi sự sống.</p>
+        </div>
+      `
+    },
+    hocThuat: {
+      title: "Phát Triển Học Thuật",
+      content: `
+        <div>
+          <img src="pic/hoatdong/workshop.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Workshop kỹ năng:</b> Học hỏi từ các chuyên gia hàng đầu.</p>
+        </div>
+        <div>
+          <img src="pic/hoatdong/contest.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Cuộc thi học thuật:</b> Sân chơi thử thách trí tuệ sinh viên.</p>
+        </div>
+      `
+    },
+    vanTheMy: {
+      title: "Văn – Thể – Mỹ",
+      content: `
+        <div>
+          <img src="pic/hoatdong/vannghe.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Liên hoan văn nghệ:</b> Nơi tỏa sáng tài năng nghệ thuật.</p>
+        </div>
+        <div>
+          <img src="pic/hoatdong/hoithao.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Hội thao sinh viên:</b> Rèn luyện sức khỏe – gắn kết tập thể.</p>
+        </div>
+      `
+    },
+    lyTuong: {
+      title: "Bồi Đắp Lý Tưởng",
+      content: `
+        <div>
+          <img src="pic/hoatdong/hoctap.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Học tập Nghị quyết:</b> Trang bị tri thức chính trị, định hướng tư tưởng.</p>
+        </div>
+        <div>
+          <img src="pic/hoatdong/toado.jpg" class="rounded-lg mb-2 w-full">
+          <p><b>Tọa đàm chính trị:</b> Định hình giá trị sống, lý tưởng cách mạng.</p>
+        </div>
+      `
+    }
+  };
+
+  function openModal(data) {
+    document.getElementById("modalTitle").innerHTML = data.title;
+    document.getElementById("modalContent").innerHTML = data.content;
+    document.getElementById("dynamicModal").classList.remove("hidden");
+  }
+  function closeModal() {
+    document.getElementById("dynamicModal").classList.add("hidden");
+  }
+</script>
 
 
 <!-- 2) HTML: section Swiper -->
@@ -522,6 +602,7 @@
     </div>
 
 </div> -->
+
 
 
 
