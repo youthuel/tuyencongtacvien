@@ -684,9 +684,12 @@ z-index: 50; /* tránh bị che */
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       // đổi active button
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
-      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-
+      document.querySelectorAll(".tab-btn").forEach(b => {
+    b.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
+      btn.classList.add("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+      })
+      btn.classList.add("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+      btn.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
       // ẩn/hiện nội dung
       document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
       document.querySelector(btn.dataset.target).classList.remove("hidden");
@@ -815,6 +818,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
