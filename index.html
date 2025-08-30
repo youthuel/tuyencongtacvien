@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
@@ -268,6 +269,83 @@ object-fit: cover;
 .carousel-control-next {
 z-index: 50; /* tránh bị che */
 }
+
+/* Scoped styles - chỉ ảnh hưởng khu vực activities */
+#activities-swiper { padding: 2.25rem 0; position: relative; }
+#activities-swiper .section-title { text-align:center; margin-bottom:1.75rem; }
+
+/* ensure wrapper/layout */
+#activities-swiper .swiper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* mỗi slide chứa 1 card, set width bằng % + spaceBetween quản lý khoảng cách */
+#activities-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  position: relative;           /* important: avoid absolute stacking */
+}
+
+/* card inside slide */
+#activities-swiper .activity-card {
+  width: 100%;
+  max-width: 360px;             /* bạn thay đổi kích thước card ở đây */
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(2,6,23,0.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+  display: flex;
+  flex-direction: column;
+}
+#activities-swiper .activity-card:hover { transform: translateY(-6px); box-shadow: 0 22px 40px rgba(2,6,23,0.12); }
+
+#activities-swiper .activity-card img {
+  width: 100%;
+  height: 190px;                /* giảm/tăng chiều cao ảnh ở đây */
+  object-fit: cover;
+  display:block;
+}
+
+#activities-swiper .activity-card .body {
+  padding: 1rem 1.15rem 1.25rem;
+}
+
+/* navigation buttons (positioned inside section) */
+#activities-swiper .swiper-button-next,
+#activities-swiper .swiper-button-prev {
+  color: #0ea5a6;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  --swiper-navigation-size: 18px; /* icon size */
+  right: 1rem;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+}
+#activities-swiper .swiper-button-prev { left: 1rem; right: auto; }
+
+/* pagination (optional) */
+#activities-swiper .swiper-pagination-bullet {
+  background: rgba(15,23,42,0.15);
+}
+#activities-swiper .swiper-pagination-bullet-active {
+  background: #06b6d4;
+}
+
+/* Responsive: giảm max-width card trên mobile */
+@media (max-width: 768px) {
+  #activities-swiper .activity-card { max-width: 92%; }
+  #activities-swiper .activity-card img { height: 140px; }
+}
+        
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -694,6 +772,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
