@@ -183,7 +183,7 @@
       </div>
       <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate border-t-4 border-rose-400" style="transition-delay:200ms;">
         <div class="text-4xl mb-4">🎖️</div>
-        <h3 class="text-xl font-bold text-rose-600 mb-2">Bằng khen Trung ương Đoàn</h3>
+        <h3 class="text-xl font-bold text-rose-600 mb-2">Bằng khen Trung ương Đoàn và Thành Đoàn</h3>
         <p class="text-slate-600">05 năm liên tục đạt danh hiệu đơn vị xuất sắc dẫn đầu trong công tác Đoàn và phong trào thanh niên TP.HCM</p>
       </div>
       <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate border-t-4 border-sky-400" style="transition-delay:300ms;">
@@ -194,7 +194,7 @@
     </div>
 
     <!-- Slider hình ảnh -->
-    <div class="swiper mySwiperAchievement rounded-xl overflow-hidden shadow-lg max-w-xl mx-auto">
+    <div class="swiper mySwiper rounded-xl overflow-hidden shadow-lg max-w-xl mx-auto">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="pic/gioithieu/thanhtich1.jpg" class="w-full h-80 object-cover" alt="Thành tích 1">
@@ -227,12 +227,22 @@
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- Thêm script Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiperAchievement", {
+  const swiper = new Swiper(".mySwiper", {
     loop: true,
-    autoplay: { delay: 3000, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 </script>
   </div>
@@ -253,6 +263,7 @@
     </div>
 
 </section>
+
 
 
 
