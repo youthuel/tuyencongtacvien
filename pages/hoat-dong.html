@@ -403,27 +403,81 @@ function closeModal() {
     </div>
 </div>
 <div id="modal-xuan-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-orange-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Chiến Dịch Xuân Tình Nguyện</h2>
-            <p class="mt-4 text-slate-600">Mang hơi ấm và những món quà ý nghĩa đến với những hoàn cảnh khó khăn, trẻ em vùng sâu vùng xa mỗi dịp Tết đến Xuân về. Hoạt động không chỉ lan tỏa tinh thần sẻ chia mà còn là trải nghiệm đáng nhớ cho mỗi sinh viên.</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 flex gap-4 overflow-x-auto">
-                 <div class="flex-shrink-0 overflow-hidden rounded-lg shadow-md w-72"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40"></div>
-                <div class="flex-shrink-0 overflow-hidden rounded-lg shadow-md w-72"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40"></div>
-                <div class="flex-shrink-0 overflow-hidden rounded-lg shadow-md w-72"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40"></div>
-            </div>
-          <h2 class="text-3xl font-bold text-slate-800 mt-2">Chiến Dịch Mùa Hè Xanh</h2>
-            <p class="mt-4 text-slate-600">Là một trong những hoạt động tình nguyện hè ý nghĩa và có quy mô lớn nhất, thu hút đông đảo sinh viên tham gia. Chương trình mang lại những giá trị thiết thực cho cộng đồng và là cơ hội để sinh viên rèn luyện bản lĩnh, kỹ năng và trưởng thành hơn.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/mhx-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/mhx-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/mhx-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
+  <div class="modal-content glass-card rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
+
+      <!-- Header -->
+      <div class="mb-6">
+        <span class="text-sm font-bold uppercase text-orange-600 tracking-wide">🌸 Tình nguyện</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mt-2">
+          Chiến Dịch Xuân Tình Nguyện
+        </h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Mang hơi ấm và những món quà ý nghĩa đến với những hoàn cảnh khó khăn, trẻ em vùng sâu vùng xa mỗi dịp Tết đến Xuân về. 
+          Hoạt động không chỉ lan tỏa tinh thần sẻ chia mà còn là trải nghiệm đáng nhớ cho mỗi sinh viên.
+        </p>
+      </div>
+
+      <!-- Gallery slider -->
+      <h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center gap-2">
+        <span>📸 Thư viện ảnh</span>
+      </h3>
+      <div class="swiper gallerySwiper mb-8">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
         </div>
+        <!-- Nút điều hướng -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="mt-10">
+        <span class="text-sm font-bold uppercase text-green-600 tracking-wide">☀️ Tình nguyện hè</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-2">
+          Chiến Dịch Mùa Hè Xanh
+        </h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Là một trong những hoạt động tình nguyện hè ý nghĩa và có quy mô lớn nhất, thu hút đông đảo sinh viên tham gia. 
+          Chương trình mang lại những giá trị thiết thực cho cộng đồng và là cơ hội để sinh viên rèn luyện bản lĩnh, kỹ năng và trưởng thành hơn.
+        </p>
+      </div>
+
+      <!-- Gallery slider -->
+      <h3 class="font-bold text-lg text-slate-800 mt-6 mb-3 flex items-center gap-2">
+        <span>📸 Thư viện ảnh</span>
+      </h3>
+      <div class="swiper gallerySwiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
+          <div class="swiper-slide">
+            <img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-48 hover:scale-105 transition">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
     </div>
+  </div>
 </div>
 <div id="modal-hoi-thao" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
     <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
@@ -621,6 +675,7 @@ function closeModal() {
 
 
 </body>
+
 
 
 
