@@ -402,6 +402,7 @@ function closeModal() {
         </div>
     </div>
 </div>
+<!-- Modal -->
 <div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
     <div class="p-8 relative">
@@ -420,77 +421,69 @@ function closeModal() {
       </div>
 
       <!-- Nội dung Tabs -->
-      <div id="tab-xuan" class="tab-content block">
+      <div id="tab-xuan" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Xuân Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
-          Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
         </p>
-        <div class="swiper gallerySwiper mt-6">
+        <div class="swiper gallerySwiper-xuan mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="next-xuan swiper-button-next"></div>
+          <div class="prev-xuan swiper-button-prev"></div>
         </div>
       </div>
 
       <div id="tab-mhx" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
-          Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
-        </p>
-        <div class="swiper gallerySwiper2 mt-6">
+        <p class="mt-4 text-slate-600 leading-relaxed">Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương.</p>
+        <div class="swiper gallerySwiper-mhx mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="next-mhx swiper-button-next"></div>
+          <div class="prev-mhx swiper-button-prev"></div>
         </div>
       </div>
 
       <div id="tab-tsmt" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
-          Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
-        </p>
-        <div class="swiper gallerySwiper3 mt-6">
+        <p class="mt-4 text-slate-600 leading-relaxed">Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học.</p>
+        <div class="swiper gallerySwiper-tsmt mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="next-tsmt swiper-button-next"></div>
+          <div class="prev-tsmt swiper-button-prev"></div>
         </div>
       </div>
 
       <div id="tab-hmtn" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
-          góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
-        </p>
-        <div class="swiper gallerySwiper4 mt-6">
+        <p class="mt-4 text-slate-600 leading-relaxed">“Một giọt máu cho đi – một cuộc đời ở lại”.</p>
+        <div class="swiper gallerySwiper-hmtn mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="next-hmtn swiper-button-next"></div>
+          <div class="prev-hmtn swiper-button-prev"></div>
         </div>
       </div>
 
     </div>
   </div>
 </div>
+
+     
 <div id="modal-hoi-thao" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
     <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
         <div class="p-8 relative">
@@ -687,6 +680,7 @@ function closeModal() {
 
 
 </body>
+
 
 
 
