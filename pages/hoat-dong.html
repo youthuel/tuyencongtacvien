@@ -306,7 +306,26 @@ function closeModal() {
     </div>
   </div>
 </section>
+<script>
+  // Thời gian diễn ra chương trình 
+  const eventDate = new Date("Sep 14, 2025 08:00:00").getTime();
 
+  const timer = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "<p class='text-lg font-bold'>Sự kiện đã bắt đầu!</p>";
+      return;
+    }
+
+    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+  }, 1000);
+</script>
 
 <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-pink-50 to-violet-50">
     <div class="container mx-auto px-6 relative z-10">
@@ -593,6 +612,7 @@ function closeModal() {
     </div>
 
 </div> -->
+
 
 
 
