@@ -292,10 +292,12 @@ z-index: 50; /* tránh bị che */
 /* card inside slide */
 #activities-swiper .activity-card {
   width: 100%;
-  background: #fff;
+  max-width: 360px;
+  background: rgba(255,255,255,0.85);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 14px 30px rgba(2,6,23,0.08);
+  transition: transform .35s ease, box-shadow .35s ease;
   display: flex;
   flex-direction: column;
 }
@@ -770,6 +772,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
