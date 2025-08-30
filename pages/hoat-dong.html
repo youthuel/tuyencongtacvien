@@ -1,4 +1,3 @@
-<body class="bg-gradient-to-tr from-pink-50 via-orange-50 to-yellow-50">
 <section class="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 bg-gradient-to-tr from-rose-100 to-amber-100">
      <div class="deco-shape w-40 h-40 rounded-full bg-rose-200/80 top-10 right-20"></div>
      <div class="deco-shape w-32 h-32 rounded-full bg-amber-200/80 bottom-10 left-20" style="animation-delay: -2s;"></div>
@@ -593,62 +592,6 @@ function closeModal() {
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // tạo swiper
-    const mySwiper = new Swiper(".myActivitiesSwiper", {
-      slidesPerView: 3,        // luôn hiển thị 3 ô
-      spaceBetween: 28,        // khoảng cách giữa ô
-      loop: true,
-      centeredSlides: false,
-      autoplay: {
-        delay: 2800,
-        disableOnInteraction: false
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        0:   { slidesPerView: 1, spaceBetween: 16 },
-        640: { slidesPerView: 2, spaceBetween: 20 },
-        1024:{ slidesPerView: 3, spaceBetween: 28 }
-      }
-    });
-  });
-</script>
-<script>
-  // Xử lý click tab
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = btn.getAttribute("data-target");
-
-      // Ẩn tất cả tab-content
-      document.querySelectorAll(".tab-content").forEach(tab => {
-        tab.classList.add("hidden");
-      });
-
-      // Hiện tab đang chọn
-      document.querySelector(target).classList.remove("hidden");
-
-      // Reset style button
-      document.querySelectorAll(".tab-btn").forEach(b => {
-        b.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-        b.classList.add("bg-gray-200","text-slate-700");
-      });
-
-      // Active cho nút hiện tại
-      btn.classList.remove("bg-gray-200","text-slate-700");
-      btn.classList.add("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-    });
-  });
-</script>
-
 
 
 
@@ -747,9 +690,6 @@ function closeModal() {
 
 </div> -->
 
-
-
-</body>
 
 
 
