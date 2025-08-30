@@ -149,72 +149,6 @@
     });
   </script>
 
-<!-- JS xử lý -->
-<script>
-const activityData = {
-lyTuong: {
-  title: "Bồi Đắp Lý Tưởng",
-  desc: "Xây dựng bản lĩnh chính trị, bồi dưỡng niềm tin và hoài bão lớn cho sinh viên UEL.",
-  programs: [
-    { name: "Tập Huấn Chính Trị", img: "pic/hoatdong/lytuong1.jpg" },
-    { name: "Sinh Hoạt Chuyên Đề", img: "pic/hoatdong/lytuong2.jpg" },
-    { name: "Diễn Đàn Thanh Niên", img: "pic/hoatdong/lytuong3.jpg" }
-  ]
-},  
-tinhNguyen: {
-    title: "Tình Nguyện Cộng Đồng",
-    desc: "Các chương trình tình nguyện gắn liền với dấu ấn tuổi trẻ UEL.",
-    programs: [
-      { name: "Mùa Hè Xanh", img: "pic/hoatdong/muaxanh.jpg" },
-      { name: "Xuân Tình Nguyện", img: "pic/hoatdong/xuantinhnguyen.jpg" },
-      { name: "Hiến Máu Nhân Đạo", img: "pic/hoatdong/hienmau.jpg" }
-    ]
-  },
-  hocThuat: {
-    title: "Phát Triển Học Thuật",
-    desc: "Nâng cao tri thức, kỹ năng qua nhiều hoạt động bổ ích.",
-    programs: [
-      { name: "Workshop Kỹ Năng", img: "pic/hoatdong/workshop.jpg" },
-      { name: "Cuộc Thi Học Thuật", img: "pic/hoatdong/cuocthi.jpg" }
-    ]
-  },
-  vanTheMy: {
-    title: "Văn - Thể - Mỹ",
-    desc: "Không gian tỏa sáng cho sinh viên UEL năng động, sáng tạo.",
-    programs: [
-      { name: "Hội Thao Sinh Viên", img: "pic/hoatdong/hoithao.jpg" },
-      { name: "Liên Hoan Văn Nghệ", img: "pic/hoatdong/vannghe.jpg" },
-      { name: "CLB - Đội - Nhóm", img: "pic/hoatdong/clb.jpg" }
-    ]
-  }
-};
-
-function openModal(data) {
-  document.getElementById("modalTitle").textContent = data.title;
-  document.getElementById("modalDesc").textContent = data.desc;
-
-  const container = document.getElementById("modalPrograms");
-  container.innerHTML = "";
-  data.programs.forEach(prog => {
-    container.innerHTML += `
-      <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition">
-        <img src="${prog.img}" alt="${prog.name}" class="w-full h-40 object-cover">
-        <div class="p-4 bg-slate-50">
-          <h4 class="font-bold text-slate-800">${prog.name}</h4>
-        </div>
-      </div>`;
-  });
-
-  document.getElementById("activityModal").classList.remove("hidden");
-  document.getElementById("activityModal").classList.add("flex");
-}
-
-function closeModal() {
-  document.getElementById("activityModal").classList.add("hidden");
-  document.getElementById("activityModal").classList.remove("flex");
-}
-</script>
-
 
 <!-- <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-indigo-100 to-purple-200">
     <div class="container mx-auto px-6 relative z-10">
@@ -910,6 +844,7 @@ function closeModal() {
     </div>
 
 </div> -->
+
 
 
 
