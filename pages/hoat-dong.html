@@ -579,28 +579,32 @@ function closeModal() {
   });
 </script>
 <script>
-  // Tabs
+  // Xử lý click tab
   document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      // đổi active button
+      const target = btn.getAttribute("data-target");
+
+      // Ẩn tất cả tab-content
+      document.querySelectorAll(".tab-content").forEach(tab => {
+        tab.classList.add("hidden");
+      });
+
+      // Hiện tab đang chọn
+      document.querySelector(target).classList.remove("hidden");
+
+      // Reset style button
       document.querySelectorAll(".tab-btn").forEach(b => {
-    b.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
+        b.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+        b.classList.add("bg-gray-200","text-slate-700");
+      });
+
+      // Active cho nút hiện tại
+      btn.classList.remove("bg-gray-200","text-slate-700");
       btn.classList.add("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      })
-      btn.classList.add("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      btn.classList.remove("bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      // ẩn/hiện nội dung
-      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-      document.querySelector(btn.dataset.target).classList.remove("hidden");
     });
   });
-
-  // Swipers
-  new Swiper(".gallerySwiper-xuan", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-xuan", prevEl: ".prev-xuan"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper-mhx", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-mhx", prevEl: ".prev-mhx"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper-tsmt", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-tsmt", prevEl: ".prev-tsmt"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper-hmtn", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".next-hmtn", prevEl: ".prev-hmtn"}, breakpoints:{768:{slidesPerView:3}} });
 </script>
+
 
 
 
@@ -702,6 +706,7 @@ function closeModal() {
 
 
 </body>
+
 
 
 
