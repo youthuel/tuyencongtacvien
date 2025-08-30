@@ -402,127 +402,113 @@ function closeModal() {
         </div>
     </div>
 </div>
-<div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-    <div class="p-8 relative">
-      
+  <!-- Nút mở modal -->
+  <button onclick="document.getElementById('modal-tinh-nguyen').classList.remove('hidden')" 
+          class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700">
+    Mở Modal
+  </button>
+
+  <!-- Modal -->
+  <div id="modal-tinh-nguyen" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-8 relative">
+
       <!-- Nút đóng -->
-      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+      <button onclick="document.getElementById('modal-tinh-nguyen').classList.add('hidden')" 
+              class="absolute top-4 right-4 bg-gray-200 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 transition">
         ✕
       </button>
 
       <!-- Tabs -->
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Xuân TN</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hmtn">💉 Hiến Máu TN</button>
-      </div>
+      <div class="flex justify-center mb-6 flex-wrap gap-3"> 
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-pink-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Xuân TN</button> 
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button> 
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button> 
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hmtn">💉 Hiến Máu TN</button> 
+      </div> 
 
       <!-- Nội dung Tabs -->
-      <div id="tab-xuan" class="tab-content block">
+      <div id="tab-xuan" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Xuân Tình Nguyện</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
-          Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
-        </p>
-        <div class="swiper gallerySwiper mt-6">
+        <p class="mt-4 text-slate-600">Mang hơi ấm và món quà ý nghĩa đến với trẻ em, gia đình khó khăn.</p>
+        <div class="swiper swiper-xuan mt-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl w-full aspect-[16/9]"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl w-full aspect-[16/9]"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-xuan"></div>
+          <div class="swiper-button-prev prev-xuan"></div>
         </div>
       </div>
 
       <div id="tab-mhx" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
-          Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
-        </p>
-        <div class="swiper gallerySwiper2 mt-6">
+        <p class="mt-4 text-slate-600">Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học.</p>
+        <div class="swiper swiper-mhx mt-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-mhx"></div>
+          <div class="swiper-button-prev prev-mhx"></div>
         </div>
       </div>
 
       <div id="tab-tsmt" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
-          Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
-        </p>
-        <div class="swiper gallerySwiper3 mt-6">
+        <p class="mt-4 text-slate-600">Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT.</p>
+        <div class="swiper swiper-tsmt mt-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-tsmt"></div>
+          <div class="swiper-button-prev prev-tsmt"></div>
         </div>
       </div>
 
       <div id="tab-hmtn" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
-          góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
-        </p>
-        <div class="swiper gallerySwiper4 mt-6">
+        <p class="mt-4 text-slate-600">“Một giọt máu cho đi – một cuộc đời ở lại”.</p>
+        <div class="swiper swiper-hmtn mt-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-hmtn"></div>
+          <div class="swiper-button-prev prev-hmtn"></div>
         </div>
       </div>
 
     </div>
   </div>
-</div>
 
-<!-- Swiper + Tab script -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // Tabs chuyển đổi
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
-      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-      document.querySelector(btn.dataset.target).classList.remove("hidden");
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Tabs
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+
+        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+        document.querySelector(target).classList.remove("hidden");
+
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.remove("bg-pink-500","text-white");
+          b.classList.add("bg-gray-200","text-slate-700");
+        });
+
+        btn.classList.remove("bg-gray-200","text-slate-700");
+        btn.classList.add("bg-pink-500","text-white");
+      });
     });
-  });
 
-  // Swiper galleries
-  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-</script>
-
-
-    // Swiper
-    new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    // Swiper cho từng tab
+    new Swiper(".swiper-xuan", { navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" } });
+    new Swiper(".swiper-mhx", { navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" } });
+    new Swiper(".swiper-tsmt", { navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" } });
+    new Swiper(".swiper-hmtn", { navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" } });
   </script>
 
      
@@ -688,6 +674,7 @@ function closeModal() {
     </div>
 
 </div> -->
+
 
 
 
