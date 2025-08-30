@@ -27,7 +27,7 @@
             <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </div>
           <h3 class="text-l font-bold text-slate-800">Bồi Đắp Lý Tưởng</h3>
-          <p class="mt-2 text-slate-700 font-medium">Xây dựng bản lĩnh chính trị, bồi dưỡng niềm tin và hoài bão lớn cho sinh viên UEL.</p>
+          <p class="mt-2 text-slate-700 font-medium">Xây dựng bản lĩnh chính trị, bồi dưỡng niềm tin và hoài bão lớn cho sinh viên UEL</p>
         </div>
       </div> 
 
@@ -451,7 +451,7 @@ function closeModal() {
         </div>
       </div>
 
-      <div id="tab-mhx" class="tab-content hidden">
+      <div id="tab-mhx" class="tab-content" style="display:none;">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
@@ -468,7 +468,7 @@ function closeModal() {
         </div>
       </div>
 
-      <div id="tab-tsmt" class="tab-content hidden">
+      <div id="tab-tsmt" class="tab-content" style="display:none;">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
@@ -485,7 +485,7 @@ function closeModal() {
         </div>
       </div>
 
-      <div id="tab-hmtn" class="tab-content hidden">
+      <div id="tab-hmtn" class="tab-content" style="display:none;">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
@@ -505,8 +505,31 @@ function closeModal() {
   </div>
 </div>
 
-<!-- Swiper + Tab script -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script>
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-target");
+
+      // Ẩn hết tab
+      document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "none");
+
+      // Hiện tab được chọn
+      document.getElementById(target).style.display = "block";
+
+      // Reset style nút
+      document.querySelectorAll(".tab-btn").forEach(b => {
+        b.classList.remove("bg-pink-500","text-white");
+        b.classList.add("bg-gray-200","text-slate-700");
+      });
+
+      // Active cho nút hiện tại
+      btn.classList.remove("bg-gray-200","text-slate-700");
+      btn.classList.add("bg-pink-500","text-white");
+    });
+  });
+</script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Tabs
@@ -727,6 +750,7 @@ function closeModal() {
     </div>
 
 </div> -->
+
 
 
 
