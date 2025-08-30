@@ -54,63 +54,70 @@
     </div>
 </section>
 
-<section id="tinhnguyen" class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-emerald-100 to-green-200">
-  <div class="container mx-auto px-6 relative z-10">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-      Hoạt động Tình nguyện Cộng đồng
-    </h2>
+<!-- 2) HTML: section Swiper -->
+<section id="activities-swiper" class="relative overflow-hidden py-12 bg-gradient-to-br from-emerald-100 to-green-200">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-3xl font-bold text-center text-slate-800">Hoạt động Tình nguyện Cộng đồng</h2>
 
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
+    <div class="swiper myActivitiesSwiper">
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <div class="rounded-2xl overflow-hidden shadow-lg bg-white/80 backdrop-blur-sm">
-            <img src="pic/tn1.jpg" alt="Mùa hè xanh" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg text-emerald-700">Chiến dịch Mùa Hè Xanh</h3>
-              <p class="text-gray-600 text-sm">Sinh viên đến với vùng quê, lan tỏa tri thức và năng lượng tích cực.</p>
+          <div class="activity-card">
+            <img src="pic/tn1.jpg" alt="Mùa hè xanh" />
+            <div class="body">
+              <h3 class="font-semibold text-emerald-700">Chiến dịch Mùa Hè Xanh</h3>
+              <p class="text-sm text-slate-700 mt-1">Sinh viên đến với vùng quê, lan tỏa tri thức và năng lượng tích cực.</p>
             </div>
           </div>
         </div>
+
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <div class="rounded-2xl overflow-hidden shadow-lg bg-white/80 backdrop-blur-sm">
-            <img src="pic/tn2.jpg" alt="Xuân tình nguyện" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg text-emerald-700">Xuân Tình Nguyện</h3>
-              <p class="text-gray-600 text-sm">Mang tết ấm đến cho bà con có hoàn cảnh khó khăn.</p>
+          <div class="activity-card">
+            <img src="pic/tn2.jpg" alt="Xuân tình nguyện" />
+            <div class="body">
+              <h3 class="font-semibold text-emerald-700">Xuân Tình Nguyện</h3>
+              <p class="text-sm text-slate-700 mt-1">Mang tết ấm đến cho bà con có hoàn cảnh khó khăn.</p>
             </div>
           </div>
         </div>
+
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <div class="rounded-2xl overflow-hidden shadow-lg bg-white/80 backdrop-blur-sm">
-            <img src="pic/tn3.jpg" alt="Hiến máu nhân đạo" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg text-emerald-700">Hiến máu nhân đạo</h3>
-              <p class="text-gray-600 text-sm">Chia sẻ giọt máu đào, trao đi sự sống.</p>
+          <div class="activity-card">
+            <img src="pic/tn3.jpg" alt="Hiến máu" />
+            <div class="body">
+              <h3 class="font-semibold text-emerald-700">Hiến máu nhân đạo</h3>
+              <p class="text-sm text-slate-700 mt-1">Chia sẻ giọt máu đào, trao đi sự sống.</p>
             </div>
           </div>
         </div>
+
         <!-- Slide 4 -->
         <div class="swiper-slide">
-          <div class="rounded-2xl overflow-hidden shadow-lg bg-white/80 backdrop-blur-sm">
-            <img src="pic/tn4.jpg" alt="Tiếp sức mùa thi" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg text-emerald-700">Tiếp Sức Mùa Thi</h3>
-              <p class="text-gray-600 text-sm">Đồng hành cùng sĩ tử trong kỳ thi quan trọng.</p>
+          <div class="activity-card">
+            <img src="pic/tn4.jpg" alt="Tiếp sức mùa thi" />
+            <div class="body">
+              <h3 class="font-semibold text-emerald-700">Tiếp Sức Mùa Thi</h3>
+              <p class="text-sm text-slate-700 mt-1">Đồng hành cùng sĩ tử trong kỳ thi quan trọng.</p>
             </div>
           </div>
         </div>
+
+        <!-- thêm slide tùy ý -->
       </div>
 
-      <!-- Nút điều hướng -->
+      <!-- navigation -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+
+      <!-- pagination (nếu muốn) -->
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -368,26 +375,37 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,       // luôn hiển thị 3 ô
-    spaceBetween: 30,
-    loop: true,             // xoay vòng vô hạn
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },     
-      768: { slidesPerView: 2 },   
-      1024: { slidesPerView: 3 }   
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    // tạo swiper
+    const mySwiper = new Swiper(".myActivitiesSwiper", {
+      slidesPerView: 3,        // luôn hiển thị 3 ô
+      spaceBetween: 28,        // khoảng cách giữa ô
+      loop: true,
+      centeredSlides: false,
+      autoplay: {
+        delay: 2800,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0:   { slidesPerView: 1, spaceBetween: 16 },
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        1024:{ slidesPerView: 3, spaceBetween: 28 }
+      }
+    });
   });
 </script>
+
 
 
 
@@ -485,6 +503,7 @@
     </div>
 
 </div> -->
+
 
 
 
