@@ -131,7 +131,7 @@
     </div>
 </section>
 
-<section class="py-20 md:py-24 bg-gradient-to-br from-sky-50 to-teal-100">
+<!-- <section class="py-20 md:py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-100">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16 scroll-animate">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-800">Thành Tích Tiêu Biểu</h2>
@@ -160,7 +160,67 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="py-20 md:py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-800">Thành Tích Tiêu Biểu</h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+        Những cột mốc đáng nhớ ghi dấu sự nỗ lực và cống hiến của tuổi trẻ UEL.
+      </p>
+    </div>
+
+    <!-- Thành tích dạng card -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+      <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate border-t-4 border-yellow-400" style="transition-delay:100ms;">
+        <div class="text-4xl mb-4">🏆</div>
+        <h3 class="text-xl font-bold text-yellow-600 mb-2">Huân chương Lao động hạng Ba</h3>
+        <p class="text-slate-600">Vinh dự được Nhà nước trao tặng vì những đóng góp xuất sắc trong công tác Đoàn và phong trào thanh niên</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate border-t-4 border-rose-400" style="transition-delay:200ms;">
+        <div class="text-4xl mb-4">🎖️</div>
+        <h3 class="text-xl font-bold text-rose-600 mb-2">Bằng khen Trung ương Đoàn</h3>
+        <p class="text-slate-600">05 năm liên tục đạt danh hiệu đơn vị xuất sắc dẫn đầu trong công tác Đoàn và phong trào thanh niên TP.HCM</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg scroll-animate border-t-4 border-sky-400" style="transition-delay:300ms;">
+        <div class="text-4xl mb-4">⭐</div>
+        <h3 class="text-xl font-bold text-sky-600 mb-2">Giải thưởng Hồ Hảo Hớn</h3>
+        <p class="text-slate-600">Mô hình "Hệ thống hỗ trợ học tập, tìm hiểu kiến thức pháp luật cộng đồng trên nền tảng công nghệ số"</p>
+      </div>
+    </div>
+
+    <!-- Slider hình ảnh -->
+    <div class="swiper mySwiperAchievement rounded-xl overflow-hidden shadow-lg max-w-5xl mx-auto">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="pic/thanhtich/tt1.jpg" class="w-full h-72 object-cover" alt="Thành tích 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="pic/thanhtich/tt2.jpg" class="w-full h-72 object-cover" alt="Thành tích 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="pic/thanhtich/tt3.jpg" class="w-full h-72 object-cover" alt="Thành tích 3">
+        </div>
+      </div>
+      <!-- Nút điều hướng -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
 </section>
+
+<!-- Thêm script Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiperAchievement", {
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  });
+</script>
 
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
@@ -177,6 +237,7 @@
     </div>
 
 </section>
+
 
 
 
