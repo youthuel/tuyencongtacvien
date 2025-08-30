@@ -679,6 +679,24 @@ z-index: 50; /* tránh bị che */
     breakpoints: { 768: { slidesPerView: 3 } }
   });
 </script>
+    script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Tabs chuyển đổi
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
+      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+      document.querySelector(btn.dataset.target).classList.remove("hidden");
+    });
+  });
+
+  // Swiper galleries
+  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+</script>
 </body>
 <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -795,6 +813,7 @@ z-index: 50; /* tránh bị che */
 
 
 </html>
+
 
 
 
