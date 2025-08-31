@@ -329,43 +329,69 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
+  /* CSS cho Swiper navigation buttons */
   .swiper-button-next,
   .swiper-button-prev {
     color: #3b82f6 !important;
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     border-radius: 50% !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 48px !important;
+    height: 48px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
-    z-index: 10 !important;
+    z-index: 50 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
 
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
     background: rgba(255, 255, 255, 1) !important;
-    transform: scale(1.1) !important;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
+  .swiper-button-next {
+    right: 15px !important;
+  }
+
+  .swiper-button-prev {
+    left: 15px !important;
+  }
+
+  /* Custom navigation icons */
   .swiper-button-next:after,
   .swiper-button-prev:after {
-      font-size: 20px !important;
-    font-weight: bold !important;
+    content: '' !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-size: 24px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    pointer-events: none !important;
+  }
+
+  .swiper-button-next:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
+
+  .swiper-button-prev:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M15 19l-7-7 7-7'%3E%3C/path%3E%3C/svg%3E") !important;
   }
 
   /* Đảm bảo Swiper container có position relative */
   .swiper {
     position: relative !important;
-  }
-
-  /* Ẩn navigation buttons mặc định của Swiper */
-  .swiper-button-next.swiper-button-disabled,
-  .swiper-button-prev.swiper-button-disabled {
-    opacity: 0.3 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
   }
 
   /* Đảm bảo Swiper slides hiển thị đúng */
@@ -388,6 +414,7 @@
     height: 224px !important;
     object-fit: cover !important;
     display: block !important;
+    border-radius: 12px !important;
   }
 
   /* Sửa lỗi slide width trên mobile */
@@ -398,38 +425,6 @@
   }
 
   /* Đảm bảo Swiper container có kích thước đúng */
-  .swiper {
-    overflow: hidden !important;
-    width: 100% !important;
-    position: relative !important;
-  }
-
-  /* Sửa lỗi navigation buttons */
-  .swiper-button-next,
-  .swiper-button-prev {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 20 !important;
-    cursor: pointer !important;
-    pointer-events: auto !important;
-  }
-
-  .swiper-button-next {
-    right: 10px !important;
-  }
-
-  .swiper-button-prev {
-    left: 10px !important;
-  }
-
-  /* Đảm bảo navigation buttons có thể click */
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    pointer-events: none !important;
-  }
-
-  /* Đảm bảo Swiper container có kích thước đúng */
   .gallerySwiper-xuan,
   .gallerySwiper-mhx,
   .gallerySwiper-tsmt,
@@ -437,60 +432,22 @@
     width: 100% !important;
     height: auto !important;
     min-height: 300px !important;
+    position: relative !important;
   }
 
-  /* Sửa lỗi slide width */
-  .swiper-slide {
-    width: 100% !important;
-    height: auto !important;
+  /* Ẩn navigation buttons mặc định của Swiper */
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.3 !important;
   }
 
-  /* Đảm bảo images hiển thị đúng */
-  .swiper-slide img {
-    width: 100% !important;
-    height: 224px !important;
-    object-fit: cover !important;
-    border-radius: 12px !important;
-  }
-
-  /* Đảm bảo Swiper hoạt động đúng */
-  .swiper-container {
-    overflow: hidden !important;
-  }
-
+  /* Đảm bảo navigation buttons có thể click */
   .swiper-button-next,
   .swiper-button-prev {
     user-select: none !important;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
-  }
-    
-  /* Đảm bảo navigation buttons có thể click */
-  .swiper-button-next,
-  .swiper-button-prev {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-    z-index: 30 !important;
-  }
-
-  /* Sửa lỗi navigation buttons bị ẩn */
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    content: '' !important;
-    width: 20px !important;
-    height: 20px !important;
-    background-size: 20px !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-  }
-
-  .swiper-button-next:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E") !important;
-  }
-
-  .swiper-button-prev:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 19l-7-7 7-7'%3E%3C/path%3E%3C/svg%3E") !important;
   }
 </style>
 
@@ -502,11 +459,11 @@
     
     // Khởi tạo Swiper cho các gallery
     if (document.querySelector('.gallerySwiper-xuan')) {
-     const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+      const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
-                breakpoints: { 
+        breakpoints: { 
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 } 
         },
@@ -527,17 +484,23 @@
       const prevBtnXuan = document.querySelector('.prev-xuan');
       
       if (nextBtnXuan) {
-        nextBtnXuan.addEventListener('click', () => swiperXuan.slideNext());
+        nextBtnXuan.addEventListener('click', () => {
+          console.log('Next button clicked for xuan');
+          swiperXuan.slideNext();
+        });
       }
       if (prevBtnXuan) {
-        prevBtnXuan.addEventListener('click', () => swiperXuan.slidePrev());
+        prevBtnXuan.addEventListener('click', () => {
+          console.log('Prev button clicked for xuan');
+          swiperXuan.slidePrev();
+        });
       }
       
       console.log('Swiper xuan initialized with navigation');
     }
     
     if (document.querySelector('.gallerySwiper-mhx')) {
-        const swiperMhx = new Swiper(".gallerySwiper-mhx", {  
+      const swiperMhx = new Swiper(".gallerySwiper-mhx", {  
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
@@ -562,10 +525,16 @@
       const prevBtnMhx = document.querySelector('.prev-mhx');
       
       if (nextBtnMhx) {
-        nextBtnMhx.addEventListener('click', () => swiperMhx.slideNext());
+        nextBtnMhx.addEventListener('click', () => {
+          console.log('Next button clicked for mhx');
+          swiperMhx.slideNext();
+        });
       }
       if (prevBtnMhx) {
-        prevBtnMhx.addEventListener('click', () => swiperMhx.slidePrev());
+        prevBtnMhx.addEventListener('click', () => {
+          console.log('Prev button clicked for mhx');
+          swiperMhx.slidePrev();
+        });
       }
       
       console.log('Swiper mhx initialized with navigation');
@@ -576,7 +545,7 @@
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
-                breakpoints: { 
+        breakpoints: { 
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 } 
         },
@@ -597,10 +566,16 @@
       const prevBtnTsmt = document.querySelector('.prev-tsmt');
       
       if (nextBtnTsmt) {
-        nextBtnTsmt.addEventListener('click', () => swiperTsmt.slideNext());
+        nextBtnTsmt.addEventListener('click', () => {
+          console.log('Next button clicked for tsmt');
+          swiperTsmt.slideNext();
+        });
       }
       if (prevBtnTsmt) {
-        prevBtnTsmt.addEventListener('click', () => swiperTsmt.slidePrev());
+        prevBtnTsmt.addEventListener('click', () => {
+          console.log('Prev button clicked for tsmt');
+          swiperTsmt.slidePrev();
+        });
       }
       
       console.log('Swiper tsmt initialized with navigation');
@@ -611,7 +586,7 @@
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
-                breakpoints: { 
+        breakpoints: { 
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 } 
         },
@@ -632,23 +607,84 @@
       const prevBtnHmtn = document.querySelector('.prev-hmtn');
       
       if (nextBtnHmtn) {
-        nextBtnHmtn.addEventListener('click', () => swiperHmtn.slideNext());
+        nextBtnHmtn.addEventListener('click', () => {
+          console.log('Next button clicked for hmtn');
+          swiperHmtn.slideNext();
+        });
       }
       if (prevBtnHmtn) {
-        prevBtnHmtn.addEventListener('click', () => swiperHmtn.slidePrev());
+        prevBtnHmtn.addEventListener('click', () => {
+          console.log('Prev button clicked for hmtn');
+          swiperHmtn.slidePrev();
+        });
       }
       
       console.log('Swiper hmtn initialized with navigation');
     }
-    }
     
     console.log('All Swipers initialized for hoat-dong page');
+  });
+
+  // Hàm khởi tạo lại Swiper khi modal mở
+  function reinitializeSwipers() {
+    console.log('Reinitializing Swipers...');
+    
+    // Khởi tạo lại tất cả Swiper instances
+    if (document.querySelector('.gallerySwiper-xuan')) {
+      const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      // Thêm event listeners
+      const nextBtnXuan = document.querySelector('.next-xuan');
+      const prevBtnXuan = document.querySelector('.prev-xuan');
+      
+      if (nextBtnXuan) {
+        nextBtnXuan.addEventListener('click', () => {
+          console.log('Next button clicked for xuan (reinit)');
+          swiperXuan.slideNext();
+        });
+      }
+      if (prevBtnXuan) {
+        prevBtnXuan.addEventListener('click', () => {
+          console.log('Prev button clicked for xuan (reinit)');
+          swiperXuan.slidePrev();
+        });
+      }
+    }
+    
+    // Tương tự cho các Swiper khác...
+    console.log('Swipers reinitialized');
+  }
+
+  // Lắng nghe sự kiện modal mở để khởi tạo lại Swiper
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-trigger')) {
+      setTimeout(() => {
+        reinitializeSwipers();
+      }, 300);
+    }
   });
 </script>
 
 </body>
 </html>
-
 
 
 
