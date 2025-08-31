@@ -800,6 +800,48 @@
 
 </div> -->
 
+<!-- Button mở modal -->
+<div class="flex justify-center mb-6">
+  <button onclick="openModal()" 
+    class="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition">
+    🚀 Khám phá các phong trào
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="movementModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+  <div class="bg-white max-w-6xl w-full max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-xl relative">
+    <!-- Nút đóng -->
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+
+    <!-- === Toàn bộ code bạn đưa nằm ở đây === -->
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Các Phong Trào Hành Động</h2>
+            <p class="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">Mỗi ngày ở UEL đều là một cơ hội để bạn trải nghiệm </br>và lớn lên qua các phong trào sôi nổi.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-12">
+            <div class="movement-card active cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-sang-tao">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-blue-100 text-blue-500 text-2xl mr-4">🎓</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-lg">Tuổi trẻ Sáng tạo</h3>
+                        <p class="text-sm text-slate-500">Học thuật & Nghiên cứu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-tinh-nguyen">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-rose-100 text-rose-500 text-2xl mr-4">❤️</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-lg">Thanh niên Tình nguyện</h3>
+                        <p class="text-sm text-slate-500">Cống hiến & Sẻ chia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-
+
 
 
 
