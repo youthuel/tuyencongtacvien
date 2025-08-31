@@ -313,7 +313,13 @@
                 // 2. MODAL HANDLERS: Xử lý đóng/mở các cửa sổ popup (modal)
                 const openModal = (modalId) => {
                     const modal = document.querySelector(modalId);
-                    if (modal) modal.classList.add('is-open');
+                    if (modal) {
+                        modal.classList.add('is-open');
+                        // Khởi tạo Swiper sau khi modal mở
+                        setTimeout(() => {
+                            initializeModalSwipers();
+                        }, 100);
+                    }
                 };
                 const closeModal = (modal) => {
                     if (modal) modal.classList.remove('is-open');
@@ -371,6 +377,54 @@
                             tab.classList.add('hidden');
                         }
                     });
+                }
+
+                                // Khởi tạo Swiper cho các gallery trong modal
+                function initializeModalSwipers() {
+                    console.log('Initializing modal Swipers...');
+                    
+                    // Khởi tạo Swiper cho Modal Tình Nguyện
+                    if (document.querySelector('.gallerySwiper-xuan')) {
+                        new Swiper(".gallerySwiper-xuan", { 
+                            slidesPerView: 2, 
+                            spaceBetween: 16, 
+                            navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
+                            breakpoints: { 768: { slidesPerView: 3 } } 
+                        });
+                        console.log('Swiper xuan initialized');
+                    }
+                    
+                    if (document.querySelector('.gallerySwiper-mhx')) {
+                        new Swiper(".gallerySwiper-mhx", { 
+                            slidesPerView: 2, 
+                            spaceBetween: 16, 
+                            navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
+                            breakpoints: { 768: { slidesPerView: 3 } } 
+                        });
+                        console.log('Swiper mhx initialized');
+                    }
+                    
+                    if (document.querySelector('.gallerySwiper-tsmt')) {
+                        new Swiper(".gallerySwiper-tsmt", { 
+                            slidesPerView: 2, 
+                            spaceBetween: 16, 
+                            navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
+                            breakpoints: { 768: { slidesPerView: 3 } } 
+                        });
+                        console.log('Swiper tsmt initialized');
+                    }
+                    
+                    if (document.querySelector('.gallerySwiper-hmtn')) {
+                        new Swiper(".gallerySwiper-hmtn", { 
+                            slidesPerView: 2, 
+                            spaceBetween: 16, 
+                            navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
+                            breakpoints: { 768: { slidesPerView: 3 } } 
+                        });
+                        console.log('Swiper hmtn initialized');
+                    }
+                    
+                    console.log('All modal Swipers initialized');
                 }
 
                 // Xử lý Tabs cho Modal Tình Nguyện
@@ -499,7 +553,8 @@
                     initializeTinhNguyenTabs();
                     initializeHocThuatTabs();
                     initializeVTMTabs();
-                    console.log('Tabs initialization complete');
+                    initializeModalSwipers(); // Khởi tạo Swiper cho modal
+                    console.log('Tabs and Swipers initialization complete');
                 }, 300);
 
                 // 3. SWIPER SLIDER: Khởi tạo slider ảnh
@@ -856,5 +911,6 @@ module.exports = {
 </body>
 
 </html>
+
 
 
