@@ -95,7 +95,7 @@
       </div>
 
       <!-- Nội dung Tabs -->
-      <div id="tab-xuan" class="tab-content block">
+      <div id="tab-xuan" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Xuân Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
@@ -289,6 +289,36 @@
   </div>
 </div>
 
+<!-- CSS cho Modal -->
+<style>
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease;
+  }
+  
+  .modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  
+  .modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal.is-open .modal-content {
+    transform: scale(1);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+</style>
+
 <!-- Script xử lý Modal và Tabs -->
 <script>
   // Xử lý Modal
@@ -296,7 +326,10 @@
     trigger.addEventListener('click', () => {
       const modalId = trigger.getAttribute('data-modal-target');
       const modal = document.querySelector(modalId);
-      if (modal) modal.classList.add('is-open');
+      if (modal) {
+        modal.classList.add('is-open');
+        console.log('Modal opened:', modalId); // Debug log
+      }
     });
   });
 
@@ -311,42 +344,87 @@
   // Xử lý Tabs cho Modal Tình Nguyện
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      console.log('Tab clicked:', btn.dataset.target); // Debug log
+      
+      // Reset tất cả tabs
       document.querySelectorAll('.tab-btn').forEach(b => {
         b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
         b.classList.add('bg-gray-200', 'text-slate-700');
       });
+      
+      // Active tab được click
+      btn.classList.remove('bg-gray-200', 'text-slate-700');
       btn.classList.add('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
       
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
-      document.querySelector(btn.dataset.target).classList.remove('hidden');
+      // Ẩn tất cả nội dung
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      
+      // Hiện nội dung tương ứng
+      const targetContent = document.querySelector(btn.dataset.target);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        console.log('Showing content:', btn.dataset.target); // Debug log
+      }
     });
   });
 
   // Xử lý Tabs cho Modal Học Thuật
   document.querySelectorAll('.tab-btn-hoc-thuat').forEach(btn => {
     btn.addEventListener('click', () => {
+      console.log('Hoc thuat tab clicked:', btn.dataset.target); // Debug log
+      
+      // Reset tất cả tabs
       document.querySelectorAll('.tab-btn-hoc-thuat').forEach(b => {
         b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
         b.classList.add('bg-gray-200', 'text-slate-700');
       });
+      
+      // Active tab được click
+      btn.classList.remove('bg-gray-200', 'text-slate-700');
       btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
       
-      document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => tab.classList.add('hidden'));
-      document.querySelector(btn.dataset.target).classList.remove('hidden');
+      // Ẩn tất cả nội dung
+      document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      
+      // Hiện nội dung tương ứng
+      const targetContent = document.querySelector(btn.dataset.target);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        console.log('Showing hoc thuat content:', btn.dataset.target); // Debug log
+      }
     });
   });
 
   // Xử lý Tabs cho Modal Văn - Thể - Mỹ
   document.querySelectorAll('.tab-btn-vtm').forEach(btn => {
     btn.addEventListener('click', () => {
+      console.log('VTM tab clicked:', btn.dataset.target); // Debug log
+      
+      // Reset tất cả tabs
       document.querySelectorAll('.tab-btn-vtm').forEach(b => {
         b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
         b.classList.add('bg-gray-200', 'text-slate-700');
       });
+      
+      // Active tab được click
+      btn.classList.remove('bg-gray-200', 'text-slate-700');
       btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
       
-      document.querySelectorAll('.tab-content-vtm').forEach(tab => tab.classList.add('hidden'));
-      document.querySelector(btn.dataset.target).classList.remove('hidden');
+      // Ẩn tất cả nội dung
+      document.querySelectorAll('.tab-content-vtm').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      
+      // Hiện nội dung tương ứng
+      const targetContent = document.querySelector(btn.dataset.target);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        console.log('Showing VTM content:', btn.dataset.target); // Debug log
+      }
     });
   });
 
@@ -374,5 +452,46 @@
     spaceBetween: 16, 
     navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
     breakpoints: { 768: { slidesPerView: 3 } } 
+  });
+
+  // Khởi tạo trạng thái ban đầu cho tabs
+  function initializeTabs() {
+    // Modal Tình Nguyện: Ẩn tất cả nội dung trừ tab đầu tiên
+    document.querySelectorAll('.tab-content').forEach((tab, index) => {
+      if (index === 0) {
+        tab.classList.remove('hidden');
+      } else {
+        tab.classList.add('hidden');
+      }
+    });
+
+    // Modal Học Thuật: Ẩn tất cả nội dung trừ tab đầu tiên
+    document.querySelectorAll('.tab-content-hoc-thuat').forEach((tab, index) => {
+      if (index === 0) {
+        tab.classList.remove('hidden');
+      } else {
+        tab.classList.add('hidden');
+      }
+    });
+
+    // Modal Văn - Thể - Mỹ: Ẩn tất cả nội dung trừ tab đầu tiên
+    document.querySelectorAll('.tab-content-vtm').forEach((tab, index) => {
+      if (index === 0) {
+        tab.classList.remove('hidden');
+      } else {
+        tab.classList.add('hidden');
+      }
+    });
+  }
+
+  // Debug: Log khi trang load xong
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded, checking elements:');
+    console.log('Modal triggers:', document.querySelectorAll('.modal-trigger').length);
+    console.log('Tab buttons:', document.querySelectorAll('.tab-btn').length);
+    console.log('Tab contents:', document.querySelectorAll('.tab-content').length);
+    
+    // Khởi tạo trạng thái tabs
+    initializeTabs();
   });
 </script>
