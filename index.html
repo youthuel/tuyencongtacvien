@@ -37,6 +37,18 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .nav-active { color: #2563eb !important; font-weight: 700; }
+               
+        /* Đảm bảo navigation hiển thị */
+        #main-nav {
+            display: flex !important;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        #main-nav a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px) scale(0.95);
@@ -212,7 +224,7 @@
                 <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
             </a>
             
-            <nav class="hidden md:flex items-center space-x-8" id="main-nav">
+            <nav class="flex items-center space-x-8" id="main-nav">
                 <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
                 <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
                 <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
@@ -844,4 +856,5 @@ module.exports = {
 </body>
 
 </html>
+
 
