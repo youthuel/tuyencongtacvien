@@ -331,16 +331,59 @@
 
   .swiper-button-next,
   .swiper-button-prev {
-    color: #3b82f6;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    color: #3b82f6 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    z-index: 10 !important;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
   }
 
   .swiper-button-next:after,
   .swiper-button-prev:after {
-    font-size: 18px;
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+
+  /* Đảm bảo Swiper container có position relative */
+  .swiper {
+    position: relative !important;
+  }
+
+  /* Ẩn navigation buttons mặc định của Swiper */
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.3 !important;
+  }
+
+  /* Đảm bảo Swiper slides hiển thị đúng */
+  .swiper-wrapper {
+    display: flex !important;
+    transition-property: transform !important;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  /* Ẩn overflow để chỉ hiển thị slides hiện tại */
+  .swiper {
+    overflow: hidden !important;
   }
 </style>
 
@@ -353,40 +396,61 @@
     // Khởi tạo Swiper cho các gallery
     if (document.querySelector('.gallerySwiper-xuan')) {
       new Swiper(".gallerySwiper-xuan", { 
-        slidesPerView: 2, 
+        slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
-        breakpoints: { 768: { slidesPerView: 3 } } 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: false,
+        grabCursor: true
       });
       console.log('Swiper xuan initialized');
     }
     
     if (document.querySelector('.gallerySwiper-mhx')) {
       new Swiper(".gallerySwiper-mhx", { 
-        slidesPerView: 2, 
+        slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
-        breakpoints: { 768: { slidesPerView: 3 } } 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: false,
+        grabCursor: true
       });
       console.log('Swiper mhx initialized');
     }
     
     if (document.querySelector('.gallerySwiper-tsmt')) {
       new Swiper(".gallerySwiper-tsmt", { 
-        slidesPerView: 2, 
+        slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
-        breakpoints: { 768: { slidesPerView: 3 } } 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: false,
+        grabCursor: true
       });
       console.log('Swiper tsmt initialized');
     }
     
     if (document.querySelector('.gallerySwiper-hmtn')) {
       new Swiper(".gallerySwiper-hmtn", { 
-        slidesPerView: 2, 
+        slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
-        breakpoints: { 768: { slidesPerView: 3 } } 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: false,
+        grabCursor: true
+
       });
       console.log('Swiper hmtn initialized');
     }
@@ -397,3 +461,4 @@
 
 </body>
 </html>
+
