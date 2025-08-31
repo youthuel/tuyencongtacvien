@@ -335,58 +335,73 @@
     </div>
 </div>
 
+<!-- Nút mở modal -->
+  <button onclick="document.getElementById('modal').classList.remove('hidden')" 
+          class="px-4 py-2 bg-blue-600 text-white rounded">Mở Modal</button>
 
-  <div class="bg-white rounded-3xl max-w-3xl w-full p-8 shadow-xl relative">
-    
-    <!-- Tabs -->
-    <div class="flex justify-center mb-6 flex-wrap gap-3"> 
-      <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-pink-500 text-white" data-target="xuan">🌸 Xuân TN</button> 
-      <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="mhx">☀️ Mùa Hè Xanh</button> 
-      <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="tsmt">📘 Tiếp Sức Mùa Thi</button> 
-      <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="hmtn">💉 Hiến Máu TN</button> 
-    </div> 
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-8 relative">
 
-    <!-- Nội dung Tabs -->
-    <div id="tab-xuan" class="tab-content">
-      <h2 class="text-2xl font-bold">Chiến Dịch Xuân Tình Nguyện</h2>
-      <p class="mt-2">🌸 Đây là nội dung Xuân Tình Nguyện.</p>
+      <!-- Nút đóng -->
+      <button onclick="document.getElementById('modal').classList.add('hidden')" 
+              class="absolute top-4 right-4 bg-gray-200 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-300 transition">
+        ✕
+      </button>
+
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-pink-500 text-white shadow" data-target="#tab-xuan">🌸 Xuân TN</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700" data-target="#tab-hmtn">💉 Hiến Máu TN</button>
+      </div>
+
+      <!-- Nội dung Tabs -->
+      <div id="tab-xuan" class="tab-content">
+        <h2 class="text-2xl font-bold">Chiến Dịch Xuân Tình Nguyện</h2>
+        <p class="mt-2">🌸 Đây là nội dung Xuân TN.</p>
+      </div>
+
+      <div id="tab-mhx" class="tab-content hidden">
+        <h2 class="text-2xl font-bold">Chiến Dịch Mùa Hè Xanh</h2>
+        <p class="mt-2">☀️ Đây là nội dung Mùa Hè Xanh.</p>
+      </div>
+
+      <div id="tab-tsmt" class="tab-content hidden">
+        <h2 class="text-2xl font-bold">Chương Trình Tiếp Sức Mùa Thi</h2>
+        <p class="mt-2">📘 Đây là nội dung Tiếp Sức Mùa Thi.</p>
+      </div>
+
+      <div id="tab-hmtn" class="tab-content hidden">
+        <h2 class="text-2xl font-bold">Chương Trình Hiến Máu TN</h2>
+        <p class="mt-2">💉 Đây là nội dung Hiến Máu TN.</p>
+      </div>
+
     </div>
-
-    <div id="tab-mhx" class="tab-content hidden">
-      <h2 class="text-2xl font-bold">Chiến Dịch Mùa Hè Xanh</h2>
-      <p class="mt-2">☀️ Đây là nội dung Mùa Hè Xanh.</p>
-    </div>
-
-    <div id="tab-tsmt" class="tab-content hidden">
-      <h2 class="text-2xl font-bold">Chương Trình Tiếp Sức Mùa Thi</h2>
-      <p class="mt-2">📘 Đây là nội dung Tiếp Sức Mùa Thi.</p>
-    </div>
-
-    <div id="tab-hmtn" class="tab-content hidden">
-      <h2 class="text-2xl font-bold">Chương Trình Hiến Máu Tình Nguyện</h2>
-      <p class="mt-2">💉 Đây là nội dung Hiến Máu TN.</p>
-    </div>
-
   </div>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Script xử lý Tabs -->
   <script>
     document.querySelectorAll(".tab-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const target = btn.getAttribute("data-target");
 
-        // Ẩn tất cả tab-content
+        // Ẩn hết nội dung
         document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-        
         // Hiện tab được chọn
-        document.getElementById("tab-" + target).classList.remove("hidden");
+        document.querySelector(target).classList.remove("hidden");
 
-        // Reset nút
+        // Reset style nút
         document.querySelectorAll(".tab-btn").forEach(b => {
           b.classList.remove("bg-pink-500","text-white");
           b.classList.add("bg-gray-200","text-slate-700");
         });
 
-        // Active nút hiện tại
+        // Active cho nút hiện tại
         btn.classList.remove("bg-gray-200","text-slate-700");
         btn.classList.add("bg-pink-500","text-white");
       });
@@ -748,6 +763,7 @@
     </div>
 
 </div> -->
+
 
 
 
