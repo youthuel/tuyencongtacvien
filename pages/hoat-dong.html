@@ -667,6 +667,41 @@
 </div>
 
 
+<div class="volunteer-section text-center py-16 bg-gradient-to-r from-green-100 to-blue-100">
+  <h2 class="text-3xl font-bold mb-6">Tình nguyện vì cộng đồng</h2>
+  <button id="exploreBtn" class="px-6 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition">Khám phá</button>
+
+  <div id="programs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 opacity-0 max-h-0 overflow-hidden transition-all duration-500">
+    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+      <img src="prog1.jpg" class="rounded-lg mb-4">
+      <h3 class="font-bold text-xl mb-2">Chương trình 1</h3>
+      <p>Giới thiệu ngắn gọn...</p>
+    </div>
+    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+      <img src="prog2.jpg" class="rounded-lg mb-4">
+      <h3 class="font-bold text-xl mb-2">Chương trình 2</h3>
+      <p>Giới thiệu ngắn gọn...</p>
+    </div>
+    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+      <img src="prog3.jpg" class="rounded-lg mb-4">
+      <h3 class="font-bold text-xl mb-2">Chương trình 3</h3>
+      <p>Giới thiệu ngắn gọn...</p>
+    </div>
+    <!-- Thêm card khác nếu cần -->
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('exploreBtn');
+  const programs = document.getElementById('programs');
+
+  btn.addEventListener('click', () => {
+    programs.classList.toggle('opacity-0');
+    programs.classList.toggle('max-h-0');
+    programs.classList.toggle('opacity-100');
+    programs.classList.toggle('max-h-screen');
+  });
+</script>
 
 
 <!-- Phần này chèn để khỏi bị lỗi
@@ -763,6 +798,7 @@
     </div>
 
 </div> -->
+
 
 
 
