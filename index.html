@@ -1,915 +1,689 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đoàn Trường ĐH Kinh tế - Luật</title>
-
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Hoạt Động - UEL</title>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        /* === CSS CHUNG === */
-        :root {
-            --swiper-navigation-size: 18px;
-        }
-        html, body {
-            font-family: 'Be Vietnam Pro', sans-serif;
-            width: 100%;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        main {
-        padding-top: 5rem;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .nav-active { color: #2563eb !important; font-weight: 700; }
-               
-        /* Đảm bảo navigation hiển thị */
-        #main-nav {
-            display: flex !important;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        #main-nav a {
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .scroll-animate.is-visible { opacity: 1; transform: translateY(0) scale(1); }
-        .deco-shape { position: absolute; z-index: 0; animation: float 8s ease-in-out infinite; }
-        main:empty::before {
-            content: 'Đang tải trang...';
-            display: block;
-            text-align: center;
-            padding: 5rem;
-            font-size: 1.25rem;
-            color: #64748b;
-        }
-        .modal { visibility: hidden; opacity: 0; transition: visibility 0s 0.3s, opacity 0.3s ease; }
-        .modal.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
-        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
-        .modal.is-open .modal-content { transform: scale(1); }
-        
-        /* CSS cho tabs */
-        .hidden { display: none !important; }
-        .tab-content, .tab-content-hoc-thuat, .tab-content-vtm { display: block; }
-        .tab-content.hidden, .tab-content-hoc-thuat.hidden, .tab-content-vtm.hidden { display: none !important; }
-        
-        /* Đảm bảo tab buttons có style đúng */
-        .tab-btn, .tab-btn-hoc-thuat, .tab-btn-vtm {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn:hover, .tab-btn-hoc-thuat:hover, .tab-btn-vtm:hover {
-            transform: scale(1.05);
-        }
-        #mobile-menu { visibility: hidden; transition: visibility 0.3s; }
-        #mobile-menu.is-open { visibility: visible; }
-        #mobile-menu-panel { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
-        #mobile-menu.is-open #mobile-menu-panel { transform: translateX(0); }
-        #mobile-menu-backdrop { opacity: 0; transition: opacity 0.3s ease-in-out; }
-        #mobile-menu.is-open #mobile-menu-backdrop { opacity: 1; }
-        .header-gradient-text {
-            background-image: linear-gradient(to right, #3b82f6, #22d3ee, #3b82f6);
-            background-size: 200% auto; /* Thêm hoặc sửa lại dòng này */
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-pan 5s linear infinite;
-        }
-        .gradient-text {
-            display: inline-block;
-            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f59e0b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .cta-button {
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease-in-out;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
-        }
-        .modal-trigger { cursor: pointer; }
-        .background-blob { position: absolute; opacity: 0.6; filter: blur(100px); z-index: 0; }
-        .animate-fadeIn { animation: fadeIn 0.4s ease; }
-
-        /* === CSS TỪNG TRANG === */
-        /* GIỚI THIỆU */
-        .activity-card img { transition: transform 0.4s ease-out; }
-        .activity-card:hover img { transform: scale(1.1); }
-        .activity-tab { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .activity-tab.active { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); color: white; }
-        .stat-card { transition: all 0.3s ease-out; }
-        .stat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .activity-content { animation: fadeIn-10 0.5s ease-in-out; }
-
-        /* TỔ CHỨC */
-        .member-card, .personnel-card { transition: all 0.3s ease-in-out; }
-        .member-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
-        .personnel-card:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        .department-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .department-card:hover { transform: translateY(-12px); box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.15); }
-        .department-card:hover .card-bg-pattern { opacity: 0.1; transform: scale(1.1); }
-        .card-bg-pattern { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.05; background-size: cover; transition: opacity 0.3s ease, transform 0.5s ease; }
-        .card-icon { margin-bottom: 1.5rem; padding: 1rem; border-radius: 9999px; background-color: rgba(255, 255, 255, 0.2); display: inline-flex; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
-        .card-icon svg { width: 2.5rem; height: 2.5rem; }
-        .card-slogan { font-size: 1.125rem; font-style: italic; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; }
-        .card-tasks { list-style: none; padding: 0; text-align: left; width: 100%; }
-        .card-tasks li { display: flex; align-items: flex-start; margin-bottom: 0.75rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.95); }
-        .card-tasks li::before { content: '✓'; margin-right: 0.75rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); flex-shrink: 0; }
-        .handwriting-container svg { width: 100%; max-width: 600px; height: auto; }
-        .handwriting-text { font-family: 'Dancing Script', cursive; font-size: 100px; font-weight: 700; stroke: #1e3a8a; stroke-width: 1; fill: transparent; stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw-text 4s ease-in-out forwards; }
-        .handwriting-container.drawn .handwriting-text { animation: fill-text 1s forwards 3.5s; }
-
-        /* HOẠT ĐỘNG */
-        .category-card { transition: all 0.3s ease-in-out; }
-        .category-card:hover { transform: translateY(-10px) rotate(-2deg); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
-        .swiper-container { width: 100%; padding: 50px 0; }
-        .swiper-slide { will-change: transform; width: 100%; height: auto; border-radius: 1.5rem; overflow: hidden; transition: transform 0.4s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
-        .movement-card { background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-color: transparent; }
-        .movement-card.active { transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); background-color: white; }
-        .movement-card[data-color="blue"].active { border-color: #3b82f6; }
-        .movement-card[data-color="rose"].active { border-color: #f43f5e; }
-        .movement-card[data-color="teal"].active { border-color: #14b8a6; }
-        .movement-content { animation: fadeIn-15 0.6s ease-in-out; }
-        .carousel-item { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; }
-        .carousel-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-        .carousel-control-prev, .carousel-control-next { z-index: 50; }
-        #activities-swiper { padding: 2.25rem 0; position: relative; }
-        #activities-swiper .section-title { text-align: center; margin-bottom: 1.75rem; }
-        #activities-swiper .swiper { width: 100%; box-sizing: border-box; }
-        #activities-swiper .swiper-slide { display: flex; justify-content: center; align-items: stretch; box-sizing: border-box; position: relative; }
-        #activities-swiper .activity-card { width: 100%; max-width: 360px; background: rgba(255, 255, 255, 0.85); border-radius: 14px; overflow: hidden; box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08); transition: transform .35s ease, box-shadow .35s ease; display: flex; flex-direction: column; }
-        #activities-swiper .activity-card:hover { transform: translateY(-6px); box-shadow: 0 22px 40px rgba(2, 6, 23, 0.12); }
-        #activities-swiper .activity-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
-        #activities-swiper .activity-card .body { padding: 1rem 1.15rem 1.25rem; }
-        #activities-swiper .swiper-button-next, #activities-swiper .swiper-button-prev { color: #0ea5a6; width: 44px; height: 44px; border-radius: 9999px; background: rgba(255, 255, 255, 0.95); box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06); top: 50%; transform: translateY(-50%); z-index: 30; }
-        #activities-swiper .swiper-button-next { right: 1rem; left: auto; }
-        #activities-swiper .swiper-button-prev { left: 1rem; right: auto; }
-        #activities-swiper .swiper-pagination-bullet { background: rgba(15, 23, 42, 0.15); }
-        #activities-swiper .swiper-pagination-bullet-active { background: #06b6d4; }
-
-        /* QUY TRÌNH & FAQ */
-        .timeline-item { display: grid; grid-template-columns: 70px 1fr; margin-bottom: 3rem; }
-        .timeline-marker { display: flex; justify-content: center; align-items: center; width: 64px; height: 64px; border-radius: 9999px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); transform: translateX(-50%); position: relative; left: -2px; z-index: 10; }
-        .timeline-card-new { background-image: linear-gradient(to right, var(--tw-gradient-stops)); padding: 2.5rem; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .timeline-item:hover .timeline-card-new { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
-        .timeline-item-container { transition: all 0.4s ease; }
-        .timeline-item-container:hover .timeline-card { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.1); }
-        .timeline-item-container:hover .timeline-dot { transform: scale(1.2); }
-        .faq-question { cursor: pointer; }
-        .faq-question:hover { background-color: #f8fafc; }
-        .faq-arrow { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-        .faq-item.open .faq-arrow { transform: rotate(180deg); }
-        .faq-answer { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
-        .faq-item.open .faq-answer { grid-template-rows: 1fr; }
-        .faq-answer > div { min-height: 0; }
-        .animated-gradient-ring { background-image: linear-gradient(-45deg, #f857a6, #ff5858, #ffc94e, #23d5ab, #23a6d5, #f857a6); background-size: 600% 600%; animation: gradient-pan 8s ease-in-out infinite; }
-
-        /* === KEYFRAMES === */
-        @keyframes float { 50% { transform: translateY(-20px) rotate(10deg); } }
-        @keyframes gradient-pan { 50% { background-position: 100% 50%; } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn-10 { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn-15 { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes draw-text { to { stroke-dashoffset: 0; } }
-        @keyframes fill-text { to { fill: #2563eb; } }
-
-        /* === MEDIA QUERIES === */
-        @media (max-width: 768px) {
-            .timeline-item { grid-template-columns: 50px 1fr; }
-            .timeline-marker { width: 48px; height: 48px; }
-            .timeline-marker svg { width: 1.5rem; height: 1.5rem; }
-            .timeline-card-new { padding: 1.5rem; }
-            #activities-swiper .activity-card { max-width: 92%; }
-            #activities-swiper .activity-card img { height: 140px; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+<body>
 
-<body class="flex flex-col min-h-screen">
-
-    <header id="header" class="fixed top-0 bg-white/90 backdrop-blur-lg left-0 right-0 z-50 shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-            <a href="#home" class="nav-trigger flex items-center space-x-2 z-20" data-page="home">
-                <img src="pic/logo/logodt.png" alt="Logo Đoàn Trường UEL" class="h-10 w-auto">
-                <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
-            </a>
-            
-            <nav class="flex items-center space-x-8" id="main-nav">
-                <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
-                <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
-                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
-                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="quy-trinh">Ứng tuyển</a>
-                <a href="https://www.facebook.com/youth.uel" target="_blank" class="text-gray-600 hover:text-blue-600 font-semibold">Liên hệ</a>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="hidden sm:block bg-blue-600 text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">Về với chúng mình</a>
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none z-20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main id="app-container"></main>
-
-    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
-        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60"></div>
-        
-        <div id="mobile-menu-panel" class="relative z-50 bg-white w-4/5 max-w-sm h-full ml-auto p-6 shadow-xl flex flex-col">
-            <div class="flex justify-end items-center mb-8">
-                <button id="mobile-menu-close-button" class="p-2 rounded-md text-gray-600 hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav class="flex flex-col space-y-4 text-lg">
-                <a href="#gioithieu" class="nav-trigger nav-link text-gray-700 hover:text-blue-600 font-semibold py-2" data-page="gioithieu">Giới thiệu</a>
-                <a href="#tochuc" class="nav-trigger nav-link text-gray-700 hover:text-blue-600 font-semibold py-2" data-page="tochuc">Tổ chức</a>
-                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-700 hover:text-blue-600 font-semibold py-2" data-page="hoat-dong">Hoạt động</a>
-                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:text-blue-600 font-semibold py-2" data-page="quy-trinh">Quy trình</a>
-                <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link text-gray-700 hover:text-blue-600 font-semibold py-2">Liên hệ</a>
-            </nav>
-            <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="w-full mt-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all duration-300">Đăng ký Ngay</a>
+<section class="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 bg-gradient-to-tr from-rose-100 to-amber-100">
+     <div class="deco-shape w-40 h-40 rounded-full bg-rose-200/80 top-10 right-20"></div>
+     <div class="deco-shape w-32 h-32 rounded-full bg-amber-200/80 bottom-10 left-20" style="animation-delay: -2s;"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="scroll-animate">
+            <p class="text-sm font-semibold text-orange-600 uppercase tracking-widest">Sân Chơi Sôi Nổi</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mt-2">Nơi Thanh Xuân Rực Rỡ</h1>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Khám phá thế giới hoạt động đa dạng, nơi bạn có thể học hỏi, cống hiến và cháy hết mình cùng tuổi trẻ UEL.</p>
         </div>
     </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // === KHU VỰC KHAI BÁO BIẾN VÀ ĐỊNH NGHĨA ROUTE ===
-            const appContainer = document.getElementById('app-container');
-            const routes = {
-                'home': { path: 'pages/home.html', title: 'Tuyển Cộng Tác Viên' },
-                'gioithieu': { path: 'pages/gioithieu.html', title: 'Giới Thiệu' },
-                'tochuc': { path: 'pages/tochuc.html', title: 'Cơ Cấu Tổ Chức' },
-                'hoat-dong': { path: 'pages/hoat-dong.html', title: 'Hoạt Động' },
-                'quy-trinh': { path: 'pages/quy-trinh.html', title: 'Quy Trình Ứng Tuyển' }
-            };
-            let countdownInterval;
+<section class="relative overflow-hidden py-12 md:py-24 bg-gradient-to-br from-teal-50 to-cyan-50">
+  <div class="deco-shape w-64 h-64 rounded-full bg-teal-200/50 -bottom-20 -left-20"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 scroll-animate">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Đa Dạng Sắc Màu Hoạt Động</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
-            const header = document.getElementById('header');
-            const mainContainer = document.getElementById('app-container');
-            function adjustMainPadding() {
-                if (header && mainContainer) {
-                    const headerHeight = header.offsetHeight;
-                    mainContainer.style.paddingTop = `${headerHeight}px`;
-                }
-            }
-            adjustMainPadding();
-            window.addEventListener('resize', adjustMainPadding);
-            
-            // === HÀM KHỞI TẠO CÁC SCRIPT CỦA TRANG CON (initializePageScripts) ===
-            // Hàm này sẽ được gọi mỗi khi một trang mới được tải vào #app-container.
-            // Nó chịu trách nhiệm kích hoạt lại các hiệu ứng (scroll, counter), slider,
-            // modal, tabs, FAQ... cho nội dung vừa được tải.
-            const initializePageScripts = () => {
-                if (countdownInterval) clearInterval(countdownInterval);
+     <!-- Bồi đắp lý tưởng -->
+   <div class="cursor-pointer category-card p-8 rounded-3xl shadow-xl shadow-amber-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 scroll-animate" style="transition-delay: 400ms;">
+        <div class="absolute -top-8 -left-12 w-20 h-20 bg-amber-300/50 rounded-full filter blur-xl"></div>
+        <div class="absolute -bottom-14 -right-10 w-24 h-24 bg-orange-300/50 rounded-full filter blur-xl"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-amber-400 to-orange-600 text-white rounded-2xl shadow-lg shadow-amber-500/40">
+            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="text-l font-bold text-slate-800">Bồi Đắp Lý Tưởng</h3>
+          <p class="mt-2 text-slate-700 font-medium">Xây dựng bản lĩnh chính trị, bồi dưỡng niềm tin và hoài bão lớn cho sinh viên UEL</p>
+        </div>
+      </div> 
 
-                // 1. SCROLL ANIMATE: Hiệu ứng xuất hiện khi cuộn trang
-                document.querySelectorAll('.scroll-animate').forEach(el => {
-                    new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('is-visible');
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.1 }).observe(el);
-                });
+      <!-- Tình nguyện vì cộng đồng -->
+<div class="category-card p-8 rounded-3xl shadow-xl shadow-green-500/20 bg-gradient-to-br from-emerald-100 to-green-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/30 scroll-animate" style="transition-delay: 100ms;">
+        <div class="absolute -top-10 -right-10 w-20 h-20 bg-emerald-300/50 rounded-full filter blur-xl"></div>
+        <div class="absolute -bottom-12 -left-10 w-24 h-24 bg-green-300/50 rounded-full filter blur-xl"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-green-600 text-white rounded-2xl shadow-lg shadow-emerald-500/40">
+            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+          </div>
+          <h3 class="text-l font-bold text-slate-800">Tình Nguyện Vì Cộng Đồng</h3>
+          <p class="mt-2 text-slate-700 font-medium">Lan tỏa giá trị nhân văn qua các chiến dịch Mùa Hè Xanh, Xuân Tình Nguyện, Hiến Máu Nhân Đạo...</p>
+              <button data-modal-target="#modal-tinh-nguyen" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 transition-colors">Khám phá</button>
+        </div>
+      </div> 
 
-                // 2. MODAL HANDLERS: Xử lý đóng/mở các cửa sổ popup (modal)
-                const openModal = (modalId) => {
-                    const modal = document.querySelector(modalId);
-                    if (modal) {
-                        modal.classList.add('is-open');
-                        // Khởi tạo Swiper sau khi modal mở
-                        setTimeout(() => {
-                            initializeModalSwipers();
-                        }, 100);
-                    }
-                };
-                const closeModal = (modal) => {
-                    if (modal) modal.classList.remove('is-open');
-                };
-                document.querySelectorAll('.modal-trigger').forEach(trigger => {
-                    trigger.addEventListener('click', () => {
-                        const modalId = trigger.getAttribute('data-modal-target');
-                        openModal(modalId);
-                    });
-                });
-                document.querySelectorAll('.modal').forEach(modal => {
-                    modal.addEventListener('click', (e) => {
-                        if (e.target === modal || e.target.closest('.modal-close')) {
-                            closeModal(modal);
-                        }
-                    });
-                });
+      <!-- Phát triển học thuật -->
+    <div class="category-card p-8 rounded-3xl shadow-xl shadow-sky-500/20 bg-gradient-to-br from-sky-100 to-blue-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/30 scroll-animate" style="transition-delay: 200ms;">
+        <div class="absolute top-0 -left-12 w-20 h-20 bg-sky-300/50 rounded-full filter blur-xl"></div>
+        <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-blue-300/50 rounded-full filter blur-xl"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-2xl shadow-lg shadow-sky-500/40">
+            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 0 0018 18a8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+          </div>
+          <h3 class="text-l font-bold text-slate-800">Phát Triển Học Thuật</h3>
+          <p class="mt-2 text-slate-700 font-medium">Nâng cao kiến thức và kỹ năng qua các buổi tọa đàm, workshop, cuộc thi học thuật chuyên ngành.</p>
+          <button data-modal-target="#modal-hoc-thuat" class="modal-trigger mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors">Khám phá</button>
+        </div>
+      </div>
+      <!-- Văn - Thể - Mỹ -->
+      <div class="category-card p-8 rounded-3xl shadow-xl shadow-purple-500/20 bg-gradient-to-br from-fuchsia-100 to-purple-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 scroll-animate" style="transition-delay: 300ms;">
+        <div class="absolute -top-4 -right-12 w-20 h-20 bg-fuchsia-300/50 rounded-full filter blur-xl"></div>
+        <div class="absolute -bottom-16 -left-4 w-24 h-24 bg-purple-300/50 rounded-full filter blur-xl"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-fuchsia-500 to-purple-600 text-white rounded-2xl shadow-lg shadow-fuchsia-500/40">
+            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" /></svg>
+          </div>
+          <h3 class="text-l font-bold text-slate-800">Văn - Thể - Mỹ</h3>
+          <p class="mt-2 text-slate-700 font-medium">Cháy hết mình tại các sân chơi như Hội thao, Liên hoan văn nghệ, các CLB-Đội-Nhóm sở thích.</p>
+          <button data-modal-target="#modal-van-the-my" class="modal-trigger mt-4 w-full bg-purple-500 text-white font-semibold py-2 rounded-lg hover:bg-purple-600 transition-colors">Khám phá</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                // 2.1. TAB HANDLERS: Xử lý tabs trong các modal
-                // Khởi tạo trạng thái ban đầu cho tabs
-                function initializeTabs() {
-                    console.log('initializeTabs called');
-                    
-                    // Modal Tình Nguyện: Ẩn tất cả nội dung trừ tab đầu tiên
-                    const tinhNguyenTabs = document.querySelectorAll('.tab-content');
-                    console.log('Found tinh nguyen tabs:', tinhNguyenTabs.length);
-                    tinhNguyenTabs.forEach((tab, index) => {
-                        if (index === 0) {
-                            tab.classList.remove('hidden');
-                            console.log('Showing first tab:', tab.id);
-                        } else {
-                            tab.classList.add('hidden');
-                            console.log('Hiding tab:', tab.id);
-                        }
-                    });
+</section>
 
-                    // Modal Học Thuật: Ẩn tất cả nội dung trừ tab đầu tiên
-                    const hocThuatTabs = document.querySelectorAll('.tab-content-hoc-thuat');
-                    console.log('Found hoc thuat tabs:', hocThuatTabs.length);
-                    hocThuatTabs.forEach((tab, index) => {
-                        if (index === 0) {
-                            tab.classList.remove('hidden');
-                        } else {
-                            tab.classList.add('hidden');
-                        }
-                    });
+<!-- Modal Tình Nguyện với 4 tab -->
+<div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
 
-                    // Modal Văn - Thể - Mỹ: Ẩn tất cả nội dung trừ tab đầu tiên
-                    const vtmTabs = document.querySelectorAll('.tab-content-vtm');
-                    console.log('Found VTM tabs:', vtmTabs.length);
-                    vtmTabs.forEach((tab, index) => {
-                        if (index === 0) {
-                            tab.classList.remove('hidden');
-                        } else {
-                            tab.classList.add('hidden');
-                        }
-                    });
-                }
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Xuân TN</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hmtn">💉 Hiến Máu TN</button>
+      </div>
 
-                                // Khởi tạo Swiper cho các gallery trong modal
-                function initializeModalSwipers() {
-                    console.log('Initializing modal Swipers...');
-                    
-                    // Khởi tạo Swiper cho Modal Tình Nguyện
-                    if (document.querySelector('.gallerySwiper-xuan')) {
-                        new Swiper(".gallerySwiper-xuan", { 
-                            slidesPerView: 2, 
-                            spaceBetween: 16, 
-                            navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
-                        });
-                        console.log('Swiper xuan initialized');
-                    }
-                    
-                    if (document.querySelector('.gallerySwiper-mhx')) {
-                        new Swiper(".gallerySwiper-mhx", { 
-                            slidesPerView: 2, 
-                            spaceBetween: 16, 
-                            navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
-                        });
-                        console.log('Swiper mhx initialized');
-                    }
-                    
-                    if (document.querySelector('.gallerySwiper-tsmt')) {
-                        new Swiper(".gallerySwiper-tsmt", { 
-                            slidesPerView: 2, 
-                            spaceBetween: 16, 
-                            navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
-                        });
-                        console.log('Swiper tsmt initialized');
-                    }
-                    
-                    if (document.querySelector('.gallerySwiper-hmtn')) {
-                        new Swiper(".gallerySwiper-hmtn", { 
-                            slidesPerView: 2, 
-                            spaceBetween: 16, 
-                            navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
-                        });
-                        console.log('Swiper hmtn initialized');
-                    }
-                    
-                    console.log('All modal Swipers initialized');
-                }
+      <!-- Nội dung Tabs -->
+      <div id="tab-xuan" class="tab-content">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Xuân Tình Nguyện</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
+          Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
+        </p>
+        <div class="swiper gallerySwiper-xuan mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next next-xuan"></div>
+          <div class="swiper-button-prev prev-xuan"></div>
+        </div>
+      </div>
 
-                // Xử lý Tabs cho Modal Tình Nguyện
-                function initializeTinhNguyenTabs() {
-                    const tabButtons = document.querySelectorAll('.tab-btn');
-                    console.log('Found tinh nguyen tab buttons:', tabButtons.length);
-                    
-                    if (tabButtons.length > 0) {
-                        tabButtons.forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                
-                                console.log('Tab clicked:', btn.dataset.target);
-                                
-                                // Reset tất cả tabs
-                                tabButtons.forEach(b => {
-                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
-                                    b.classList.add('bg-gray-200', 'text-slate-700');
-                                });
-                                
-                                // Active tab được click
-                                btn.classList.remove('bg-gray-200', 'text-slate-700');
-                                btn.classList.add('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
-                                
-                                // Ẩn tất cả nội dung
-                                document.querySelectorAll('.tab-content').forEach(tab => {
-                                    tab.classList.add('hidden');
-                                });
-                                
-                                // Hiện nội dung tương ứng
-                                const targetContent = document.querySelector(btn.dataset.target);
-                                if (targetContent) {
-                                    targetContent.classList.remove('hidden');
-                                    console.log('Showing content:', btn.dataset.target);
-                                } else {
-                                    console.error('Target content not found:', btn.dataset.target);
-                                }
-                            });
-                        });
-                    }
-                }
+      <div id="tab-mhx" class="tab-content hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
+          Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
+        </p>
+        <div class="swiper gallerySwiper-mhx mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next next-mhx"></div>
+          <div class="swiper-button-prev prev-mhx"></div>
+        </div>
+      </div>
 
-                // Xử lý Tabs cho Modal Học Thuật
-                function initializeHocThuatTabs() {
-                    const tabButtons = document.querySelectorAll('.tab-btn-hoc-thuat');
-                    console.log('Found hoc thuat tab buttons:', tabButtons.length);
-                    
-                    if (tabButtons.length > 0) {
-                        tabButtons.forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                
-                                console.log('Hoc thuat tab clicked:', btn.dataset.target);
-                                
-                                // Reset tất cả tabs
-                                tabButtons.forEach(b => {
-                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
-                                    b.classList.add('bg-gray-200', 'text-slate-700');
-                                });
-                                
-                                // Active tab được click
-                                btn.classList.remove('bg-gray-200', 'text-slate-700');
-                                btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
-                                
-                                // Ẩn tất cả nội dung
-                                document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => {
-                                    tab.classList.add('hidden');
-                                });
-                                
-                                // Hiện nội dung tương ứng
-                                const targetContent = document.querySelector(btn.dataset.target);
-                                if (targetContent) {
-                                    targetContent.classList.remove('hidden');
-                                    console.log('Showing hoc thuat content:', btn.dataset.target);
-                                }
-                            });
-                        });
-                    }
-                }
+      <div id="tab-tsmt" class="tab-content hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
+          Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
+        </p>
+        <div class="swiper gallerySwiper-tsmt mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next next-tsmt"></div>
+          <div class="swiper-button-prev prev-tsmt"></div>
+        </div>
+      </div>
 
-                // Xử lý Tabs cho Modal Văn - Thể - Mỹ
-                function initializeVTMTabs() {
-                    const tabButtons = document.querySelectorAll('.tab-btn-vtm');
-                    console.log('Found VTM tab buttons:', tabButtons.length);
-                    
-                    if (tabButtons.length > 0) {
-                        tabButtons.forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                
-                                console.log('VTM tab clicked:', btn.dataset.target);
-                                
-                                // Reset tất cả tabs
-                                tabButtons.forEach(b => {
-                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
-                                    b.classList.add('bg-gray-200', 'text-slate-700');
-                                });
-                                
-                                // Active tab được click
-                                btn.classList.remove('bg-gray-200', 'text-slate-700');
-                                btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
-                                
-                                // Ẩn tất cả nội dung
-                                document.querySelectorAll('.tab-content-vtm').forEach(tab => {
-                                    tab.classList.add('hidden');
-                                });
-                                
-                                // Hiện nội dung tương ứng
-                                const targetContent = document.querySelector(btn.dataset.target);
-                                if (targetContent) {
-                                    targetContent.classList.remove('hidden');
-                                    console.log('Showing VTM content:', btn.dataset.target);
-                                }
-                            });
-                        });
-                    }
-                }
+      <div id="tab-hmtn" class="tab-content hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
+          góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
+        </p>
+        <div class="swiper gallerySwiper-hmtn mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next next-hmtn"></div>
+          <div class="swiper-button-prev prev-hmtn"></div>
+        </div>
+      </div>
 
-                // Khởi tạo tabs với delay để đảm bảo DOM đã sẵn sàng
-                setTimeout(() => {
-                    console.log('Initializing tabs with delay...');
-                    initializeTabs();
-                    initializeTinhNguyenTabs();
-                    initializeHocThuatTabs();
-                    initializeVTMTabs();
-                    initializeModalSwipers(); // Khởi tạo Swiper cho modal
-                    console.log('Tabs and Swipers initialization complete');
-                }, 300);
+    </div>
+  </div>
+</div>
 
-                // 3. SWIPER SLIDER: Khởi tạo slider ảnh
-                if (document.querySelector('.mySwiper')) {
-                    new Swiper(".mySwiper", {
-                        effect: "cards",
-                        grabCursor: true,
-                        loop: false,
-                        speed: 800,
-                        autoplay: {
-                            delay: 3500,
-                            disableOnInteraction: false
-                        },
-                        cardsEffect: {
-                            slideShadows: false,
-                            perSlideRotate: 2,
-                            perSlideOffset: 8
-                        },
-                        on: {
-                            reachEnd: function() {
-                                setTimeout(() => {
-                                    this.slideTo(0, 800);
-                                }, 1000);
-                            }
-                        }
-                    });
-                }
+<!-- Modal Học Thuật -->
+<div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
 
-                // 4. ANIMATED COUNTER: Hiệu ứng đếm số
-                const statsContainer = document.getElementById('stats-container');
-                if (statsContainer) {
-                    new IntersectionObserver((entries, observer) => {
-                        if (entries[0].isIntersecting) {
-                            statsContainer.querySelectorAll('.stat-counter').forEach(counter => {
-                                const target = +counter.getAttribute('data-target');
-                                let current = 0;
-                                const increment = target / 100;
-                                const updateCounter = () => {
-                                    if (current < target) {
-                                        current += increment;
-                                        counter.innerText = Math.ceil(current).toLocaleString();
-                                        requestAnimationFrame(updateCounter);
-                                    } else {
-                                        counter.innerText = target.toLocaleString();
-                                    }
-                                };
-                                updateCounter();
-                            });
-                            observer.unobserve(statsContainer);
-                        }
-                    }, { threshold: 0.8 }).observe(statsContainer);
-                }
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn-hoc-thuat active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow hover:scale-105 transition" data-target="#tab-hoc-thuat-1">📚 Tọa Đàm Học Thuật</button>
+        <button class="tab-btn-hoc-thuat px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hoc-thuat-2">🏆 Cuộc Thi Chuyên Ngành</button>
+        <button class="tab-btn-hoc-thuat px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hoc-thuat-3">💡 Workshop Kỹ Năng</button>
+      </div>
 
-                // 5. ACTIVITY TABS: Xử lý chuyển đổi tab nội dung
-                const tabsContainer = document.getElementById('activity-tabs');
-                if (tabsContainer) {
-                    const tabs = tabsContainer.querySelectorAll('.activity-tab');
-                    const contents = document.querySelectorAll('.activity-content');
-                    tabs.forEach(tab => {
-                        tab.addEventListener('click', () => {
-                            const targetId = tab.getAttribute('data-target');
-                            tabs.forEach(item => item.classList.remove('active', 'bg-blue-500', 'bg-rose-500', 'bg-teal-500'));
-                            tab.classList.add('active', 'bg-blue-500');
-                            contents.forEach(content => content.classList.toggle('hidden', content.id !== targetId));
-                        });
-                    });
-                }
+      <!-- Nội dung Tabs -->
+      <div id="tab-hoc-thuat-1" class="tab-content-hoc-thuat">
+        <h2 class="text-3xl font-extrabold text-slate-800">Tọa Đàm Học Thuật</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các buổi tọa đàm chuyên sâu về các chủ đề học thuật, hướng nghiệp và phát triển kỹ năng. 
+          Nơi sinh viên được gặp gỡ chuyên gia, doanh nhân và học hỏi từ những người đi trước.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-                // 6. COUNTDOWN TIMER: Đồng hồ đếm ngược
-                const countdownElement = document.getElementById('countdown');
-                if (countdownElement) {
-                    const countdownDate = new Date("Sep 14, 2025 08:00:00").getTime();
-                    countdownInterval = setInterval(() => {
-                        const now = new Date().getTime();
-                        const distance = countdownDate - now;
-                        const D = (id, val) => {
-                            const el = document.getElementById(id);
-                            if (el) el.innerText = val;
-                        };
-                        D('days', Math.floor(distance / 86400000).toString().padStart(2, '0'));
-                        D('hours', Math.floor((distance % 86400000) / 3600000).toString().padStart(2, '0'));
-                        D('minutes', Math.floor((distance % 3600000) / 60000).toString().padStart(2, '0'));
-                        D('seconds', Math.floor((distance % 60000) / 1000).toString().padStart(2, '0'));
-                        if (distance < 0) {
-                            clearInterval(countdownInterval);
-                            countdownElement.innerHTML = "<p class='text-lg font-bold'>Sự kiện đã diễn ra!</p>";
-                        }
-                    }, 1000);
-                }
-                
-                // 7. MOVEMENT CARDS: Xử lý click và đổi nền cho phần Phong trào
-                const initMovementCards = () => {
-                    const container = document.getElementById('movement-cards-container');
-                    if (!container) return;
+      <div id="tab-hoc-thuat-2" class="tab-content-hoc-thuat hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Cuộc Thi Chuyên Ngành</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các cuộc thi học thuật đa dạng từ cấp khoa đến cấp trường, giúp sinh viên rèn luyện tư duy, 
+          áp dụng kiến thức và cạnh tranh lành mạnh với bạn bè cùng ngành.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/cuoc-thi-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-                    const cards = container.querySelectorAll('.movement-card');
-                    const contents = document.querySelectorAll('.movement-content');
-                    const mainSection = document.getElementById('phong-trao-section');
-                    const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+      <div id="tab-hoc-thuat-3" class="tab-content-hoc-thuat hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Workshop Kỹ Năng</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các buổi workshop thực hành về kỹ năng mềm, công nghệ mới và xu hướng ngành nghề. 
+          Giúp sinh viên cập nhật kiến thức và chuẩn bị tốt cho tương lai.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-                    cards.forEach(card => {
-                        card.addEventListener('click', () => {
-                            cards.forEach(c => c.classList.remove('active'));
-                            card.classList.add('active');
+    </div>
+  </div>
+</div>
 
-                            const targetId = card.dataset.content;
-                            contents.forEach(content => {
-                                content.classList.toggle('hidden', content.id !== targetId);
-                            });
+<!-- Modal Văn - Thể - Mỹ -->
+<div id="modal-van-the-my" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
 
-                            if (mainSection) {
-                                const newBg = card.dataset.bg;
-                                mainSection.classList.remove(...bgClasses);
-                                mainSection.classList.add(...newBg.split(' '));
-                            }
-                        });
-                    });
-                };
-                initMovementCards();
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn-vtm active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow hover:scale-105 transition" data-target="#tab-vtm-1">⚽ Hội Thao</button>
+        <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-2">🎭 Văn Nghệ</button>
+        <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-3">🎨 CLB - Đội - Nhóm</button>
+      </div>
 
-                // 8. FAQ ACCORDION: Xử lý xổ ra/thu vào câu hỏi thường gặp
-                const initFAQ = () => {
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.querySelector('.faq-question').addEventListener('click', () => {
-                            document.querySelectorAll('.faq-item').forEach(other => {
-                                if (other !== item) other.classList.remove('open');
-                            });
-                            item.classList.toggle('open');
-                        });
-                    });
-                };
-                initFAQ();
-                
-                // 9. HANDWRITING ANIMATION: Kích hoạt hiệu ứng viết tay
-                const handwritingContainer = document.getElementById('handwriting-svg-container');
-                if (handwritingContainer) {
-                    setTimeout(() => {
-                        handwritingContainer.classList.add('drawn');
-                    }, 100);
-                }
-            };
+      <!-- Nội dung Tabs -->
+      <div id="tab-vtm-1" class="tab-content-vtm">
+        <h2 class="text-3xl font-extrabold text-slate-800">Hội Thao Truyền Thống UEL</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Sự kiện thể thao lớn nhất trong năm, nơi các khoa tranh tài ở nhiều bộ môn khác nhau. 
+          Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/ht-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-            // === HÀM TẢI TRANG (loadPage) ===
-            // Chức năng cốt lõi của SPA. Tải nội dung từ file HTML tương ứng 
-            // và chèn vào #app-container, sau đó gọi hàm initializePageScripts().
-            const loadPage = async (pageKey = 'home') => {
-                const route = routes[pageKey];
-                if (!route) {
-                    appContainer.innerHTML = `<p class="text-center p-20">Lỗi 404</p>`;
-                    return;
-                }
-                try {
-                    const response = await fetch(route.path);
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    const content = await response.text();
-                    appContainer.innerHTML = content;
-                    window.scrollTo(0, 0);
-                    document.title = `${route.title} | Đoàn trường ĐH Kinh tế - Luật`;
-                    updateActiveNavLink(pageKey);
-                    console.log('Page loaded, calling initializePageScripts...');
-                    initializePageScripts(); // Rất quan trọng: Kích hoạt lại script cho nội dung mới
-                    console.log('initializePageScripts called');
-                } catch (error) {
-                    appContainer.innerHTML = `<p class="text-center p-20">Lỗi tải trang.</p>`;
-                }
-            };
+      <div id="tab-vtm-2" class="tab-content-vtm hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Liên Hoan Văn Nghệ</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Sân chơi nghệ thuật đầy màu sắc, nơi sinh viên thể hiện tài năng âm nhạc, múa, kịch và các loại hình nghệ thuật khác. 
+          Tạo cơ hội giao lưu văn hóa và phát hiện tài năng mới.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/hoi-thao-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-            // === CÁC HÀM TIỆN ÍCH VÀ LẮNG NGHE SỰ KIỆN ===
-            // Cập nhật trạng thái 'active' cho link điều hướng.
-            const updateActiveNavLink = (pageKey) => {
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.toggle('nav-active', link.dataset.page === pageKey);
-                });
-            };
+      <div id="tab-vtm-3" class="tab-content-vtm hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">CLB - Đội - Nhóm Sở Thích</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hệ thống các câu lạc bộ đa dạng từ âm nhạc, thể thao, nhiếp ảnh đến các nhóm sở thích khác. 
+          Nơi sinh viên có thể phát triển đam mê và kết nối với những người có cùng sở thích.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
 
-            // Logic xử lý đóng/mở menu mobile.
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeMenu = () => mobileMenu.classList.remove('is-open');
-            const openMenu = () => mobileMenu.classList.add('is-open');
+    </div>
+  </div>
+</div>
 
-            // Lắng nghe sự kiện click trên toàn bộ trang để xử lý điều hướng SPA.
-            document.body.addEventListener('click', (e) => {
-                const navTrigger = e.target.closest('.nav-trigger');
-                if (navTrigger && navTrigger.dataset.page) {
-                    e.preventDefault();
-                    const pageKey = navTrigger.dataset.page;
-                    if ((location.hash.substring(1) || 'home') !== pageKey) {
-                        history.pushState({ page: pageKey }, '', `#${pageKey}`);
-                        loadPage(pageKey);
-                    }
-                    closeMenu();
-                }
-            });
+<!-- CSS cho Modal -->
+<style>
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease;
+  }
+  
+  .modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  
+  .modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal.is-open .modal-content {
+    transform: scale(1);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 
-            // Lắng nghe sự kiện popstate (khi người dùng nhấn nút back/forward của trình duyệt).
-            window.addEventListener('popstate', () => loadPage(location.hash.substring(1) || 'home'));
+  /* CSS cho Swiper navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #3b82f6 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50% !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    z-index: 50 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
 
-            // Lắng nghe sự kiện cho các nút của menu mobile.
-            document.getElementById('mobile-menu-button').addEventListener('click', () => mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu());
-            document.getElementById('mobile-menu-close-button').addEventListener('click', closeMenu);
-            document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  }
 
-            // === TẢI TRANG BAN ĐẦU ===
-            // Tải trang dựa trên URL hash khi người dùng truy cập lần đầu.
-            loadPage(location.hash.substring(1) || 'home');
-        });
+  .swiper-button-next {
+    right: 15px !important;
+  }
 
-        /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./docs/**/*.{html,js}",   // nếu bạn để file web trong /docs (khuyên dùng cho GH Pages)
-    "./src/**/*.{html,js}"     // nếu bạn để file nguồn trong /src
-  ],
-  theme: { extend: {} },
-  plugins: [],
-}
+  .swiper-button-prev {
+    left: 15px !important;
+  }
 
-    </script>
+  /* Custom navigation icons */
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    content: '' !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-size: 24px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    pointer-events: none !important;
+  }
+
+  .swiper-button-next:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
+
+  .swiper-button-prev:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M15 19l-7-7 7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
+
+  /* Đảm bảo Swiper container có position relative */
+  .swiper {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  /* Đảm bảo Swiper slides hiển thị đúng */
+  .swiper-wrapper {
+    display: flex !important;
+    transition-property: transform !important;
+    width: 100% !important;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .swiper-slide img {
+    width: 100% !important;
+    height: 224px !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 12px !important;
+  }
+
+  /* Sửa lỗi slide width trên mobile */
+  @media (max-width: 640px) {
+    .swiper-slide {
+      width: 100% !important;
+    }
+  }
+
+  /* Đảm bảo Swiper container có kích thước đúng */
+  .gallerySwiper-xuan,
+  .gallerySwiper-mhx,
+  .gallerySwiper-tsmt,
+  .gallerySwiper-hmtn {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+    position: relative !important;
+  }
+
+  /* Ẩn navigation buttons mặc định của Swiper */
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0.3 !important;
+  }
+
+  /* Đảm bảo navigation buttons có thể click */
+  .swiper-button-next,
+  .swiper-button-prev {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+  }
+</style>
+
+<!-- Script khởi tạo Swiper cho gallery -->
+<script>
+  // Khởi tạo Swiper cho các gallery khi trang load
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Initializing Swipers for hoat-dong page...');
     
-    <script src="./js/app.js" defer></script>
-
-    <!-- Script xử lý gallery chung -->
-    <script>
-        // Khởi tạo các slider cho gallery chung (nếu có)
-        if (document.querySelector(".gallerySwiper")) {
-            new Swiper(".gallerySwiper", {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3
-                    }
-                }
-            });
+    // Khởi tạo Swiper cho các gallery
+    if (document.querySelector('.gallerySwiper-xuan')) {
+      const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }
+      });
         
-        if (document.querySelector(".gallerySwiper2")) {
-            new Swiper(".gallerySwiper2", {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3
-                    }
-                }
-            });
-        }
-    </script>
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnXuan = document.querySelector('.next-xuan');
+      const prevBtnXuan = document.querySelector('.prev-xuan');
+      
+      if (nextBtnXuan) {
+        nextBtnXuan.addEventListener('click', () => {
+          console.log('Next button clicked for xuan');
+          swiperXuan.slideNext();
+        });
+      }
+      if (prevBtnXuan) {
+        prevBtnXuan.addEventListener('click', () => {
+          console.log('Prev button clicked for xuan');
+          swiperXuan.slidePrev();
+        });
+      }
+      
+      console.log('Swiper xuan initialized with navigation');
+    }
     
-    <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
-        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                    <img src="pic/logo/logodt.png" alt="Logo Đoàn UEL" class="h-14 w-auto drop-shadow-md">
-                    <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
-                </div>
-                <p class="text-sm leading-relaxed text-slate-600">
-                    🌟 Ngôi nhà tuổi trẻ – nơi thanh xuân trở nên rực rỡ 🌟
-                </p>
-            </div>
-
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-sky-700">Liên hệ</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li class="flex items-center space-x-2">
-                        <span class="text-sky-500">📍</span>
-                        <span>Văn phòng Đoàn - Hội (A.210)</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-sky-500">📞</span>
-                        <span>(028) 37244 555</span>
-                    </li>
-                    <li class="flex items-center space-x-2">
-                        <span class="text-sky-500">✉️</span>
-                        <span>doanthanhnien@uel.edu.vn</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-sky-700">Kết nối</h3>
-                <div class="flex space-x-4">
-                    <a href="https://www.facebook.com/youth.uel" class="social-circle facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/youth.uel" class="social-circle instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/%40youthuelofficial3100" class="social-circle youtube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@teuthichdichoi" target="_blank" class="social-circle tiktok"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="bg-white/60 text-center py-4 text-sm text-slate-600 border-t border-slate-200">
-            © 2025 Đoàn Trường Đại học Kinh tế - Luật. All rights reserved.
-        </div>
-
-        <style>
-            .social-circle {
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                color: white;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-                transition: all 0.3s ease;
-            }
-            .social-circle:hover {
-                transform: scale(1.15) rotate(-5deg);
-                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-                filter: brightness(1.15);
-            }
-            .social-circle.facebook { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-            .social-circle.instagram { background: linear-gradient(135deg, #f43f5e, #f59e0b, #8b5cf6); }
-            .social-circle.youtube { background: linear-gradient(135deg, #ef4444, #b91c1c); }
-            .social-circle.tiktok { background: linear-gradient(135deg, #000, #69C9D0, #EE1D52); }
-
-            .social-icon {
-                width: 2.5rem;
-                height: 2.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 9999px;
-                color: white;
-                font-size: 1.125rem;
-                transition: all 0.3s ease;
-                transform-origin: center;
-            }
-            .social-icon:hover {
-                animation: wiggle 0.4s ease-in-out;
-                filter: brightness(1.2);
-                transform: scale(1.1) rotate(-5deg);
-            }
-            @keyframes wiggle {
-                0%, 100% { transform: rotate(0deg); }
-                25% { transform: rotate(-10deg); }
-                75% { transform: rotate(10deg); }
-            }
+    if (document.querySelector('.gallerySwiper-mhx')) {
+      const swiperMhx = new Swiper(".gallerySwiper-mhx", {  
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnMhx = document.querySelector('.next-mhx');
+      const prevBtnMhx = document.querySelector('.prev-mhx');
+      
+      if (nextBtnMhx) {
+        nextBtnMhx.addEventListener('click', () => {
+          console.log('Next button clicked for mhx');
+          swiperMhx.slideNext();
+        });
+      }
+      if (prevBtnMhx) {
+        prevBtnMhx.addEventListener('click', () => {
+          console.log('Prev button clicked for mhx');
+          swiperMhx.slidePrev();
+        });
+      }
+      
+      console.log('Swiper mhx initialized with navigation');
+    }
+    
+    if (document.querySelector('.gallerySwiper-tsmt')) {
+      const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnTsmt = document.querySelector('.next-tsmt');
+      const prevBtnTsmt = document.querySelector('.prev-tsmt');
+      
+      if (nextBtnTsmt) {
+        nextBtnTsmt.addEventListener('click', () => {
+          console.log('Next button clicked for tsmt');
+          swiperTsmt.slideNext();
+        });
+      }
+      if (prevBtnTsmt) {
+        prevBtnTsmt.addEventListener('click', () => {
+          console.log('Prev button clicked for tsmt');
+          swiperTsmt.slidePrev();
+        });
+      }
+      
+      console.log('Swiper tsmt initialized with navigation');
+    }
+    
+    if (document.querySelector('.gallerySwiper-hmtn')) {
+      const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
             
-        </style>
-    </footer>
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnHmtn = document.querySelector('.next-hmtn');
+      const prevBtnHmtn = document.querySelector('.prev-hmtn');
+      
+      if (nextBtnHmtn) {
+        nextBtnHmtn.addEventListener('click', () => {
+          console.log('Next button clicked for hmtn');
+          swiperHmtn.slideNext();
+        });
+      }
+      if (prevBtnHmtn) {
+        prevBtnHmtn.addEventListener('click', () => {
+          console.log('Prev button clicked for hmtn');
+          swiperHmtn.slidePrev();
+        });
+      }
+      
+      console.log('Swiper hmtn initialized with navigation');
+    }
+    
+    console.log('All Swipers initialized for hoat-dong page');
+  });
+
+  // Hàm khởi tạo lại Swiper khi modal mở
+  function reinitializeSwipers() {
+    console.log('Reinitializing Swipers...');
+    
+    // Khởi tạo lại tất cả Swiper instances
+    if (document.querySelector('.gallerySwiper-xuan')) {
+      const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      // Thêm event listeners
+      const nextBtnXuan = document.querySelector('.next-xuan');
+      const prevBtnXuan = document.querySelector('.prev-xuan');
+      
+      if (nextBtnXuan) {
+        nextBtnXuan.addEventListener('click', () => {
+          console.log('Next button clicked for xuan (reinit)');
+          swiperXuan.slideNext();
+        });
+      }
+      if (prevBtnXuan) {
+        prevBtnXuan.addEventListener('click', () => {
+          console.log('Prev button clicked for xuan (reinit)');
+          swiperXuan.slidePrev();
+        });
+      }
+    }
+    
+    // Tương tự cho các Swiper khác...
+    console.log('Swipers reinitialized');
+  }
+
+  // Lắng nghe sự kiện modal mở để khởi tạo lại Swiper
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-trigger')) {
+      setTimeout(() => {
+        reinitializeSwipers();
+      }, 300);
+    }
+  });
+</script>
 
 </body>
-
 </html>
 
 
