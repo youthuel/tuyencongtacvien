@@ -348,68 +348,116 @@
     });
   </script>
 
-<div id="modal-hoc-thuat1" class="py-20 md:py-24 bg-gradient-to-br from-sky-50 to-blue-100 transition-all duration-700">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Các Phong Trào Hành Động</h2>
-            <p class="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">Mỗi ngày ở UEL đều là một cơ hội để bạn trải nghiệm </br>và lớn lên qua các phong trào sôi nổi.</p>
-        </div>
+<div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 scroll-animate" id="movement-cards-container">
-            <div class="movement-card active cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-sang-tao" data-bg="bg-gradient-to-br from-sky-50 to-blue-100" data-color="blue">
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-blue-100 text-blue-500 text-2xl mr-4">🎓</div>
-                    <div>
-                        <h3 class="font-bold text-slate-800 text-lg">Tuổi trẻ Sáng tạo</h3>
-                        <p class="text-sm text-slate-500">Học thuật & Nghiên cứu</p>
-                    </div>
-                </div>
-            </div>
-            <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-tinh-nguyen" data-bg="bg-gradient-to-br from-rose-50 to-red-100" data-color="rose">
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-rose-100 text-rose-500 text-2xl mr-4">❤️</div>
-                    <div>
-                        <h3 class="font-bold text-slate-800 text-lg">Thanh niên Tình nguyện</h3>
-                        <p class="text-sm text-slate-500">Cống hiến & Sẻ chia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2" data-content="content-dong-hanh" data-bg="bg-gradient-to-br from-teal-50 to-green-100" data-color="teal">
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-teal-100 text-teal-500 text-2xl mr-4">🤝</div>
-                    <div>
-                        <h3 class="font-bold text-slate-800 text-lg">Đồng hành cùng Sinh viên</h3>
-                        <p class="text-sm text-slate-500">Hỗ trợ & Phát triển</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="relative max-w-4xl mx-auto scroll-animate" style="transition-delay: 150ms;">
-            <div id="content-sang-tao" class="movement-content">
-                 <ul class="space-y-4 text-slate-600 text-lg">
-                    <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Nghiên cứu khoa học:</strong> Tổ chức tọa đàm, khóa học, khuyến khích sinh viên tham gia nghiên cứu.</span></li>
-                    <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Giải thưởng danh giá:</strong> Hỗ trợ sinh viên tham gia và đạt thành tích cao tại các giải thưởng lớn như "Euréka", "Nữ sinh Khoa học công nghệ",...</span></li>
-                    <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Sân chơi học thuật:</strong> 16 CLB học thuật cùng hàng loạt cuộc thi chuyên ngành quy mô toàn quốc.</span></li>
-                 </ul>
-            </div>
-            <div id="content-tinh-nguyen" class="movement-content hidden">
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3 w-1/4 p-2">
+        <div class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-content="content-eureka" >Éureka</div>
+      </div>
+      <div class="flex justify-center mb-6 flex-wrap gap-3 w-1/4 p-2">
+        <div class=" movement-card px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-content="content-nckh" >NCKH</div>
+      </div>
+            <div id="content-eureka" class="movement-content hidden">
                  <ul class="space-y-4 text-slate-600 text-lg">
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Các chiến dịch lớn:</strong> Mùa hè xanh, Xuân tình nguyện, Tiếp sức mùa thi là những dấu ấn thanh xuân không thể nào quên.</span></li>
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Hoạt động thường xuyên:</strong> Hiến máu tình nguyện, "Chủ nhật xanh" và nhiều hoạt động an sinh xã hội.</span></li>
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Chuyên môn hóa hoạt động:</strong> Tổ chức các phiên tòa giả định, tư vấn pháp luật miễn phí cho người dân, .</span></li>
                  </ul>
             </div>
-            <div id="content-dong-hanh" class="movement-content hidden">
+            <div id="content-nckh" class="movement-content hidden">
                  <ul class="space-y-4 text-slate-600 text-lg">
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Học tập:</strong> Tổ chức các chương trình hưởng ứng "Mùa thi nghiêm túc", các lớp học thuật, diễn đàn chia sẻ kiến thức.</span></li>
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Khởi nghiệp - Lập nghiệp:</strong> Tổ chức Ngày hội việc làm, talkshow định hướng và phát động phong trào khởi nghiệp.</span></li>
                     <li class="flex items-start"><span class="w-6 h-6 mr-4 mt-1 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center flex-shrink-0 text-xs">✓</span><span><strong class="font-semibold text-slate-800">Kỹ năng & Đời sống tinh thần:</strong> Đa dạng các workshop kỹ năng, hội thao, sân chơi văn nghệ và hoạt động chăm sóc sức khỏe tâm thần.</span></li>
                  </ul>
             </div>
+
+      <!-- Nội dung Tabs -->
+      <div id="tab-xuan" class="tab-content">
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
+          Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
+        </p>
+        <div class="swiper gallerySwiper mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
+      </div>
+        <br> </br>
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-green-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">☀️ Chiến dịch Mùa Hè Xanh</button>
+      </div>
+      <div id="tab-mhx" class="tab-content">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
+          Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
+        </p>
+        <div class="swiper gallerySwiper2 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">📘 Chương trình Tiếp sức mùa thi</button>
+      </div>
+      <div id="tab-tsmt" class="tab-content">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
+          Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
+        </p>
+        <div class="swiper gallerySwiper3 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">🩸Hoạt động Hiến máu tình nguyện</button>
+      </div>
+      <div id="tab-hmtn" class="tab-content">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
+          góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
+        </p>
+        <div class="swiper gallerySwiper4 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>
+
 
  <div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
@@ -860,6 +908,7 @@
     </div>
 
 </div> -->
+
 
 
 
