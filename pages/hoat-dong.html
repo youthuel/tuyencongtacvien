@@ -703,6 +703,54 @@
   });
 </script>
 
+<!-- Swiper -->
+<div class="volunteer-section py-16">
+  <h2 class="text-3xl font-bold mb-6 text-center">Tình nguyện vì cộng đồng</h2>
+  <button id="exploreBtn" class="mx-auto mb-8 px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition">Khám phá</button>
+
+  <div id="carouselContainer" class="hidden swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="prog1.jpg" alt="">
+        <h3 class="text-xl font-bold mt-4">Chương trình 1</h3>
+      </div>
+      <div class="swiper-slide">
+        <img src="prog2.jpg" alt="">
+        <h3 class="text-xl font-bold mt-4">Chương trình 2</h3>
+      </div>
+      <!-- thêm slide khác -->
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('exploreBtn');
+  const carousel = document.getElementById('carouselContainer');
+  btn.addEventListener('click', () => {
+    carousel.classList.remove('hidden');
+  });
+</script>
+
+
+<div class="accordion max-w-3xl mx-auto mt-8">
+  <div class="accordion-item border rounded mb-2">
+    <button class="w-full text-left p-4 font-bold bg-green-100">Chương trình 1</button>
+    <div class="accordion-body p-4 hidden bg-white">Chi tiết chương trình 1...</div>
+  </div>
+  <!-- thêm chương trình khác -->
+</div>
+
+<script>
+  document.querySelectorAll('.accordion-item button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      body.classList.toggle('hidden');
+    });
+  });
+</script>
+
 
 <!-- Phần này chèn để khỏi bị lỗi
 <div id="modal-hien" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
@@ -798,6 +846,7 @@
     </div>
 
 </div> -->
+
 
 
 
