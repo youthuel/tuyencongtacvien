@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
      <!-- Bồi đắp lý tưởng -->
-   <div onclick="openModal(activityData.lyTuong)"  class="cursor-pointer category-card p-8 rounded-3xl shadow-xl shadow-amber-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 scroll-animate" style="transition-delay: 400ms;">
+   <div class="cursor-pointer category-card p-8 rounded-3xl shadow-xl shadow-amber-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 scroll-animate" style="transition-delay: 400ms;">
         <div class="absolute -top-8 -left-12 w-20 h-20 bg-amber-300/50 rounded-full filter blur-xl"></div>
         <div class="absolute -bottom-14 -right-10 w-24 h-24 bg-orange-300/50 rounded-full filter blur-xl"></div>
         <div class="relative z-10">
@@ -41,7 +41,7 @@
           </div>
           <h3 class="text-l font-bold text-slate-800">Tình Nguyện Vì Cộng Đồng</h3>
           <p class="mt-2 text-slate-700 font-medium">Lan tỏa giá trị nhân văn qua các chiến dịch Mùa Hè Xanh, Xuân Tình Nguyện, Hiến Máu Nhân Đạo...</p>
-              <button data-modal-target="#modal-tinh-nguyen" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
+              <button data-modal-target="#modal-tinh-nguyen" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 transition-colors">Khám phá</button>
         </div>
       </div> 
 
@@ -50,12 +50,12 @@
         <div class="absolute top-0 -left-12 w-20 h-20 bg-sky-300/50 rounded-full filter blur-xl"></div>
         <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-blue-300/50 rounded-full filter blur-xl"></div>
         <div class="relative z-10">
-          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-2xl shadow-lg shadow-blue-500/40">
+          <div class="w-20 h-20 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-2xl shadow-lg shadow-sky-500/40">
             <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
           </div>
           <h3 class="text-l font-bold text-slate-800">Phát Triển Học Thuật</h3>
           <p class="mt-2 text-slate-700 font-medium">Nâng cao kiến thức và kỹ năng qua các buổi tọa đàm, workshop, cuộc thi học thuật chuyên ngành.</p>
-          <button Onclick="openModal('modal-hoc-thuat')"  class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
+          <button data-modal-target="#modal-hoc-thuat" class="modal-trigger mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors">Khám phá</button>
         </div>
       </div>
       <!-- Văn - Thể - Mỹ -->
@@ -68,6 +68,7 @@
           </div>
           <h3 class="text-l font-bold text-slate-800">Văn - Thể - Mỹ</h3>
           <p class="mt-2 text-slate-700 font-medium">Cháy hết mình tại các sân chơi như Hội thao, Liên hoan văn nghệ, các CLB-Đội-Nhóm sở thích.</p>
+          <button data-modal-target="#modal-van-the-my" class="modal-trigger mt-4 w-full bg-purple-500 text-white font-semibold py-2 rounded-lg hover:bg-purple-600 transition-colors">Khám phá</button>
         </div>
       </div>
     </div>
@@ -75,281 +76,7 @@
 
 </section>
 
-
-
-<!-- <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-indigo-100 to-purple-200">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Những Hoạt Động Tiêu Biểu</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Cùng nhìn lại những chương trình đã làm nên tên tuổi và dấu ấn của Đoàn trường.</p>
-        </div>
-        
-        <div class="swiper-container mySwiper scroll-animate">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/mua-he-xanh-card.jpg" alt="Mùa Hè Xanh" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-xs font-bold uppercase text-green-700">Tình Nguyện</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Mùa Hè Xanh</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Chiến dịch tình nguyện ý nghĩa, mang lại giá trị thiết thực cho cộng đồng.</p>
-                        <button data-modal-target="#modal-mua-he-xanh" class="modal-trigger mt-4 w-full bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-                <!-- Slide 2 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/xuan-tinh-nguyen-card.jpg" alt="Xuân Tình Nguyện" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-xs font-bold uppercase text-orange-700">Tình Nguyện</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Xuân Tình Nguyện</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Mang hơi ấm đến những vùng xa xôi, lan tỏa tinh thần sẻ chia ngày Tết.</p>
-                        <button data-modal-target="#modal-xuan-tinh-nguyen" class="modal-trigger mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-                <!-- Slide 3 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/hoi-thao-card.jpg" alt="Hội Thao" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-xs font-bold uppercase text-sky-700">Văn - Thể - Mỹ</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Hội Thao Cán Bộ Đoàn - Hội</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Sân chơi thể thao bùng nổ, nơi sinh viên thể hiện tài năng và sự đoàn kết.</p>
-                        <button data-modal-target="#modal-hoi-thao" class="modal-trigger mt-4 w-full bg-sky-500 text-white font-semibold py-2 rounded-lg hover:bg-sky-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-                <!-- Slide 4 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/tap-huan-card.jpg" alt="Tập Huấn" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                       <span class="text-xs font-bold uppercase text-fuchsia-700">Kết Nối</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Tập Huấn Cán Bộ Đoàn Trường</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Cơ hội giao lưu và học hỏi.</p>
-                        <button data-modal-target="#modal-van-nghe" class="modal-trigger mt-4 w-full bg-fuchsia-500 text-white font-semibold py-2 rounded-lg hover:bg-fuchsia-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-                <!-- Slide 5 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/cuoc-thi-card.jpg" alt="Tọa Đàm" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-xs font-bold uppercase text-blue-700">Học Thuật</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Các Cuộc Thi Học Thuật</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Cơ hội gặp gỡ, học hỏi qua đó trao dồi nhận thức, lý luận chính trị.</p>
-                        <button data-modal-target="#modal-cuoc-thi" class="modal-trigger mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-                <!-- Slide 6 --
-                <div class="swiper-slide glass-card flex flex-col">
-                    <div class="h-56 rounded-t-2xl overflow-hidden"><img src="pic/hoat-dong/hien-mau-card.jpg" alt="Hiến Máu" class="w-full h-full object-cover"></div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-                        <h3 class="text-xl font-bold text-slate-800 mt-2">Hiến Máu Nhân Đạo</h3>
-                        <p class="text-sm text-slate-600 mt-2 flex-grow">Một giọt máu cho đi, một cuộc đời ở lại. Hoạt động nhân văn sâu sắc.</p>
-                        <button data-modal-target="#modal-hien-mau" class="modal-trigger mt-4 w-full bg-red-500 text-white font-semibold py-2 rounded-lg hover:bg-red-600 transition-colors">Khám phá</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <section class="relative py-20 md:py-24 bg-gradient-to-tr from-slate-900 via-blue-900 to-slate-900 text-white">
-     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/az-subtle.png')] opacity-10"></div>
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="scroll-animate">
-                <span class="text-sm font-bold uppercase text-yellow-400">Đừng Bỏ Lỡ</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold my-4">Sự Kiện Nổi Bật Sắp Tới</h2>
-                <p class="text-lg text-slate-300 mb-6">"CHƯƠNG TRÌNH GẶP GỠ CÁN BỘ ĐOÀN THPT, ĐẢNG VIÊN SINH VIÊN CÙNG ĐOÀN THANH NIÊN - HỘI SINH VIÊN TRƯỜNG" - Chương trình giao lưu với Cán bộ Đoàn THPT, đảng viên năm nhất và các bạn sinh viên có nguyện vọng gặp gỡ, giao lưu với Đoàn - Hội Trường </p>
-                <div id="countdown" class="flex gap-4 text-center my-8">
-                    <div><div id="days" class="text-4xl font-bold bg-white/10 p-4 rounded-lg">00</div><span class="text-xs mt-2 block">Ngày</span></div>
-                    <div><div id="hours" class="text-4xl font-bold bg-white/10 p-4 rounded-lg">00</div><span class="text-xs mt-2 block">Giờ</span></div>
-                    <div><div id="minutes" class="text-4xl font-bold bg-white/10 p-4 rounded-lg">00</div><span class="text-xs mt-2 block">Phút</span></div>
-                    <div><div id="seconds" class="text-4xl font-bold bg-white/10 p-4 rounded-lg">00</div><span class="text-xs mt-2 block">Giây</span></div>
-                </div>
-                <a href="#" class="bg-yellow-500 text-slate-900 font-bold text-lg py-3 px-10 rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 inline-block">Tìm hiểu ngay!</a>
-            </div>
-            <div class="scroll-animate" style="transition-delay: 150ms;">
-                <img src="pic/hoat-dong/gala-2025.jpg" alt="Gặp gỡ Cán bộ Đoàn THPT" class="rounded-2xl shadow-2xl shadow-yellow-500/20 transform hover:scale-105 transition-transform duration-500">
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<section class="relative overflow-hidden py-12 bg-gradient-to-br from-pink-100 via-orange-100 to-yellow-100">
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="mb-12">
-      <div class="text-center scroll-animate">
-        <span class="text-sm font-bold uppercase text-pink-500">Đừng Bỏ Lỡ</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">🌟 Chương Trình Đặc Biệt Sắp Tới</h2>
-        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
-          Hãy cùng hòa mình vào hoạt động ý nghĩa, nơi bạn được trải nghiệm – cống hiến – tỏa sáng cùng UEL.
-        </p>
-      </div>                
-
-      <!-- Card chương trình -->
-      <div class="relative rounded-3xl overflow-hidden shadow-2xl group max-w-5xl mx-auto">
-        <!-- Ảnh nền -->
-        <img src="pic/hoat-dong/gapgo.PNG" 
-             class="w-full h-80 md:h-[28rem] object-cover transform group-hover:scale-105 transition duration-500 rounded-3xl">
-        
-        <!-- Overlay gradient -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-        
-        <!-- Nội dung -->
-        <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
-<!--           <h3 class="text-2xl md:text-3xl font-extrabold mb-3">
-            Giao lưu cùng Đoàn Thanh niên - Hội Sinh viên Trường 2025
-          </h3>
-          <p class="text-sm md:text-base max-w-2xl mb-5 text-gray-200">
-            Sự kiện lớn nhất năm dành cho cán bộ Đoàn THPT và sinh viên UEL có nhu cầu – 
-            nơi kết nối, trải nghiệm và khẳng định bản lĩnh tuổi trẻ.
-          </p> -->
-
-          <!-- Countdown -->
-          <div id="countdown" class="flex gap-4 text-center my-8">
-            <div class="bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl">
-              <p id="days" class="text-2xl font-bold">0</p>
-              <span class="text-xs">Ngày</span>
-            </div>
-            <div class="bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl">
-              <p id="hours" class="text-2xl font-bold">0</p>
-              <span class="text-xs">Giờ</span>
-            </div>
-            <div class="bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl">
-              <p id="minutes" class="text-2xl font-bold">0</p>
-              <span class="text-xs">Phút</span>
-            </div>
-            <div class="bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl">
-              <p id="seconds" class="text-2xl font-bold">0</p>
-              <span class="text-xs">Giây</span>
-            </div>
-          </div>
-
-          <!-- Nút hành động -->
-          <div class="flex flex-wrap gap-4">
-            <a href="#dangky" 
-               class="px-6 py-3 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full font-semibold shadow-lg hover:scale-110 transition transform">
-              Đăng ký ngay
-            </a>
-            <a href="#chitiet" 
-               class="px-6 py-3 bg-white text-slate-800 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition">
-              Xem chi tiết
-            </a>
-          </div>      
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="relative overflow-hidden py-12 md:py-24 bg-gradient-to-br from-pink-50 to-violet-50">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Khoảnh Khắc Thanh Xuân</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Lắng nghe chia sẻ từ chính những người trong cuộc về hành trình của họ tại Đoàn trường.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="scroll-animate" style="transition-delay: 100ms;">
-                <div class="p-8 rounded-2xl glass-card h-full flex flex-col">
-                    <p class="text-slate-600 flex-grow italic">"Tham gia Mùa Hè Xanh là trải nghiệm tuyệt vời nhất đời sinh viên của mình. Mình đã học được cách yêu thương, cho đi và nhận lại những nụ cười."</p>
-                    <div class="flex items-center mt-6 pt-6 border-t border-white/50">
-                        <img src="pic/hoat-dong/sv-1.jpg" alt="Ảnh sinh viên" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <p class="font-bold text-slate-800">Lê Anh Tuấn</p>
-                            <p class="text-sm text-slate-500">K23, Khoa Luật</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-animate" style="transition-delay: 200ms;">
-                 <div class="p-8 rounded-2xl glass-card h-full flex flex-col">
-                    <p class="text-slate-600 flex-grow italic">"Nhờ các buổi tọa đàm hướng nghiệp, mình đã tự tin hơn rất nhiều vào con đường đã chọn. Cảm ơn Đoàn trường đã tạo ra những cơ hội quý giá."</p>
-                    <div class="flex items-center mt-6 pt-6 border-t border-white/50">
-                        <img src="pic/hoat-dong/sv-2.jpg" alt="Ảnh sinh viên" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <p class="font-bold text-slate-800">Trần Ngọc Mai</p>
-                            <p class="text-sm text-slate-500">K22, Khoa Kinh tế</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div class="scroll-animate" style="transition-delay: 300ms;">
-                 <div class="p-8 rounded-2xl glass-card h-full flex flex-col">
-                    <p class="text-slate-600 flex-grow italic">"Hội thao thực sự đã kết nối chúng mình lại với nhau. Những giọt mồ hôi và những tiếng hò reo cổ vũ sẽ là kỷ niệm không thể nào quên."</p>
-                    <div class="flex items-center mt-6 pt-6 border-t border-white/50">
-                        <img src="pic/hoat-dong/sv-3.jpg" alt="Ảnh sinh viên" class="w-12 h-12 rounded-full object-cover">
-                        <div class="ml-4">
-                            <p class="font-bold text-slate-800">Phạm Văn Hùng</p>
-                            <p class="text-sm text-slate-500">K24, Khoa QTKD</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
-    <div class="deco-shape w-64 h-64 bg-white/10 rounded-full -top-20 -left-20"></div>
-    <div class="deco-shape w-80 h-80 bg-white/10 rounded-full -bottom-32 -right-20" style="animation-delay: -3s;"></div>
-    <div class="container mx-auto px-6 text-center relative z-10 scroll-animate">
-        <h2 class="text-3xl font-bold">Trở Thành Một Mảnh Ghép, Tạo Nên Dấu Ấn!</h2>
-         <p class="max-w-xl mx-auto mt-3 text-purple-200">Đừng chần chừ! Hãy trở thành một phần của chúng mình và cùng nhau tạo nên một nhiệm kỳ đáng nhớ.</p>
-        <div class="mt-8">
-            <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="bg-white text-blue-600 font-bold text-lg py-3 px-10 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-purple-500/30 inline-block">
-                Ứng Tuyển Ngay
-            </a>
-        </div>
-    </div>
-</section>
-
-<div id="modal-mua-he-xanh" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-green-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Chiến Dịch Mùa Hè Xanh</h2>
-            <p class="mt-4 text-slate-600">Là một trong những hoạt động tình nguyện hè ý nghĩa và có quy mô lớn nhất, thu hút đông đảo sinh viên tham gia. Chương trình mang lại những giá trị thiết thực cho cộng đồng và là cơ hội để sinh viên rèn luyện bản lĩnh, kỹ năng và trưởng thành hơn.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/mhx-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/mhx-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/mhx-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Script xử lý Tabs -->
-  <script>
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-
-        // Ẩn hết nội dung
-        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-        // Hiện tab được chọn
-        document.querySelector(target).classList.remove("hidden");
-
-        // Reset style nút
-        document.querySelectorAll(".tab-btn").forEach(b => {
-          b.classList.remove("bg-pink-500","text-white");
-          b.classList.add("bg-gray-200","text-slate-700");
-        });
-
-        // Active cho nút hiện tại
-        btn.classList.remove("bg-gray-200","text-slate-700");
-        btn.classList.add("bg-pink-500","text-white");
-      });
-    });
-  </script>
-
-
-
+<!-- Modal Tình Nguyện với 4 tab -->
 <div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
     <div class="p-8 relative">
@@ -374,14 +101,14 @@
           Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
           Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
         </p>
-        <div class="swiper gallerySwiper mt-6">
+        <div class="swiper gallerySwiper-xuan mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-xuan"></div>
+          <div class="swiper-button-prev prev-xuan"></div>
         </div>
       </div>
 
@@ -391,14 +118,14 @@
           Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
           Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
         </p>
-        <div class="swiper gallerySwiper2 mt-6">
+        <div class="swiper gallerySwiper-mhx mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-mhx"></div>
+          <div class="swiper-button-prev prev-mhx"></div>
         </div>
       </div>
 
@@ -408,14 +135,14 @@
           Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
           Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
         </p>
-        <div class="swiper gallerySwiper3 mt-6">
+        <div class="swiper gallerySwiper-tsmt mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-tsmt"></div>
+          <div class="swiper-button-prev prev-tsmt"></div>
         </div>
       </div>
 
@@ -425,14 +152,14 @@
           Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
           góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
         </p>
-        <div class="swiper gallerySwiper4 mt-6">
+        <div class="swiper gallerySwiper-hmtn mt-6">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next next-hmtn"></div>
+          <div class="swiper-button-prev prev-hmtn"></div>
         </div>
       </div>
 
@@ -440,131 +167,8 @@
   </div>
 </div>
 
-<!-- Swiper + Tab script -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // Tabs chuyển đổi
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
-      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-      document.querySelector(btn.dataset.target).classList.remove("hidden");
-    });
-  });
-
-  // Swiper galleries
-  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-</script>
-
-<!-- Swiper + Tab script -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // Tabs chuyển đổi
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
-      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
-      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-      document.querySelector(btn.dataset.target).classList.remove("hidden");
-    });
-  });
-
-  // Swiper galleries
-  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
-</script>
-
-<script>
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = btn.getAttribute("data-target");
-
-      // Ẩn hết tab
-      document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "none");
-
-      // Hiện tab được chọn
-      document.getElementById(target).style.display = "block";
-
-      // Reset style nút
-      document.querySelectorAll(".tab-btn").forEach(b => {
-        b.classList.remove("bg-pink-500","text-white");
-        b.classList.add("bg-gray-200","text-slate-700");
-      });
-
-      // Active cho nút hiện tại
-      btn.classList.remove("bg-gray-200","text-slate-700");
-      btn.classList.add("bg-pink-500","text-white");
-    });
-  });
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    // Tabs
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-
-        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-        document.querySelector(target).classList.remove("hidden");
-
-        document.querySelectorAll(".tab-btn").forEach(b => {
-          b.classList.remove("bg-pink-500","text-white");
-          b.classList.add("bg-gray-200","text-slate-700");
-        });
-
-        btn.classList.remove("bg-gray-200","text-slate-700");
-        btn.classList.add("bg-pink-500","text-white");
-      });
-    });
-
-  // Swiper galleries
-     new Swiper(".swiper-xuan", { navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" } });
-     new Swiper(".swiper-mhx", { navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" } });
-     new Swiper(".swiper-tsmt", { navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" } });
-     new Swiper(".swiper-hmtn", { navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" } });
-</script>
-
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
-    // Tabs
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-
-        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-        document.querySelector(target).classList.remove("hidden");
-
-        document.querySelectorAll(".tab-btn").forEach(b => {
-          b.classList.remove("bg-pink-500","text-white");
-          b.classList.add("bg-gray-200","text-slate-700");
-        });
-
-        btn.classList.remove("bg-gray-200","text-slate-700");
-        btn.classList.add("bg-pink-500","text-white");
-      });
-    });
-
-    // Swiper cho từng tab
-    new Swiper(".swiper-xuan", { navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" } });
-    new Swiper(".swiper-mhx", { navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" } });
-    new Swiper(".swiper-tsmt", { navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" } });
-    new Swiper(".swiper-hmtn", { navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" } });
-  </script>
-
- <div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+<!-- Modal Học Thuật -->
+<div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
     <div class="p-8 relative">
       
@@ -574,355 +178,201 @@
       </button>
 
       <!-- Tabs -->
-      <div class="flex justify-center mb-6 flex-wrap gap-3 w-1/4 p-2">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Chiến dịch XTN</button>
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn-hoc-thuat active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow hover:scale-105 transition" data-target="#tab-hoc-thuat-1">📚 Tọa Đàm Học Thuật</button>
+        <button class="tab-btn-hoc-thuat px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hoc-thuat-2">🏆 Cuộc Thi Chuyên Ngành</button>
+        <button class="tab-btn-hoc-thuat px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hoc-thuat-3">💡 Workshop Kỹ Năng</button>
       </div>
 
       <!-- Nội dung Tabs -->
-      <div id="tab-xuan" class="tab-content">
+      <div id="tab-hoc-thuat-1" class="tab-content-hoc-thuat block">
+        <h2 class="text-3xl font-extrabold text-slate-800">Tọa Đàm Học Thuật</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
-          Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
+          Các buổi tọa đàm chuyên sâu về các chủ đề học thuật, hướng nghiệp và phát triển kỹ năng. 
+          Nơi sinh viên được gặp gỡ chuyên gia, doanh nhân và học hỏi từ những người đi trước.
         </p>
-        <div class="swiper gallerySwiper mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
         </div>
       </div>
-        <br> </br>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-green-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">☀️ Chiến dịch Mùa Hè Xanh</button>
-      </div>
-      <div id="tab-mhx" class="tab-content">
-        <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
+
+      <div id="tab-hoc-thuat-2" class="tab-content-hoc-thuat hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Cuộc Thi Chuyên Ngành</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
-          Là cơ hội rèn luyện bản lĩnh, kỹ năng và sự trưởng thành của sinh viên.
+          Các cuộc thi học thuật đa dạng từ cấp khoa đến cấp trường, giúp sinh viên rèn luyện tư duy, 
+          áp dụng kiến thức và cạnh tranh lành mạnh với bạn bè cùng ngành.
         </p>
-        <div class="swiper gallerySwiper2 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/cuoc-thi-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
         </div>
       </div>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">📘 Chương trình Tiếp sức mùa thi</button>
-      </div>
-      <div id="tab-tsmt" class="tab-content">
-        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
+
+      <div id="tab-hoc-thuat-3" class="tab-content-hoc-thuat hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Workshop Kỹ Năng</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
-          Sinh viên tình nguyện UEL hỗ trợ thí sinh, phụ huynh với tinh thần trách nhiệm và nhiệt huyết.
+          Các buổi workshop thực hành về kỹ năng mềm, công nghệ mới và xu hướng ngành nghề. 
+          Giúp sinh viên cập nhật kiến thức và chuẩn bị tốt cho tương lai.
         </p>
-        <div class="swiper gallerySwiper3 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </div>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">🩸Hoạt động Hiến máu tình nguyện</button>
-      </div>
-      <div id="tab-hmtn" class="tab-content">
-        <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
-          góp phần cứu sống hàng ngàn bệnh nhân và lan tỏa tinh thần sẻ chia của tuổi trẻ.
-        </p>
-        <div class="swiper gallerySwiper4 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
         </div>
       </div>
 
     </div>
   </div>
 </div>
-     
-<div id="modal-hoi-thao" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-sky-700">Văn - Thể - Mỹ</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Hội Thao Truyền Thống UEL</h2>
-            <p class="mt-4 text-slate-600">Là sự kiện thể thao lớn nhất trong năm, nơi các khoa tranh tài ở nhiều bộ môn khác nhau. Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết, màu cờ sắc áo của từng khoa.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/ht-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/ht-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/ht-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="modal-van-nghe" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-fuchsia-700">Kết Nối</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Tập Huấn Cán Bộ Đoàn Trường</h2>
-            <p class="mt-4 text-slate-600">Là cơ hội để các cán bộ Đoàn, đoàn viên có cơ hội để được giao lưu với nhau cũng rèn luyện và trao dồi các kĩ năng chuyên môn trong công tác Đoàn.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/th-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/th-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/th-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="modal-cuoc-thi" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-blue-700">Học Thuật</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Các Cuộc Thi Học Thuật</h2>
-            <p class="mt-4 text-slate-600">Môi trường để bồi dưỡng nhận thức, lý luận chính trị ngoài ra còn giúp sinh viên phát triển kỹ năng tư duy phản biện và giải quyết vấn đề.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/ct-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/ct-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/ct-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
 
-
-
-<!-- Phần này chèn để khỏi bị lỗi
-<div id="modal-hien" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div><div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div><div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div><div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-</div><div id="modal-hien-mau" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-    <div class="modal-content glass-card rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-8 relative">
-            <button class="modal-close absolute top-4 right-4 bg-white/50 w-8 h-8 rounded-full hover:bg-white transition-colors z-10 font-bold">&times;</button>
-            <span class="text-xs font-bold uppercase text-red-700">Tình Nguyện</span>
-            <h2 class="text-3xl font-bold text-slate-800 mt-2">Ngày Hội Hiến Máu Nhân Đạo</h2>
-            <p class="mt-4 text-slate-600">"Một giọt máu cho đi, một cuộc đời ở lại" - Ngày hội là dịp để sinh viên UEL thể hiện lòng nhân ái, trách nhiệm với cộng đồng. Đây là một trong những hoạt động thường niên thu hút sự tham gia của đông đảo sinh viên và cán bộ giảng viên.</p>
-            <h3 class="font-bold text-slate-800 mt-6 mb-4">Thư viện ảnh:</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img src="pic/hoat-dong/hm-1.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-2.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-                <img src="pic/hoat-dong/hm-3.jpg" class="rounded-lg object-cover w-full h-32 md:h-40">
-            </div>
-        </div>
-    </div>
-
-</div> -->
-<body class="flex items-center justify-center h-screen bg-gray-100">
-
-  <!-- Button mở modal -->
-  <button id="openModal"
-    class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-    Mở modal
-  </button>
-
-  <!-- Modal -->
-  <div id="myModal"
-       class="fixed inset-0 bg-black/50 hidden items-center justify-center">
-    <div class="bg-white p-6 rounded-xl shadow-lg max-w-sm w-full">
-      <h2 class="text-xl font-bold mb-4">Modal Test</h2>
-      <p class="mb-4">Nếu bạn thấy được hộp thoại này nghĩa là modal chạy ok 🎉</p>
-      <button id="closeModal" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
-        Đóng
+<!-- Modal Văn - Thể - Mỹ -->
+<div id="modal-van-the-my" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
       </button>
+
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn-vtm active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow hover:scale-105 transition" data-target="#tab-vtm-1">⚽ Hội Thao</button>
+        <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-2">🎭 Văn Nghệ</button>
+        <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-3">🎨 CLB - Đội - Nhóm</button>
+      </div>
+
+      <!-- Nội dung Tabs -->
+      <div id="tab-vtm-1" class="tab-content-vtm block">
+        <h2 class="text-3xl font-extrabold text-slate-800">Hội Thao Truyền Thống UEL</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Sự kiện thể thao lớn nhất trong năm, nơi các khoa tranh tài ở nhiều bộ môn khác nhau. 
+          Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/ht-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
+
+      <div id="tab-vtm-2" class="tab-content-vtm hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Liên Hoan Văn Nghệ</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Sân chơi nghệ thuật đầy màu sắc, nơi sinh viên thể hiện tài năng âm nhạc, múa, kịch và các loại hình nghệ thuật khác. 
+          Tạo cơ hội giao lưu văn hóa và phát hiện tài năng mới.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/hoi-thao-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
+
+      <div id="tab-vtm-3" class="tab-content-vtm hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">CLB - Đội - Nhóm Sở Thích</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Hệ thống các câu lạc bộ đa dạng từ âm nhạc, thể thao, nhiếp ảnh đến các nhóm sở thích khác. 
+          Nơi sinh viên có thể phát triển đam mê và kết nối với những người có cùng sở thích.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+          <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        </div>
+      </div>
+
     </div>
   </div>
+</div>
 
-  <script>
-    const openBtn = document.getElementById("openModal");
-    const closeBtn = document.getElementById("closeModal");
-    const modal = document.getElementById("myModal");
-
-    openBtn.addEventListener("click", () => {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
+<!-- Script xử lý Modal và Tabs -->
+<script>
+  // Xử lý Modal
+  document.querySelectorAll('.modal-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const modalId = trigger.getAttribute('data-modal-target');
+      const modal = document.querySelector(modalId);
+      if (modal) modal.classList.add('is-open');
     });
+  });
 
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.closest('.modal-close')) {
+        modal.classList.remove('is-open');
+      }
     });
-  </script>
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  });
+
+  // Xử lý Tabs cho Modal Tình Nguyện
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+        b.classList.add('bg-gray-200', 'text-slate-700');
+      });
+      btn.classList.add('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+      
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.querySelector(btn.dataset.target).classList.remove('hidden');
+    });
+  });
+
+  // Xử lý Tabs cho Modal Học Thuật
+  document.querySelectorAll('.tab-btn-hoc-thuat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn-hoc-thuat').forEach(b => {
+        b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+        b.classList.add('bg-gray-200', 'text-slate-700');
+      });
+      btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+      
+      document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => tab.classList.add('hidden'));
+      document.querySelector(btn.dataset.target).classList.remove('hidden');
+    });
+  });
+
+  // Xử lý Tabs cho Modal Văn - Thể - Mỹ
+  document.querySelectorAll('.tab-btn-vtm').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn-vtm').forEach(b => {
+        b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+        b.classList.add('bg-gray-200', 'text-slate-700');
+      });
+      btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+      
+      document.querySelectorAll('.tab-content-vtm').forEach(tab => tab.classList.add('hidden'));
+      document.querySelector(btn.dataset.target).classList.remove('hidden');
+    });
+  });
+
+  // Khởi tạo Swiper cho các gallery
+  new Swiper(".gallerySwiper-xuan", { 
+    slidesPerView: 2, 
+    spaceBetween: 16, 
+    navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
+    breakpoints: { 768: { slidesPerView: 3 } } 
+  });
+  new Swiper(".gallerySwiper-mhx", { 
+    slidesPerView: 2, 
+    spaceBetween: 16, 
+    navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
+    breakpoints: { 768: { slidesPerView: 3 } } 
+  });
+  new Swiper(".gallerySwiper-tsmt", { 
+    slidesPerView: 2, 
+    spaceBetween: 16, 
+    navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
+    breakpoints: { 768: { slidesPerView: 3 } } 
+  });
+  new Swiper(".gallerySwiper-hmtn", { 
+    slidesPerView: 2, 
+    spaceBetween: 16, 
+    navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
+    breakpoints: { 768: { slidesPerView: 3 } } 
+  });
+</script>
