@@ -56,6 +56,21 @@
         .modal.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
         .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
         .modal.is-open .modal-content { transform: scale(1); }
+        
+        /* CSS cho tabs */
+        .hidden { display: none !important; }
+        .tab-content, .tab-content-hoc-thuat, .tab-content-vtm { display: block; }
+        .tab-content.hidden, .tab-content-hoc-thuat.hidden, .tab-content-vtm.hidden { display: none !important; }
+        
+        /* Đảm bảo tab buttons có style đúng */
+        .tab-btn, .tab-btn-hoc-thuat, .tab-btn-vtm {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover, .tab-btn-hoc-thuat:hover, .tab-btn-vtm:hover {
+            transform: scale(1.05);
+        }
         #mobile-menu { visibility: hidden; transition: visibility 0.3s; }
         #mobile-menu.is-open { visibility: visible; }
         #mobile-menu-panel { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
@@ -305,6 +320,176 @@
                     });
                 });
 
+                // 2.1. TAB HANDLERS: Xử lý tabs trong các modal
+                // Khởi tạo trạng thái ban đầu cho tabs
+                function initializeTabs() {
+                    console.log('initializeTabs called');
+                    
+                    // Modal Tình Nguyện: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const tinhNguyenTabs = document.querySelectorAll('.tab-content');
+                    console.log('Found tinh nguyen tabs:', tinhNguyenTabs.length);
+                    tinhNguyenTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                            console.log('Showing first tab:', tab.id);
+                        } else {
+                            tab.classList.add('hidden');
+                            console.log('Hiding tab:', tab.id);
+                        }
+                    });
+
+                    // Modal Học Thuật: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const hocThuatTabs = document.querySelectorAll('.tab-content-hoc-thuat');
+                    console.log('Found hoc thuat tabs:', hocThuatTabs.length);
+                    hocThuatTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                        } else {
+                            tab.classList.add('hidden');
+                        }
+                    });
+
+                    // Modal Văn - Thể - Mỹ: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const vtmTabs = document.querySelectorAll('.tab-content-vtm');
+                    console.log('Found VTM tabs:', vtmTabs.length);
+                    vtmTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                        } else {
+                            tab.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Xử lý Tabs cho Modal Tình Nguyện
+                function initializeTinhNguyenTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn');
+                    console.log('Found tinh nguyen tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing content:', btn.dataset.target);
+                                } else {
+                                    console.error('Target content not found:', btn.dataset.target);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Học Thuật
+                function initializeHocThuatTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-hoc-thuat');
+                    console.log('Found hoc thuat tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Hoc thuat tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing hoc thuat content:', btn.dataset.target);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Văn - Thể - Mỹ
+                function initializeVTMTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-vtm');
+                    console.log('Found VTM tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('VTM tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-vtm').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing VTM content:', btn.dataset.target);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Khởi tạo tabs với delay để đảm bảo DOM đã sẵn sàng
+                setTimeout(() => {
+                    console.log('Initializing tabs with delay...');
+                    initializeTabs();
+                    initializeTinhNguyenTabs();
+                    initializeHocThuatTabs();
+                    initializeVTMTabs();
+                    console.log('Tabs initialization complete');
+                }, 300);
+
                 // 3. SWIPER SLIDER: Khởi tạo slider ảnh
                 if (document.querySelector('.mySwiper')) {
                     new Swiper(".mySwiper", {
@@ -462,7 +647,9 @@
                     window.scrollTo(0, 0);
                     document.title = `${route.title} | Đoàn trường ĐH Kinh tế - Luật`;
                     updateActiveNavLink(pageKey);
+                    console.log('Page loaded, calling initializePageScripts...');
                     initializePageScripts(); // Rất quan trọng: Kích hoạt lại script cho nội dung mới
+                    console.log('initializePageScripts called');
                 } catch (error) {
                     appContainer.innerHTML = `<p class="text-center p-20">Lỗi tải trang.</p>`;
                 }
@@ -522,49 +709,40 @@ module.exports = {
     
     <script src="./js/app.js" defer></script>
 
+    <!-- Script xử lý gallery chung -->
     <script>
-        // Khởi tạo các slider cho gallery trong modal của trang Hoạt Động
-        new Swiper(".gallerySwiper", {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 3
+        // Khởi tạo các slider cho gallery chung (nếu có)
+        if (document.querySelector(".gallerySwiper")) {
+            new Swiper(".gallerySwiper", {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3
+                    }
                 }
-            }
-        });
-        new Swiper(".gallerySwiper2", {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 3
-                }
-            }
-        });
-
-        // Xử lý Tabs và Swipers trong Modal Tình Nguyện
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active", "bg-gradient-to-r", "from-pink-500", "to-orange-500", "text-white"));
-                btn.classList.add("active", "bg-gradient-to-r", "from-pink-500", "to-orange-500", "text-white");
-                document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
-                document.querySelector(btn.dataset.target).classList.remove("hidden");
             });
-        });
-
-        new Swiper(".gallerySwiper-xuan", { slidesPerView: 2, spaceBetween: 16, navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, breakpoints: { 768: { slidesPerView: 3 } } });
-        new Swiper(".gallerySwiper-mhx", { slidesPerView: 2, spaceBetween: 16, navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, breakpoints: { 768: { slidesPerView: 3 } } });
-        new Swiper(".gallerySwiper-tsmt", { slidesPerView: 2, spaceBetween: 16, navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, breakpoints: { 768: { slidesPerView: 3 } } });
-        new Swiper(".gallerySwiper-hmtn", { slidesPerView: 2, spaceBetween: 16, navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, breakpoints: { 768: { slidesPerView: 3 } } });
+        }
+        
+        if (document.querySelector(".gallerySwiper2")) {
+            new Swiper(".gallerySwiper2", {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3
+                    }
+                }
+            });
+        }
     </script>
     
     <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
