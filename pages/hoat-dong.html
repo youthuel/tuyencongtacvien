@@ -350,7 +350,7 @@
 
 
 
- <div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+<div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
     <div class="p-8 relative">
       
@@ -360,12 +360,16 @@
       </button>
 
       <!-- Tabs -->
-      <div class="flex justify-center mb-6 flex-wrap gap-3 w-1/4 p-2">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Chiến dịch Xuân tình nguyện</button>
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Xuân TN</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button>
+        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hmtn">💉 Hiến Máu TN</button>
       </div>
 
       <!-- Nội dung Tabs -->
-      <div id="tab-xuan" class="tab-content">
+      <div id="tab-xuan" class="tab-content block">
+        <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Xuân Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Mang hơi ấm và những món quà ý nghĩa đến với trẻ em, gia đình khó khăn vùng sâu vùng xa mỗi dịp Tết. 
           Đây là hoạt động sẻ chia và là kỷ niệm đáng nhớ của sinh viên UEL.
@@ -380,11 +384,8 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-        <br> </br>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-green-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">☀️ Chiến dịch Mùa Hè Xanh</button>
-      </div>
-      <div id="tab-mhx" class="tab-content">
+
+      <div id="tab-mhx" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Hoạt động hè quy mô lớn, gắn bó với cộng đồng qua xây dựng, dạy học, hỗ trợ địa phương. 
@@ -400,10 +401,8 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">📘 Chương trình Tiếp sức mùa thi</button>
-      </div>
-      <div id="tab-tsmt" class="tab-content">
+
+      <div id="tab-tsmt" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Đồng hành cùng sĩ tử trong kỳ thi tốt nghiệp THPT và tuyển sinh Đại học. 
@@ -419,10 +418,8 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">🩸Hoạt động Hiến máu tình nguyện</button>
-      </div>
-      <div id="tab-hmtn" class="tab-content">
+
+      <div id="tab-hmtn" class="tab-content hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Hoạt động nhân văn mang ý nghĩa "một giọt máu cho đi, một cuộc đời ở lại", 
@@ -442,6 +439,28 @@
     </div>
   </div>
 </div>
+
+<!-- Swiper + Tab script -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Tabs chuyển đổi
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white"));
+      btn.classList.add("active","bg-gradient-to-r","from-pink-500","to-orange-500","text-white");
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+      document.querySelector(btn.dataset.target).classList.remove("hidden");
+    });
+  });
+
+  // Swiper galleries
+  new Swiper(".gallerySwiper", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper2", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper3", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+  new Swiper(".gallerySwiper4", { slidesPerView: 2, spaceBetween: 16, navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}, breakpoints:{768:{slidesPerView:3}} });
+</script>
+
 <!-- Swiper + Tab script -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -835,6 +854,7 @@
     });
   </script>
 </body>
+
 
 
 
