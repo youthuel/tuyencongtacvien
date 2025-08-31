@@ -458,13 +458,39 @@
     overflow: hidden !important;
   }
 
-  /* Sửa lỗi navigation buttons không click được */
   .swiper-button-next,
   .swiper-button-prev {
     user-select: none !important;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
+  }
+    
+  /* Đảm bảo navigation buttons có thể click */
+  .swiper-button-next,
+  .swiper-button-prev {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 30 !important;
+  }
+
+  /* Sửa lỗi navigation buttons bị ẩn */
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    content: '' !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-size: 20px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+
+  .swiper-button-next:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E") !important;
+  }
+
+  .swiper-button-prev:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 19l-7-7 7-7'%3E%3C/path%3E%3C/svg%3E") !important;
   }
 </style>
 
@@ -476,7 +502,7 @@
     
     // Khởi tạo Swiper cho các gallery
     if (document.querySelector('.gallerySwiper-xuan')) {
-      new Swiper(".gallerySwiper-xuan", { 
+     const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
@@ -495,11 +521,23 @@
           pauseOnMouseEnter: true
         }
       });
-      console.log('Swiper xuan initialized');
+        
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnXuan = document.querySelector('.next-xuan');
+      const prevBtnXuan = document.querySelector('.prev-xuan');
+      
+      if (nextBtnXuan) {
+        nextBtnXuan.addEventListener('click', () => swiperXuan.slideNext());
+      }
+      if (prevBtnXuan) {
+        prevBtnXuan.addEventListener('click', () => swiperXuan.slidePrev());
+      }
+      
+      console.log('Swiper xuan initialized with navigation');
     }
     
     if (document.querySelector('.gallerySwiper-mhx')) {
-      new Swiper(".gallerySwiper-mhx", { 
+        const swiperMhx = new Swiper(".gallerySwiper-mhx", {  
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
@@ -518,11 +556,23 @@
           pauseOnMouseEnter: true
         }
       });
-      console.log('Swiper mhx initialized');
+      
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnMhx = document.querySelector('.next-mhx');
+      const prevBtnMhx = document.querySelector('.prev-mhx');
+      
+      if (nextBtnMhx) {
+        nextBtnMhx.addEventListener('click', () => swiperMhx.slideNext());
+      }
+      if (prevBtnMhx) {
+        prevBtnMhx.addEventListener('click', () => swiperMhx.slidePrev());
+      }
+      
+      console.log('Swiper mhx initialized with navigation');
     }
     
     if (document.querySelector('.gallerySwiper-tsmt')) {
-      new Swiper(".gallerySwiper-tsmt", { 
+      const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
@@ -541,11 +591,23 @@
           pauseOnMouseEnter: true
         }
       });
-      console.log('Swiper tsmt initialized');
+      
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnTsmt = document.querySelector('.next-tsmt');
+      const prevBtnTsmt = document.querySelector('.prev-tsmt');
+      
+      if (nextBtnTsmt) {
+        nextBtnTsmt.addEventListener('click', () => swiperTsmt.slideNext());
+      }
+      if (prevBtnTsmt) {
+        prevBtnTsmt.addEventListener('click', () => swiperTsmt.slidePrev());
+      }
+      
+      console.log('Swiper tsmt initialized with navigation');
     }
     
     if (document.querySelector('.gallerySwiper-hmtn')) {
-      new Swiper(".gallerySwiper-hmtn", { 
+      const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
         slidesPerView: 1, 
         spaceBetween: 16, 
         navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
@@ -564,7 +626,20 @@
           pauseOnMouseEnter: true
         }
       });
-      console.log('Swiper hmtn initialized');
+            
+      // Đảm bảo navigation buttons hoạt động
+      const nextBtnHmtn = document.querySelector('.next-hmtn');
+      const prevBtnHmtn = document.querySelector('.prev-hmtn');
+      
+      if (nextBtnHmtn) {
+        nextBtnHmtn.addEventListener('click', () => swiperHmtn.slideNext());
+      }
+      if (prevBtnHmtn) {
+        prevBtnHmtn.addEventListener('click', () => swiperHmtn.slidePrev());
+      }
+      
+      console.log('Swiper hmtn initialized with navigation');
+    }
     }
     
     console.log('All Swipers initialized for hoat-dong page');
@@ -573,6 +648,7 @@
 
 </body>
 </html>
+
 
 
 
