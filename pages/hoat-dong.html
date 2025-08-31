@@ -419,10 +419,7 @@
 
       <!-- Tabs -->
       <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Xuân TN</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-mhx">☀️ Mùa Hè Xanh</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-tsmt">📘 Tiếp Sức Mùa Thi</button>
-        <button class="tab-btn px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-hmtn">💉 Hiến Máu TN</button>
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-xuan">🌸 Chiến dịch Xuân tình nguyện</button>
       </div>
 
       <!-- Nội dung Tabs -->
@@ -442,7 +439,9 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-green-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">☀️ Chiến dịch Mùa Hè Xanh</button>
+      </div>
       <div id="tab-mhx" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chiến Dịch Mùa Hè Xanh</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
@@ -459,7 +458,9 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">📘 Chương trình Tiếp sức mùa thi</button>
+      </div>
       <div id="tab-tsmt" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Tiếp Sức Mùa Thi</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
@@ -476,7 +477,9 @@
           <div class="swiper-button-prev"></div>
         </div>
       </div>
-
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-blue-500 to-cyan-500  text-white shadow hover:scale-105 transition" data-target="#tab-mhx">🩸Hoạt động Hiến máu tình nguyện</button>
+      </div>
       <div id="tab-hmtn" class="tab-content">
         <h2 class="text-3xl font-extrabold text-slate-800">Chương Trình Hiến Máu Tình Nguyện</h2>
         <p class="mt-4 text-slate-600 leading-relaxed">
@@ -667,90 +670,6 @@
 </div>
 
 
-<div class="volunteer-section text-center py-16 bg-gradient-to-r from-green-100 to-blue-100">
-  <h2 class="text-3xl font-bold mb-6">Tình nguyện vì cộng đồng</h2>
-  <button id="exploreBtn" class="px-6 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition">Khám phá</button>
-
-  <div id="programs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 opacity-0 max-h-0 overflow-hidden transition-all duration-500">
-    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <img src="prog1.jpg" class="rounded-lg mb-4">
-      <h3 class="font-bold text-xl mb-2">Chương trình 1</h3>
-      <p>Giới thiệu ngắn gọn...</p>
-    </div>
-    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <img src="prog2.jpg" class="rounded-lg mb-4">
-      <h3 class="font-bold text-xl mb-2">Chương trình 2</h3>
-      <p>Giới thiệu ngắn gọn...</p>
-    </div>
-    <div class="program-card bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
-      <img src="prog3.jpg" class="rounded-lg mb-4">
-      <h3 class="font-bold text-xl mb-2">Chương trình 3</h3>
-      <p>Giới thiệu ngắn gọn...</p>
-    </div>
-    <!-- Thêm card khác nếu cần -->
-  </div>
-</div>
-
-<script>
-  const btn = document.getElementById('exploreBtn');
-  const programs = document.getElementById('programs');
-
-  btn.addEventListener('click', () => {
-    programs.classList.toggle('opacity-0');
-    programs.classList.toggle('max-h-0');
-    programs.classList.toggle('opacity-100');
-    programs.classList.toggle('max-h-screen');
-  });
-</script>
-
-<!-- Swiper -->
-<div class="volunteer-section py-16">
-  <h2 class="text-3xl font-bold mb-6 text-center">Tình nguyện vì cộng đồng</h2>
-  <button id="exploreBtn" class="mx-auto mb-8 px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition">Khám phá</button>
-
-  <div id="carouselContainer" class="hidden swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="prog1.jpg" alt="">
-        <h3 class="text-xl font-bold mt-4">Chương trình 1</h3>
-      </div>
-      <div class="swiper-slide">
-        <img src="prog2.jpg" alt="">
-        <h3 class="text-xl font-bold mt-4">Chương trình 2</h3>
-      </div>
-      <!-- thêm slide khác -->
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-</div>
-
-<script>
-  const btn = document.getElementById('exploreBtn');
-  const carousel = document.getElementById('carouselContainer');
-  btn.addEventListener('click', () => {
-    carousel.classList.remove('hidden');
-  });
-</script>
-
-
-<div class="accordion max-w-3xl mx-auto mt-8">
-  <div class="accordion-item border rounded mb-2">
-    <button class="w-full text-left p-4 font-bold bg-green-100">Chương trình 1</button>
-    <div class="accordion-body p-4 hidden bg-white">Chi tiết chương trình 1...</div>
-  </div>
-  <!-- thêm chương trình khác -->
-</div>
-
-<script>
-  document.querySelectorAll('.accordion-item button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const body = btn.nextElementSibling;
-      body.classList.toggle('hidden');
-    });
-  });
-</script>
-
 
 <!-- Phần này chèn để khỏi bị lỗi
 <div id="modal-hien" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
@@ -846,6 +765,7 @@
     </div>
 
 </div> -->
+
 
 
 
