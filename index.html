@@ -153,6 +153,32 @@
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
 }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  25% { transform: rotate(3deg) translateY(-3px); }
+  50% { transform: rotate(-2deg) translateY(2px); }
+  75% { transform: rotate(2deg) translateY(-2px); }
+}
+
+.tagline {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: wiggle 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
 
                            
                            
@@ -1113,6 +1139,7 @@
 </body>
 
 </html>
+
 
 
 
