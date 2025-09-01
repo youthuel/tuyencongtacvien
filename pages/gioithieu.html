@@ -182,69 +182,61 @@
     </div>
 
     <!-- Cards -->
- <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <!-- Card 1 -->
-  <div class="rounded-2xl shadow-lg overflow-hidden">
-    <!-- Header -->
-    <div class="bg-blue-600 text-white p-6">
-      <div class="flex items-center gap-3">
-        <img src="icon1.png" alt="icon" class="w-10 h-10">
-        <div>
-          <h3 class="text-lg font-bold">Tuổi trẻ Sáng tạo</h3>
-          <p class="text-sm opacity-90">Học thuật & Nghiên cứu</p>
-        </div>
-      </div>
+<div class="space-y-6">
+  <!-- 3 card nhỏ (menu) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div onclick="showTab(1)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-blue-100 transition">
+      <h3 class="font-bold text-lg">Tuổi trẻ sáng tạo</h3>
+      <p class="text-sm text-gray-600">Học thuật & Nghiên cứu</p>
     </div>
-    <!-- Content -->
-    <div class="bg-blue-50 p-6">
-      <ul class="space-y-2 text-gray-700">
-        <li><span class="font-semibold">Chiến dịch lớn:</span> Mùa hè xanh, Tiếp sức mùa thi...</li>
-        <li><span class="font-semibold">Hoạt động thường xuyên:</span> Hiến máu tình nguyện, Ngày chủ nhật xanh...</li>
-        <li><span class="font-semibold">Chuyên môn hóa:</span> Tổ chức phiên tòa giả định, CLB học thuật...</li>
-      </ul>
+    <div onclick="showTab(2)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-green-100 transition">
+      <h3 class="font-bold text-lg">Thanh niên tình nguyện</h3>
+      <p class="text-sm text-gray-600">Cộng đồng & Xã hội</p>
+    </div>
+    <div onclick="showTab(3)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-orange-100 transition">
+      <h3 class="font-bold text-lg">Đồng hành cùng sinh viên</h3>
+      <p class="text-sm text-gray-600">Học tập & Phát triển</p>
     </div>
   </div>
 
-  <!-- Card 2 -->
-  <div class="rounded-2xl shadow-lg overflow-hidden">
-    <div class="bg-green-600 text-white p-6">
-      <div class="flex items-center gap-3">
-        <img src="icon2.png" alt="icon" class="w-10 h-10">
-        <div>
-          <h3 class="text-lg font-bold">Thanh niên Tình nguyện</h3>
-          <p class="text-sm opacity-90">Cộng đồng & Xã hội</p>
-        </div>
-      </div>
-    </div>
-    <div class="bg-green-50 p-6">
-      <ul class="space-y-2 text-gray-700">
-        <li><span class="font-semibold">Chiến dịch lớn:</span> Xuân tình nguyện, Chiến dịch mùa hè xanh...</li>
-        <li><span class="font-semibold">Hoạt động thường xuyên:</span> Ngày thứ bảy tình nguyện...</li>
-        <li><span class="font-semibold">Chuyên môn hóa:</span> Đội hình pháp luật, đội hình số...</li>
-      </ul>
-    </div>
+  <!-- Nội dung hiển thị -->
+  <div id="tab-1" class="p-6 rounded-2xl bg-blue-50 shadow-md">
+    <h4 class="text-xl font-semibold mb-3 text-blue-700">Tuổi trẻ sáng tạo</h4>
+    <ul class="list-disc list-inside space-y-2 text-gray-700">
+      <li>Chiến dịch lớn: Mùa hè xanh, Tiếp sức mùa thi...</li>
+      <li>Hoạt động thường xuyên: Hiến máu tình nguyện, Ngày chủ nhật xanh...</li>
+      <li>Chuyên môn hóa: Tổ chức phiên tòa giả định, CLB học thuật...</li>
+    </ul>
   </div>
 
-  <!-- Card 3 -->
-  <div class="rounded-2xl shadow-lg overflow-hidden">
-    <div class="bg-orange-600 text-white p-6">
-      <div class="flex items-center gap-3">
-        <img src="icon3.png" alt="icon" class="w-10 h-10">
-        <div>
-          <h3 class="text-lg font-bold">Đồng hành cùng Sinh viên</h3>
-          <p class="text-sm opacity-90">Học tập & Phát triển</p>
-        </div>
-      </div>
-    </div>
-    <div class="bg-orange-50 p-6">
-      <ul class="space-y-2 text-gray-700">
-        <li><span class="font-semibold">Hoạt động lớn:</span> Hội thao, Văn nghệ, Sinh viên 5 tốt...</li>
-        <li><span class="font-semibold">Hỗ trợ:</span> Học bổng, Kỹ năng mềm, Tư vấn tâm lý...</li>
-        <li><span class="font-semibold">Đồng hành khác:</span> Ngày hội việc làm, kết nối doanh nghiệp...</li>
-      </ul>
-    </div>
+  <div id="tab-2" class="p-6 rounded-2xl bg-green-50 shadow-md hidden">
+    <h4 class="text-xl font-semibold mb-3 text-green-700">Thanh niên tình nguyện</h4>
+    <ul class="list-disc list-inside space-y-2 text-gray-700">
+      <li>Chiến dịch lớn: Xuân tình nguyện, Chiến dịch mùa hè xanh...</li>
+      <li>Hoạt động thường xuyên: Ngày thứ bảy tình nguyện...</li>
+      <li>Chuyên môn hóa: Đội hình pháp luật, đội hình số...</li>
+    </ul>
+  </div>
+
+  <div id="tab-3" class="p-6 rounded-2xl bg-orange-50 shadow-md hidden">
+    <h4 class="text-xl font-semibold mb-3 text-orange-700">Đồng hành cùng sinh viên</h4>
+    <ul class="list-disc list-inside space-y-2 text-gray-700">
+      <li>Hoạt động lớn: Hội thao, Văn nghệ, Sinh viên 5 tốt...</li>
+      <li>Hỗ trợ: Học bổng, Kỹ năng mềm, Tư vấn tâm lý...</li>
+      <li>Đồng hành khác: Ngày hội việc làm, kết nối doanh nghiệp...</li>
+    </ul>
   </div>
 </div>
+
+<script>
+  function showTab(tabIndex) {
+    // Ẩn tất cả nội dung
+    document.querySelectorAll('[id^="tab-"]').forEach(el => el.classList.add('hidden'));
+    // Hiện nội dung được chọn
+    document.getElementById('tab-' + tabIndex).classList.remove('hidden');
+  }
+</script>
+
 
 
 
@@ -518,6 +510,7 @@
     </div>
 
 </section>
+
 
 
 
