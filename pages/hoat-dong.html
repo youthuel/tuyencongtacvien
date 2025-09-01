@@ -201,130 +201,6 @@
   </div>
 </div>
 
-<!-- Modal Bồi Đắp Lý Tưởng -->
-<div id="modal-ly-tuong" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
-  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-    <div class="p-8 relative">
-      
-      <!-- Nút đóng -->
-      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
-        ✕
-      </button>
-
-      <!-- Tabs -->
-      <div class="flex justify-center mb-6 flex-wrap gap-3">
-        <button class="tab-btn-ly-tuong active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-ly-tuong-1">🏛️ Học Tập Chính Trị</button>
-        <button class="tab-btn-ly-tuong px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-ly-tuong-2">🎯 Định Hướng Nghề Nghiệp</button>
-        <button class="tab-btn-ly-tuong px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-ly-tuong-3">🌟 Phát Triển Bản Thân</button>
-      </div>
-
-      <!-- Nội dung Tabs -->
-      <div id="tab-ly-tuong-1" class="tab-content-ly-tuong">
-        <h2 class="text-3xl font-extrabold text-slate-800">Học Tập Chính Trị</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Các buổi học tập chính trị, tư tưởng Hồ Chí Minh và đường lối của Đảng. 
-          Giúp sinh viên nâng cao nhận thức chính trị, xã hội và xây dựng bản lĩnh vững vàng.
-        </p>
-        
-        <!-- Swiper Gallery -->
-        <div class="swiper swiper-ly-tuong-1 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-1.jpg" alt="Học tập chính trị 1">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-2.jpg" alt="Học tập chính trị 2">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-3.jpg" alt="Học tập chính trị 3">
-            </div>
-          </div>
-          <!-- Navigation buttons -->
-          <button class="swiper-nav-btn swiper-nav-prev">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button class="swiper-nav-btn swiper-nav-next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div id="tab-ly-tuong-2" class="tab-content-ly-tuong hidden">
-        <h2 class="text-3xl font-extrabold text-slate-800">Định Hướng Nghề Nghiệp</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Các chương trình tư vấn hướng nghiệp, gặp gỡ doanh nhân và chuyên gia trong ngành. 
-          Giúp sinh viên định hướng rõ ràng về tương lai nghề nghiệp và phát triển kỹ năng cần thiết.
-        </p>
-        
-        <!-- Swiper Gallery -->
-        <div class="swiper swiper-ly-tuong-2 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/tap-huan-card.jpg" alt="Định hướng nghề nghiệp 1">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-1.jpg" alt="Định hướng nghề nghiệp 2">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-2.jpg" alt="Định hướng nghề nghiệp 3">
-            </div>
-          </div>
-          <!-- Navigation buttons -->
-          <button class="swiper-nav-btn swiper-nav-prev">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button class="swiper-nav-btn swiper-nav-next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div id="tab-ly-tuong-3" class="tab-content-ly-tuong hidden">
-        <h2 class="text-3xl font-extrabold text-slate-800">Phát Triển Bản Thân</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Các hoạt động rèn luyện kỹ năng mềm, phát triển tư duy lãnh đạo và xây dựng phẩm chất đạo đức. 
-          Tạo môi trường để sinh viên phát triển toàn diện về nhân cách và năng lực.
-        </p>
-        
-        <!-- Swiper Gallery -->
-        <div class="swiper swiper-ly-tuong-3 mt-6">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/hoi-thao-card.jpg" alt="Phát triển bản thân 1">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-2.jpg" alt="Phát triển bản thân 2">
-            </div>
-            <div class="swiper-slide">
-              <img src="pic/hoat-dong/ct-3.jpg" alt="Phát triển bản thân 3">
-            </div>
-          </div>
-          <!-- Navigation buttons -->
-          <button class="swiper-nav-btn swiper-nav-prev">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button class="swiper-nav-btn swiper-nav-next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 <!-- Modal Học Thuật -->
  <div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
@@ -410,12 +286,33 @@
           Sự kiện thể thao lớn nhất trong năm, nơi các khoa tranh tài ở nhiều bộ môn khác nhau. 
           Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết.
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-          <img src="pic/hoat-dong/ht-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-vtm-1 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ht-1.jpg" alt="Hội thao 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ht-2.jpg" alt="Hội thao 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ht-3.jpg" alt="Hội thao 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
-    </div>
+      </div>
 
       <div id="tab-vtm-2" class="tab-content-vtm hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Liên Hoan Văn Nghệ</h2>
@@ -423,12 +320,33 @@
           Sân chơi nghệ thuật đầy màu sắc, nơi sinh viên thể hiện tài năng âm nhạc, múa, kịch và các loại hình nghệ thuật khác. 
           Tạo cơ hội giao lưu văn hóa và phát hiện tài năng mới.
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-          <img src="pic/hoat-dong/hoi-thao-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-vtm-2 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/hoi-thao-card.jpg" alt="Văn nghệ 1">
             </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-1.jpg" alt="Văn nghệ 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-2.jpg" alt="Văn nghệ 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
+      </div>
 
       <div id="tab-vtm-3" class="tab-content-vtm hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">CLB - Đội - Nhóm Sở Thích</h2>
@@ -436,12 +354,33 @@
           Hệ thống các câu lạc bộ đa dạng từ âm nhạc, thể thao, nhiếp ảnh đến các nhóm sở thích khác. 
           Nơi sinh viên có thể phát triển đam mê và kết nối với những người có cùng sở thích.
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-          <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-          <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-    </div>
-</div>
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-vtm-3 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/tap-huan-card.jpg" alt="CLB 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-2.jpg" alt="CLB 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-3.jpg" alt="CLB 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
 
             </div>
         </div>
