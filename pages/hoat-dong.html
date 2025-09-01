@@ -340,10 +340,43 @@
   .modal-content {
     transform: scale(0.95);
     transition: transform 0.3s ease;
+    /* Điều chỉnh kích thước modal nhỏ gọn hơn */
+    max-width: 90vw !important; /* Responsive theo viewport width */
+    width: 100% !important;
+    max-height: 85vh !important; /* Giảm chiều cao */
   }
   
   .modal.is-open .modal-content {
     transform: scale(1);
+  }
+  
+  /* Responsive cho modal */
+  @media (min-width: 640px) {
+    .modal-content {
+      max-width: 600px !important; /* Tablet: 600px */
+      max-height: 80vh !important;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .modal-content {
+      max-width: 700px !important; /* Desktop nhỏ: 700px */
+      max-height: 80vh !important;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .modal-content {
+      max-width: 800px !important; /* Desktop lớn: 800px */
+      max-height: 75vh !important;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .modal-content {
+      max-width: 900px !important; /* Desktop rất lớn: 900px */
+      max-height: 75vh !important;
+    }
   }
   
   .glass-card {
@@ -373,17 +406,19 @@
 
   .swiper-slide img {
     width: 100% !important;
-    height: 400px !important; /* Tối ưu cho tỷ lệ 16:9 */
+    height: 280px !important; /* Tối ưu cho tỷ lệ 16:9 */
     object-fit: cover !important;
     display: block !important;
     border-radius: 16px !important; /* Border radius đẹp hơn */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important; /* Shadow đẹp hơn */
     transition: all 0.3s ease !important;
   }
+
   .swiper-slide img:hover {
     transform: scale(1.02) !important;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25) !important;
   }
+
   /* Custom navigation buttons - đơn giản và hiệu quả */
   .swiper-nav-btn {
     position: absolute !important;
@@ -433,10 +468,6 @@
     }
   }
 </style>
-
-
-
-
 
 
 
