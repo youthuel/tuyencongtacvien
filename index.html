@@ -315,10 +315,11 @@
                     const modal = document.querySelector(modalId);
                     if (modal) {
                         modal.classList.add('is-open');
-                        // Khởi tạo Swiper sau khi modal mở
+                        /// Khởi tạo Swiper sau khi modal mở với delay dài hơn
                         setTimeout(() => {
+                            console.log('Opening modal, initializing Swipers...');
                             initializeModalSwipers();
-                        }, 100);
+                        }, 500);
                     }
                 };
                 const closeModal = (modal) => {
@@ -385,6 +386,12 @@
                     
                     // Khởi tạo Swiper cho Modal Tình Nguyện
                     if (document.querySelector('.gallerySwiper-xuan')) {
+                        console.log('Found gallerySwiper-xuan, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperXuan && window.swiperXuan.destroy) {
+                            window.swiperXuan.destroy(true, true);
+                        }
                         const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -404,19 +411,33 @@
                                 pauseOnMouseEnter: true
                             }
                         });
+                        // Store reference globally
+                        window.swiperXuan = swiperXuan;
                         
                         // Thêm event listeners cho navigation buttons
                         const nextBtnXuan = document.querySelector('.next-xuan');
                         const prevBtnXuan = document.querySelector('.prev-xuan');
                         
                         if (nextBtnXuan) {
-                            nextBtnXuan.addEventListener('click', () => {
+                            // Remove existing listeners
+                            nextBtnXuan.replaceWith(nextBtnXuan.cloneNode(true));
+                            const newNextBtnXuan = document.querySelector('.next-xuan');
+                            
+                            newNextBtnXuan.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Next button clicked for xuan');
                                 swiperXuan.slideNext();
                             });
                         }
                         if (prevBtnXuan) {
-                            prevBtnXuan.addEventListener('click', () => {
+                            // Remove existing listeners
+                            prevBtnXuan.replaceWith(prevBtnXuan.cloneNode(true));
+                            const newPrevBtnXuan = document.querySelector('.prev-xuan');
+                            
+                            newPrevBtnXuan.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Prev button clicked for xuan');
                                 swiperXuan.slidePrev();
                             });
@@ -426,6 +447,12 @@
                     }
                     
                     if (document.querySelector('.gallerySwiper-mhx')) {
+                        console.log('Found gallerySwiper-mhx, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperMhx && window.swiperMhx.destroy) {
+                            window.swiperMhx.destroy(true, true);
+                        }
                         const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -445,18 +472,32 @@
                                 pauseOnMouseEnter: true
                             }
                         });
+                        // Store reference globally
+                        window.swiperMhx = swiperMhx;
                         
                         const nextBtnMhx = document.querySelector('.next-mhx');
                         const prevBtnMhx = document.querySelector('.prev-mhx');
                         
                         if (nextBtnMhx) {
-                            nextBtnMhx.addEventListener('click', () => {
+                            // Remove existing listeners
+                            nextBtnMhx.replaceWith(nextBtnMhx.cloneNode(true));
+                            const newNextBtnMhx = document.querySelector('.next-mhx');
+                            
+                            newNextBtnMhx.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Next button clicked for mhx');
                                 swiperMhx.slideNext();
                             });
                         }
                         if (prevBtnMhx) {
-                            prevBtnMhx.addEventListener('click', () => {
+                            // Remove existing listeners
+                            prevBtnMhx.replaceWith(prevBtnMhx.cloneNode(true));
+                            const newPrevBtnMhx = document.querySelector('.prev-mhx');
+                            
+                            newPrevBtnMhx.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Prev button clicked for mhx');
                                 swiperMhx.slidePrev();
                             });
@@ -466,6 +507,12 @@
                     }
                     
                     if (document.querySelector('.gallerySwiper-tsmt')) {
+                        console.log('Found gallerySwiper-tsmt, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperTsmt && window.swiperTsmt.destroy) {
+                            window.swiperTsmt.destroy(true, true);
+                        }
                         const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -485,18 +532,32 @@
                                 pauseOnMouseEnter: true
                             }
                         });
+                        // Store reference globally
+                        window.swiperTsmt = swiperTsmt;
                         
                         const nextBtnTsmt = document.querySelector('.next-tsmt');
                         const prevBtnTsmt = document.querySelector('.prev-tsmt');
                         
                         if (nextBtnTsmt) {
-                            nextBtnTsmt.addEventListener('click', () => {
+                            // Remove existing listeners
+                            nextBtnTsmt.replaceWith(nextBtnTsmt.cloneNode(true));
+                            const newNextBtnTsmt = document.querySelector('.next-tsmt');
+                            
+                            newNextBtnTsmt.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Next button clicked for tsmt');
                                 swiperTsmt.slideNext();
                             });
                         }
                         if (prevBtnTsmt) {
-                            prevBtnTsmt.addEventListener('click', () => {
+                            // Remove existing listeners
+                            prevBtnTsmt.replaceWith(prevBtnTsmt.cloneNode(true));
+                            const newPrevBtnTsmt = document.querySelector('.prev-tsmt');
+                            
+                            newPrevBtnTsmt.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Prev button clicked for tsmt');
                                 swiperTsmt.slidePrev();
                             });
@@ -506,6 +567,12 @@
                     }
                     
                     if (document.querySelector('.gallerySwiper-hmtn')) {
+                        console.log('Found gallerySwiper-hmtn, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperHmtn && window.swiperHmtn.destroy) {
+                            window.swiperHmtn.destroy(true, true);
+                        }
                         const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -525,18 +592,32 @@
                                 pauseOnMouseEnter: true
                             }
                         });
+                        // Store reference globally
+                        window.swiperHmtn = swiperHmtn;
                         
                         const nextBtnHmtn = document.querySelector('.next-hmtn');
                         const prevBtnHmtn = document.querySelector('.prev-hmtn');
                         
                         if (nextBtnHmtn) {
-                            nextBtnHmtn.addEventListener('click', () => {
+                            // Remove existing listeners
+                            nextBtnHmtn.replaceWith(nextBtnHmtn.cloneNode(true));
+                            const newNextBtnHmtn = document.querySelector('.next-hmtn');
+                            
+                            newNextBtnHmtn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Next button clicked for hmtn');
                                 swiperHmtn.slideNext();
                             });
                         }
                         if (prevBtnHmtn) {
-                            prevBtnHmtn.addEventListener('click', () => {
+                            // Remove existing listeners
+                            prevBtnHmtn.replaceWith(prevBtnHmtn.cloneNode(true));
+                            const newPrevBtnHmtn = document.querySelector('.prev-hmtn');
+                            
+                            newPrevBtnHmtn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
                                 console.log('Prev button clicked for hmtn');
                                 swiperHmtn.slidePrev();
                             });
@@ -675,8 +756,7 @@
                     initializeTinhNguyenTabs();
                     initializeHocThuatTabs();
                     initializeVTMTabs();
-                    initializeModalSwipers(); // Khởi tạo Swiper cho modal
-                    console.log('Tabs and Swipers initialization complete');
+                    console.log('Tabs initialization complete');
                 }, 300);
 
                 // 3. SWIPER SLIDER: Khởi tạo slider ảnh
@@ -1025,6 +1105,7 @@
 </body>
 
 </html>
+
 
 
 
