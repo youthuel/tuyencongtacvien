@@ -168,7 +168,8 @@
         <div class="max-w-4xl mx-auto space-y-6 scroll-animate" style="transition-delay: 150ms;">
             
             <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
+                <input type="checkbox" class="faq-toggle" id="faq1">
+                <label for="faq1" class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
                     <span class="text-lg leading-relaxed pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
                     <div class="flex-shrink-0 ml-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -177,8 +178,8 @@
                             </svg>
                         </div>
                     </div>
-                </button>
-                <div class="faq-answer hidden">
+                </label>
+                <div class="faq-answer">
                     <div class="px-6 pb-6">
                         <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
                             <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Chúng mình chào đón tất cả các bạn sinh viên có nhiệt huyết và mong muốn cống hiến. Kinh nghiệm là một lợi thế, nhưng tinh thần ham học hỏi và sự cam kết mới là điều quan trọng nhất. Bạn sẽ được đào tạo và hướng dẫn trong suốt quá trình hoạt động. 🌟</p>
@@ -188,7 +189,8 @@
             </div>
 
             <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
+                <input type="checkbox" class="faq-toggle" id="faq2">
+                <label for="faq2" class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
                     <span class="text-lg leading-relaxed pr-4">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
                     <div class="flex-shrink-0 ml-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -197,8 +199,8 @@
                             </svg>
                         </div>
                     </div>
-                </button>
-                <div class="faq-answer hidden">
+                </label>
+                <div class="faq-answer">
                     <div class="px-6 pb-6">
                         <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
                             <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
@@ -208,7 +210,8 @@
             </div>
 
             <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
+                <input type="checkbox" class="faq-toggle" id="faq3">
+                <label for="faq3" class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
                     <span class="text-lg leading-relaxed pr-4">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
                     <div class="flex-shrink-0 ml-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -217,18 +220,19 @@
                             </svg>
                         </div>
                     </div>
-                </button>
-                <div class="faq-answer hidden">
+                </label>
+                <div class="faq-answer">
                     <div class="px-6 pb-6">
                         <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển toàn diện!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
+                            <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển tốt nhất!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
+                <input type="checkbox" class="faq-toggle" id="faq4">
+                <label for="faq4" class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
                     <span class="text-lg leading-relaxed pr-4">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
                     <div class="flex-shrink-0 ml-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -237,8 +241,8 @@
                             </svg>
                         </div>
                     </div>
-                </button>
-                <div class="faq-answer hidden">
+                </label>
+                <div class="faq-answer">
                     <div class="px-6 pb-6">
                         <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
                             <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
@@ -248,7 +252,8 @@
             </div>
 
             <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
+                <input type="checkbox" class="faq-toggle" id="faq5">
+                <label for="faq5" class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
                     <span class="text-lg leading-relaxed pr-4">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
                     <div class="flex-shrink-0 ml-4">
                         <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
@@ -257,8 +262,8 @@
                             </svg>
                         </div>
                     </div>
-                </button>
-                <div class="faq-answer hidden">
+                </label>
+                <div class="faq-answer">
                     <div class="px-6 pb-6">
                         <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
                             <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
@@ -318,4 +323,48 @@
         </div>
     </div>
 </section>
+
+<style>
+        /* Pure CSS solution using checkbox hack */
+        .faq-toggle {
+            display: none;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-toggle:checked ~ .faq-answer {
+            max-height: 500px;
+            overflow: visible;
+        }
+        
+        .faq-toggle:checked ~ .faq-question .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+        }
+        
+        /* Ensure proper spacing */
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer > div {
+            padding-top: 0.5rem;
+        }
+        
+        /* Additional styling for better appearance */
+        .faq-answer {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-toggle:checked ~ .faq-question {
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+        }
+    </style>
 
