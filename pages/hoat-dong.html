@@ -30,7 +30,7 @@
           </div>
           <h3 class="text-l font-bold text-slate-800">Bồi Đắp Lý Tưởng</h3>
           <p class="mt-2 text-slate-700 font-medium">Xây dựng bản lĩnh chính trị, bồi dưỡng niềm tin và hoài bão lớn cho sinh viên UEL</p>
-                 <button data-modal-target="#modal-tinh-nguyen" class="modal-trigger mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
+                 <button data-modal-target="#modal-ly-tuong" class="modal-trigger mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition-colors">Khám phá</button>
         </div>
       </div> 
 
@@ -78,6 +78,130 @@
   </div>
 
 </section>
+
+<!-- Modal Bồi Đắp Lý Tưởng -->
+<div id="modal-ly-tuong" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="p-8 relative">
+      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
+        ✕
+      </button>
+
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 flex-wrap gap-3">
+        <button class="tab-btn-ly-tuong active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow hover:scale-105 transition" data-target="#tab-ly-tuong-1">🎯 Định Hướng Nghề Nghiệp</button>
+        <button class="tab-btn-ly-tuong px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-ly-tuong-2">🌟 Phát Triển Bản Thân</button>
+        <button class="tab-btn-ly-tuong px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-ly-tuong-3">💪 Rèn Luyện Kỹ Năng</button>
+      </div>
+
+      <!-- Nội dung Tabs -->
+      <div id="tab-ly-tuong-1" class="tab-content-ly-tuong">
+        <h2 class="text-3xl font-extrabold text-slate-800">Định Hướng Nghề Nghiệp</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các chương trình tư vấn và định hướng nghề nghiệp, giúp sinh viên hiểu rõ bản thân, 
+          xác định mục tiêu và lập kế hoạch phát triển sự nghiệp trong tương lai.
+        </p>
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-ly-tuong-1 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-1.jpg" alt="Định hướng nghề nghiệp 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-2.jpg" alt="Định hướng nghề nghiệp 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-3.jpg" alt="Định hướng nghề nghiệp 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="tab-ly-tuong-2" class="tab-content-ly-tuong hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Phát Triển Bản Thân</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các hoạt động rèn luyện kỹ năng mềm, phát triển tư duy và xây dựng phẩm chất đạo đức. 
+          Giúp sinh viên trở thành những công dân có ích cho xã hội.
+        </p>
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-ly-tuong-2 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/cuoc-thi-card.jpg" alt="Phát triển bản thân 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-1.jpg" alt="Phát triển bản thân 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-2.jpg" alt="Phát triển bản thân 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="tab-ly-tuong-3" class="tab-content-ly-tuong hidden">
+        <h2 class="text-3xl font-extrabold text-slate-800">Rèn Luyện Kỹ Năng</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Các khóa học và workshop về kỹ năng lãnh đạo, làm việc nhóm, giao tiếp và quản lý thời gian. 
+          Chuẩn bị hành trang vững chắc cho tương lai.
+        </p>
+        
+        <!-- Swiper Gallery -->
+        <div class="swiper swiper-ly-tuong-3 mt-6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/tap-huan-card.jpg" alt="Rèn luyện kỹ năng 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-1.jpg" alt="Rèn luyện kỹ năng 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="pic/hoat-dong/ct-3.jpg" alt="Rèn luyện kỹ năng 3">
+            </div>
+          </div>
+          <!-- Navigation buttons -->
+          <button class="swiper-nav-btn swiper-nav-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swiper-nav-btn swiper-nav-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- Modal Tình Nguyện với 4 tab -->
 <div id="modal-tinh-nguyen" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
@@ -600,6 +724,7 @@
     }
   }
 </style>
+
 
 
 
