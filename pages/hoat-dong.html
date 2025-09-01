@@ -1,3 +1,5 @@
+<!-- Trang Hoạt Động - UEL -->
+
 <section class="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 bg-gradient-to-tr from-rose-100 to-amber-100">
      <div class="deco-shape w-40 h-40 rounded-full bg-rose-200/80 top-10 right-20"></div>
      <div class="deco-shape w-32 h-32 rounded-full bg-amber-200/80 bottom-10 left-20" style="animation-delay: -2s;"></div>
@@ -137,9 +139,9 @@
         </p>
         <div class="swiper gallerySwiper-tsmt mt-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/tsmt-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+                      <div class="swiper-slide"><img src="pic/hoat-dong/th-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          <div class="swiper-slide"><img src="pic/hoat-dong/th-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          <div class="swiper-slide"><img src="pic/hoat-dong/th-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
           <div class="swiper-button-next next-tsmt"></div>
           <div class="swiper-button-prev prev-tsmt"></div>
@@ -168,7 +170,7 @@
 </div>
 
 <!-- Modal Học Thuật -->
-<div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+ <div id="modal-hoc-thuat" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
     <div class="p-8 relative">
       
@@ -227,11 +229,11 @@
     </div>
   </div>
 </div>
-
+     
 <!-- Modal Văn - Thể - Mỹ -->
 <div id="modal-van-the-my" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
   <div class="modal-content glass-card rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-    <div class="p-8 relative">
+        <div class="p-8 relative">
       
       <!-- Nút đóng -->
       <button class="modal-close absolute top-4 right-4 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition z-10 shadow">
@@ -243,7 +245,7 @@
         <button class="tab-btn-vtm active px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow hover:scale-105 transition" data-target="#tab-vtm-1">⚽ Hội Thao</button>
         <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-2">🎭 Văn Nghệ</button>
         <button class="tab-btn-vtm px-4 py-2 rounded-full font-semibold bg-gray-200 text-slate-700 hover:bg-gray-300 transition" data-target="#tab-vtm-3">🎨 CLB - Đội - Nhóm</button>
-      </div>
+            </div>
 
       <!-- Nội dung Tabs -->
       <div id="tab-vtm-1" class="tab-content-vtm">
@@ -257,7 +259,7 @@
           <img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
           <img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
         </div>
-      </div>
+    </div>
 
       <div id="tab-vtm-2" class="tab-content-vtm hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">Liên Hoan Văn Nghệ</h2>
@@ -269,8 +271,8 @@
           <img src="pic/hoat-dong/hoi-thao-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
           <img src="pic/hoat-dong/ct-1.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
           <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
+            </div>
         </div>
-      </div>
 
       <div id="tab-vtm-3" class="tab-content-vtm hidden">
         <h2 class="text-3xl font-extrabold text-slate-800">CLB - Đội - Nhóm Sở Thích</h2>
@@ -282,12 +284,12 @@
           <img src="pic/hoat-dong/tap-huan-card.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
           <img src="pic/hoat-dong/ct-2.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
           <img src="pic/hoat-dong/ct-3.jpg" class="rounded-xl shadow-md object-cover w-full h-40">
-        </div>
-      </div>
-
     </div>
-  </div>
 </div>
+
+            </div>
+        </div>
+    </div>
 
 <!-- CSS cho Modal -->
 <style>
@@ -331,12 +333,13 @@
     justify-content: center !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
-    z-index: 50 !important;
+    z-index: 100 !important;
     cursor: pointer !important;
     pointer-events: auto !important;
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+    margin-top: 0 !important;
   }
 
   .swiper-button-next:hover,
@@ -375,7 +378,7 @@
   /* Đảm bảo Swiper container có position relative */
   .swiper {
     position: relative !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     width: 100% !important;
     height: auto !important;
     min-height: 300px !important;
@@ -386,6 +389,7 @@
     display: flex !important;
     transition-property: transform !important;
     width: 100% !important;
+    position: relative !important;
   }
 
   .swiper-slide {
@@ -420,6 +424,23 @@
     height: auto !important;
     min-height: 300px !important;
     position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* Đảm bảo navigation buttons cố định ở vị trí đúng */
+  .gallerySwiper-xuan .swiper-button-next,
+  .gallerySwiper-xuan .swiper-button-prev,
+  .gallerySwiper-mhx .swiper-button-next,
+  .gallerySwiper-mhx .swiper-button-prev,
+  .gallerySwiper-tsmt .swiper-button-next,
+  .gallerySwiper-tsmt .swiper-button-prev,
+  .gallerySwiper-hmtn .swiper-button-next,
+  .gallerySwiper-hmtn .swiper-button-prev {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    pointer-events: auto !important;
   }
 
   /* Ẩn navigation buttons mặc định của Swiper */
@@ -435,7 +456,7 @@
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
-          opacity: 1 !important;
+    opacity: 1 !important;
     visibility: visible !important;
     display: flex !important;
   }
@@ -462,7 +483,7 @@
     opacity: 1 !important;
     visibility: visible !important;
   }
-    
+
   /* Đảm bảo Swiper navigation buttons hoạt động */
   .swiper-button-next,
   .swiper-button-prev {
@@ -485,10 +506,50 @@
     position: relative !important;
     overflow: visible !important;
   }
+
+  /* Đảm bảo navigation buttons không bị ảnh hưởng bởi scroll */
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    pointer-events: auto !important;
+    transform-origin: center center !important;
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  /* Đảm bảo navigation buttons cố định hoàn toàn */
+  .swiper-button-next {
+    right: 15px !important;
+    left: auto !important;
+  }
+
+  .swiper-button-prev {
+    left: 15px !important;
+    right: auto !important;
+  }
+
+  /* Đảm bảo Swiper container có overflow visible để navigation buttons hiển thị */
+  .gallerySwiper-xuan,
+  .gallerySwiper-mhx,
+  .gallerySwiper-tsmt,
+  .gallerySwiper-hmtn {
+    overflow: visible !important;
+    position: relative !important;
+  }
+
+  /* Đảm bảo navigation buttons không bị ảnh hưởng bởi transform của slides */
+  .swiper-wrapper {
+    transform-style: flat !important;
+  }
+
+  .swiper-slide {
+    transform-style: flat !important;
+  }
 </style>
-
-
-
 
 
 
