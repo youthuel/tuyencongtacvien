@@ -762,19 +762,11 @@
             loadPage(location.hash.substring(1) || 'home');
         });
 
-        /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./docs/**/*.{html,js}",   // nếu bạn để file web trong /docs (khuyên dùng cho GH Pages)
-    "./src/**/*.{html,js}"     // nếu bạn để file nguồn trong /src
-  ],
-  theme: { extend: {} },
-  plugins: [],
-}
+        // Khởi tạo trang ban đầu
+        loadPage(location.hash.substring(1) || 'home');
 
     </script>
-    
-    <script src="./js/app.js" defer></script>
+
 
     <!-- Script xử lý gallery chung -->
     <script>
@@ -911,5 +903,6 @@ module.exports = {
 </body>
 
 </html>
+
 
 
