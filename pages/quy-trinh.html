@@ -357,11 +357,15 @@
                 </form>
             </div>
         </div>
+
+        <!-- Danh sách câu hỏi đã gửi -->
+        <div id="faq-list" class="max-w-3xl mx-auto mt-12 space-y-5">
+            <div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>
+        </div>
     </div>
 </section>
 
-
-<section class="relative overflow-hidden bg-gradient-to-tr from-amber-50 to-orange-100 py-20 md:py-24">
+<section class="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 py-20 md:py-24">
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 scroll-animate">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Một Vài Lời Khuyên Vàng Từ Chúng Mình</h2>
@@ -449,6 +453,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             
             faqQuestions.forEach(question => {
@@ -480,8 +485,8 @@
                     }
                 });
             });
-            
-            // FAQ Form functionality
+
+            // ===== FAQ Form + List (localStorage) =====
             const faqForm = document.getElementById('faq-form');
             const anonymousCheckbox = document.getElementById('anonymous');
             const fullnameInput = document.getElementById('fullname');
@@ -490,6 +495,99 @@
             const facultyInput = document.getElementById('faculty');
             const emailInput = document.getElementById('email');
             const questionInput = document.getElementById('question');
+            const faqListContainer = document.getElementById('faq-list');
+
+            const STORAGE_KEY = 'uel_faq_questions';
+
+            function loadQuestions() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : [];
+                } catch { return []; }
+            }
+            function saveQuestions(items) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+            }
+            function renderQuestions() {
+                const items = loadQuestions();
+                if (!items.length) {
+                    faqListContainer.innerHTML = '<div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>';
+                    return;
+                }
+                faqListContainer.innerHTML = items.map((q, idx) => `
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-md border p-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white flex items-center justify-center font-bold">${(q.fullname || 'Ẩn danh').charAt(0).toUpperCase()}</div>
+                            <div class="flex-1">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <p class="font-semibold text-slate-800">${q.fullname || 'Ẩn danh'}</p>
+                                    <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.class || '—'}</span>
+                                    <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.faculty || '—'}</span>
+                                    <span class="ml-auto text-xs text-gray-500">${new Date(q.createdAt).toLocaleString()}</span>
+                                </div>
+                                <p class="mt-2 text-slate-700">${escapeHtml(q.question)}</p>
+
+                                ${q.answer ? `
+                                    <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500">
+                                        <div class="text-sm text-gray-500 mb-1">Phản hồi</div>
+                                        <p class="text-slate-800">${escapeHtml(q.answer)}</p>
+                                    </div>
+                                ` : `
+                                    <div class="mt-4">
+                                        <textarea data-idx="${idx}" rows="2" placeholder="Nhập phản hồi..." class="reply-input w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                                        <div class="flex items-center gap-3 mt-2">
+                                            <button data-idx="${idx}" class="reply-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Trả lời</button>
+                                            <button data-idx="${idx}" class="delete-btn px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200">Xóa</button>
+                                        </div>
+                                    </div>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Wire reply buttons
+                faqListContainer.querySelectorAll('.reply-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = +btn.getAttribute('data-idx');
+                        const input = faqListContainer.querySelector(`.reply-input[data-idx="${idx}"]`);
+                        const val = (input?.value || '').trim();
+                        if (!val) { showNotification('Vui lòng nhập phản hồi', 'error'); return; }
+                        const items = loadQuestions();
+                        if (!items[idx]) return;
+                        items[idx].answer = val;
+                        items[idx].answeredAt = Date.now();
+                        saveQuestions(items);
+                        renderQuestions();
+                        showNotification('Đã gửi phản hồi cho câu hỏi', 'success');
+                    });
+                });
+
+                // Wire delete buttons
+                faqListContainer.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = +btn.getAttribute('data-idx');
+                        const items = loadQuestions();
+                        items.splice(idx, 1);
+                        saveQuestions(items);
+                        renderQuestions();
+                        showNotification('Đã xóa câu hỏi', 'success');
+                    });
+                });
+            }
+
+            // Escape HTML for safe rendering
+            function escapeHtml(str) {
+                return String(str)
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;')
+                    .replaceAll('"', '&quot;')
+                    .replaceAll("'", '&#039;');
+            }
+
+            // Load initial list
+            renderQuestions();
 
             // Toggle required fields based on anonymous checkbox
             anonymousCheckbox.addEventListener('change', function() {
@@ -507,29 +605,27 @@
             faqForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Get form data
                 const formData = {
                     anonymous: anonymousCheckbox.checked,
-                    fullname: fullnameInput.value.trim(),
+                    fullname: anonymousCheckbox.checked ? '' : fullnameInput.value.trim(),
                     studentId: studentIdInput.value.trim(),
                     class: classInput.value.trim(),
                     faculty: facultyInput.value.trim(),
                     email: emailInput.value.trim(),
-                    question: questionInput.value.trim()
+                    question: questionInput.value.trim(),
+                    createdAt: Date.now(),
+                    answer: ''
                 };
 
-                // Validation
                 if (!formData.anonymous && !formData.fullname) {
                     showNotification('Vui lòng nhập họ và tên hoặc chọn gửi ẩn danh', 'error');
                     return;
                 }
-
                 if (!formData.question) {
                     showNotification('Vui lòng nhập nội dung câu hỏi', 'error');
                     return;
                 }
 
-                // Show loading state
                 const submitBtn = faqForm.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = `
@@ -542,22 +638,24 @@
                 `;
                 submitBtn.disabled = true;
 
-                // Simulate form submission (replace with actual API call)
                 setTimeout(() => {
-                    showNotification('Cảm ơn bạn đã gửi câu hỏi! Chúng mình sẽ trả lời sớm nhất có thể. 💫', 'success');
+                    const items = loadQuestions();
+                    items.unshift(formData);
+                    saveQuestions(items);
+                    renderQuestions();
+
+                    showNotification('Cảm ơn bạn đã gửi câu hỏi! Chúng mình sẽ phản hồi tại đây. 💫', 'success');
                     faqForm.reset();
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
-                }, 2000);
+                }, 800);
             });
 
             // Notification function
             function showNotification(message, type = 'info') {
-                // Remove existing notifications
                 const existingNotifications = document.querySelectorAll('.notification');
                 existingNotifications.forEach(notification => notification.remove());
 
-                // Create notification element
                 const notification = document.createElement('div');
                 notification.className = `notification fixed top-4 right-4 z-50 max-w-md p-4 rounded-xl shadow-lg transform transition-all duration-300 translate-x-full`;
                 
@@ -589,23 +687,12 @@
                 `;
 
                 document.body.appendChild(notification);
-
-                // Animate in
-                setTimeout(() => {
-                    notification.classList.remove('translate-x-full');
-                }, 100);
-
-                // Auto remove after 5 seconds
+                setTimeout(() => { notification.classList.remove('translate-x-full'); }, 100);
                 setTimeout(() => {
                     notification.classList.add('translate-x-full');
-                    setTimeout(() => {
-                        if (notification.parentElement) {
-                            notification.remove();
-                        }
-                    }, 300);
+                    setTimeout(() => { if (notification.parentElement) notification.remove(); }, 300);
                 }, 5000);
             }
         });
     </script>
-
 
