@@ -373,10 +373,12 @@
 
   .swiper-slide img {
     width: 100% !important;
-    height: 224px !important;
+    height: 280px !important; /* Tối ưu cho tỷ lệ 16:9 */
     object-fit: cover !important;
     display: block !important;
-    border-radius: 12px !important;
+    border-radius: 16px !important; /* Border radius đẹp hơn */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important; /* Shadow đẹp hơn */
+    transition: all 0.3s ease !important;
   }
 
   /* Custom navigation buttons - đơn giản và hiệu quả */
@@ -428,6 +430,7 @@
     }
   }
 </style>
+
 
 
 
