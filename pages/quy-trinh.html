@@ -271,6 +271,96 @@
     </div>
 </section>
 
+<!-- Form gửi câu hỏi FAQ -->
+<section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-rose-50 via-pink-50 to-red-50">
+    <div class="background-blob w-96 h-96 bg-rose-200 rounded-full -top-20 -left-40 opacity-60"></div>
+    <div class="background-blob w-96 h-96 bg-pink-200 rounded-full -bottom-20 -right-40 opacity-60"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-12 scroll-animate">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full mb-6">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Đặt Câu Hỏi Của Bạn</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Có thắc mắc gì khác không? Hãy gửi câu hỏi cho chúng mình nhé! 💭</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto scroll-animate" style="transition-delay: 150ms;">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-10">
+                <form id="faq-form" class="space-y-6">
+                    <!-- Checkbox gửi ẩn danh -->
+                    <div class="flex items-center space-x-3">
+                        <input type="checkbox" id="anonymous" name="anonymous" class="w-5 h-5 text-rose-500 bg-gray-100 border-gray-300 rounded focus:ring-rose-500 focus:ring-2">
+                        <label for="anonymous" class="text-sm font-medium text-gray-700">Gửi ẩn danh</label>
+                    </div>
+                    
+                    <!-- Họ và tên -->
+                    <div>
+                        <label for="fullname" class="block text-sm font-semibold text-gray-700 mb-2">Họ và tên *</label>
+                        <input type="text" id="fullname" name="fullname" required 
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                               placeholder="Nhập họ và tên của bạn">
+                    </div>
+                    
+                    <!-- Mã số sinh viên -->
+                    <div>
+                        <label for="studentId" class="block text-sm font-semibold text-gray-700 mb-2">Mã số sinh viên</label>
+                        <input type="text" id="studentId" name="studentId" 
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                               placeholder="Nhập mã số sinh viên">
+                    </div>
+                    
+                    <!-- Lớp -->
+                    <div>
+                        <label for="class" class="block text-sm font-semibold text-gray-700 mb-2">Lớp</label>
+                        <input type="text" id="class" name="class" 
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                               placeholder="Nhập lớp của bạn">
+                    </div>
+                    
+                    <!-- Khoa -->
+                    <div>
+                        <label for="faculty" class="block text-sm font-semibold text-gray-700 mb-2">Khoa</label>
+                        <input type="text" id="faculty" name="faculty" 
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                               placeholder="Nhập khoa của bạn">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" 
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                               placeholder="Nhập email của bạn">
+                    </div>
+                    
+                    <!-- Nội dung câu hỏi -->
+                    <div>
+                        <label for="question" class="block text-sm font-semibold text-gray-700 mb-2">Nội dung câu hỏi *</label>
+                        <textarea id="question" name="question" rows="4" required 
+                                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 resize-none"
+                                  placeholder="Nhập câu hỏi của bạn..."></textarea>
+                    </div>
+                    
+                    <!-- Nút gửi -->
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:from-rose-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-rose-500/30 focus:outline-none focus:ring-4 focus:ring-rose-500/50">
+                        <span class="flex items-center justify-center space-x-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                            <span>Gửi Câu Hỏi</span>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="relative overflow-hidden bg-gradient-to-tr from-amber-50 to-orange-100 py-20 md:py-24">
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 scroll-animate">
@@ -390,6 +480,132 @@
                     }
                 });
             });
+            
+            // FAQ Form functionality
+            const faqForm = document.getElementById('faq-form');
+            const anonymousCheckbox = document.getElementById('anonymous');
+            const fullnameInput = document.getElementById('fullname');
+            const studentIdInput = document.getElementById('studentId');
+            const classInput = document.getElementById('class');
+            const facultyInput = document.getElementById('faculty');
+            const emailInput = document.getElementById('email');
+            const questionInput = document.getElementById('question');
+
+            // Toggle required fields based on anonymous checkbox
+            anonymousCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    fullnameInput.required = false;
+                    fullnameInput.placeholder = "Nhập họ và tên (tùy chọn)";
+                    fullnameInput.classList.remove('border-red-300');
+                } else {
+                    fullnameInput.required = true;
+                    fullnameInput.placeholder = "Nhập họ và tên của bạn";
+                }
+            });
+
+            // Form submission
+            faqForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    anonymous: anonymousCheckbox.checked,
+                    fullname: fullnameInput.value.trim(),
+                    studentId: studentIdInput.value.trim(),
+                    class: classInput.value.trim(),
+                    faculty: facultyInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    question: questionInput.value.trim()
+                };
+
+                // Validation
+                if (!formData.anonymous && !formData.fullname) {
+                    showNotification('Vui lòng nhập họ và tên hoặc chọn gửi ẩn danh', 'error');
+                    return;
+                }
+
+                if (!formData.question) {
+                    showNotification('Vui lòng nhập nội dung câu hỏi', 'error');
+                    return;
+                }
+
+                // Show loading state
+                const submitBtn = faqForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                        <span>Đang gửi...</span>
+                    </span>
+                `;
+                submitBtn.disabled = true;
+
+                // Simulate form submission (replace with actual API call)
+                setTimeout(() => {
+                    showNotification('Cảm ơn bạn đã gửi câu hỏi! Chúng mình sẽ trả lời sớm nhất có thể. 💫', 'success');
+                    faqForm.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
+
+            // Notification function
+            function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notification => notification.remove());
+
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `notification fixed top-4 right-4 z-50 max-w-md p-4 rounded-xl shadow-lg transform transition-all duration-300 translate-x-full`;
+                
+                if (type === 'success') {
+                    notification.classList.add('bg-green-500', 'text-white');
+                } else if (type === 'error') {
+                    notification.classList.add('bg-red-500', 'text-white');
+                } else {
+                    notification.classList.add('bg-blue-500', 'text-white');
+                }
+
+                notification.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            ${type === 'success' ? 
+                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' :
+                                type === 'error' ?
+                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>' :
+                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                            }
+                        </svg>
+                        <p class="font-medium">${message}</p>
+                        <button onclick="this.parentElement.parentElement.remove()" class="ml-auto flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+
+                document.body.appendChild(notification);
+
+                // Animate in
+                setTimeout(() => {
+                    notification.classList.remove('translate-x-full');
+                }, 100);
+
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    notification.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        if (notification.parentElement) {
+                            notification.remove();
+                        }
+                    }, 300);
+                }, 5000);
+            }
         });
     </script>
+
 
