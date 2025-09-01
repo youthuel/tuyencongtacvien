@@ -179,8 +179,40 @@
 .animation-delay-400 {
   animation-delay: 0.4s;
 }
-
-                           
+/* Rung nhẹ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+.animate-shake {
+  animation: shake 0.5s infinite;
+}
+/* Lắc lư */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wobble {
+  animation: wobble 1.5s infinite ease-in-out;
+}
+/* Trượt ngang */
+ @keyframes float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+/* Lượn sóng */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-wave {
+  animation: wave 2.5s infinite ease-in-out;
+}
+                          
                            
         /* TỔ CHỨC */
         .member-card, .personnel-card { transition: all 0.3s ease-in-out; }
@@ -1139,6 +1171,7 @@
 </body>
 
 </html>
+
 
 
 
