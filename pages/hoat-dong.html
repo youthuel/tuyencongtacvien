@@ -368,21 +368,19 @@
   /* Custom navigation icons */
   .swiper-button-next:after,
   .swiper-button-prev:after {
-    content: '' !important;
-    width: 24px !important;
-    height: 24px !important;
-    background-size: 24px !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+    content: '›' !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #3b82f6 !important;
     pointer-events: none !important;
   }
 
   .swiper-button-next:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E") !important;
+    content: '›' !important;
   }
 
   .swiper-button-prev:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M15 19l-7-7 7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    content: '‹' !important;
   }
 
   /* Đảm bảo Swiper container có position relative */
@@ -448,6 +446,32 @@
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
+          opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  /* Đảm bảo navigation buttons không bị ẩn */
+  .swiper-button-next.swiper-button-hidden,
+  .swiper-button-prev.swiper-button-hidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  /* Thêm hiệu ứng hover rõ ràng */
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Đảm bảo navigation buttons luôn hiển thị */
+  .swiper-container .swiper-button-next,
+  .swiper-container .swiper-button-prev {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 </style>
 
@@ -669,8 +693,125 @@
       }
     }
     
-    // Tương tự cho các Swiper khác...
-    console.log('Swipers reinitialized');
+        // Khởi tạo lại Swiper mhx
+    if (document.querySelector('.gallerySwiper-mhx')) {
+      const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      const nextBtnMhx = document.querySelector('.next-mhx');
+      const prevBtnMhx = document.querySelector('.prev-mhx');
+      
+      if (nextBtnMhx) {
+        nextBtnMhx.addEventListener('click', () => {
+          console.log('Next button clicked for mhx (reinit)');
+          swiperMhx.slideNext();
+        });
+      }
+      if (prevBtnMhx) {
+        prevBtnMhx.addEventListener('click', () => {
+          console.log('Prev button clicked for mhx (reinit)');
+          swiperMhx.slidePrev();
+        });
+      }
+    }
+    
+    // Khởi tạo lại Swiper tsmt
+    if (document.querySelector('.gallerySwiper-tsmt')) {
+      const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      const nextBtnTsmt = document.querySelector('.next-tsmt');
+      const prevBtnTsmt = document.querySelector('.prev-tsmt');
+      
+      if (nextBtnTsmt) {
+        nextBtnTsmt.addEventListener('click', () => {
+          console.log('Next button clicked for tsmt (reinit)');
+          swiperTsmt.slideNext();
+        });
+      }
+      if (prevBtnTsmt) {
+        prevBtnTsmt.addEventListener('click', () => {
+          console.log('Prev button clicked for tsmt (reinit)');
+          swiperTsmt.slidePrev();
+        });
+      }
+    }
+    
+    // Khởi tạo lại Swiper hmtn
+    if (document.querySelector('.gallerySwiper-hmtn')) {
+      const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
+        slidesPerView: 1, 
+        spaceBetween: 16, 
+        navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
+        breakpoints: { 
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 } 
+        },
+        loop: true,
+        grabCursor: true,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }
+      });
+      
+      const nextBtnHmtn = document.querySelector('.next-hmtn');
+      const prevBtnHmtn = document.querySelector('.prev-hmtn');
+      
+      if (nextBtnHmtn) {
+        nextBtnHmtn.addEventListener('click', () => {
+          console.log('Next button clicked for hmtn (reinit)');
+          swiperHmtn.slideNext();
+        });
+      }
+      if (prevBtnHmtn) {
+        prevBtnHmtn.addEventListener('click', () => {
+          console.log('Prev button clicked for hmtn (reinit)');
+          swiperHmtn.slidePrev();
+        });
+      }
+    }
+    
+    console.log('All Swipers reinitialized');
+    
   }
 
   // Lắng nghe sự kiện modal mở để khởi tạo lại Swiper
@@ -685,6 +826,7 @@
 
 </body>
 </html>
+
 
 
 
