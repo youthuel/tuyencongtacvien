@@ -275,9 +275,7 @@
             </span>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold 
-              bg-gradient-to-r from-indigo-500 to-blue-400 
-              text-transparent bg-clip-text">
+            <h3 class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">
               Đ/c Phạm Văn Dư
             </h3>
             <p class="text-sm text-indigo-600 font-semibold">Nguyên Ủy viên Ban Thường vụ Đoàn Trường</p>
@@ -330,6 +328,8 @@
           </div>
         </div>
 
+        <!-- Thêm nhiều card nữa tùy bạn -->
+
       </div>
 
       <!-- Nút điều hướng -->
@@ -343,18 +343,9 @@
 <!-- JS Swiper -->
 <script>
   var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 30,
-      stretch: 0,
-      depth: 200,
-      modifier: 1,
-      slideShadows: true,
-    },
-    loop: true,
+    slidesPerView: 3, // hiển thị 3 card cùng lúc
+    spaceBetween: 30,
+    loop: true, // chạy vòng lặp
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -367,9 +358,19 @@
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
   });
 </script>
-
 
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
@@ -386,6 +387,7 @@
     </div>
 
 </section>
+
 
 
 
