@@ -424,14 +424,6 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
-  .swiper-nav-next {
-    right: 16px !important;
-  }
-
-  .swiper-nav-prev {
-    left: 16px !important;
-  }
-
   /* Responsive */
   @media (max-width: 640px) {
     .swiper-slide {
@@ -448,28 +440,75 @@
   /* Responsive cho hình ảnh */
   @media (min-width: 640px) {
     .swiper-slide img {
-      height: 280px !important; /* Tablet: 280px */
+      height: 240px !important; /* Tablet: 240px */
     }
     .swiper-wrapper {
-      max-width: 700px !important;
+      max-width: 600px !important; /* Tablet: 600px */
     }
   }
 
   @media (min-width: 768px) {
     .swiper-slide img {
-      height: 320px !important; /* Desktop: 320px */
+      height: 280px !important; /* Desktop: 280px */
     }
     .swiper-wrapper {
-      max-width: 800px !important;
+      max-width: 700px !important; /* Desktop: 700px */
     }
   }
 
   @media (min-width: 1024px) {
     .swiper-slide img {
-      height: 360px !important; /* Desktop lớn: 360px */
+      height: 320px !important; /* Desktop lớn: 320px */
     }
     .swiper-wrapper {
-      max-width: 900px !important;
+      max-width: 800px !important; /* Desktop lớn: 800px */
+    }
+  }
+
+  /* Điều chỉnh vị trí navigation buttons theo khung hình ảnh mới */
+  .swiper-nav-next {
+    right: calc(50% - 250px + 20px) !important; /* Căn theo max-width 500px */
+  }
+
+  .swiper-nav-prev {
+    left: calc(50% - 250px + 20px) !important; /* Căn theo max-width 500px */
+  }
+
+  /* Responsive cho vị trí buttons */
+  @media (min-width: 640px) {
+    .swiper-nav-next {
+      right: calc(50% - 300px + 20px) !important; /* max-width 600px */
+    }
+    .swiper-nav-prev {
+      left: calc(50% - 300px + 20px) !important; /* max-width 600px */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .swiper-nav-next {
+      right: calc(50% - 350px + 20px) !important; /* max-width 700px */
+    }
+    .swiper-nav-prev {
+      left: calc(50% - 350px + 20px) !important; /* max-width 700px */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .swiper-nav-next {
+      right: calc(50% - 400px + 20px) !important; /* max-width 800px */
+    }
+    .swiper-nav-prev {
+      left: calc(50% - 400px + 20px) !important; /* max-width 800px */
+    }
+  }
+
+  /* Fallback cho màn hình nhỏ */
+  @media (max-width: 639px) {
+    .swiper-nav-next {
+      right: 20px !important;
+    }
+    .swiper-nav-prev {
+      left: 20px !important;
     }
   }
 </style>
