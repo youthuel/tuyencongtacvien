@@ -182,63 +182,49 @@
     </div>
 
     <!-- Cards -->
-<div class="space-y-6">
-  <!-- 3 card nhỏ (menu) -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div onclick="showTab(1)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-blue-100 transition">
-      <h3 class="font-bold text-lg">Tuổi trẻ sáng tạo</h3>
-      <p class="text-sm text-gray-600">Học thuật & Nghiên cứu</p>
+    <div id="movement-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 scroll-animate">
+      <!-- Card 1 -->
+      <div class="movement-card active cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
+           data-content="content-sang-tao"
+           data-bg="bg-gradient-to-br from-sky-50 to-blue-100"
+           data-color="blue">
+        <div class="flex items-center">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-blue-100 text-blue-500 text-2xl mr-4 shadow-inner">🎓</div>
+          <div>
+            <h3 class="font-bold text-slate-800 text-lg">Tuổi trẻ Sáng tạo</h3>
+            <p class="text-sm text-slate-500">Học thuật & Nghiên cứu</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
+           data-content="content-tinh-nguyen"
+           data-bg="bg-gradient-to-br from-rose-50 to-red-100"
+           data-color="rose">
+        <div class="flex items-center">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-rose-100 text-rose-500 text-2xl mr-4 shadow-inner">❤️</div>
+          <div>
+            <h3 class="font-bold text-slate-800 text-lg">Thanh niên Tình nguyện</h3>
+            <p class="text-sm text-slate-500">Cống hiến & Sẻ chia</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
+           data-content="content-dong-hanh"
+           data-bg="bg-gradient-to-br from-teal-50 to-green-100"
+           data-color="teal">
+        <div class="flex items-center">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-teal-100 text-teal-500 text-2xl mr-4 shadow-inner">🤝</div>
+          <div>
+            <h3 class="font-bold text-slate-800 text-lg">Đồng hành cùng Sinh viên</h3>
+            <p class="text-sm text-slate-500">Hỗ trợ & Phát triển</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div onclick="showTab(2)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-green-100 transition">
-      <h3 class="font-bold text-lg">Thanh niên tình nguyện</h3>
-      <p class="text-sm text-gray-600">Cộng đồng & Xã hội</p>
-    </div>
-    <div onclick="showTab(3)" class="cursor-pointer rounded-2xl shadow-md p-6 text-center bg-white hover:bg-orange-100 transition">
-      <h3 class="font-bold text-lg">Đồng hành cùng sinh viên</h3>
-      <p class="text-sm text-gray-600">Học tập & Phát triển</p>
-    </div>
-  </div>
-
-  <!-- Nội dung hiển thị -->
-  <div id="tab-1" class="p-6 rounded-2xl bg-blue-50 shadow-md">
-    <h4 class="text-xl font-semibold mb-3 text-blue-700">Tuổi trẻ sáng tạo</h4>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Chiến dịch lớn: Mùa hè xanh, Tiếp sức mùa thi...</li>
-      <li>Hoạt động thường xuyên: Hiến máu tình nguyện, Ngày chủ nhật xanh...</li>
-      <li>Chuyên môn hóa: Tổ chức phiên tòa giả định, CLB học thuật...</li>
-    </ul>
-  </div>
-
-  <div id="tab-2" class="p-6 rounded-2xl bg-green-50 shadow-md hidden">
-    <h4 class="text-xl font-semibold mb-3 text-green-700">Thanh niên tình nguyện</h4>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Chiến dịch lớn: Xuân tình nguyện, Chiến dịch mùa hè xanh...</li>
-      <li>Hoạt động thường xuyên: Ngày thứ bảy tình nguyện...</li>
-      <li>Chuyên môn hóa: Đội hình pháp luật, đội hình số...</li>
-    </ul>
-  </div>
-
-  <div id="tab-3" class="p-6 rounded-2xl bg-orange-50 shadow-md hidden">
-    <h4 class="text-xl font-semibold mb-3 text-orange-700">Đồng hành cùng sinh viên</h4>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Hoạt động lớn: Hội thao, Văn nghệ, Sinh viên 5 tốt...</li>
-      <li>Hỗ trợ: Học bổng, Kỹ năng mềm, Tư vấn tâm lý...</li>
-      <li>Đồng hành khác: Ngày hội việc làm, kết nối doanh nghiệp...</li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  function showTab(tabIndex) {
-    // Ẩn tất cả nội dung
-    document.querySelectorAll('[id^="tab-"]').forEach(el => el.classList.add('hidden'));
-    // Hiện nội dung được chọn
-    document.getElementById('tab-' + tabIndex).classList.remove('hidden');
-  }
-</script>
-
-
-
 
     <!-- Contents -->
     <div class="relative max-w-4xl mx-auto scroll-animate" style="transition-delay: 150ms;">
@@ -298,6 +284,18 @@
     </div>
   </div>
 </section>
+
+<!-- Thêm animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+</style>
+
 
 <!-- Thêm animation -->
 <style>
@@ -510,6 +508,7 @@
     </div>
 
 </section>
+
 
 
 
