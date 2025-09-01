@@ -877,19 +877,7 @@
                             const answer = faqItem.querySelector('.faq-answer');
                             const arrow = this.querySelector('.faq-arrow');
                             
-                            // Toggle current answer
-                            answer.classList.toggle('hidden');
-                            
-                            // Rotate arrow
-                            if (answer.classList.contains('hidden')) {
-                                arrow.style.transform = 'rotate(0deg)';
-                            } else {
-                                arrow.style.transform = 'rotate(180deg)';
-                            }
-                            
-                            // Optional: Close other answers (accordion behavior)
-                            // Uncomment the code below if you want only one answer open at a time
-                            /*
+                            // Close all other answers first (accordion behavior)
                             faqQuestions.forEach(otherQuestion => {
                                 if (otherQuestion !== this) {
                                     const otherItem = otherQuestion.closest('.faq-item');
@@ -900,7 +888,16 @@
                                     otherArrow.style.transform = 'rotate(0deg)';
                                 }
                             });
-                            */
+                            
+                            // Toggle current answer
+                            answer.classList.toggle('hidden');
+                            
+                            // Rotate arrow
+                            if (answer.classList.contains('hidden')) {
+                                arrow.style.transform = 'rotate(0deg)';
+                            } else {
+                                arrow.style.transform = 'rotate(180deg)';
+                            }
                         });
                     });
                 };
