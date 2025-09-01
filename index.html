@@ -379,53 +379,175 @@
                     });
                 }
 
-                                // Khởi tạo Swiper cho các gallery trong modal
+                               // Khởi tạo Swiper cho các gallery trong modal
                 function initializeModalSwipers() {
                     console.log('Initializing modal Swipers...');
                     
                     // Khởi tạo Swiper cho Modal Tình Nguyện
                     if (document.querySelector('.gallerySwiper-xuan')) {
-                        new Swiper(".gallerySwiper-xuan", { 
-                            slidesPerView: 2, 
+                        const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+                            slidesPerView: 1, 
                             spaceBetween: 16, 
                             navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
+                            breakpoints: { 
+                                640: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 } 
+                            },
+                            loop: true,
+                            grabCursor: true,
+                            watchOverflow: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
                         });
-                        console.log('Swiper xuan initialized');
+                        
+                        // Thêm event listeners cho navigation buttons
+                        const nextBtnXuan = document.querySelector('.next-xuan');
+                        const prevBtnXuan = document.querySelector('.prev-xuan');
+                        
+                        if (nextBtnXuan) {
+                            nextBtnXuan.addEventListener('click', () => {
+                                console.log('Next button clicked for xuan');
+                                swiperXuan.slideNext();
+                            });
+                        }
+                        if (prevBtnXuan) {
+                            prevBtnXuan.addEventListener('click', () => {
+                                console.log('Prev button clicked for xuan');
+                                swiperXuan.slidePrev();
+                            });
+                        }
+                        
+                        console.log('Swiper xuan initialized with navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-mhx')) {
-                        new Swiper(".gallerySwiper-mhx", { 
-                            slidesPerView: 2, 
+                        const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
+                            slidesPerView: 1, 
                             spaceBetween: 16, 
                             navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
+                            breakpoints: { 
+                                640: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 } 
+                            },
+                            loop: true,
+                            grabCursor: true,
+                            watchOverflow: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
                         });
-                        console.log('Swiper mhx initialized');
+                        
+                        const nextBtnMhx = document.querySelector('.next-mhx');
+                        const prevBtnMhx = document.querySelector('.prev-mhx');
+                        
+                        if (nextBtnMhx) {
+                            nextBtnMhx.addEventListener('click', () => {
+                                console.log('Next button clicked for mhx');
+                                swiperMhx.slideNext();
+                            });
+                        }
+                        if (prevBtnMhx) {
+                            prevBtnMhx.addEventListener('click', () => {
+                                console.log('Prev button clicked for mhx');
+                                swiperMhx.slidePrev();
+                            });
+                        }
+                        
+                        console.log('Swiper mhx initialized with navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-tsmt')) {
-                        new Swiper(".gallerySwiper-tsmt", { 
-                            slidesPerView: 2, 
+                        const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
+                            slidesPerView: 1, 
                             spaceBetween: 16, 
                             navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
+                            breakpoints: { 
+                                640: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 } 
+                            },
+                            loop: true,
+                            grabCursor: true,
+                            watchOverflow: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
                         });
-                        console.log('Swiper tsmt initialized');
+                        
+                        const nextBtnTsmt = document.querySelector('.next-tsmt');
+                        const prevBtnTsmt = document.querySelector('.prev-tsmt');
+                        
+                        if (nextBtnTsmt) {
+                            nextBtnTsmt.addEventListener('click', () => {
+                                console.log('Next button clicked for tsmt');
+                                swiperTsmt.slideNext();
+                            });
+                        }
+                        if (prevBtnTsmt) {
+                            prevBtnTsmt.addEventListener('click', () => {
+                                console.log('Prev button clicked for tsmt');
+                                swiperTsmt.slidePrev();
+                            });
+                        }
+                        
+                        console.log('Swiper tsmt initialized with navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-hmtn')) {
-                        new Swiper(".gallerySwiper-hmtn", { 
-                            slidesPerView: 2, 
+                        const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
+                            slidesPerView: 1, 
                             spaceBetween: 16, 
                             navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
-                            breakpoints: { 768: { slidesPerView: 3 } } 
+                            breakpoints: { 
+                                640: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 } 
+                            },
+                            loop: true,
+                            grabCursor: true,
+                            watchOverflow: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
                         });
-                        console.log('Swiper hmtn initialized');
+                        
+                        const nextBtnHmtn = document.querySelector('.next-hmtn');
+                        const prevBtnHmtn = document.querySelector('.prev-hmtn');
+                        
+                        if (nextBtnHmtn) {
+                            nextBtnHmtn.addEventListener('click', () => {
+                                console.log('Next button clicked for hmtn');
+                                swiperHmtn.slideNext();
+                            });
+                        }
+                        if (prevBtnHmtn) {
+                            prevBtnHmtn.addEventListener('click', () => {
+                                console.log('Prev button clicked for hmtn');
+                                swiperHmtn.slidePrev();
+                            });
+                        }
+                        
+                        console.log('Swiper hmtn initialized with navigation');
                     }
                     
                     console.log('All modal Swipers initialized');
                 }
+
 
                 // Xử lý Tabs cho Modal Tình Nguyện
                 function initializeTinhNguyenTabs() {
@@ -903,6 +1025,7 @@
 </body>
 
 </html>
+
 
 
 
