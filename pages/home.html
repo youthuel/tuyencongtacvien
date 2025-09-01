@@ -17,25 +17,40 @@
     </div>
 </section>
 
-<section class="py-12 bg-gray-50">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-extrabold text-slate-800 mb-6">
+<section class="py-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+  <div class="max-w-5xl mx-auto text-center px-4">
+    
+    <!-- Tiêu đề -->
+    <h2 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 mb-4">
       🎬 Video Hoạt Động Nổi Bật
     </h2>
+    <p class="text-lg text-gray-600 mb-10">
+      Cùng nhìn lại những khoảnh khắc đáng nhớ của Đoàn Trường UEL ✨
+    </p>
 
-    <!-- Wrapper để video responsive -->
-    <div class="relative w-full" style="padding-top: 56.25%;">
+    <!-- Wrapper video responsive -->
+    <div class="relative w-full rounded-2xl shadow-xl overflow-hidden group" style="padding-top: 56.25%;">
       <iframe 
-        class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-        src="https://youtube.com/embed/if3Ouq490w8?si=l5yJ1emlSSbC2636" 
+        class="absolute top-0 left-0 w-full h-full rounded-2xl group-hover:scale-105 transition-transform duration-500"
+        src="https://www.youtube.com/embed/if3Ouq490w8?si=l5yJ1emlSSbC2636" 
         title="YouTube video player" 
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
+
+      <!-- Overlay icon động -->
+      <div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500">
+        <div class="bg-white p-4 rounded-full shadow-lg animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-tr from-green-50 to-cyan-50">
     <div class="deco-shape w-72 h-72 rounded-full bg-green-200/50 -bottom-20 -left-20"></div>
@@ -149,7 +164,7 @@
 
 
 
-<section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-amber-50 to-rose-50">
+<!-- <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-amber-50 to-rose-50">
     <div class="deco-shape w-52 h-52 rounded-full bg-amber-200/50 -top-10 right-10" style="animation-delay: -3s;"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-16 scroll-animate">
@@ -176,7 +191,7 @@
         </div>
     </div>
 </section>
-        
+         -->
 <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-tl from-fuchsia-50 to-purple-100">
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-16 scroll-animate">
@@ -224,6 +239,7 @@
     </div>
 
 </section>
+
 
 
 
