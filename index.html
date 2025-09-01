@@ -677,6 +677,79 @@
                     console.log('All modal Swipers initialized with custom navigation');
                 }
 
+                                // Xử lý Tabs cho Modal Bồi Đắp Lý Tưởng
+                function initializeLyTuongTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-ly-tuong');
+                    console.log('Found ly tuong tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Ly tuong tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-ly-tuong').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing ly tuong content:', btn.dataset.target);
+                                    
+                                    // Khởi tạo lại Swiper cho tab mới được hiển thị
+                                    setTimeout(() => {
+                                        const swiperContainer = targetContent.querySelector('.swiper');
+                                        if (swiperContainer) {
+                                            const swiperClass = swiperContainer.className.split(' ').find(cls => cls.startsWith('swiper-'));
+                                            if (swiperClass) {
+                                                console.log('Reinitializing Swiper for:', swiperClass);
+                                                // Destroy existing Swiper if exists
+                                                const existingSwiper = window[swiperClass.replace('swiper-', 'swiper')];
+                                                if (existingSwiper && existingSwiper.destroy) {
+                                                    existingSwiper.destroy(true, true);
+                                                }
+                                                
+                                                // Initialize new Swiper
+                                                const newSwiper = new Swiper(`.${swiperClass}`, {
+                                                    slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
+                                                    autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+                                                    breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
+                                                });
+                                                
+                                                // Add navigation buttons
+                                                const nextBtn = targetContent.querySelector('.swiper-nav-next');
+                                                const prevBtn = targetContent.querySelector('.swiper-nav-prev');
+                                                if (nextBtn) nextBtn.addEventListener('click', () => newSwiper.slideNext());
+                                                if (prevBtn) prevBtn.addEventListener('click', () => newSwiper.slidePrev());
+                                                
+                                                // Store reference
+                                                window[swiperClass.replace('swiper-', 'swiper')] = newSwiper;
+                                            }
+                                        }
+                                    }, 100);
+                                }
+                            });
+                        });
+                    }
+                }
+
+
+                
                 // Xử lý Tabs cho Modal Tình Nguyện
                 function initializeTinhNguyenTabs() {
                     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -1114,5 +1187,6 @@
 </body>
 
 </html>
+
 
 
