@@ -508,31 +508,25 @@
     </div>
 
 </section>
-
- <!-- Button nổi -->
+  <!-- Button nổi -->
   <button id="openVideoBtn" 
           class="fixed bottom-6 right-6 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition">
     ▶
   </button>
 
-  <!-- Modal Video -->
-  <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50">
+  <!-- Modal Video (ban đầu ẩn nhờ class hidden) -->
+  <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50">
     <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 relative p-4">
-      
       <!-- Nút đóng -->
-      <button id="closeVideoBtn" class="absolute top-3 right-3 text-gray-600 hover:text-black text-xl font-bold">
-        ✕
-      </button>
+      <button id="closeVideoBtn" class="absolute top-3 right-3 text-gray-600 hover:text-black text-xl font-bold">✕</button>
       
       <!-- Video -->
-      <div class="aspect-w-16 aspect-h-9">
-        <iframe id="videoFrame" class="w-full h-96 rounded-lg"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Video demo"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
+      <iframe id="videoFrame" class="w-full h-96 rounded-lg"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
   </div>
 
@@ -540,18 +534,20 @@
     const openBtn = document.getElementById("openVideoBtn");
     const closeBtn = document.getElementById("closeVideoBtn");
     const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoFrame");
 
     openBtn.addEventListener("click", () => {
-      modal.classList.add("active");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex"); // hiện modal
     });
 
     closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      // Dừng video khi đóng
-      const iframe = document.getElementById("videoFrame");
-      iframe.src = iframe.src;
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+      iframe.src = iframe.src; // reset video
     });
   </script>
+
 
 
 
