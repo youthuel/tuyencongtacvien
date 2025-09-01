@@ -545,211 +545,9 @@
                         console.log('Swiper hmtn initialized with custom navigation');
                     }
                     
-                    // Khởi tạo Swiper cho Modal Học Thuật
-                    if (document.querySelector('.swiper-hoc-thuat-1')) {
-                        console.log('Found swiper-hoc-thuat-1, initializing...');
-                        if (window.swiperHocThuat1 && window.swiperHocThuat1.destroy) {
-                            window.swiperHocThuat1.destroy(true, true);
-                        }
-                        const swiperHocThuat1 = new Swiper(".swiper-hoc-thuat-1", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnHt1 = document.querySelector('.swiper-hoc-thuat-1 .swiper-nav-next');
-                        const prevBtnHt1 = document.querySelector('.swiper-hoc-thuat-1 .swiper-nav-prev');
-                        if (nextBtnHt1) nextBtnHt1.addEventListener('click', () => swiperHocThuat1.slideNext());
-                        if (prevBtnHt1) prevBtnHt1.addEventListener('click', () => swiperHocThuat1.slidePrev());
-                        window.swiperHocThuat1 = swiperHocThuat1;
-                        console.log('Swiper hoc-thuat-1 initialized');
-                    }
-                    
-                    if (document.querySelector('.swiper-hoc-thuat-2')) {
-                        console.log('Found swiper-hoc-thuat-2, initializing...');
-                        if (window.swiperHocThuat2 && window.swiperHocThuat2.destroy) {
-                            window.swiperHocThuat2.destroy(true, true);
-                        }
-                        const swiperHocThuat2 = new Swiper(".swiper-hoc-thuat-2", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnHt2 = document.querySelector('.swiper-hoc-thuat-2 .swiper-nav-next');
-                        const prevBtnHt2 = document.querySelector('.swiper-hoc-thuat-2 .swiper-nav-prev');
-                        if (nextBtnHt2) nextBtnHt2.addEventListener('click', () => swiperHocThuat2.slideNext());
-                        if (prevBtnHt2) prevBtnHt2.addEventListener('click', () => swiperHocThuat2.slidePrev());
-                        window.swiperHocThuat2 = swiperHocThuat2;
-                        console.log('Swiper hoc-thuat-2 initialized');
-                    }
-                    
-                    if (document.querySelector('.swiper-hoc-thuat-3')) {
-                        console.log('Found swiper-hoc-thuat-3, initializing...');
-                        if (window.swiperHocThuat3 && window.swiperHocThuat3.destroy) {
-                            window.swiperHocThuat3.destroy(true, true);
-                        }
-                        const swiperHocThuat3 = new Swiper(".swiper-hoc-thuat-3", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnHt3 = document.querySelector('.swiper-hoc-thuat-3 .swiper-nav-next');
-                        const prevBtnHt3 = document.querySelector('.swiper-hoc-thuat-3 .swiper-nav-prev');
-                        if (nextBtnHt3) nextBtnHt3.addEventListener('click', () => swiperHocThuat3.slideNext());
-                        if (prevBtnHt3) prevBtnHt3.addEventListener('click', () => swiperHocThuat3.slidePrev());
-                        window.swiperHocThuat3 = swiperHocThuat3;
-                        console.log('Swiper hoc-thuat-3 initialized');
-                    }
-                    
-                    // Khởi tạo Swiper cho Modal Văn Thể Mỹ
-                    if (document.querySelector('.swiper-vtm-1')) {
-                        console.log('Found swiper-vtm-1, initializing...');
-                        if (window.swiperVtm1 && window.swiperVtm1.destroy) {
-                            window.swiperVtm1.destroy(true, true);
-                        }
-                        const swiperVtm1 = new Swiper(".swiper-vtm-1", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnVtm1 = document.querySelector('.swiper-vtm-1 .swiper-nav-next');
-                        const prevBtnVtm1 = document.querySelector('.swiper-vtm-1 .swiper-nav-prev');
-                        if (nextBtnVtm1) nextBtnVtm1.addEventListener('click', () => swiperVtm1.slideNext());
-                        if (prevBtnVtm1) prevBtnVtm1.addEventListener('click', () => swiperVtm1.slidePrev());
-                        window.swiperVtm1 = swiperVtm1;
-                        console.log('Swiper vtm-1 initialized');
-                    }
-                    
-                    if (document.querySelector('.swiper-vtm-2')) {
-                        console.log('Found swiper-vtm-2, initializing...');
-                        if (window.swiperVtm2 && window.swiperVtm2.destroy) {
-                            window.swiperVtm2.destroy(true, true);
-                        }
-                        const swiperVtm2 = new Swiper(".swiper-vtm-2", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnVtm2 = document.querySelector('.swiper-vtm-2 .swiper-nav-next');
-                        const prevBtnVtm2 = document.querySelector('.swiper-vtm-2 .swiper-nav-prev');
-                        if (nextBtnVtm2) nextBtnVtm2.addEventListener('click', () => swiperVtm2.slideNext());
-                        if (prevBtnVtm2) prevBtnVtm2.addEventListener('click', () => swiperVtm2.slidePrev());
-                        window.swiperVtm2 = swiperVtm2;
-                        console.log('Swiper vtm-2 initialized');
-                    }
-                    
-                    if (document.querySelector('.swiper-vtm-3')) {
-                        console.log('Found swiper-vtm-3, initializing...');
-                        if (window.swiperVtm3 && window.swiperVtm3.destroy) {
-                            window.swiperVtm3.destroy(true, true);
-                        }
-                        const swiperVtm3 = new Swiper(".swiper-vtm-3", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnVtm3 = document.querySelector('.swiper-vtm-3 .swiper-nav-next');
-                        const prevBtnVtm3 = document.querySelector('.swiper-vtm-3 .swiper-nav-prev');
-                        if (nextBtnVtm3) nextBtnVtm3.addEventListener('click', () => swiperVtm3.slideNext());
-                        if (prevBtnVtm3) prevBtnVtm3.addEventListener('click', () => swiperVtm3.slidePrev());
-                        window.swiperVtm3 = swiperVtm3;
-                        console.log('Swiper vtm-3 initialized');
-                    }
-                    
-                    // Khởi tạo Swiper cho Modal Bồi Đắp Lý Tưởng (chỉ tab đầu tiên)
-                    if (document.querySelector('.swiper-ly-tuong-1')) {
-                        console.log('Found swiper-ly-tuong-1, initializing...');
-                        if (window.swiperLyTuong1 && window.swiperLyTuong1.destroy) {
-                            window.swiperLyTuong1.destroy(true, true);
-                        }
-                        const swiperLyTuong1 = new Swiper(".swiper-ly-tuong-1", { 
-                            slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                            autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                            breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                        });
-                        const nextBtnLt1 = document.querySelector('.swiper-ly-tuong-1 .swiper-nav-next');
-                        const prevBtnLt1 = document.querySelector('.swiper-ly-tuong-1 .swiper-nav-prev');
-                        if (nextBtnLt1) nextBtnLt1.addEventListener('click', () => swiperLyTuong1.slideNext());
-                        if (prevBtnLt1) prevBtnLt1.addEventListener('click', () => swiperLyTuong1.slidePrev());
-                        window.swiperLyTuong1 = swiperLyTuong1;
-                        console.log('Swiper ly-tuong-1 initialized');
-                    }
-                    
                     console.log('All modal Swipers initialized with custom navigation');
                 }
 
-                                // Xử lý Tabs cho Modal Bồi Đắp Lý Tưởng
-                function initializeLyTuongTabs() {
-                    const tabButtons = document.querySelectorAll('.tab-btn-ly-tuong');
-                    console.log('Found ly tuong tab buttons:', tabButtons.length);
-                    
-                    if (tabButtons.length > 0) {
-                        tabButtons.forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                
-                                console.log('Ly tuong tab clicked:', btn.dataset.target);
-                                
-                                // Reset tất cả tabs
-                                tabButtons.forEach(b => {
-                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
-                                    b.classList.add('bg-gray-200', 'text-slate-700');
-                                });
-                                
-                                // Active tab được click
-                                btn.classList.remove('bg-gray-200', 'text-slate-700');
-                                btn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
-                                
-                                // Ẩn tất cả nội dung
-                                document.querySelectorAll('.tab-content-ly-tuong').forEach(tab => {
-                                    tab.classList.add('hidden');
-                                });
-                                
-                                // Hiện nội dung tương ứng
-                                const targetContent = document.querySelector(btn.dataset.target);
-                                if (targetContent) {
-                                    targetContent.classList.remove('hidden');
-                                    console.log('Showing ly tuong content:', btn.dataset.target);
-                                    
-                                    // Khởi tạo lại Swiper cho tab mới được hiển thị
-                                    setTimeout(() => {
-                                        const swiperContainer = targetContent.querySelector('.swiper');
-                                        if (swiperContainer) {
-                                            const swiperClass = swiperContainer.className.split(' ').find(cls => cls.startsWith('swiper-'));
-                                            if (swiperClass) {
-                                                console.log('Reinitializing Swiper for:', swiperClass);
-                                                // Destroy existing Swiper if exists
-                                                const existingSwiper = window[swiperClass.replace('swiper-', 'swiper')];
-                                                if (existingSwiper && existingSwiper.destroy) {
-                                                    existingSwiper.destroy(true, true);
-                                                }
-                                                
-                                                // Initialize new Swiper
-                                                const newSwiper = new Swiper(`.${swiperClass}`, {
-                                                    slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                                                    autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                                                    breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                                                });
-                                                
-                                                // Add navigation buttons
-                                                const nextBtn = targetContent.querySelector('.swiper-nav-next');
-                                                const prevBtn = targetContent.querySelector('.swiper-nav-prev');
-                                                if (nextBtn) nextBtn.addEventListener('click', () => newSwiper.slideNext());
-                                                if (prevBtn) prevBtn.addEventListener('click', () => newSwiper.slidePrev());
-                                                
-                                                // Store reference
-                                                window[swiperClass.replace('swiper-', 'swiper')] = newSwiper;
-                                            }
-                                        }
-                                    }, 100);
-                                }
-                            });
-                        });
-                    }
-                }
-
-
-                
                 // Xử lý Tabs cho Modal Tình Nguyện
                 function initializeTinhNguyenTabs() {
                     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -863,6 +661,77 @@
                                 if (targetContent) {
                                     targetContent.classList.remove('hidden');
                                     console.log('Showing VTM content:', btn.dataset.target);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Bồi Đắp Lý Tưởng
+                function initializeLyTuongTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-ly-tuong');
+                    console.log('Found ly tuong tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Ly tuong tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-ly-tuong').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing ly tuong content:', btn.dataset.target);
+                                    
+                                    // Khởi tạo lại Swiper cho tab mới được hiển thị
+                                    setTimeout(() => {
+                                        const swiperContainer = targetContent.querySelector('.swiper');
+                                        if (swiperContainer) {
+                                            const swiperClass = swiperContainer.className.split(' ').find(cls => cls.startsWith('swiper-'));
+                                            if (swiperClass) {
+                                                console.log('Reinitializing Swiper for:', swiperClass);
+                                                // Destroy existing Swiper if exists
+                                                const existingSwiper = window[swiperClass.replace('swiper-', 'swiper')];
+                                                if (existingSwiper && existingSwiper.destroy) {
+                                                    existingSwiper.destroy(true, true);
+                                                }
+                                                
+                                                // Initialize new Swiper
+                                                const newSwiper = new Swiper(`.${swiperClass}`, {
+                                                    slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
+                                                    autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+                                                    breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
+                                                });
+                                                
+                                                // Add navigation buttons
+                                                const nextBtn = targetContent.querySelector('.swiper-nav-next');
+                                                const prevBtn = targetContent.querySelector('.swiper-nav-prev');
+                                                if (nextBtn) nextBtn.addEventListener('click', () => newSwiper.slideNext());
+                                                if (prevBtn) prevBtn.addEventListener('click', () => newSwiper.slidePrev());
+                                                
+                                                // Store reference
+                                                window[swiperClass.replace('swiper-', 'swiper')] = newSwiper;
+                                            }
+                                        }
+                                    }, 100);
                                 }
                             });
                         });
@@ -1000,12 +869,38 @@
 
                 // 8. FAQ ACCORDION: Xử lý xổ ra/thu vào câu hỏi thường gặp
                 const initFAQ = () => {
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.querySelector('.faq-question').addEventListener('click', () => {
-                            document.querySelectorAll('.faq-item').forEach(other => {
-                                if (other !== item) other.classList.remove('open');
+                    const faqQuestions = document.querySelectorAll('.faq-question');
+                    
+                    faqQuestions.forEach(question => {
+                        question.addEventListener('click', function() {
+                            const faqItem = this.closest('.faq-item');
+                            const answer = faqItem.querySelector('.faq-answer');
+                            const arrow = this.querySelector('.faq-arrow');
+                            
+                            // Toggle current answer
+                            answer.classList.toggle('hidden');
+                            
+                            // Rotate arrow
+                            if (answer.classList.contains('hidden')) {
+                                arrow.style.transform = 'rotate(0deg)';
+                            } else {
+                                arrow.style.transform = 'rotate(180deg)';
+                            }
+                            
+                            // Optional: Close other answers (accordion behavior)
+                            // Uncomment the code below if you want only one answer open at a time
+                            /*
+                            faqQuestions.forEach(otherQuestion => {
+                                if (otherQuestion !== this) {
+                                    const otherItem = otherQuestion.closest('.faq-item');
+                                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                                    const otherArrow = otherQuestion.querySelector('.faq-arrow');
+                                    
+                                    otherAnswer.classList.add('hidden');
+                                    otherArrow.style.transform = 'rotate(0deg)';
+                                }
                             });
-                            item.classList.toggle('open');
+                            */
                         });
                     });
                 };
@@ -1188,7 +1083,5 @@
 </body>
 
 </html>
-
-
 
 
