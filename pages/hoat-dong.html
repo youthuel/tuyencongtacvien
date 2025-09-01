@@ -109,8 +109,8 @@
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/xtn-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next next-xuan"></div>
-          <div class="swiper-button-prev prev-xuan"></div>
+          <div class="swiper-nav-btn swiper-nav-next"></div>
+          <div class="swiper-nav-btn swiper-nav-prev"></div>
         </div>
       </div>
 
@@ -126,8 +126,8 @@
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/mhx-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next next-mhx"></div>
-          <div class="swiper-button-prev prev-mhx"></div>
+          <div class="swiper-nav-btn swiper-nav-next"></div>
+          <div class="swiper-nav-btn swiper-nav-prev"></div>
         </div>
       </div>
 
@@ -143,8 +143,8 @@
           <div class="swiper-slide"><img src="pic/hoat-dong/th-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           <div class="swiper-slide"><img src="pic/hoat-dong/th-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next next-tsmt"></div>
-          <div class="swiper-button-prev prev-tsmt"></div>
+          <div class="swiper-nav-btn swiper-nav-next"></div>
+          <div class="swiper-nav-btn swiper-nav-prev"></div>
         </div>
       </div>
 
@@ -160,8 +160,8 @@
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
             <div class="swiper-slide"><img src="pic/hoat-dong/hm-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
           </div>
-          <div class="swiper-button-next next-hmtn"></div>
-          <div class="swiper-button-prev prev-hmtn"></div>
+          <div class="swiper-nav-btn swiper-nav-next"></div>
+          <div class="swiper-nav-btn swiper-nav-prev"></div>
         </div>
       </div>
 
@@ -320,7 +320,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* CSS đơn giản cho Swiper navigation buttons */
+  /* CSS đơn giản cho Swiper */
   .swiper {
     position: relative !important;
     width: 100% !important;
@@ -347,14 +347,13 @@
     border-radius: 12px !important;
   }
 
-  /* Navigation buttons - đơn giản và hiệu quả */
-  .swiper-button-next,
-  .swiper-button-prev {
+  /* Custom navigation buttons - đơn giản và hiệu quả */
+  .swiper-nav-btn {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 48px !important;
-    height: 48px !important;
+    width: 40px !important;
+    height: 40px !important;
     background: rgba(255, 255, 255, 0.95) !important;
     border-radius: 50% !important;
     color: #3b82f6 !important;
@@ -364,50 +363,36 @@
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
     z-index: 1000 !important;
     cursor: pointer !important;
+    border: none !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
     transition: all 0.3s ease !important;
   }
 
-  .swiper-button-next {
-    right: 15px !important;
-  }
-
-  .swiper-button-prev {
-    left: 15px !important;
-  }
-
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
+  .swiper-nav-btn:hover {
     background: rgba(255, 255, 255, 1) !important;
     transform: translateY(-50%) scale(1.1) !important;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
-  /* Custom navigation icons */
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    content: '›' !important;
-    font-size: 24px !important;
-    font-weight: bold !important;
-    color: #3b82f6 !important;
+  .swiper-nav-next {
+    right: 16px !important;
   }
 
-  .swiper-button-prev:after {
-    content: '‹' !important;
-  }
-
-  /* Đảm bảo Swiper containers có position relative */
-  .gallerySwiper-xuan,
-  .gallerySwiper-mhx,
-  .gallerySwiper-tsmt,
-  .gallerySwiper-hmtn {
-    position: relative !important;
-    overflow: visible !important;
+  .swiper-nav-prev {
+    left: 16px !important;
   }
 
   /* Responsive */
   @media (max-width: 640px) {
     .swiper-slide {
       width: 100% !important;
+    }
+    
+    .swiper-nav-btn {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: 18px !important;
     }
   }
 </style>
