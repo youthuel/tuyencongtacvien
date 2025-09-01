@@ -360,15 +360,16 @@
   };
 
   function openModal(id) {
-    const data = leaders[id];
-    document.getElementById("modal-content").innerHTML = `
-      <img src="${data.img}" class="w-full h-60 object-cover rounded-lg shadow mb-4">
-      <h2 class="text-2xl font-bold text-indigo-600">${data.name}</h2>
-      <p class="text-sm text-slate-600 mb-4">${data.role}</p>
-      <ul class="list-disc pl-5 space-y-2 text-slate-700">
-        ${data.details.map(d => `<li>${d}</li>`).join("")}
-      </ul>
-    `;
+    // const data = leaders[id];
+    // document.getElementById("modal-content").innerHTML = `
+    //   <img src="${data.img}" class="w-full h-60 object-cover rounded-lg shadow mb-4">
+    //   <h2 class="text-2xl font-bold text-indigo-600">${data.name}</h2>
+    //   <p class="text-sm text-slate-600 mb-4">${data.role}</p>
+    //   <ul class="list-disc pl-5 space-y-2 text-slate-700">
+    //     ${data.details.map(d => `<li>${d}</li>`).join("")}
+    //   </ul>
+    // `
+      alert("Bạn vừa click: " + id);;
     document.getElementById("modal-detail").classList.remove("hidden");
   }
 
@@ -393,6 +394,7 @@
     </div>
 
 </section>
+
 
 
 
