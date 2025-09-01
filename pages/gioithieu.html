@@ -182,49 +182,58 @@
     </div>
 
     <!-- Cards -->
-    <div id="movement-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 scroll-animate">
-      <!-- Card 1 -->
-      <div class="movement-card active cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
-           data-content="content-sang-tao"
-           data-bg="bg-gradient-to-br from-sky-50 to-blue-100"
-           data-color="blue">
-        <div class="flex items-center">
-          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-blue-100 text-blue-500 text-2xl mr-4 shadow-inner">🎓</div>
-          <div>
-            <h3 class="font-bold text-slate-800 text-lg">Tuổi trẻ Sáng tạo</h3>
-            <p class="text-sm text-slate-500">Học thuật & Nghiên cứu</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
-           data-content="content-tinh-nguyen"
-           data-bg="bg-gradient-to-br from-rose-50 to-red-100"
-           data-color="rose">
-        <div class="flex items-center">
-          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-rose-100 text-rose-500 text-2xl mr-4 shadow-inner">❤️</div>
-          <div>
-            <h3 class="font-bold text-slate-800 text-lg">Thanh niên Tình nguyện</h3>
-            <p class="text-sm text-slate-500">Cống hiến & Sẻ chia</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="movement-card cursor-pointer p-6 rounded-2xl transition-all duration-300 border-2 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1"
-           data-content="content-dong-hanh"
-           data-bg="bg-gradient-to-br from-teal-50 to-green-100"
-           data-color="teal">
-        <div class="flex items-center">
-          <div class="w-14 h-14 rounded-full flex items-center justify-center bg-teal-100 text-teal-500 text-2xl mr-4 shadow-inner">🤝</div>
-          <div>
-            <h3 class="font-bold text-slate-800 text-lg">Đồng hành cùng Sinh viên</h3>
-            <p class="text-sm text-slate-500">Hỗ trợ & Phát triển</p>
-          </div>
-        </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Card 1 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6">
+    <!-- Icon + Tiêu đề -->
+    <div class="flex items-center gap-3 mb-4">
+      <img src="icon1.png" alt="icon" class="w-10 h-10">
+      <div>
+        <h3 class="text-lg font-bold">Tuổi trẻ Sáng tạo</h3>
+        <p class="text-gray-500 text-sm">Học thuật & Nghiên cứu</p>
       </div>
     </div>
+    <!-- Nội dung -->
+    <ul class="space-y-2 text-gray-700">
+      <li><span class="font-semibold">Các chiến dịch lớn:</span> Mùa hè xanh, Tiếp sức mùa thi...</li>
+      <li><span class="font-semibold">Hoạt động thường xuyên:</span> Hiến máu tình nguyện, Ngày chủ nhật xanh...</li>
+      <li><span class="font-semibold">Chuyên môn hóa:</span> Tổ chức phiên tòa giả định, CLB học thuật...</li>
+    </ul>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6">
+    <div class="flex items-center gap-3 mb-4">
+      <img src="icon2.png" alt="icon" class="w-10 h-10">
+      <div>
+        <h3 class="text-lg font-bold">Thanh niên Tình nguyện</h3>
+        <p class="text-gray-500 text-sm">Cộng đồng & Xã hội</p>
+      </div>
+    </div>
+    <ul class="space-y-2 text-gray-700">
+      <li><span class="font-semibold">Các chiến dịch lớn:</span> Xuân tình nguyện, Chiến dịch mùa hè xanh...</li>
+      <li><span class="font-semibold">Hoạt động thường xuyên:</span> Ngày thứ bảy tình nguyện...</li>
+      <li><span class="font-semibold">Chuyên môn hóa:</span> Đội hình pháp luật, đội hình số...</li>
+    </ul>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6">
+    <div class="flex items-center gap-3 mb-4">
+      <img src="icon3.png" alt="icon" class="w-10 h-10">
+      <div>
+        <h3 class="text-lg font-bold">Đồng hành cùng Sinh viên</h3>
+        <p class="text-gray-500 text-sm">Học tập & Phát triển</p>
+      </div>
+    </div>
+    <ul class="space-y-2 text-gray-700">
+      <li><span class="font-semibold">Các hoạt động lớn:</span> Hội thao, Văn nghệ, Sinh viên 5 tốt...</li>
+      <li><span class="font-semibold">Hỗ trợ:</span> Học bổng, Kỹ năng mềm, Tư vấn tâm lý...</li>
+      <li><span class="font-semibold">Đồng hành khác:</span> Ngày hội việc làm, kết nối doanh nghiệp...</li>
+    </ul>
+  </div>
+</div>
+
 
     <!-- Contents -->
     <div class="relative max-w-4xl mx-auto scroll-animate" style="transition-delay: 150ms;">
@@ -496,6 +505,7 @@
     </div>
 
 </section>
+
 
 
 
