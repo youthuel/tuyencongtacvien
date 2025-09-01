@@ -130,6 +130,12 @@
         .stat-card { transition: all 0.3s ease-out; }
         .stat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         .activity-content { animation: fadeIn-10 0.5s ease-in-out;   
+        #videoModal {
+  display: none;
+}
+#videoModal.active {
+  display: flex;
+}
                            
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
@@ -1257,6 +1263,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
