@@ -153,70 +153,116 @@
     </div>
 </section>
 
-<section class="relative overflow-hidden py-20 md:py-24 bg-slate-50">
+<section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
     <div class="container mx-auto px-6">
-         <div class="text-center mb-12 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Giải Đáp Thắc Mắc (FAQ)</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé!</p>
+         <div class="text-center mb-16 scroll-animate">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Giải Đáp Thắc Mắc</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé! 💫</p>
         </div>
-        <div class="max-w-3xl mx-auto space-y-4 scroll-animate" style="transition-delay: 150ms;">
+        
+        <div class="max-w-4xl mx-auto space-y-6 scroll-animate" style="transition-delay: 150ms;">
             
-            <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden">
-                <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-slate-800 hover:bg-gray-50 transition-colors">
-                    <span>Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không?</span>
-                    <svg class="faq-arrow w-5 h-5 text-slate-500 transition-transform duration-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
+                    <span class="text-lg leading-relaxed">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
+                    <div class="flex-shrink-0 ml-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </button>
                 <div class="faq-answer hidden">
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p>Hoàn toàn có thể! Chúng mình chào đón tất cả các bạn sinh viên có nhiệt huyết và mong muốn cống hiến. Kinh nghiệm là một lợi thế, nhưng tinh thần ham học hỏi và sự cam kết mới là điều quan trọng nhất. Bạn sẽ được đào tạo và hướng dẫn trong suốt quá trình hoạt động.</p>
+                    <div class="px-6 pb-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
+                            <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Chúng mình chào đón tất cả các bạn sinh viên có nhiệt huyết và mong muốn cống hiến. Kinh nghiệm là một lợi thế, nhưng tinh thần ham học hỏi và sự cam kết mới là điều quan trọng nhất. Bạn sẽ được đào tạo và hướng dẫn trong suốt quá trình hoạt động. 🌟</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden">
-                <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-slate-800 hover:bg-gray-50 transition-colors">
-                    <span>Thời gian hoạt động có ảnh hưởng đến việc học không?</span>
-                    <svg class="faq-arrow w-5 h-5 text-slate-500 transition-transform duration-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
+                    <span class="text-lg leading-relaxed">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
+                    <div class="flex-shrink-0 ml-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </button>
                 <div class="faq-answer hidden">
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu. Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn.</p>
+                    <div class="px-6 pb-6">
+                        <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
+                            <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden">
-                <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-slate-800 hover:bg-gray-50 transition-colors">
-                    <span>Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì?</span>
-                    <svg class="faq-arrow w-5 h-5 text-slate-500 transition-transform duration-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
+                    <span class="text-lg leading-relaxed">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
+                    <div class="flex-shrink-0 ml-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </button>
                 <div class="faq-answer hidden">
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p>Bạn sẽ được phát triển toàn diện các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa.</p>
+                    <div class="px-6 pb-6">
+                        <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
+                            <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển toàn diện!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden">
-                <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-slate-800 hover:bg-gray-50 transition-colors">
-                    <span>Hoạt động trong Đoàn có được cộng điểm rèn luyện không?</span>
-                    <svg class="faq-arrow w-5 h-5 text-slate-500 transition-transform duration-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
+                    <span class="text-lg leading-relaxed">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
+                    <div class="flex-shrink-0 ml-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </button>
                 <div class="faq-answer hidden">
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p>Chắc chắn rồi! Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng.</p>
+                    <div class="px-6 pb-6">
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
+                            <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden">
-                <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold text-slate-800 hover:bg-gray-50 transition-colors">
-                    <span>Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không?</span>
-                    <svg class="faq-arrow w-5 h-5 text-slate-500 transition-transform duration-300 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
+                    <span class="text-lg leading-relaxed">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
+                    <div class="flex-shrink-0 ml-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </button>
                 <div class="faq-answer hidden">
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p>Chúng mình khuyến khích bạn nên tìm hiểu kỹ và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký.</p>
+                    <div class="px-6 pb-6">
+                        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
+                            <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,44 +318,4 @@
         </div>
     </div>
 </section>
-
-<script>
-// FAQ Accordion Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const faqItem = this.closest('.faq-item');
-            const answer = faqItem.querySelector('.faq-answer');
-            const arrow = this.querySelector('.faq-arrow');
-            
-            // Toggle current answer
-            answer.classList.toggle('hidden');
-            
-            // Rotate arrow
-            if (answer.classList.contains('hidden')) {
-                arrow.style.transform = 'rotate(0deg)';
-            } else {
-                arrow.style.transform = 'rotate(180deg)';
-            }
-            
-            // Optional: Close other answers (accordion behavior)
-            // Uncomment the code below if you want only one answer open at a time
-            /*
-            faqQuestions.forEach(otherQuestion => {
-                if (otherQuestion !== this) {
-                    const otherItem = otherQuestion.closest('.faq-item');
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    const otherArrow = otherQuestion.querySelector('.faq-arrow');
-                    
-                    otherAnswer.classList.add('hidden');
-                    otherArrow.style.transform = 'rotate(0deg)';
-                }
-            });
-            */
-        });
-    });
-});
-</script>
 
