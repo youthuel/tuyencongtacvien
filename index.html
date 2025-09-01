@@ -246,35 +246,11 @@
         .category-card:hover { transform: translateY(-10px) rotate(-2deg); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
         .swiper-container { width: 100%; padding: 50px 0; }
         .swiper-slide { will-change: transform; width: 100%; height: auto; border-radius: 1.5rem; overflow: hidden; transition: transform 0.4s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
-/*         .movement-card { background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-color: transparent; }
+        .movement-card { background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-color: transparent; }
         .movement-card.active { transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); background-color: white; }
         .movement-card[data-color="blue"].active { border-color: #3b82f6; }
         .movement-card[data-color="rose"].active { border-color: #f43f5e; }
-        .movement-card[data-color="teal"].active { border-color: #14b8a6; } */
-          .movement-card {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  .movement-card.active {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    background-color: #fff;
-  }
-  .movement-card[data-color="blue"].active {
-    border-color: #3b82f6; /* xanh dương */
-    box-shadow: 0 8px 25px rgba(59,130,246,0.35);
-  }
-  .movement-card[data-color="rose"].active {
-    border-color: #f43f5e; /* hồng */
-    box-shadow: 0 8px 25px rgba(244,63,94,0.35);
-  }
-  .movement-card[data-color="teal"].active {
-    border-color: #14b8a6; /* xanh ngọc */
-    box-shadow: 0 8px 25px rgba(20,184,166,0.35);
-  }
+        .movement-card[data-color="teal"].active { border-color: #14b8a6; }
         .movement-content { animation: fadeIn-15 0.6s ease-in-out; }
         .carousel-item { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; }
         .carousel-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -1281,6 +1257,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
