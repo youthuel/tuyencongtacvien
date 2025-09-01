@@ -320,84 +320,23 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* CSS cho Swiper navigation buttons */
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #3b82f6 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-radius: 50% !important;
-    width: 48px !important;
-    height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
-    transition: all 0.3s ease !important;
-    z-index: 100 !important;
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    margin-top: 0 !important;
-  }
-
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    transform: translateY(-50%) scale(1.1) !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  .swiper-button-next {
-    right: 15px !important;
-  }
-
-  .swiper-button-prev {
-    left: 15px !important;
-  }
-
-  /* Custom navigation icons */
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    content: '›' !important;
-    font-size: 24px !important;
-    font-weight: bold !important;
-    color: #3b82f6 !important;
-    pointer-events: none !important;
-  }
-
-  .swiper-button-next:after {
-    content: '›' !important;
-  }
-
-  .swiper-button-prev:after {
-    content: '‹' !important;
-  }
-
-  /* Đảm bảo Swiper container có position relative */
+  /* CSS đơn giản cho Swiper navigation buttons */
   .swiper {
     position: relative !important;
-    overflow: visible !important;
     width: 100% !important;
     height: auto !important;
     min-height: 300px !important;
   }
 
-  /* Đảm bảo Swiper slides hiển thị đúng */
   .swiper-wrapper {
     display: flex !important;
-    transition-property: transform !important;
     width: 100% !important;
-    position: relative !important;
   }
 
   .swiper-slide {
     flex-shrink: 0 !important;
     width: 100% !important;
     height: auto !important;
-    position: relative !important;
-    overflow: hidden !important;
   }
 
   .swiper-slide img {
@@ -408,146 +347,68 @@
     border-radius: 12px !important;
   }
 
-  /* Sửa lỗi slide width trên mobile */
-  @media (max-width: 640px) {
-    .swiper-slide {
-      width: 100% !important;
-    }
-  }
-
-  /* Đảm bảo Swiper container có kích thước đúng */
-  .gallerySwiper-xuan,
-  .gallerySwiper-mhx,
-  .gallerySwiper-tsmt,
-  .gallerySwiper-hmtn {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 300px !important;
-    position: relative !important;
-    overflow: visible !important;
-  }
-
-  /* Đảm bảo navigation buttons cố định ở vị trí đúng */
-  .gallerySwiper-xuan .swiper-button-next,
-  .gallerySwiper-xuan .swiper-button-prev,
-  .gallerySwiper-mhx .swiper-button-next,
-  .gallerySwiper-mhx .swiper-button-prev,
-  .gallerySwiper-tsmt .swiper-button-next,
-  .gallerySwiper-tsmt .swiper-button-prev,
-  .gallerySwiper-hmtn .swiper-button-next,
-  .gallerySwiper-hmtn .swiper-button-prev {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 100 !important;
-    pointer-events: auto !important;
-  }
-
-  /* Ẩn navigation buttons mặc định của Swiper */
-  .swiper-button-next.swiper-button-disabled,
-  .swiper-button-prev.swiper-button-disabled {
-    opacity: 0.3 !important;
-  }
-
-  /* Đảm bảo navigation buttons có thể click */
-  .swiper-button-next,
-  .swiper-button-prev {
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-  }
-
-  /* Đảm bảo navigation buttons không bị ẩn */
-  .swiper-button-next.swiper-button-hidden,
-  .swiper-button-prev.swiper-button-hidden {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-  }
-
-  /* Thêm hiệu ứng hover rõ ràng */
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    transform: translateY(-50%) scale(1.1) !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  /* Đảm bảo navigation buttons luôn hiển thị */
-  .swiper-container .swiper-button-next,
-  .swiper-container .swiper-button-prev {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Đảm bảo Swiper navigation buttons hoạt động */
+  /* Navigation buttons - đơn giản và hiệu quả */
   .swiper-button-next,
   .swiper-button-prev {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    z-index: 100 !important;
+    width: 48px !important;
+    height: 48px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50% !important;
+    color: #3b82f6 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    z-index: 1000 !important;
     cursor: pointer !important;
-    pointer-events: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
+    transition: all 0.3s ease !important;
   }
 
-  /* Đảm bảo Swiper container có position relative */
-  .gallerySwiper-xuan,
-  .gallerySwiper-mhx,
-  .gallerySwiper-tsmt,
-  .gallerySwiper-hmtn {
-    position: relative !important;
-    overflow: visible !important;
-  }
-
-  /* Đảm bảo navigation buttons không bị ảnh hưởng bởi scroll */
-  .swiper-button-next,
-  .swiper-button-prev {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 100 !important;
-    pointer-events: auto !important;
-    transform-origin: center center !important;
-    will-change: transform !important;
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-  }
-
-  /* Đảm bảo navigation buttons cố định hoàn toàn */
   .swiper-button-next {
     right: 15px !important;
-    left: auto !important;
   }
 
   .swiper-button-prev {
     left: 15px !important;
-    right: auto !important;
   }
 
-  /* Đảm bảo Swiper container có overflow visible để navigation buttons hiển thị */
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Custom navigation icons */
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    content: '›' !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #3b82f6 !important;
+  }
+
+  .swiper-button-prev:after {
+    content: '‹' !important;
+  }
+
+  /* Đảm bảo Swiper containers có position relative */
   .gallerySwiper-xuan,
   .gallerySwiper-mhx,
   .gallerySwiper-tsmt,
   .gallerySwiper-hmtn {
-    overflow: visible !important;
     position: relative !important;
+    overflow: visible !important;
   }
 
-  /* Đảm bảo navigation buttons không bị ảnh hưởng bởi transform của slides */
-  .swiper-wrapper {
-    transform-style: flat !important;
-  }
-
-  .swiper-slide {
-    transform-style: flat !important;
+  /* Responsive */
+  @media (max-width: 640px) {
+    .swiper-slide {
+      width: 100% !important;
+    }
   }
 </style>
 
