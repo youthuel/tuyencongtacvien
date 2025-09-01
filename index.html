@@ -930,35 +930,74 @@
                 }
                 
                 // 7. MOVEMENT CARDS: Xử lý click và đổi nền cho phần Phong trào
-                const initMovementCards = () => {
-                    const container = document.getElementById('movement-cards-container');
-                    if (!container) return;
+                // const initMovementCards = () => {
+                //     const container = document.getElementById('movement-cards-container');
+                //     if (!container) return;
 
-                    const cards = container.querySelectorAll('.movement-card');
-                    const contents = document.querySelectorAll('.movement-content');
-                    const mainSection = document.getElementById('phong-trao-section');
-                    const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+                //     const cards = container.querySelectorAll('.movement-card');
+                //     const contents = document.querySelectorAll('.movement-content');
+                //     const mainSection = document.getElementById('phong-trao-section');
+                //     const bgClasses = Array.from(cards).map(c => c.dataset.bg);
 
-                    cards.forEach(card => {
-                        card.addEventListener('click', () => {
-                            cards.forEach(c => c.classList.remove('active'));
-                            card.classList.add('active');
+                //     cards.forEach(card => {
+                //         card.addEventListener('click', () => {
+                //             cards.forEach(c => c.classList.remove('active'));
+                //             card.classList.add('active');
 
-                            const targetId = card.dataset.content;
-                            contents.forEach(content => {
-                                content.classList.toggle('hidden', content.id !== targetId);
-                            });
+                //             const targetId = card.dataset.content;
+                //             contents.forEach(content => {
+                //                 content.classList.toggle('hidden', content.id !== targetId);
+                //             });
 
-                            if (mainSection) {
-                                const newBg = card.dataset.bg;
-                                mainSection.classList.remove(...bgClasses);
-                                mainSection.classList.add(...newBg.split(' '));
-                            }
-                        });
-                    });
-                };
-                initMovementCards();
+                //             if (mainSection) {
+                //                 const newBg = card.dataset.bg;
+                //                 mainSection.classList.remove(...bgClasses);
+                //                 mainSection.classList.add(...newBg.split(' '));
+                //             }
+                //         });
+                //     });
+                // };
+                // initMovementCards();
+const initMovementCards = () => {
+  const container = document.getElementById('movement-cards-container');
+  if (!container) return;
 
+  const cards = container.querySelectorAll('.movement-card');
+  const contents = document.querySelectorAll('.movement-content');
+  const mainSection = document.getElementById('phong-trao-section');
+  const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+
+  // 👉 Set mặc định card đầu tiên
+  if (cards.length > 0) {
+    cards[0].classList.add('active'); 
+    const defaultContent = cards[0].dataset.content;
+    document.getElementById(defaultContent).classList.remove('hidden');
+
+    if (mainSection) {
+      const newBg = cards[0].dataset.bg;
+      mainSection.classList.add(...newBg.split(' '));
+    }
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      const targetId = card.dataset.content;
+      contents.forEach(content => {
+        content.classList.toggle('hidden', content.id !== targetId);
+      });
+
+      if (mainSection) {
+        const newBg = card.dataset.bg;
+        mainSection.classList.remove(...bgClasses);
+        mainSection.classList.add(...newBg.split(' '));
+      }
+    });
+  });
+};
+initMovementCards();
                 // 8. FAQ ACCORDION: Xử lý xổ ra/thu vào câu hỏi thường gặp
                 const initFAQ = () => {
                     const faqQuestions = document.querySelectorAll('.faq-question');
@@ -1175,6 +1214,7 @@
 </body>
 
 </html>
+
 
 
 
