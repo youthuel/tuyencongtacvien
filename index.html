@@ -396,11 +396,6 @@
                         const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
-                            navigation: { nextEl: ".next-xuan", prevEl: ".prev-xuan" }, 
-                            breakpoints: { 
-                                640: { slidesPerView: 2 },
-                                768: { slidesPerView: 3 } 
-                            },
                             loop: true,
                             grabCursor: true,
                             autoplay: {
@@ -410,9 +405,24 @@
                             }
                         });
                         
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnXuan = document.querySelector('.gallerySwiper-xuan .swiper-nav-next');
+                        const prevBtnXuan = document.querySelector('.gallerySwiper-xuan .swiper-nav-prev');
+                        
+                        if (nextBtnXuan) {
+                            nextBtnXuan.addEventListener('click', () => {
+                                swiperXuan.slideNext();
+                            });
+                        }
+                        if (prevBtnXuan) {
+                            prevBtnXuan.addEventListener('click', () => {
+                                swiperXuan.slidePrev();
+                            });
+                        }
+                        
                         // Store reference globally
                         window.swiperXuan = swiperXuan;
-                        console.log('Swiper xuan initialized');
+                        console.log('Swiper xuan initialized with custom navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-mhx')) {
@@ -426,11 +436,6 @@
                         const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
-                            navigation: { nextEl: ".next-mhx", prevEl: ".prev-mhx" }, 
-                            breakpoints: { 
-                                640: { slidesPerView: 2 },
-                                768: { slidesPerView: 3 } 
-                            },
                             loop: true,
                             grabCursor: true,
                             autoplay: {
@@ -440,9 +445,24 @@
                             }
                         });
                         
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnMhx = document.querySelector('.gallerySwiper-mhx .swiper-nav-next');
+                        const prevBtnMhx = document.querySelector('.gallerySwiper-mhx .swiper-nav-prev');
+                        
+                        if (nextBtnMhx) {
+                            nextBtnMhx.addEventListener('click', () => {
+                                swiperMhx.slideNext();
+                            });
+                        }
+                        if (prevBtnMhx) {
+                            prevBtnMhx.addEventListener('click', () => {
+                                swiperMhx.slidePrev();
+                            });
+                        }
+                        
                         // Store reference globally
                         window.swiperMhx = swiperMhx;
-                        console.log('Swiper mhx initialized');
+                        console.log('Swiper mhx initialized with custom navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-tsmt')) {
@@ -456,11 +476,6 @@
                         const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
-                            navigation: { nextEl: ".next-tsmt", prevEl: ".prev-tsmt" }, 
-                            breakpoints: { 
-                                640: { slidesPerView: 2 },
-                                768: { slidesPerView: 3 } 
-                            },
                             loop: true,
                             grabCursor: true,
                             autoplay: {
@@ -470,9 +485,24 @@
                             }
                         });
                         
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnTsmt = document.querySelector('.gallerySwiper-tsmt .swiper-nav-next');
+                        const prevBtnTsmt = document.querySelector('.gallerySwiper-tsmt .swiper-nav-prev');
+                        
+                        if (nextBtnTsmt) {
+                            nextBtnTsmt.addEventListener('click', () => {
+                                swiperTsmt.slideNext();
+                            });
+                        }
+                        if (prevBtnTsmt) {
+                            prevBtnTsmt.addEventListener('click', () => {
+                                swiperTsmt.slidePrev();
+                            });
+                        }
+                        
                         // Store reference globally
                         window.swiperTsmt = swiperTsmt;
-                        console.log('Swiper tsmt initialized');
+                        console.log('Swiper tsmt initialized with custom navigation');
                     }
                     
                     if (document.querySelector('.gallerySwiper-hmtn')) {
@@ -486,11 +516,6 @@
                         const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
-                            navigation: { nextEl: ".next-hmtn", prevEl: ".prev-hmtn" }, 
-                            breakpoints: { 
-                                640: { slidesPerView: 2 },
-                                768: { slidesPerView: 3 } 
-                            },
                             loop: true,
                             grabCursor: true,
                             autoplay: {
@@ -500,12 +525,27 @@
                             }
                         });
                         
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnHmtn = document.querySelector('.gallerySwiper-hmtn .swiper-nav-next');
+                        const prevBtnHmtn = document.querySelector('.gallerySwiper-hmtn .swiper-nav-prev');
+                        
+                        if (nextBtnHmtn) {
+                            nextBtnHmtn.addEventListener('click', () => {
+                                swiperHmtn.slideNext();
+                            });
+                        }
+                        if (prevBtnHmtn) {
+                            prevBtnHmtn.addEventListener('click', () => {
+                                swiperHmtn.slidePrev();
+                            });
+                        }
+                        
                         // Store reference globally
                         window.swiperHmtn = swiperHmtn;
-                        console.log('Swiper hmtn initialized');
+                        console.log('Swiper hmtn initialized with custom navigation');
                     }
                     
-                    console.log('All modal Swipers initialized');
+                    console.log('All modal Swipers initialized with custom navigation');
                 }
 
                 // Xử lý Tabs cho Modal Tình Nguyện
