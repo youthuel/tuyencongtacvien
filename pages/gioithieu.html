@@ -248,129 +248,135 @@
   </div>
 </section>
 
-<!-- Import Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <section class="py-16 bg-gradient-to-br from-blue-100 via-indigo-100 to-pink-100">
   <div class="max-w-7xl mx-auto px-6">
-    <!-- Tiêu đề -->
     <h2 class="text-4xl font-extrabold text-center 
       bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 
       text-transparent bg-clip-text mb-12">
       🌟 Gương Cán Bộ Đoàn Tiêu Biểu
     </h2>
 
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-
-        <!-- Card -->
-        <div class="swiper-slide bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
-          <div class="relative">
-            <img src="pic/canbo/cb1.jpg" alt="Nguyễn Văn A"
-                 class="w-full h-60 object-cover">
-            <span class="absolute top-3 left-3 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs px-3 py-1 rounded-full shadow">
-              🏆 Xuất sắc
-            </span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">
-              Đ/c Phạm Văn Dư
-            </h3>
-            <p class="text-sm text-indigo-600 font-semibold">Nguyên Ủy viên Ban Thường vụ Đoàn Trường</p>
-            <ul class="mt-3 text-slate-600 text-sm space-y-2">
-              <li>✨ Giải Ba cuộc thi Bí thư Đoàn cơ sở giỏi TP. HCM năm 2023</li>
-              <li>🌱 Tham gia....</li>
-            </ul>
-          </div>
+    <!-- Grid hiển thị card -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Card 1 -->
+      <div onclick="openModal('cb1')" class="cursor-pointer bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
+        <div class="relative">
+          <img src="pic/canbo/cb1.jpg" alt="Nguyễn Văn A"
+               class="w-full h-60 object-cover">
+          <span class="absolute top-3 left-3 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs px-3 py-1 rounded-full shadow">
+            🏆 Xuất sắc
+          </span>
         </div>
-
-        <!-- Card khác -->
-        <div class="swiper-slide bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
-          <div class="relative">
-            <img src="pic/canbo/cb2.jpg" alt="Trần Thị B"
-                 class="w-full h-60 object-cover">
-            <span class="absolute top-3 left-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs px-3 py-1 rounded-full shadow">
-              🌟 Tiên tiến
-            </span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 text-transparent bg-clip-text">
-              Đ/c Trần Lê Trọng Văn
-            </h3>
-            <p class="text-sm text-indigo-600 font-semibold">Ủy viên Ban Thường vụ Đoàn Trường</p>
-            <ul class="mt-3 text-slate-600 text-sm space-y-2">
-              <li>🏅 Sinh viên 5 tốt cấp Trung ương năm 2024</li>
-              <li>☀️ Giải Nhất cuộc thi Bản lĩnh Cán bộ Đoàn năm 2023</li>
-            </ul>
-          </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">
+            Đ/c Phạm Văn Dư
+          </h3>
+          <p class="text-sm text-indigo-600 font-semibold">Nguyên Ủy viên Ban Thường vụ Đoàn Trường</p>
         </div>
-
-        <!-- Card khác -->
-        <div class="swiper-slide bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
-          <div class="relative">
-            <img src="pic/canbo/cb3.jpg" alt="Lê Văn C"
-                 class="w-full h-60 object-cover">
-            <span class="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs px-3 py-1 rounded-full shadow">
-              💡 Sáng tạo
-            </span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-bold bg-gradient-to-r from-green-500 to-teal-400 text-transparent bg-clip-text">
-              Đ/c Lê Văn C
-            </h3>
-            <p class="text-sm text-indigo-600 font-semibold">Chủ nhiệm CLB Tình nguyện</p>
-            <ul class="mt-3 text-slate-600 text-sm space-y-2">
-              <li>🌍 Khởi xướng dự án “Xanh hóa học đường”</li>
-              <li>⭐ Được TW Đoàn tuyên dương 2024</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Thêm nhiều card nữa tùy bạn -->
-
       </div>
 
-      <!-- Nút điều hướng -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+      <!-- Card 2 -->
+      <div onclick="openModal('cb2')" class="cursor-pointer bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
+        <div class="relative">
+          <img src="pic/canbo/cb2.jpg" alt="Trần Thị B"
+               class="w-full h-60 object-cover">
+          <span class="absolute top-3 left-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs px-3 py-1 rounded-full shadow">
+            🌟 Tiên tiến
+          </span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 text-transparent bg-clip-text">
+            Đ/c Trần Lê Trọng Văn
+          </h3>
+          <p class="text-sm text-indigo-600 font-semibold">Ủy viên Ban Thường vụ Đoàn Trường</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div onclick="openModal('cb3')" class="cursor-pointer bg-white rounded-3xl shadow-xl overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
+        <div class="relative">
+          <img src="pic/canbo/cb3.jpg" alt="Lê Văn C"
+               class="w-full h-60 object-cover">
+          <span class="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs px-3 py-1 rounded-full shadow">
+            💡 Sáng tạo
+          </span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold bg-gradient-to-r from-green-500 to-teal-400 text-transparent bg-clip-text">
+            Đ/c Lê Văn C
+          </h3>
+          <p class="text-sm text-indigo-600 font-semibold">Chủ nhiệm CLB Tình nguyện</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- JS Swiper -->
+<!-- Modal chi tiết -->
+<div id="modal-detail" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-xl w-full p-6 relative">
+    <!-- Nút đóng -->
+    <button onclick="closeModal()" class="absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 flex items-center justify-center">✕</button>
+    
+    <!-- Nội dung chi tiết -->
+    <div id="modal-content">
+      <!-- JS sẽ đổ nội dung vào đây -->
+    </div>
+  </div>
+</div>
+
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3, // hiển thị 3 card cùng lúc
-    spaceBetween: 30,
-    loop: true, // chạy vòng lặp
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+  // Dữ liệu cán bộ
+  const leaders = {
+    cb1: {
+      name: "Đ/c Phạm Văn Dư",
+      role: "Nguyên Ủy viên Ban Thường vụ Đoàn Trường",
+      img: "pic/canbo/cb1.jpg",
+      details: [
+        "✨ Giải Ba cuộc thi Bí thư Đoàn cơ sở giỏi TP. HCM năm 2023",
+        "🌱 Tham gia nhiều hoạt động tình nguyện cấp thành"
+      ]
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    cb2: {
+      name: "Đ/c Trần Lê Trọng Văn",
+      role: "Ủy viên Ban Thường vụ Đoàn Trường",
+      img: "pic/canbo/cb2.jpg",
+      details: [
+        "🏅 Sinh viên 5 tốt cấp Trung ương năm 2024",
+        "☀️ Giải Nhất cuộc thi Bản lĩnh Cán bộ Đoàn năm 2023"
+      ]
     },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      }
+    cb3: {
+      name: "Đ/c Lê Văn C",
+      role: "Chủ nhiệm CLB Tình nguyện",
+      img: "pic/canbo/cb3.jpg",
+      details: [
+        "🌍 Khởi xướng dự án Xanh hóa học đường",
+        "⭐ Được TW Đoàn tuyên dương 2024"
+      ]
     }
-  });
+  };
+
+  function openModal(id) {
+    const data = leaders[id];
+    document.getElementById("modal-content").innerHTML = `
+      <img src="${data.img}" class="w-full h-60 object-cover rounded-lg shadow mb-4">
+      <h2 class="text-2xl font-bold text-indigo-600">${data.name}</h2>
+      <p class="text-sm text-slate-600 mb-4">${data.role}</p>
+      <ul class="list-disc pl-5 space-y-2 text-slate-700">
+        ${data.details.map(d => `<li>${d}</li>`).join("")}
+      </ul>
+    `;
+    document.getElementById("modal-detail").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("modal-detail").classList.add("hidden");
+  }
 </script>
+
 
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
@@ -387,6 +393,7 @@
     </div>
 
 </section>
+
 
 
 
