@@ -315,7 +315,7 @@
                     const modal = document.querySelector(modalId);
                     if (modal) {
                         modal.classList.add('is-open');
-                        /// Khởi tạo Swiper sau khi modal mở với delay dài hơn
+                        // Khởi tạo Swiper sau khi modal mở với delay dài hơn
                         setTimeout(() => {
                             console.log('Opening modal, initializing Swipers...');
                             initializeModalSwipers();
@@ -380,7 +380,7 @@
                     });
                 }
 
-                               // Khởi tạo Swiper cho các gallery trong modal
+                // Khởi tạo Swiper cho các gallery trong modal
                 function initializeModalSwipers() {
                     console.log('Initializing modal Swipers...');
                     
@@ -392,6 +392,7 @@
                         if (window.swiperXuan && window.swiperXuan.destroy) {
                             window.swiperXuan.destroy(true, true);
                         }
+                        
                         const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -402,48 +403,16 @@
                             },
                             loop: true,
                             grabCursor: true,
-                            watchOverflow: true,
-                            observer: true,
-                            observeParents: true,
                             autoplay: {
                                 delay: 5000,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true
                             }
                         });
+                        
                         // Store reference globally
                         window.swiperXuan = swiperXuan;
-                        
-                        // Thêm event listeners cho navigation buttons
-                        const nextBtnXuan = document.querySelector('.next-xuan');
-                        const prevBtnXuan = document.querySelector('.prev-xuan');
-                        
-                        if (nextBtnXuan) {
-                            // Remove existing listeners
-                            nextBtnXuan.replaceWith(nextBtnXuan.cloneNode(true));
-                            const newNextBtnXuan = document.querySelector('.next-xuan');
-                            
-                            newNextBtnXuan.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Next button clicked for xuan');
-                                swiperXuan.slideNext();
-                            });
-                        }
-                        if (prevBtnXuan) {
-                            // Remove existing listeners
-                            prevBtnXuan.replaceWith(prevBtnXuan.cloneNode(true));
-                            const newPrevBtnXuan = document.querySelector('.prev-xuan');
-                            
-                            newPrevBtnXuan.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Prev button clicked for xuan');
-                                swiperXuan.slidePrev();
-                            });
-                        }
-                        
-                        console.log('Swiper xuan initialized with navigation');
+                        console.log('Swiper xuan initialized');
                     }
                     
                     if (document.querySelector('.gallerySwiper-mhx')) {
@@ -453,6 +422,7 @@
                         if (window.swiperMhx && window.swiperMhx.destroy) {
                             window.swiperMhx.destroy(true, true);
                         }
+                        
                         const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -463,47 +433,16 @@
                             },
                             loop: true,
                             grabCursor: true,
-                            watchOverflow: true,
-                            observer: true,
-                            observeParents: true,
                             autoplay: {
                                 delay: 5000,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true
                             }
                         });
+                        
                         // Store reference globally
                         window.swiperMhx = swiperMhx;
-                        
-                        const nextBtnMhx = document.querySelector('.next-mhx');
-                        const prevBtnMhx = document.querySelector('.prev-mhx');
-                        
-                        if (nextBtnMhx) {
-                            // Remove existing listeners
-                            nextBtnMhx.replaceWith(nextBtnMhx.cloneNode(true));
-                            const newNextBtnMhx = document.querySelector('.next-mhx');
-                            
-                            newNextBtnMhx.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Next button clicked for mhx');
-                                swiperMhx.slideNext();
-                            });
-                        }
-                        if (prevBtnMhx) {
-                            // Remove existing listeners
-                            prevBtnMhx.replaceWith(prevBtnMhx.cloneNode(true));
-                            const newPrevBtnMhx = document.querySelector('.prev-mhx');
-                            
-                            newPrevBtnMhx.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Prev button clicked for mhx');
-                                swiperMhx.slidePrev();
-                            });
-                        }
-                        
-                        console.log('Swiper mhx initialized with navigation');
+                        console.log('Swiper mhx initialized');
                     }
                     
                     if (document.querySelector('.gallerySwiper-tsmt')) {
@@ -513,6 +452,7 @@
                         if (window.swiperTsmt && window.swiperTsmt.destroy) {
                             window.swiperTsmt.destroy(true, true);
                         }
+                        
                         const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -523,47 +463,16 @@
                             },
                             loop: true,
                             grabCursor: true,
-                            watchOverflow: true,
-                            observer: true,
-                            observeParents: true,
                             autoplay: {
                                 delay: 5000,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true
                             }
                         });
+                        
                         // Store reference globally
                         window.swiperTsmt = swiperTsmt;
-                        
-                        const nextBtnTsmt = document.querySelector('.next-tsmt');
-                        const prevBtnTsmt = document.querySelector('.prev-tsmt');
-                        
-                        if (nextBtnTsmt) {
-                            // Remove existing listeners
-                            nextBtnTsmt.replaceWith(nextBtnTsmt.cloneNode(true));
-                            const newNextBtnTsmt = document.querySelector('.next-tsmt');
-                            
-                            newNextBtnTsmt.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Next button clicked for tsmt');
-                                swiperTsmt.slideNext();
-                            });
-                        }
-                        if (prevBtnTsmt) {
-                            // Remove existing listeners
-                            prevBtnTsmt.replaceWith(prevBtnTsmt.cloneNode(true));
-                            const newPrevBtnTsmt = document.querySelector('.prev-tsmt');
-                            
-                            newPrevBtnTsmt.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Prev button clicked for tsmt');
-                                swiperTsmt.slidePrev();
-                            });
-                        }
-                        
-                        console.log('Swiper tsmt initialized with navigation');
+                        console.log('Swiper tsmt initialized');
                     }
                     
                     if (document.querySelector('.gallerySwiper-hmtn')) {
@@ -573,6 +482,7 @@
                         if (window.swiperHmtn && window.swiperHmtn.destroy) {
                             window.swiperHmtn.destroy(true, true);
                         }
+                        
                         const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
@@ -583,52 +493,20 @@
                             },
                             loop: true,
                             grabCursor: true,
-                            watchOverflow: true,
-                            observer: true,
-                            observeParents: true,
                             autoplay: {
                                 delay: 5000,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true
                             }
                         });
+                        
                         // Store reference globally
                         window.swiperHmtn = swiperHmtn;
-                        
-                        const nextBtnHmtn = document.querySelector('.next-hmtn');
-                        const prevBtnHmtn = document.querySelector('.prev-hmtn');
-                        
-                        if (nextBtnHmtn) {
-                            // Remove existing listeners
-                            nextBtnHmtn.replaceWith(nextBtnHmtn.cloneNode(true));
-                            const newNextBtnHmtn = document.querySelector('.next-hmtn');
-                            
-                            newNextBtnHmtn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Next button clicked for hmtn');
-                                swiperHmtn.slideNext();
-                            });
-                        }
-                        if (prevBtnHmtn) {
-                            // Remove existing listeners
-                            prevBtnHmtn.replaceWith(prevBtnHmtn.cloneNode(true));
-                            const newPrevBtnHmtn = document.querySelector('.prev-hmtn');
-                            
-                            newPrevBtnHmtn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                console.log('Prev button clicked for hmtn');
-                                swiperHmtn.slidePrev();
-                            });
-                        }
-                        
-                        console.log('Swiper hmtn initialized with navigation');
+                        console.log('Swiper hmtn initialized');
                     }
                     
                     console.log('All modal Swipers initialized');
                 }
-
 
                 // Xử lý Tabs cho Modal Tình Nguyện
                 function initializeTinhNguyenTabs() {
@@ -966,46 +844,8 @@
 
         // Khởi tạo trang ban đầu
         loadPage(location.hash.substring(1) || 'home');
-
     </script>
 
-
-    <!-- Script xử lý gallery chung -->
-    <script>
-        // Khởi tạo các slider cho gallery chung (nếu có)
-        if (document.querySelector(".gallerySwiper")) {
-            new Swiper(".gallerySwiper", {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3
-                    }
-                }
-            });
-        }
-        
-        if (document.querySelector(".gallerySwiper2")) {
-            new Swiper(".gallerySwiper2", {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3
-                    }
-                }
-            });
-        }
-    </script>
-    
     <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
         <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
 
@@ -1105,8 +945,5 @@
 </body>
 
 </html>
-
-
-
 
 
