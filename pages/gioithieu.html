@@ -508,13 +508,22 @@
     </div>
 
 </section>
+ <!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Nút nổi mở video</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
   <!-- Button nổi -->
   <button id="openVideoBtn" 
           class="fixed bottom-6 right-6 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition">
     ▶
   </button>
 
-  <!-- Modal Video (ban đầu ẩn nhờ class hidden) -->
+  <!-- Modal Video (ẩn mặc định) -->
   <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-70 items-center justify-center z-50">
     <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 relative p-4">
       <!-- Nút đóng -->
@@ -532,25 +541,24 @@
 
   <script>
     const openBtn = document.getElementById("openVideoBtn");
-    const closeBtn = document.getElementById("closeVideoBtn");
     const modal = document.getElementById("videoModal");
     const iframe = document.getElementById("videoFrame");
 
+    // mở modal
     openBtn.addEventListener("click", () => {
       modal.classList.remove("hidden");
-      modal.classList.add("flex"); // hiện modal
+      modal.classList.add("flex");
     });
 
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("flex");
-      modal.classList.add("hidden");
-      iframe.src = iframe.src; // reset video
+    // bắt sự kiện đóng (dùng delegation)
+    modal.addEventListener("click", (e) => {
+      if (e.target.id === "closeVideoBtn" || e.target.id === "videoModal") {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+        iframe.src = iframe.src; // reset video
+      }
     });
   </script>
-
-
-
-
 
 
 
