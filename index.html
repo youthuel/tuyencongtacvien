@@ -129,8 +129,33 @@
         .activity-tab.active { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); color: white; }
         .stat-card { transition: all 0.3s ease-out; }
         .stat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .activity-content { animation: fadeIn-10 0.5s ease-in-out; }
+        .activity-content { animation: fadeIn-10 0.5s ease-in-out;   
+                           
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
 
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3.5s ease-in-out infinite;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+                           
+                           
         /* TỔ CHỨC */
         .member-card, .personnel-card { transition: all 0.3s ease-in-out; }
         .member-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
@@ -1088,6 +1113,7 @@
 </body>
 
 </html>
+
 
 
 
