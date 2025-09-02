@@ -4,240 +4,288 @@
     <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent"></div>
 </section>
 
-<section class="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-100">
-    <div class="absolute -top-20 -left-24 w-[28rem] h-[28rem] rounded-full bg-sky-200/40 blur-3xl"></div>
-    <div class="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-purple-200/40 blur-3xl"></div>
-    <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-xl mb-6">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m10 4h-6V7m8 5a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+<!-- Paste vào file HTML của bạn (dùng Tailwind) -->
+<section class="relative overflow-hidden py-16 md:py-20 bg-slate-900 text-white">
+  <style>
+    /* Flip card */
+    .flip-card { perspective: 1200px; }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(.2,.9,.2,1);
+    }
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 1rem;
+    }
+    .flip-card-back { transform: rotateY(180deg); }
+
+    /* Timeline dot pulse */
+    .timeline-dot {
+      animation: pulse-dot 2.2s infinite;
+    }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.06); transform: translateX(-50%) scale(1); }
+      50% { box-shadow: 0 0 20px 6px rgba(255,255,255,0.02); transform: translateX(-50%) scale(1.06); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.00); transform: translateX(-50%) scale(1); }
+    }
+
+    /* subtle card glow on hover */
+    .department-card { transition: transform .35s, box-shadow .35s; }
+    .department-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+
+    /* make card interior scrollable if long */
+    .card-tasks { max-height: 18rem; overflow: auto; padding-right: 0.25rem; }
+
+    /* improve list readability */
+    .card-tasks li { line-height: 1.45; }
+  </style>
+
+  <div class="background-blob w-96 h-96 bg-blue-500/10 rounded-full -top-16 -left-24 absolute"></div>
+  <div class="background-blob w-96 h-96 bg-purple-500/10 rounded-full -bottom-16 -right-24 absolute"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Cột trái: Timeline -->
+      <div>
+        <div class="mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Hành Trình Trở Thành Mảnh Ghép</h2>
+          <p class="text-slate-300 mt-3 max-w-xl">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800">Hành Trình Trở Thành Mảnh Ghép</h1>
-        <p class="max-w-2xl mx-auto mt-4 text-lg text-slate-600">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
 
-    </div>
-    <!-- wave decor -->
-    <svg class="absolute bottom-0 left-0 right-0" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" d="M0,96L48,80C96,64,192,32,288,26.7C384,21,480,43,576,64C672,85,768,107,864,112C960,117,1056,107,1152,85.3C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/></svg>
-</section>
+        <div class="relative max-w-3xl">
+          <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-gray-700/50 rounded-full"></div>
 
-<section class="relative overflow-hidden py-16 md:py-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-    <!-- Hiệu ứng sao lấp lánh -->
-    <div class="absolute inset-0 overflow-hidden">
-        <span class="absolute w-1 h-1 bg-white rounded-full top-10 left-20 animate-ping"></span>
-        <span class="absolute w-1 h-1 bg-white rounded-full top-1/3 left-1/2 animate-pulse"></span>
-        <span class="absolute w-1 h-1 bg-white rounded-full bottom-20 right-40 animate-ping"></span>
-    </div>
-
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <!-- Cột trái: Timeline -->
-            <div>
-                <div class="mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Hành Trình Trở Thành Mảnh Ghép</h2>
-                    <p class="text-slate-300 mt-3 max-w-xl">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
-                </div>
-                <div class="relative max-w-3xl">
-                    <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-gray-700/50 rounded-full"></div>
-
-                    <!-- Timeline item -->
-                    <div class="timeline-item-container relative md:flex md:justify-end md:mr-auto mb-12 group">
-                        <div class="md:w-1/2 md:pr-12 transform transition duration-500 group-hover:-translate-y-2">
-                            <div class="p-6 lg:p-8 rounded-3xl shadow-xl bg-gradient-to-br from-sky-100 to-blue-200 relative overflow-hidden">
-                                <div class="absolute -top-10 -right-10 w-28 h-28 bg-sky-300/50 rounded-full blur-xl opacity-70"></div>
-                                <div class="relative z-10">
-                                    <p class="text-sm font-semibold text-blue-600">VÒNG 01: DẤU ẤN CÁ NHÂN</p>
-                                    <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Điền đơn đăng ký</h3>
-                                    <p class="text-slate-700 mt-4">Đây là bước đầu tiên để chúng mình biết đến bạn. Hãy thể hiện màu sắc riêng qua biểu mẫu đăng ký trực tuyến.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-blue-500 rounded-full border-4 border-slate-900 animate-pulse"></div>
-                    </div>
-
-                    <!-- Timeline item -->
-                    <div class="timeline-item-container relative md:flex md:justify-start md:ml-auto mb-12 group">
-                        <div class="md:w-1/2 md:pl-12 transform transition duration-500 group-hover:-translate-y-2">
-                            <div class="p-6 lg:p-8 rounded-3xl shadow-xl bg-gradient-to-br from-fuchsia-100 to-purple-200 relative overflow-hidden">
-                                <div class="absolute -top-6 -right-12 w-28 h-28 bg-fuchsia-300/50 rounded-full blur-xl"></div>
-                                <div class="relative z-10">
-                                    <p class="text-sm font-semibold text-purple-600">VÒNG 02: KẾT NỐI & THẤU HIỂU</p>
-                                    <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Phỏng vấn</h3>
-                                    <p class="text-slate-700 mt-4">Cơ hội để trò chuyện, thấu hiểu lẫn nhau. Hãy tự tin chia sẻ bản thân và đặt câu hỏi bạn quan tâm.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-purple-500 rounded-full border-4 border-slate-900 animate-pulse"></div>
-                    </div>
-
-                    <!-- Timeline item -->
-                    <div class="timeline-item-container relative md:flex md:justify-end md:mr-auto group">
-                        <div class="md:w-1/2 md:pr-12 transform transition duration-500 group-hover:-translate-y-2">
-                            <div class="p-6 lg:p-8 rounded-3xl shadow-xl bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden">
-                                <div class="absolute -bottom-12 -left-10 w-28 h-28 bg-amber-300/50 rounded-full blur-xl opacity-70"></div>
-                                <div class="relative z-10">
-                                    <p class="text-sm font-semibold text-orange-600">VÒNG 03: HÒA NHỊP & CỐNG HIẾN</p>
-                                    <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Trải nghiệm</h3>
-                                    <p class="text-slate-700 mt-4">Bạn sẽ trở thành “thành viên tập sự”, cùng tham gia công việc thực tế của Bộ phận đã chọn.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-orange-500 rounded-full border-4 border-slate-900 animate-pulse"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cột phải: Flip Cards -->
-            <div>
-                <div class="mb-8">
-                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Khám Phá Các Mảnh Ghép</h3>
-                    <p class="mt-3 text-lg text-slate-300">Mỗi Bộ phận là một vũ trụ riêng. Hãy tìm nơi bạn có thể tỏa sáng rực rỡ nhất!</p>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Flip Card -->
-                    <div class="flip-card group">
-                        <div class="flip-card-inner relative w-full h-60 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                            <!-- Front -->
-                            <div class="flip-card-front absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 shadow-xl [backface-visibility:hidden]">
-                                <div class="text-4xl mb-2">📢</div>
-                                <h3 class="text-2xl font-bold">Truyền thông</h3>
-                                <p class="text-sm opacity-80">"Kiến tạo câu chuyện, lan tỏa giá trị"</p>
-                            </div>
-                            <!-- Back -->
-                            <div class="flip-card-back absolute inset-0 flex items-center justify-center rounded-2xl bg-gradient-to-br from-sky-600 to-blue-700 shadow-xl [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                                <ul class="text-left space-y-2 px-4">
-                                    <li>Sản xuất media & quản trị kênh</li>
-                                    <li>Triển khai chiến dịch truyền thông</li>
-                                    <li>Phù hợp bạn yêu thích thiết kế, quay dựng</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bạn có thể copy cấu trúc trên để làm các flip card khác -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-    <div class="container mx-auto px-6">
-           <div class="text-center mb-16 scroll-animate">
-              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-              </div>
-              <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Giải Đáp Thắc Mắc</h2>
-              <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé! 💫</p>
-        </div>
-          
-          <div class="max-w-4xl mx-auto space-y-4 scroll-animate" style="transition-delay: 150ms;">
-              
-              <!-- Q item (đồng bộ style với các câu dưới) -->
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
+          <!-- ITEM 1 -->
+          <div class="timeline-item-container scroll-animate relative md:flex md:justify-end md:mr-auto mb-12">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-blue-500/20 bg-gradient-to-br from-sky-100 to-blue-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
+                <div class="absolute -top-10 -right-10 w-28 h-28 bg-sky-300/50 rounded-full filter blur-xl opacity-80"></div>
+                <div class="relative z-10">
+                  <p class="text-sm font-semibold text-blue-600">VÒNG 01: DẤU ẤN CÁ NHÂN</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-slate-800 my-2">Vòng Điền đơn đăng ký</h3>
+                  <div class="space-y-4 text-slate-700 mt-4">
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <!-- icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"/>
+                          <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"/>
+                        </svg>
                       </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Kinh nghiệm là lợi thế nhưng không bắt buộc. Bạn sẽ được hướng dẫn và training đầy đủ trong quá trình hoạt động.</p>
-                          </div>
+                      <p class="text-base md:text-lg">Đây là bước đầu tiên để chúng mình biết đến bạn. Hãy thể hiện màu sắc riêng, nguyện vọng và những mong muốn của bạn một cách chân thành nhất qua biểu mẫu đăng ký trực tuyến.</p>
                     </div>
+
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                      <p class="text-base md:text-lg"><strong class="font-semibold">Thời gian:</strong> 03/9 - 14/9/2025.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-10 h-10 -translate-x-1/2 bg-blue-500 rounded-full border-4 border-slate-900 transition-transform duration-300"></div>
+          </div>
 
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
+          <!-- ITEM 2 -->
+          <div class="timeline-item-container scroll-animate relative md:flex md:justify-start md:ml-auto mb-12">
+            <div class="md:w-1/2 md:pl-12">
+              <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-purple-500/20 bg-gradient-to-br from-fuchsia-100 to-purple-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30">
+                <div class="absolute -top-4 -right-12 w-28 h-28 bg-fuchsia-300/50 rounded-full filter blur-xl"></div>
+                <div class="relative z-10">
+                  <p class="text-sm font-semibold text-purple-600">VÒNG 02: KẾT NỐI & THẤU HIỂU</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-slate-800 my-2">Vòng Phỏng vấn</h3>
+                  <div class="space-y-4 text-slate-700 mt-4">
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zM6 8a2 2 0 11-4 0 2 2 0 014 0zM1.49 15.326a.75.75 0 01-.318-1.464 3.5 3.5 0 016.652 0 .75.75 0 01-.318 1.464l-3.016-1.13A2.25 2.25 0 004.5 15.25v.75a.75.75 0 01-1.5 0v-.75a3.75 3.75 0 01-1.51-7.326zM18.51 15.326a.75.75 0 01-1.464-.318 3.5 3.5 0 00-6.652 0 .75.75 0 01-1.464.318l-1.13 3.016a.75.75 0 011.05 1.05l3.015-1.13a2.25 2.25 0 013.902 0l3.015 1.13a.75.75 0 011.05-1.05l-1.13-3.016z" /></svg>
                       </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
-                          </div>
+                      <p class="text-base md:text-lg">Cơ hội để chúng ta trò chuyện và hiểu nhau hơn. Hãy tự tin chia sẻ về bản thân, kinh nghiệm và đặt những câu hỏi bạn quan tâm. Chúng mình tìm kiếm những cộng tác viên phù hợp về cả năng lực và tinh thần.</p>
                     </div>
-                </div>
-            </div>
 
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
                       </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển tốt nhất!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
-                          </div>
+                      <p class="text-base md:text-lg"><strong class="font-semibold">Thời gian:</strong> Dự kiến 18/9/2025.</p>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
-                      </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
+            <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-10 h-10 -translate-x-1/2 bg-purple-500 rounded-full border-4 border-slate-900 transition-transform duration-300"></div>
+          </div>
 
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
+          <!-- ITEM 3 -->
+          <div class="timeline-item-container scroll-animate relative md:flex md:justify-end md:mr-auto">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-orange-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30">
+                <div class="absolute -bottom-12 -left-10 w-28 h-28 bg-amber-300/50 rounded-full filter blur-xl opacity-80"></div>
+                <div class="relative z-10">
+                  <p class="text-sm font-semibold text-orange-600">VÒNG 03: HÒA NHỊP & CỐNG HIẾN</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-slate-800 my-2">Vòng Trải nghiệm</h3>
+                  <div class="space-y-4 text-slate-700 mt-4">
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"/></svg>
                       </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
-                          </div>
+                      <p class="text-base md:text-lg">Bạn sẽ trở thành một "thành viên tập sự", cùng tham gia vào các công việc thực tế của Bộ phận mà bạn đã chọn. Đây là giai đoạn để bạn thể hiện khả năng làm việc nhóm, sự sáng tạo và tinh thần trách nhiệm.</p>
                     </div>
+
+                    <div class="flex items-start">
+                      <div class="flex-shrink-0 w-8 pt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                      </div>
+                      <p class="text-base md:text-lg"><strong class="font-semibold">Thời gian:</strong> 22/9 – 03/10/2025.</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-10 h-10 -translate-x-1/2 bg-orange-500 rounded-full border-4 border-slate-900 transition-transform duration-300"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Card Flip -->
+      <div>
+        <div class="mb-8">
+          <h3 class="text-3xl md:text-4xl font-bold tracking-tight">Khám Phá Các Mảnh Ghép</h3>
+          <p class="mt-3 text-lg text-slate-300">Mỗi Bộ phận là một vũ trụ riêng với sứ mệnh độc đáo. Hãy tìm nơi bạn có thể tỏa sáng rực rỡ nhất!</p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- Truyền thông -->
+          <div class="flip-card scroll-animate w-full md:w-96 h-96 mx-auto">
+            <div class="flip-card-inner">
+              <div class="flip-card-front department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-sky-500 to-blue-600 shadow-lg">
+                <div class="card-bg-pattern absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); background-size: cover;"></div>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                  <div class="card-icon text-5xl mb-3">📢</div>
+                  <h3 class="text-2xl md:text-3xl font-bold mb-2">Bộ phận Truyền thông</h3>
+                  <p class="card-slogan text-base md:text-lg opacity-90">"Kiến tạo câu chuyện, lan tỏa giá trị"</p>
+                </div>
+              </div>
+
+              <div class="flip-card-back department-card rounded-2xl p-6 text-white text-left bg-gradient-to-br from-sky-600 to-blue-700 shadow-lg">
+                <ul class="card-tasks list-none space-y-3 text-base md:text-lg">
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🎥</span><span>Sản xuất các sản phẩm media (hình ảnh, video) và quản trị các kênh Fanpage, Website, Youtube.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🗂️</span><span>Lên kế hoạch và triển khai các chiến dịch truyền thông cho sự kiện.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">✍️</span><span>Phù hợp với các bạn yêu thích thiết kế, nhiếp ảnh, quay dựng, viết lách.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phong trào -->
+          <div class="flip-card scroll-animate w-full md:w-96 h-96 mx-auto" style="transition-delay: 100ms;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-rose-500 to-red-600 shadow-lg">
+                <div class="card-bg-pattern absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png'); background-size: cover;"></div>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                  <div class="card-icon text-5xl mb-3">🔥</div>
+                  <h3 class="text-2xl md:text-3xl font-bold mb-2">Bộ phận Phong trào</h3>
+                  <p class="card-slogan text-base md:text-lg opacity-90">"Thổi bùng nhiệt huyết, kiến tạo thanh xuân"</p>
+                </div>
+              </div>
+
+              <div class="flip-card-back department-card rounded-2xl p-6 text-white text-left bg-gradient-to-br from-rose-600 to-red-700 shadow-lg">
+                <ul class="card-tasks list-none space-y-3 text-base md:text-lg">
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🏃‍♂️</span><span>Chịu trách nhiệm lan tỏa 3 phong trào hành động và 3 chương trình đồng hành.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🎉</span><span>Tổ chức các sự kiện lớn, chiến dịch tình nguyện, sân chơi văn nghệ, thể thao.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🤝</span><span>Dành cho những bạn năng động, nhiệt huyết, có khả năng tổ chức và kết nối.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tổ chức - Xây dựng Đoàn -->
+          <div class="flip-card scroll-animate w-full md:w-96 h-96 mx-auto" style="transition-delay: 200ms;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-emerald-500 to-green-600 shadow-lg">
+                <div class="card-bg-pattern absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cross-dots.png'); background-size: cover;"></div>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                  <div class="card-icon text-5xl mb-3">⚙️</div>
+                  <h3 class="text-2xl md:text-3xl font-bold mb-2">Tổ chức - Xây dựng Đoàn</h3>
+                  <p class="card-slogan text-base md:text-lg opacity-90">"Vững cấu trúc, mạnh phong trào"</p>
+                </div>
+              </div>
+
+              <div class="flip-card-back department-card rounded-2xl p-6 text-white text-left bg-gradient-to-br from-emerald-600 to-green-700 shadow-lg">
+                <ul class="card-tasks list-none space-y-3 text-base md:text-lg">
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🧭</span><span>Là "xương sống", phụ trách công tác quản lý, phát triển và giới thiệu đoàn viên ưu tú.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🧑‍🏫</span><span>Tham mưu về nhân sự, tổ chức các lớp tập huấn, hội thi cho cán bộ Đoàn.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">📋</span><span>Dành cho các bạn có tư duy logic, cẩn thận và yêu thích công việc hệ thống.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tuyên giáo -->
+          <div class="flip-card scroll-animate w-full md:w-96 h-96 mx-auto" style="transition-delay: 300ms;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-amber-500 to-yellow-600 shadow-lg">
+                <div class="card-bg-pattern absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/tiny-grid.png'); background-size: cover;"></div>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                  <div class="card-icon text-5xl mb-3">💡</div>
+                  <h3 class="text-2xl md:text-3xl font-bold mb-2">Bộ phận Tuyên giáo</h3>
+                  <p class="card-slogan text-base md:text-lg opacity-90">"Giữ lửa lý tưởng, lan tỏa tri thức"</p>
+                </div>
+              </div>
+
+              <div class="flip-card-back department-card rounded-2xl p-6 text-white text-left bg-gradient-to-br from-amber-600 to-yellow-700 shadow-lg">
+                <ul class="card-tasks list-none space-y-3 text-base md:text-lg">
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🧠</span><span>Là "linh hồn" của Đoàn Trường, thực hiện công tác giáo dục chính trị, tư tưởng, lịch sử.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">📰</span><span>Sáng tạo ấn phẩm, quản lý kênh Tik Tok "Vietnam Up" để lan tỏa giá trị tốt đẹp.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🎓</span><span>Phù hợp với các bạn có kiến thức xã hội tốt và khả năng truyền đạt.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Văn phòng Đoàn Trường -->
+          <div class="flip-card scroll-animate w-full md:w-96 h-96 mx-auto" style="transition-delay: 400ms;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-slate-500 to-gray-600 shadow-lg">
+                <div class="card-bg-pattern absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png'); background-size: cover;"></div>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                  <div class="card-icon text-5xl mb-3">📋</div>
+                  <h3 class="text-2xl md:text-3xl font-bold mb-2">Văn phòng Đoàn Trường</h3>
+                  <p class="card-slogan text-base md:text-lg opacity-90">"Hậu phương vững chắc, vận hành trôi chảy"</p>
+                </div>
+              </div>
+
+              <div class="flip-card-back department-card rounded-2xl p-6 text-white text-left bg-gradient-to-br from-slate-600 to-gray-700 shadow-lg">
+                <ul class="card-tasks list-none space-y-3 text-base md:text-lg">
+                  <li class="flex items-start"><span class="mr-3 text-2xl">📂</span><span>Là trung tâm thông tin, đảm bảo công tác hành chính, hậu cần, tài chính.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🧾</span><span>Công việc bao gồm quản trị cơ sở vật chất, xử lý giấy tờ, thanh quyết toán.</span></li>
+                  <li class="flex items-start"><span class="mr-3 text-2xl">🛠️</span><span>Dành cho những bạn tỉ mỉ, có trách nhiệm, giỏi sắp xếp và quản lý công việc.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
         </div>
+      </div>
     </div>
+  </div>
 </section>
+
 
   
   <section class="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 py-20 md:py-24">
@@ -287,5 +335,6 @@
         </div>
     </div>
 </section>
+
 
 
