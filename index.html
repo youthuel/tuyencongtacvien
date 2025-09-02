@@ -509,6 +509,129 @@
                 // Khởi tạo Swiper cho các gallery trong modal
                 function initializeModalSwipers() {
                     console.log('Initializing modal Swipers...');
+
+                        // Chính trị tư tưởng
+                        if (document.querySelector('.gallerySwiper-ct')) {
+                        console.log('Found gallerySwiper-ct, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperct && window.swiperct.destroy) {
+                            window.swiperct.destroy(true, true);
+                        }
+                        
+                        const swiperct = new Swiper(".gallerySwiper-ct", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnct = document.querySelector('.gallerySwiper-ct .swiper-nav-next');
+                        const prevBtnct = document.querySelector('.gallerySwiper-ct .swiper-nav-prev');
+                        
+                        if (nextBtnct) {
+                            nextBtnct.addEventListener('click', () => {
+                                swiperct.slideNext();
+                            });
+                        }
+                        if (prevBtnct) {
+                            prevBtnct.addEventListener('click', () => {
+                                swiperct.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperct = swiperct;
+                        console.log('Swiper ct initialized with custom navigation');
+                    }
+                    
+                        // Pháp luật
+                        if (document.querySelector('.gallerySwiper-pl')) {
+                        console.log('Found gallerySwiper-pl, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperpl && window.swiperpl.destroy) {
+                            window.swiperpl.destroy(true, true);
+                        }
+                        
+                        const swiperpl = new Swiper(".gallerySwiper-pl", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnpl = document.querySelector('.gallerySwiper-pl .swiper-nav-next');
+                        const prevBtnpl = document.querySelector('.gallerySwiper-pl .swiper-nav-prev');
+                        
+                        if (nextBtnpl) {
+                            nextBtnpl.addEventListener('click', () => {
+                                swiperpl.slideNext();
+                            });
+                        }
+                        if (prevBtnpl) {
+                            prevBtnpl.addEventListener('click', () => {
+                                swiperpl.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperpl = swiperpl;
+                        console.log('Swiper pl initialized with custom navigation');
+                    }
+                    
+                     // Đạo đức lối sống
+                        if (document.querySelector('.gallerySwiper-ddls')) {
+                        console.log('Found gallerySwiper-ddls, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperddls && window.swiperddls.destroy) {
+                            window.swiperddls.destroy(true, true);
+                        }
+                        
+                        const swiperddls = new Swiper(".gallerySwiper-ddls", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnddls = document.querySelector('.gallerySwiper-ddls .swiper-nav-next');
+                        const prevBtnddls = document.querySelector('.gallerySwiper-ddls .swiper-nav-prev');
+                        
+                        if (nextBtnddls) {
+                            nextBtnddls.addEventListener('click', () => {
+                                swiperddls.slideNext();
+                            });
+                        }
+                        if (prevBtnddls) {
+                            prevBtnddls.addEventListener('click', () => {
+                                swiperddls.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperddls = swiperddls;
+                        console.log('Swiper ddls initialized with custom navigation');
+                    }
                     
                     // Khởi tạo Swiper cho Modal Tình Nguyện
                     if (document.querySelector('.gallerySwiper-xuan')) {
@@ -793,6 +916,129 @@
                         // Store reference globally
                         window.swipertaphuan = swipertaphuan;
                         console.log('Swiper taphuan initialized with custom navigation');
+                    }
+
+                        // Văn
+                        if (document.querySelector('.gallerySwiper-van')) {
+                        console.log('Found gallerySwiper-van, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipervan && window.swipervan.destroy) {
+                            window.swipervan.destroy(true, true);
+                        }
+                        
+                        const swipervan = new Swiper(".gallerySwiper-van", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnvan = document.querySelector('.gallerySwiper-van .swiper-nav-next');
+                        const prevBtnvan = document.querySelector('.gallerySwiper-van .swiper-nav-prev');
+                        
+                        if (nextBtnvan) {
+                            nextBtnvan.addEventListener('click', () => {
+                                swipervan.slideNext();
+                            });
+                        }
+                        if (prevBtnvan) {
+                            prevBtnvan.addEventListener('click', () => {
+                                swipervan.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipervan = swipervan;
+                        console.log('Swiper van initialized with custom navigation');
+                    }
+
+                        // Thể
+                        if (document.querySelector('.gallerySwiper-the')) {
+                        console.log('Found gallerySwiper-the, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperthe && window.swiperthe.destroy) {
+                            window.swiperthe.destroy(true, true);
+                        }
+                        
+                        const swiperthe = new Swiper(".gallerySwiper-the", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnthe = document.querySelector('.gallerySwiper-the .swiper-nav-next');
+                        const prevBtnthe = document.querySelector('.gallerySwiper-the .swiper-nav-prev');
+                        
+                        if (nextBtnthe) {
+                            nextBtnthe.addEventListener('click', () => {
+                                swiperthe.slideNext();
+                            });
+                        }
+                        if (prevBtnthe) {
+                            prevBtnthe.addEventListener('click', () => {
+                                swiperthe.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperthe = swiperthe;
+                        console.log('Swiper the initialized with custom navigation');
+                    }
+
+                        // Mỹ
+                        if (document.querySelector('.gallerySwiper-my')) {
+                        console.log('Found gallerySwiper-my, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipermy && window.swipermy.destroy) {
+                            window.swipermy.destroy(true, true);
+                        }
+                        
+                        const swipermy = new Swiper(".gallerySwiper-my", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnmy = document.querySelector('.gallerySwiper-my .swiper-nav-next');
+                        const prevBtnmy = document.querySelector('.gallerySwiper-my .swiper-nav-prev');
+                        
+                        if (nextBtnmy) {
+                            nextBtnmy.addEventListener('click', () => {
+                                swiperthe.slideNext();
+                            });
+                        }
+                        if (prevBtnmy) {
+                            prevBtnmy.addEventListener('click', () => {
+                                swipermy.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipermy = swipermy;
+                        console.log('Swiper the initialized with custom navigation');
                     }
                     
                     console.log('All modal Swipers initialized with custom navigation');
@@ -1415,6 +1661,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
