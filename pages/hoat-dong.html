@@ -846,43 +846,44 @@
 
 
 <!-- Modal -->
+<div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden">
+  <!-- Cover -->
+  <div class="overflow-hidden">
+    <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
+         class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+  </div>
 
-
-
-
-      <div  class="scroll-animate" style="transition-delay: 100ms;">
-        <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden">
-          <!-- Cover -->
-          <div data-modal-target="#modal-hoc-thuat" class="overflow-hidden">
-            <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
-                 class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
-          </div>
-          <!-- Nội dung -->
-          <div class="p-8 flex flex-col flex-grow">
-            <p class="text-slate-600 flex-grow italic relative">
-              <span class="text-4xl text-pink-400 absolute -left-3 -top-2">“</span>
-              Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình, hoạt động Đoàn – Hội. 
-              Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi chuẩn bị hậu cần, cắm cọc tại hội trường, 
-              nhà kho, vật lộn với backdrop, bơi trong deadline để chương trình diễn ra suôn sẻ. 
-              Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ, và gắn kết với nhau nhiều hơn. 
-              Iu lắm lắm 💗💗
-              <span class="text-4xl text-pink-400 absolute -right-3 -bottom-6">”</span>
-            </p>
-
-            <!-- Người gửi -->
-            <div class="flex items-center mt-8 pt-6 border-t border-gray-100">
-              <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
-                <img src="pic/hoat-dong/ThanhNgoc.jpeg" 
-                     class="w-full h-full rounded-full object-cover">
-              </div>
-              <button data-modal-target="#modal-hoc-thuat" class="ml-4">
-                <p class="font-bold text-cyan-700">Nguyễn Trần Hiếu Nhân</p>
-                <p class="text-sm text-slate-500">K22, Ủy viên Ban Thường vụ Đoàn Trường</p>
-              </button>
-            </div>
-          </div>
-        </div>
+  <!-- Nội dung ngắn -->
+  <div class="mt-4 flex flex-col">
+    <!-- Người gửi -->
+    <div class="flex items-center mt-2 pt-2 border-t border-gray-100">
+      <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
+        <img src="pic/hoat-dong/ThanhNgoc.jpeg" 
+             class="w-full h-full rounded-full object-cover">
       </div>
+      <div class="ml-4">
+        <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
+        <p class="text-sm text-slate-500">K20, Nguyên UV. BCH, Phó Chánh Văn phòng Đoàn Trường</p>
+      </div>
+    </div>
+
+    <!-- Nút mở modal -->
+    <button data-modal-target="#modal-thanh-ngoc" 
+  class="modal-trigger mt-4 mb-4 w-fit mx-auto flex items-center justify-center gap-2 
+         px-6 py-2 rounded-full border border-pink-400 
+         bg-pink-50 text-pink-600 font-semibold text-sm
+         hover:bg-pink-100 hover:scale-105 transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+             2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09 
+             C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 
+             22 8.5c0 3.78-3.4 6.86-8.55 
+             11.54L12 21.35z"/>
+  </svg>
+  Xem thêm
+</button>
+  </div>
+</div>
 
        <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden">
   <!-- Cover -->
@@ -1058,6 +1059,7 @@
         </div>
     </div>
 </section>
+
 
 
 
