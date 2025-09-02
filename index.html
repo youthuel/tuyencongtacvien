@@ -713,6 +713,88 @@
                         console.log('Swiper nckh initialized with custom navigation');
                     }
                     
+                        // CuocThi
+                        if (document.querySelector('.gallerySwiper-cuocthi')) {
+                        console.log('Found gallerySwiper-cuocthi, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipercuocthi && window.swipercuocthi.destroy) {
+                            window.swipercuocthi.destroy(true, true);
+                        }
+                        
+                        const swipercuocthi = new Swiper(".gallerySwiper-cuocthi", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtncuocthi = document.querySelector('.gallerySwiper-cuocthi .swiper-nav-next');
+                        const prevBtncuocthi = document.querySelector('.gallerySwiper-cuocthi .swiper-nav-prev');
+                        
+                        if (nextBtncuocthi) {
+                            nextBtncuocthi.addEventListener('click', () => {
+                                swipercuocthi.slideNext();
+                            });
+                        }
+                        if (prevBtncuocthi) {
+                            prevBtncuocthi.addEventListener('click', () => {
+                                swipercuocthi.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipercuocthi = swipercuocthi;
+                        console.log('Swiper cuocthi initialized with custom navigation');
+                    }
+
+                        // TapHuan
+                        if (document.querySelector('.gallerySwiper-taphuan')) {
+                        console.log('Found gallerySwiper-taphuan, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipertaphuan && window.swipertaphuan.destroy) {
+                            window.swipertaphuan.destroy(true, true);
+                        }
+                        
+                        const swipertaphuan = new Swiper(".gallerySwiper-taphuan", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtntaphuan = document.querySelector('.gallerySwiper-taphuan .swiper-nav-next');
+                        const prevBtntaphuan = document.querySelector('.gallerySwiper-taphuan .swiper-nav-prev');
+                        
+                        if (nextBtntaphuan) {
+                            nextBtntaphuan.addEventListener('click', () => {
+                                swipertaphuan.slideNext();
+                            });
+                        }
+                        if (prevBtntaphuan) {
+                            prevBtntaphuan.addEventListener('click', () => {
+                                swipertaphuan.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipertaphuan = swipertaphuan;
+                        console.log('Swiper taphuan initialized with custom navigation');
+                    }
+                    
                     console.log('All modal Swipers initialized with custom navigation');
                 }
 
@@ -1333,6 +1415,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
