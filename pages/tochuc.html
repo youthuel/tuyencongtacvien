@@ -30,11 +30,26 @@
 
         <div class="grid place-items-center mb-12 scroll-animate" style="transition-delay:150ms;">
             <div data-modal-target="#modal-huynh-manh-phuong-btv" class="modal-trigger group bg-white rounded-2xl p-6 text-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer">
-                <div class="w-28 h-28 rounded-full mx-auto mb-4 p-1.5  bg-gradient-to-br from-orange-400 to-yellow-500 shadow-md transition-transform duration-300 group-hover:scale-110 animated-gradient-ring">
-                    <div class="w-full h-full rounded-full p-1 bg-white">
-                        <img src="pic/tochuc/huynhmanhphuong.png" alt="Ảnh Đ/c Huỳnh Mạnh Phương" class="w-full h-full rounded-full object-cover">
-                    </div>
-                </div>
+<div class="w-28 h-28 rounded-full mx-auto mb-4 p-1.5 shadow-md 
+            transition-transform duration-300 group-hover:scale-110"
+     style="background: conic-gradient(
+              from 0deg,
+              #f97316,
+              #facc15,
+              #22c55e,
+              #3b82f6,
+              #f97316
+            );
+            animation: spin 5s linear infinite;
+            border-radius: 9999px;">
+
+  <div class="w-full h-full rounded-full p-1 bg-white">
+    <img src="pic/tochuc/huynhmanhphuong.png" 
+         alt="Ảnh Đ/c Huỳnh Mạnh Phương" 
+         class="w-full h-full rounded-full object-cover">
+  </div>
+</div>
+
                 <h3 class="font-bold text-slate-700 text-lg group-hover:text-blue-600 transition-colors duration-300">Đ/c Huỳnh Mạnh Phương</h3>
                 <p class="text-sm text-slate-500 font-semibold">Bí thư</p>
             </div>
@@ -387,6 +402,7 @@
     });
 
 </script>
+
 
 
 
