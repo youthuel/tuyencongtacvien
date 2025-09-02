@@ -120,7 +120,14 @@
         /* Custom animation chậm */
         .animate-spin-slow {
         animation: spin 6s linear infinite;
-
+                  .custom-stroke {
+    -webkit-text-stroke: 0.5px #1d4ed8; /* Viền xanh */
+/*     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */ */
+      }
+      .custom-stroketr {
+    -webkit-text-stroke: 0.5px #fff; /* Viền trắng */
+/*     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */ */
+      }
         /* === CSS TỪNG TRANG === */
         /* GIỚI THIỆU */
         .activity-card img { transition: transform 0.4s ease-out; }
@@ -1326,6 +1333,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
