@@ -291,6 +291,24 @@
         .faq-item.open .faq-answer { grid-template-rows: 1fr; }
         .faq-answer > div { min-height: 0; }
         .animated-gradient-ring { background-image: linear-gradient(-45deg, #f857a6, #ff5858, #ffc94e, #23d5ab, #23a6d5, #f857a6); background-size: 600% 600%; animation: gradient-pan 8s ease-in-out infinite; }
+        .animated-gradient-ring1 {
+  position: relative;
+  background: conic-gradient(
+    from 0deg,
+    #f97316,  /* cam */
+    #facc15,  /* vàng */
+    #22c55e,  /* xanh lá */
+    #3b82f6,  /* xanh dương */
+    #f97316   /* quay lại cam để mượt */
+  );
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
         /* === KEYFRAMES === */
         @keyframes float { 50% { transform: translateY(-20px) rotate(10deg); } }
@@ -1263,6 +1281,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
