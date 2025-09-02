@@ -821,36 +821,7 @@
 
 
 <!-- Modal -->
-<div id="modal-ngoc" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative">
-    <!-- Nút đóng -->
-    <button onclick="closeModal('modal-ngoc')" 
-            class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">✖</button>
 
-    <!-- Nội dung chi tiết -->
-    <img src="pic/hoat-dong/ThanhNgoc1.jpeg" class="w-full h-60 object-cover rounded-xl mb-4" />
-    <p class="text-slate-600 italic">
-      “Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình,
-      hoạt động Đoàn – Hội. Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi
-      chuẩn bị hậu cần, cắm cọc tại hội trường, nhà kho, vật lộn với backdrop, bơi trong deadline
-      để chương trình diễn ra suôn sẻ. Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ,
-      và gắn kết với nhau nhiều hơn. Iu lắm lắm 💗💗”
-    </p>
-  </div>
-</div>
-
-<script>
-function openModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-}
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
-}
-</script>
 
 
 
@@ -1020,45 +991,28 @@ function closeModal(id) {
   </div>
 </div>
 
-<script>
-function toggleCard(card) {
-  const detail = card.querySelector('.card-detail');
-  detail.classList.toggle('hidden');
-}
-</script>
-
     </div>
   </div>
 </section>
+
       //Modal Thanh Ngọc
-         <div id="tab-vtm-1" class="tab-content-vtm">
-        <h2 class="text-3xl font-extrabold text-slate-800">Hội thao cán bộ Đoàn - Hội</h2>
-        <p class="mt-3 text-slate-600 leading-relaxed">
-          Sự kiện thể thao lớn nhất trong năm dành cho cán bộ Đoàn - Hội các khoa tranh tài ở nhiều bộ môn khác nhau. 
-          Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết.
-        </p>
-        
-        <!-- Swiper Gallery -->
-         <div class="swiper gallerySwiper-the mt-3">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="pic/hoat-dong/hh-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/ht-4.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-            <div class="swiper-slide"><img src="pic/hoat-dong/ht-5.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
-          </div>
-          <div class="swiper-nav-btn swiper-nav-next">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-          <div class="swiper-nav-btn swiper-nav-prev">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
+<div id="modal-ngoc" class="modal fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+  <div class="modal-content bg-white rounded-2xl max-w-2xl w-full p-6 relative">      
+      <!-- Nút đóng -->
+      <button class="modal-close absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">
+        ✕
+      </button>
+    <!-- Nội dung chi tiết -->
+    <img src="pic/hoat-dong/ThanhNgoc1.jpeg" class="w-full h-60 object-cover rounded-xl mb-4" />
+    <p class="text-slate-600 italic">
+      “Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình,
+      hoạt động Đoàn – Hội. Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi
+      chuẩn bị hậu cần, cắm cọc tại hội trường, nhà kho, vật lộn với backdrop, bơi trong deadline
+      để chương trình diễn ra suôn sẻ. Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ,
+      và gắn kết với nhau nhiều hơn. Iu lắm lắm 💗💗”
+    </p>
+    </div>
+  </div>
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
     <div class="deco-shape w-64 h-64 bg-white/10 rounded-full -top-20 -left-20"></div>
@@ -1073,6 +1027,7 @@ function toggleCard(card) {
         </div>
     </div>
 </section>
+
 
 
 
