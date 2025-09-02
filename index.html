@@ -670,11 +670,11 @@
                         console.log('Found gallerySwiper-nckh, initializing...');
                         
                         // Destroy existing Swiper instance if exists
-                        if (window.swipernckh && window.swiperHmtn.destroy) {
+                        if (window.swipernckh && window.swipernckh.destroy) {
                             window.swipernckh.destroy(true, true);
                         }
                         
-                        const swiperHmtn = new Swiper(".gallerySwiper-nckh", { 
+                        const swipernckh = new Swiper(".gallerySwiper-nckh", { 
                             slidesPerView: 1, 
                             spaceBetween: 16, 
                             loop: true,
@@ -1326,6 +1326,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
