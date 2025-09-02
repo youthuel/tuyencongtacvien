@@ -266,7 +266,7 @@
         .card-slogan { font-size: 1.125rem; font-style: italic; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; }
         .card-tasks { list-style: none; padding: 0; text-align: left; width: 100%; }
         .card-tasks li { display: flex; align-items: flex-start; margin-bottom: 0.75rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.95); }
-        .card-tasks li::before { content: '✓'; margin-right: 0.75rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); flex-shrink: 0; }
+        .card-tasks li::before { content: none; }
         .handwriting-container svg { width: 100%; max-width: 600px; height: auto; }
         .handwriting-text { font-family: 'Dancing Script', cursive; font-size: 100px; font-weight: 700; stroke: #1e3a8a; stroke-width: 1; fill: transparent; stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw-text 4s ease-in-out forwards; }
         .handwriting-container.drawn .handwriting-text { animation: fill-text 1s forwards 3.5s; }
@@ -372,6 +372,20 @@
         @keyframes fadeIn-15 { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes draw-text { to { stroke-dashoffset: 0; } }
         @keyframes fill-text { to { fill: #2563eb; } }
+
+        /* Timeline cards: square-ish and responsive text */
+        .timeline-card { display: flex; flex-direction: column; justify-content: center; }
+        .timeline-card h3 { font-size: clamp(1rem, 0.8vw + 0.9rem, 1.35rem); }
+        .timeline-card p { font-size: clamp(0.9rem, 0.35vw + 0.8rem, 1rem); line-height: 1.55; }
+        @media (min-width: 768px) {
+            .timeline-card { aspect-ratio: 1 / 1; min-height: 260px; }
+        }
+        @media (max-width: 767px) {
+            .timeline-card { min-height: 220px; }
+        }
+
+        /* Flip card front: slightly smaller heading for better fit */
+        .flip-card-front h3 { font-size: clamp(1rem, 0.7vw + 0.9rem, 1.25rem); }
 
         /* === RESPONSIVE OPTIMIZATION === */
         
