@@ -1,22 +1,36 @@
-<section class="relative absolute inset-0 overflow-hidden">
-  <!-- Ảnh nền -->
-    <img src="pic/banner.png" 
-         alt="Background" 
-         class="w-full h-full object-cover">
-    <!-- Overlay gradient tối để chữ nổi bật hơn -->
-<!--     <div class="absolute inset-0 bg-gradient-to-br from-sky-900/70 via-purple-900/60 to-pink-900/70"></div> -->
-</section>
-    
-<section class="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 bg-gradient-to-tr from-teal-100 via-sky-100 to-indigo-200">
-    <div class="background-blob w-96 h-96 bg-sky-300 rounded-full -top-20 -left-40"></div>
-    <div class="background-blob w-96 h-96 bg-indigo-300 rounded-full -bottom-20 -right-40"></div>
-    <div class="container mx-auto px-6 text-center relative z-10">
-        <div class="scroll-animate">
-            <p class="text-sm font-semibold text-blue-600 uppercase tracking-widest">Lộ Trình Tuyển Chọn</p>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mt-2">Hành Trình Trở Thành Mảnh Ghép</h1>
-            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Cùng theo dõi các mốc thời gian và nội dung chi tiết để không bỏ lỡ </br>cơ hội gia nhập ngôi nhà chung của Tuổi trẻ UEL!</p>
+<section class="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-100">
+    <div class="absolute -top-20 -left-24 w-[28rem] h-[28rem] rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-purple-200/40 blur-3xl"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-xl mb-6">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m10 4h-6V7m8 5a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800">Hành Trình Trở Thành Mảnh Ghép</h1>
+        <p class="max-w-2xl mx-auto mt-4 text-lg text-slate-600">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
+
+        <!-- Stepper nhanh -->
+        <div class="mt-10 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-extrabold text-lg">01</div>
+                    <h3 class="mt-4 font-bold text-slate-800">Điền đơn trực tuyến</h3>
+                    <p class="mt-2 text-slate-600 text-sm">Thể hiện màu sắc cá nhân và nguyện vọng của bạn trong form đăng ký.</p>
+                </div>
+                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
+                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-extrabold text-lg">02</div>
+                    <h3 class="mt-4 font-bold text-slate-800">Phỏng vấn thân thiện</h3>
+                    <p class="mt-2 text-slate-600 text-sm">Trò chuyện để hiểu nhau hơn và chọn vị trí phù hợp nhất với bạn.</p>
+                </div>
+                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-extrabold text-lg">03</div>
+                    <h3 class="mt-4 font-bold text-slate-800">Gia nhập & tỏa sáng</h3>
+                    <p class="mt-2 text-slate-600 text-sm">Trải nghiệm thực tế, kết nối đồng đội và tạo dấu ấn thanh xuân.</p>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- wave decor -->
+    <svg class="absolute bottom-0 left-0 right-0" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" d="M0,96L48,80C96,64,192,32,288,26.7C384,21,480,43,576,64C672,85,768,107,864,112C960,117,1056,107,1152,85.3C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/></svg>
 </section>
 
 <section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-slate-50 to-gray-100">
@@ -162,116 +176,116 @@
     </div>
 </section>
 
-<section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+  <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
     <div class="container mx-auto px-6">
-         <div class="text-center mb-16 scroll-animate">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Giải Đáp Thắc Mắc</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé! 💫</p>
+           <div class="text-center mb-16 scroll-animate">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+              </div>
+              <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Giải Đáp Thắc Mắc</h2>
+              <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé! 💫</p>
         </div>
-        
-        <div class="max-w-4xl mx-auto space-y-6 scroll-animate" style="transition-delay: 150ms;">
+          
+          <div class="max-w-4xl mx-auto space-y-6 scroll-animate" style="transition-delay: 150ms;">
+              
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                          </div>
+                      </div>
+                </button>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Chúng mình chào đón tất cả các bạn sinh viên có nhiệt huyết và mong muốn cống hiến. Kinh nghiệm là một lợi thế, nhưng tinh thần ham học hỏi và sự cam kết mới là điều quan trọng nhất. Bạn sẽ được đào tạo và hướng dẫn trong suốt quá trình hoạt động. 🌟</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                          </div>
+                      </div>
+                </button>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                          </div>
+                      </div>
+                </button>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển tốt nhất!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
-                    <span class="text-lg leading-relaxed pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
-                    <div class="flex-shrink-0 ml-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                          </div>
+                      </div>
                 </button>
-                <div class="faq-answer hidden">
-                    <div class="px-6 pb-6">
-                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Chúng mình chào đón tất cả các bạn sinh viên có nhiệt huyết và mong muốn cống hiến. Kinh nghiệm là một lợi thế, nhưng tinh thần ham học hỏi và sự cam kết mới là điều quan trọng nhất. Bạn sẽ được đào tạo và hướng dẫn trong suốt quá trình hoạt động. 🌟</p>
-                        </div>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
+                          </div>
                     </div>
                 </div>
             </div>
 
-            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
-                    <span class="text-lg leading-relaxed pr-4">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
-                    <div class="flex-shrink-0 ml-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
+                          </div>
+                      </div>
                 </button>
-                <div class="faq-answer hidden">
-                    <div class="px-6 pb-6">
-                        <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
-                    <span class="text-lg leading-relaxed pr-4">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
-                    <div class="flex-shrink-0 ml-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-                <div class="faq-answer hidden">
-                    <div class="px-6 pb-6">
-                        <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển tốt nhất!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
-                    <span class="text-lg leading-relaxed pr-4">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
-                    <div class="flex-shrink-0 ml-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-                <div class="faq-answer hidden">
-                    <div class="px-6 pb-6">
-                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
-                    <span class="text-lg leading-relaxed pr-4">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
-                    <div class="flex-shrink-0 ml-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                            <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
-                <div class="faq-answer hidden">
-                    <div class="px-6 pb-6">
-                        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
-                            <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
-                        </div>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -280,101 +294,101 @@
     </div>
 </section>
 
-<!-- Form gửi câu hỏi FAQ -->
-<!-- <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-rose-50 via-pink-50 to-red-50">
-    <div class="background-blob w-96 h-96 bg-rose-200 rounded-full -top-20 -left-40 opacity-60"></div>
-    <div class="background-blob w-96 h-96 bg-pink-200 rounded-full -bottom-20 -right-40 opacity-60"></div>
-    
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-12 scroll-animate">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full mb-6">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Đặt Câu Hỏi Của Bạn</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Có thắc mắc gì khác không? Hãy gửi câu hỏi cho chúng mình nhé! 💭</p>
-        </div>
-        
-        <div class="max-w-2xl mx-auto scroll-animate" style="transition-delay: 150ms;">
-            <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-10">
-                <form id="faq-form" class="space-y-6">
-                    <!-- Checkbox gửi ẩn danh --
-                    <div class="flex items-center space-x-3">
-                        <input type="checkbox" id="anonymous" name="anonymous" class="w-5 h-5 text-rose-500 bg-gray-100 border-gray-300 rounded focus:ring-rose-500 focus:ring-2">
-                        <label for="anonymous" class="text-sm font-medium text-gray-700">Gửi ẩn danh</label>
-                    </div>
-                    
-                    <!-- Họ và tên --
-                    <div>
-                        <label for="fullname" class="block text-sm font-semibold text-gray-700 mb-2">Họ và tên *</label>
-                        <input type="text" id="fullname" name="fullname" required 
-                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
-                               placeholder="Nhập họ và tên của bạn">
-                    </div>
-                    
-                    <!-- Mã số sinh viên --
-                    <div>
-                        <label for="studentId" class="block text-sm font-semibold text-gray-700 mb-2">Mã số sinh viên</label>
-                        <input type="text" id="studentId" name="studentId" 
-                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
-                               placeholder="Nhập mã số sinh viên">
-                    </div>
-                    
-                    <!-- Lớp --
-                    <div>
-                        <label for="class" class="block text-sm font-semibold text-gray-700 mb-2">Lớp</label>
-                        <input type="text" id="class" name="class" 
-                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
-                               placeholder="Nhập lớp của bạn">
-                    </div>
-                    
-                    <!-- Khoa --
-                    <div>
-                        <label for="faculty" class="block text-sm font-semibold text-gray-700 mb-2">Khoa</label>
-                        <input type="text" id="faculty" name="faculty" 
-                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
-                               placeholder="Nhập khoa của bạn">
-                    </div>
-                    
-                    <!-- Email --
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                        <input type="email" id="email" name="email" 
-                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
-                               placeholder="Nhập email của bạn">
-                    </div>
-                    
-                    <!-- Nội dung câu hỏi --
-                    <div>
-                        <label for="question" class="block text-sm font-semibold text-gray-700 mb-2">Nội dung câu hỏi *</label>
-                        <textarea id="question" name="question" rows="4" required 
-                                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 resize-none"
-                                  placeholder="Nhập câu hỏi của bạn..."></textarea>
-                    </div>
-                    
-                    <!-- Nút gửi --
-                    <button type="submit" 
-                            class="w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:from-rose-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-rose-500/30 focus:outline-none focus:ring-4 focus:ring-rose-500/50">
-                        <span class="flex items-center justify-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                            <span>Gửi Câu Hỏi</span>
-                        </span>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Danh sách câu hỏi đã gửi --
-        <div id="faq-list" class="max-w-3xl mx-auto mt-12 space-y-5">
-            <div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>
-        </div>
-    </div>
-</section> -->
-
-<section class="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 py-20 md:py-24">
+  <!-- Form gửi câu hỏi FAQ -->
+  <!-- <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-rose-50 via-pink-50 to-red-50">
+      <div class="background-blob w-96 h-96 bg-rose-200 rounded-full -top-20 -left-40 opacity-60"></div>
+      <div class="background-blob w-96 h-96 bg-pink-200 rounded-full -bottom-20 -right-40 opacity-60"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-12 scroll-animate">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full mb-6">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+              </div>
+              <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Đặt Câu Hỏi Của Bạn</h2>
+              <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Có thắc mắc gì khác không? Hãy gửi câu hỏi cho chúng mình nhé! 💭</p>
+          </div>
+          
+          <div class="max-w-2xl mx-auto scroll-animate" style="transition-delay: 150ms;">
+              <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 p-8 md:p-10">
+                  <form id="faq-form" class="space-y-6">
+                      <!-- Checkbox gửi ẩn danh --
+                      <div class="flex items-center space-x-3">
+                          <input type="checkbox" id="anonymous" name="anonymous" class="w-5 h-5 text-rose-500 bg-gray-100 border-gray-300 rounded focus:ring-rose-500 focus:ring-2">
+                          <label for="anonymous" class="text-sm font-medium text-gray-700">Gửi ẩn danh</label>
+                      </div>
+                      
+                      <!-- Họ và tên --
+                      <div>
+                          <label for="fullname" class="block text-sm font-semibold text-gray-700 mb-2">Họ và tên *</label>
+                          <input type="text" id="fullname" name="fullname" required 
+                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                                 placeholder="Nhập họ và tên của bạn">
+                      </div>
+                      
+                      <!-- Mã số sinh viên --
+                      <div>
+                          <label for="studentId" class="block text-sm font-semibold text-gray-700 mb-2">Mã số sinh viên</label>
+                          <input type="text" id="studentId" name="studentId" 
+                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                                 placeholder="Nhập mã số sinh viên">
+                      </div>
+                      
+                      <!-- Lớp --
+                      <div>
+                          <label for="class" class="block text-sm font-semibold text-gray-700 mb-2">Lớp</label>
+                          <input type="text" id="class" name="class" 
+                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                                 placeholder="Nhập lớp của bạn">
+                      </div>
+                      
+                      <!-- Khoa --
+                      <div>
+                          <label for="faculty" class="block text-sm font-semibold text-gray-700 mb-2">Khoa</label>
+                          <input type="text" id="faculty" name="faculty" 
+                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                                 placeholder="Nhập khoa của bạn">
+                      </div>
+                      
+                      <!-- Email --
+                      <div>
+                          <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                          <input type="email" id="email" name="email" 
+                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                                 placeholder="Nhập email của bạn">
+                      </div>
+                      
+                      <!-- Nội dung câu hỏi --
+                      <div>
+                          <label for="question" class="block text-sm font-semibold text-gray-700 mb-2">Nội dung câu hỏi *</label>
+                          <textarea id="question" name="question" rows="4" required 
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 resize-none"
+                                    placeholder="Nhập câu hỏi của bạn..."></textarea>
+                      </div>
+                      
+                      <!-- Nút gửi --
+                      <button type="submit" 
+                              class="w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold text-lg py-4 px-8 rounded-xl hover:from-rose-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-rose-500/30 focus:outline-none focus:ring-4 focus:ring-rose-500/50">
+                          <span class="flex items-center justify-center space-x-2">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                              </svg>
+                              <span>Gửi Câu Hỏi</span>
+                          </span>
+                      </button>
+                  </form>
+              </div>
+          </div>
+  
+          <!-- Danh sách câu hỏi đã gửi --
+          <div id="faq-list" class="max-w-3xl mx-auto mt-12 space-y-5">
+              <div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>
+          </div>
+      </div>
+  </section> -->
+  
+  <section class="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 py-20 md:py-24">
     <div class="container mx-auto px-6 relative z-10">
         <div class="text-center mb-12 scroll-animate">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Một Vài Lời Khuyên Vàng Từ Chúng Mình</h2>
@@ -422,288 +436,288 @@
     </div>
 </section>
 
-<!-- <style>
-        /* FAQ Styling */
-        .faq-question {
-            cursor: pointer;
-        }
-        
-        .faq-answer {
-            transition: all 0.3s ease-out;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-answer.hidden {
-            display: none;
-        }
-        
-        .faq-answer:not(.hidden) {
-            display: block;
-        }
-        
-        .faq-arrow {
-            transition: transform 0.3s ease;
-        }
-        
-        /* Ensure proper spacing */
-        .faq-item {
-            margin-bottom: 1rem;
-        }
-        
-        .faq-answer > div {
-            padding-top: 0.5rem;
-        }
-        
-        /* Active state styling */
-        .faq-item:has(.faq-answer:not(.hidden)) .faq-question {
-            background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
-        }
-    </style>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // FAQ Accordion functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.closest('.faq-item');
-                    const answer = faqItem.querySelector('.faq-answer');
-                    const arrow = this.querySelector('.faq-arrow');
-                    
-                    // Close all other answers first (accordion behavior)
-                    faqQuestions.forEach(otherQuestion => {
-                        if (otherQuestion !== this) {
-                            const otherItem = otherQuestion.closest('.faq-item');
-                            const otherAnswer = otherItem.querySelector('.faq-answer');
-                            const otherArrow = otherQuestion.querySelector('.faq-arrow');
-                            
-                            otherAnswer.classList.add('hidden');
-                            otherArrow.style.transform = 'rotate(0deg)';
-                        }
-                    });
-                    
-                    // Toggle current answer
-                    answer.classList.toggle('hidden');
-                    
-                    // Rotate arrow
-                    if (answer.classList.contains('hidden')) {
-                        arrow.style.transform = 'rotate(0deg)';
-                    } else {
-                        arrow.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
-            // ===== FAQ Form + List (localStorage) =====
-            const faqForm = document.getElementById('faq-form');
-            const anonymousCheckbox = document.getElementById('anonymous');
-            const fullnameInput = document.getElementById('fullname');
-            const studentIdInput = document.getElementById('studentId');
-            const classInput = document.getElementById('class');
-            const facultyInput = document.getElementById('faculty');
-            const emailInput = document.getElementById('email');
-            const questionInput = document.getElementById('question');
-            const faqListContainer = document.getElementById('faq-list');
-
-            const STORAGE_KEY = 'uel_faq_questions';
-
-            function loadQuestions() {
-                try {
-                    const raw = localStorage.getItem(STORAGE_KEY);
-                    return raw ? JSON.parse(raw) : [];
-                } catch { return []; }
-            }
-            function saveQuestions(items) {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-            }
-            function renderQuestions() {
-                const items = loadQuestions();
-                if (!items.length) {
-                    faqListContainer.innerHTML = '<div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>';
-                    return;
-                }
-                faqListContainer.innerHTML = items.map((q, idx) => `
-                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-md border p-5">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white flex items-center justify-center font-bold">${(q.fullname || 'Ẩn danh').charAt(0).toUpperCase()}</div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <p class="font-semibold text-slate-800">${q.fullname || 'Ẩn danh'}</p>
-                                    <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.class || '—'}</span>
-                                    <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.faculty || '—'}</span>
-                                    <span class="ml-auto text-xs text-gray-500">${new Date(q.createdAt).toLocaleString()}</span>
-                                </div>
-                                <p class="mt-2 text-slate-700">${escapeHtml(q.question)}</p>
-
-                                ${q.answer ? `
-                                    <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500">
-                                        <div class="text-sm text-gray-500 mb-1">Phản hồi</div>
-                                        <p class="text-slate-800">${escapeHtml(q.answer)}</p>
-                                    </div>
-                                ` : `
-                                    <div class="mt-4">
-                                        <textarea data-idx="${idx}" rows="2" placeholder="Nhập phản hồi..." class="reply-input w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-                                        <div class="flex items-center gap-3 mt-2">
-                                            <button data-idx="${idx}" class="reply-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Trả lời</button>
-                                            <button data-idx="${idx}" class="delete-btn px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200">Xóa</button>
-                                        </div>
-                                    </div>
-                                `}
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Wire reply buttons
-                faqListContainer.querySelectorAll('.reply-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const idx = +btn.getAttribute('data-idx');
-                        const input = faqListContainer.querySelector(`.reply-input[data-idx="${idx}"]`);
-                        const val = (input?.value || '').trim();
-                        if (!val) { showNotification('Vui lòng nhập phản hồi', 'error'); return; }
-                        const items = loadQuestions();
-                        if (!items[idx]) return;
-                        items[idx].answer = val;
-                        items[idx].answeredAt = Date.now();
-                        saveQuestions(items);
-                        renderQuestions();
-                        showNotification('Đã gửi phản hồi cho câu hỏi', 'success');
-                    });
-                });
-
-                // Wire delete buttons
-                faqListContainer.querySelectorAll('.delete-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const idx = +btn.getAttribute('data-idx');
-                        const items = loadQuestions();
-                        items.splice(idx, 1);
-                        saveQuestions(items);
-                        renderQuestions();
-                        showNotification('Đã xóa câu hỏi', 'success');
-                    });
-                });
-            }
-
-            // Escape HTML for safe rendering
-            function escapeHtml(str) {
-                return String(str)
-                    .replaceAll('&', '&amp;')
-                    .replaceAll('<', '&lt;')
-                    .replaceAll('>', '&gt;')
-                    .replaceAll('"', '&quot;')
-                    .replaceAll("'", '&#039;');
-            }
-
-            // Load initial list
-            renderQuestions();
-
-            // Toggle required fields based on anonymous checkbox
-            anonymousCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    fullnameInput.required = false;
-                    fullnameInput.placeholder = "Nhập họ và tên (tùy chọn)";
-                    fullnameInput.classList.remove('border-red-300');
-                } else {
-                    fullnameInput.required = true;
-                    fullnameInput.placeholder = "Nhập họ và tên của bạn";
-                }
-            });
-
-            // Form submission
-            faqForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = {
-                    anonymous: anonymousCheckbox.checked,
-                    fullname: anonymousCheckbox.checked ? '' : fullnameInput.value.trim(),
-                    studentId: studentIdInput.value.trim(),
-                    class: classInput.value.trim(),
-                    faculty: facultyInput.value.trim(),
-                    email: emailInput.value.trim(),
-                    question: questionInput.value.trim(),
-                    createdAt: Date.now(),
-                    answer: ''
-                };
-
-                if (!formData.anonymous && !formData.fullname) {
-                    showNotification('Vui lòng nhập họ và tên hoặc chọn gửi ẩn danh', 'error');
-                    return;
-                }
-                if (!formData.question) {
-                    showNotification('Vui lòng nhập nội dung câu hỏi', 'error');
-                    return;
-                }
-
-                const submitBtn = faqForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = `
-                    <span class="flex items-center justify-center space-x-2">
-                        <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                        </svg>
-                        <span>Đang gửi...</span>
-                    </span>
-                `;
-                submitBtn.disabled = true;
-
-                setTimeout(() => {
-                    const items = loadQuestions();
-                    items.unshift(formData);
-                    saveQuestions(items);
-                    renderQuestions();
-
-                    showNotification('Cảm ơn bạn đã gửi câu hỏi! Chúng mình sẽ phản hồi tại đây. 💫', 'success');
-                    faqForm.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 800);
-            });
-
-            // Notification function
-            function showNotification(message, type = 'info') {
-                const existingNotifications = document.querySelectorAll('.notification');
-                existingNotifications.forEach(notification => notification.remove());
-
-                const notification = document.createElement('div');
-                notification.className = `notification fixed top-4 right-4 z-50 max-w-md p-4 rounded-xl shadow-lg transform transition-all duration-300 translate-x-full`;
-                
-                if (type === 'success') {
-                    notification.classList.add('bg-green-500', 'text-white');
-                } else if (type === 'error') {
-                    notification.classList.add('bg-red-500', 'text-white');
-                } else {
-                    notification.classList.add('bg-blue-500', 'text-white');
-                }
-
-                notification.innerHTML = `
-                    <div class="flex items-center space-x-3">
-                        <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            ${type === 'success' ? 
-                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' :
-                                type === 'error' ?
-                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>' :
-                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
-                            }
-                        </svg>
-                        <p class="font-medium">${message}</p>
-                        <button onclick="this.parentElement.parentElement.remove()" class="ml-auto flex-shrink-0">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-                `;
-
-                document.body.appendChild(notification);
-                setTimeout(() => { notification.classList.remove('translate-x-full'); }, 100);
-                setTimeout(() => {
-                    notification.classList.add('translate-x-full');
-                    setTimeout(() => { if (notification.parentElement) notification.remove(); }, 300);
-                }, 5000);
-            }
-        });
-    </script>
- -->
-
-
+  <!-- <style>
+          /* FAQ Styling */
+          .faq-question {
+              cursor: pointer;
+          }
+          
+          .faq-answer {
+              transition: all 0.3s ease-out;
+              border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+          
+          .faq-answer.hidden {
+              display: none;
+          }
+          
+          .faq-answer:not(.hidden) {
+              display: block;
+          }
+          
+          .faq-arrow {
+              transition: transform 0.3s ease;
+          }
+          
+          /* Ensure proper spacing */
+          .faq-item {
+              margin-bottom: 1rem;
+          }
+          
+          .faq-answer > div {
+              padding-top: 0.5rem;
+          }
+          
+          /* Active state styling */
+          .faq-item:has(.faq-answer:not(.hidden)) .faq-question {
+              background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+          }
+      </style>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              // FAQ Accordion functionality
+              const faqQuestions = document.querySelectorAll('.faq-question');
+              
+              faqQuestions.forEach(question => {
+                  question.addEventListener('click', function() {
+                      const faqItem = this.closest('.faq-item');
+                      const answer = faqItem.querySelector('.faq-answer');
+                      const arrow = this.querySelector('.faq-arrow');
+                      
+                      // Close all other answers first (accordion behavior)
+                      faqQuestions.forEach(otherQuestion => {
+                          if (otherQuestion !== this) {
+                              const otherItem = otherQuestion.closest('.faq-item');
+                              const otherAnswer = otherItem.querySelector('.faq-answer');
+                              const otherArrow = otherQuestion.querySelector('.faq-arrow');
+                              
+                              otherAnswer.classList.add('hidden');
+                              otherArrow.style.transform = 'rotate(0deg)';
+                          }
+                      });
+                      
+                      // Toggle current answer
+                      answer.classList.toggle('hidden');
+                      
+                      // Rotate arrow
+                      if (answer.classList.contains('hidden')) {
+                          arrow.style.transform = 'rotate(0deg)';
+                      } else {
+                          arrow.style.transform = 'rotate(180deg)';
+                      }
+                  });
+              });
+  
+              // ===== FAQ Form + List (localStorage) =====
+              const faqForm = document.getElementById('faq-form');
+              const anonymousCheckbox = document.getElementById('anonymous');
+              const fullnameInput = document.getElementById('fullname');
+              const studentIdInput = document.getElementById('studentId');
+              const classInput = document.getElementById('class');
+              const facultyInput = document.getElementById('faculty');
+              const emailInput = document.getElementById('email');
+              const questionInput = document.getElementById('question');
+              const faqListContainer = document.getElementById('faq-list');
+  
+              const STORAGE_KEY = 'uel_faq_questions';
+  
+              function loadQuestions() {
+                  try {
+                      const raw = localStorage.getItem(STORAGE_KEY);
+                      return raw ? JSON.parse(raw) : [];
+                  } catch { return []; }
+              }
+              function saveQuestions(items) {
+                  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+              }
+              function renderQuestions() {
+                  const items = loadQuestions();
+                  if (!items.length) {
+                      faqListContainer.innerHTML = '<div class="text-center text-gray-500 bg-white/70 rounded-2xl p-8 border">Chưa có câu hỏi nào. Hãy là người đầu tiên đặt câu hỏi! ✨</div>';
+                      return;
+                  }
+                  faqListContainer.innerHTML = items.map((q, idx) => `
+                      <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-md border p-5">
+                          <div class="flex items-start gap-3">
+                              <div class="w-10 h-10 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 text-white flex items-center justify-center font-bold">${(q.fullname || 'Ẩn danh').charAt(0).toUpperCase()}</div>
+                              <div class="flex-1">
+                                  <div class="flex flex-wrap items-center gap-2">
+                                      <p class="font-semibold text-slate-800">${q.fullname || 'Ẩn danh'}</p>
+                                      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.class || '—'}</span>
+                                      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">${q.faculty || '—'}</span>
+                                      <span class="ml-auto text-xs text-gray-500">${new Date(q.createdAt).toLocaleString()}</span>
+        </div>
+                                  <p class="mt-2 text-slate-700">${escapeHtml(q.question)}</p>
+  
+                                  ${q.answer ? `
+                                      <div class="mt-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500">
+                                          <div class="text-sm text-gray-500 mb-1">Phản hồi</div>
+                                          <p class="text-slate-800">${escapeHtml(q.answer)}</p>
+    </div>
+                                  ` : `
+                                      <div class="mt-4">
+                                          <textarea data-idx="${idx}" rows="2" placeholder="Nhập phản hồi..." class="reply-input w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                                          <div class="flex items-center gap-3 mt-2">
+                                              <button data-idx="${idx}" class="reply-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Trả lời</button>
+                                              <button data-idx="${idx}" class="delete-btn px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200">Xóa</button>
+        </div>
+    </div>
+                                  `}
+        </div>
+    </div>
+        </div>
+                  `).join('');
+  
+                  // Wire reply buttons
+                  faqListContainer.querySelectorAll('.reply-btn').forEach(btn => {
+                      btn.addEventListener('click', () => {
+                          const idx = +btn.getAttribute('data-idx');
+                          const input = faqListContainer.querySelector(`.reply-input[data-idx="${idx}"]`);
+                          const val = (input?.value || '').trim();
+                          if (!val) { showNotification('Vui lòng nhập phản hồi', 'error'); return; }
+                          const items = loadQuestions();
+                          if (!items[idx]) return;
+                          items[idx].answer = val;
+                          items[idx].answeredAt = Date.now();
+                          saveQuestions(items);
+                          renderQuestions();
+                          showNotification('Đã gửi phản hồi cho câu hỏi', 'success');
+                      });
+                  });
+  
+                  // Wire delete buttons
+                  faqListContainer.querySelectorAll('.delete-btn').forEach(btn => {
+                      btn.addEventListener('click', () => {
+                          const idx = +btn.getAttribute('data-idx');
+                          const items = loadQuestions();
+                          items.splice(idx, 1);
+                          saveQuestions(items);
+                          renderQuestions();
+                          showNotification('Đã xóa câu hỏi', 'success');
+                      });
+                  });
+              }
+  
+              // Escape HTML for safe rendering
+              function escapeHtml(str) {
+                  return String(str)
+                      .replaceAll('&', '&amp;')
+                      .replaceAll('<', '&lt;')
+                      .replaceAll('>', '&gt;')
+                      .replaceAll('"', '&quot;')
+                      .replaceAll("'", '&#039;');
+              }
+  
+              // Load initial list
+              renderQuestions();
+  
+              // Toggle required fields based on anonymous checkbox
+              anonymousCheckbox.addEventListener('change', function() {
+                  if (this.checked) {
+                      fullnameInput.required = false;
+                      fullnameInput.placeholder = "Nhập họ và tên (tùy chọn)";
+                      fullnameInput.classList.remove('border-red-300');
+                  } else {
+                      fullnameInput.required = true;
+                      fullnameInput.placeholder = "Nhập họ và tên của bạn";
+                  }
+              });
+  
+              // Form submission
+              faqForm.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  const formData = {
+                      anonymous: anonymousCheckbox.checked,
+                      fullname: anonymousCheckbox.checked ? '' : fullnameInput.value.trim(),
+                      studentId: studentIdInput.value.trim(),
+                      class: classInput.value.trim(),
+                      faculty: facultyInput.value.trim(),
+                      email: emailInput.value.trim(),
+                      question: questionInput.value.trim(),
+                      createdAt: Date.now(),
+                      answer: ''
+                  };
+  
+                  if (!formData.anonymous && !formData.fullname) {
+                      showNotification('Vui lòng nhập họ và tên hoặc chọn gửi ẩn danh', 'error');
+                      return;
+                  }
+                  if (!formData.question) {
+                      showNotification('Vui lòng nhập nội dung câu hỏi', 'error');
+                      return;
+                  }
+  
+                  const submitBtn = faqForm.querySelector('button[type="submit"]');
+                  const originalText = submitBtn.innerHTML;
+                  submitBtn.innerHTML = `
+                      <span class="flex items-center justify-center space-x-2">
+                          <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                          </svg>
+                          <span>Đang gửi...</span>
+                      </span>
+                  `;
+                  submitBtn.disabled = true;
+  
+                  setTimeout(() => {
+                      const items = loadQuestions();
+                      items.unshift(formData);
+                      saveQuestions(items);
+                      renderQuestions();
+  
+                      showNotification('Cảm ơn bạn đã gửi câu hỏi! Chúng mình sẽ phản hồi tại đây. 💫', 'success');
+                      faqForm.reset();
+                      submitBtn.innerHTML = originalText;
+                      submitBtn.disabled = false;
+                  }, 800);
+              });
+  
+              // Notification function
+              function showNotification(message, type = 'info') {
+                  const existingNotifications = document.querySelectorAll('.notification');
+                  existingNotifications.forEach(notification => notification.remove());
+  
+                  const notification = document.createElement('div');
+                  notification.className = `notification fixed top-4 right-4 z-50 max-w-md p-4 rounded-xl shadow-lg transform transition-all duration-300 translate-x-full`;
+                  
+                  if (type === 'success') {
+                      notification.classList.add('bg-green-500', 'text-white');
+                  } else if (type === 'error') {
+                      notification.classList.add('bg-red-500', 'text-white');
+                  } else {
+                      notification.classList.add('bg-blue-500', 'text-white');
+                  }
+  
+                  notification.innerHTML = `
+                      <div class="flex items-center space-x-3">
+                          <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              ${type === 'success' ? 
+                                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' :
+                                  type === 'error' ?
+                                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>' :
+                                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                              }
+                          </svg>
+                          <p class="font-medium">${message}</p>
+                          <button onclick="this.parentElement.parentElement.remove()" class="ml-auto flex-shrink-0">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                              </svg>
+                          </button>
+    </div>
+                  `;
+  
+                  document.body.appendChild(notification);
+                  setTimeout(() => { notification.classList.remove('translate-x-full'); }, 100);
+                  setTimeout(() => {
+                      notification.classList.add('translate-x-full');
+                      setTimeout(() => { if (notification.parentElement) notification.remove(); }, 300);
+                  }, 5000);
+              }
+          });
+      </script>
+   -->
+  
+  
