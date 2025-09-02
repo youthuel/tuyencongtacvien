@@ -196,21 +196,25 @@
           
           <div class="max-w-4xl mx-auto space-y-4 scroll-animate" style="transition-delay: 150ms;">
               
-              <!-- Q item -->
-              <div class="faq-item bg-white rounded-2xl shadow-md border overflow-hidden">
-                  <button class="faq-question w-full flex items-center justify-between text-left p-5">
-                      <span class="font-semibold text-slate-800 pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
-                      <span class="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100">
-                          <svg class="faq-arrow w-5 h-5 text-slate-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </span>
-                  </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-5 pb-5 pt-0">
-                          <div class="rounded-xl bg-blue-50 p-4 text-slate-700">
-                              ✨ <strong>Hoàn toàn có thể!</strong> Kinh nghiệm là lợi thế nhưng không bắt buộc. Bạn sẽ được hướng dẫn và training đầy đủ trong quá trình hoạt động.
+              <!-- Q item (đồng bộ style với các câu dưới) -->
+              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
+                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group-hover:shadow-sm">
+                      <span class="text-lg leading-relaxed pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
+                      <div class="flex-shrink-0 ml-4">
+                          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                              </svg>
                           </div>
                       </div>
-                  </div>
+                </button>
+                  <div class="faq-answer hidden">
+                      <div class="px-6 pb-6">
+                          <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-500">
+                              <p class="text-slate-700 leading-relaxed text-lg">✨ <strong>Hoàn toàn có thể!</strong> Kinh nghiệm là lợi thế nhưng không bắt buộc. Bạn sẽ được hướng dẫn và training đầy đủ trong quá trình hoạt động.</p>
+                          </div>
+                    </div>
+                </div>
               </div>
 
               <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
