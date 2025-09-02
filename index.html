@@ -519,6 +519,14 @@
     </button>
 <!-- Removed old mobile menu block to avoid duplicate IDs; using the panel-based menu below -->
 
+    <!-- Global audio and controls -->
+    <audio id="bg-audio" loop src="pic/audio/bg-music.mp3"></audio>
+    <button id="music-toggle" class="fixed bottom-20 right-4 z-50 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center border-2 border-blue-500 hover:scale-110 transition duration-300">
+        <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 18V5l12-2v13"></path><circle cx="9" cy="19" r="3"></circle><circle cx="21" cy="16" r="3"></circle>
+        </svg>
+    </button>
+
     <main id="app-container"></main>
 
     <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
@@ -1691,6 +1699,34 @@
                 fabBtn.addEventListener('click', openMenu);
             }
 
+            // === GLOBAL MUSIC TOGGLE ===
+            const audio = document.getElementById('bg-audio');
+            const toggleBtn = document.getElementById('music-toggle');
+            const icon = document.getElementById('music-icon');
+            if (audio && toggleBtn && icon) {
+                const saved = localStorage.getItem('bg-audio-playing');
+                if (saved === 'true') { audio.play().catch(()=>{}); }
+                const setIcon = (isPlaying) => {
+                    icon.innerHTML = isPlaying
+                      ? '<rect x="5" y="4" width="4" height="16"></rect><rect x="15" y="4" width="4" height="16"></rect>'
+                      : '<path d="M9 18V5l12-2v13"></path><circle cx="9" cy="19" r="3"></circle><circle cx="21" cy="16" r="3"></circle>';
+                };
+                setIcon(saved === 'true');
+                toggleBtn.addEventListener('click', async () => {
+                    try {
+                        if (audio.paused) {
+                            await audio.play();
+                            localStorage.setItem('bg-audio-playing', 'true');
+                            setIcon(true);
+                        } else {
+                            audio.pause();
+                            localStorage.setItem('bg-audio-playing', 'false');
+                            setIcon(false);
+                        }
+                    } catch(e) {}
+                });
+            }
+
             // === TẢI TRANG BAN ĐẦU ===
             // Tải trang dựa trên URL hash khi người dùng truy cập lần đầu.
             loadPage(location.hash.substring(1) || 'home');
@@ -1842,7 +1878,6 @@
 </body>
 
 </html>
-
 
 
 
