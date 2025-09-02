@@ -779,10 +779,8 @@
     <div class="grid md:grid-cols-3 gap-10">
       
       <!-- Card -->
-<!-- Card -->
 <div class="scroll-animate" style="transition-delay: 100ms;">
-  <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden cursor-pointer"
-       onclick="openModal('modal-ngoc')">
+  <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
     
     <!-- Cover -->
     <div class="overflow-hidden">
@@ -800,33 +798,43 @@
         <p class="text-sm text-slate-500">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Modal -->
-<!-- Card -->
-<div class="scroll-animate" style="transition-delay: 100ms;">
-  <div onclick="openModal('modal-ngoc')"
-       class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden cursor-pointer">
-    
-    <!-- Cover -->
-    <div class="overflow-hidden">
-      <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
-           class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+    <!-- Nút xem thêm -->
+    <div class="px-6 pb-4">
+      <button onclick="toggleDetail(this)"
+              class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+        👉 Xem thêm
+      </button>
     </div>
 
-    <!-- Thông tin ngắn -->
-    <div class="p-6 flex items-center">
-      <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
-        <img src="pic/hoat-dong/ThanhNgoc.jpeg" class="w-full h-full rounded-full object-cover">
-      </div>
-      <div class="ml-4">
-        <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
-        <p class="text-sm text-slate-500">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
-      </div>
+    <!-- Nội dung chi tiết (ẩn ban đầu) -->
+    <div class="p-6 pt-0 hidden card-detail">
+      <p class="text-slate-600 italic">
+        “Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình,
+        hoạt động Đoàn – Hội. Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi
+        chuẩn bị hậu cần, cắm cọc tại hội trường, nhà kho, vật lộn với backdrop, bơi trong deadline
+        để chương trình diễn ra suôn sẻ. Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ,
+        và gắn kết với nhau nhiều hơn. Iu lắm lắm 💗💗”
+      </p>
     </div>
   </div>
 </div>
+
+<script>
+function toggleDetail(btn) {
+  const card = btn.closest('.rounded-2xl');
+  const detail = card.querySelector('.card-detail');
+  
+  if (detail.classList.contains('hidden')) {
+    detail.classList.remove('hidden');
+    btn.textContent = "⬆️ Thu gọn";
+  } else {
+    detail.classList.add('hidden');
+    btn.textContent = "👉 Xem thêm";
+  }
+}
+</script>
+
 
 <!-- Modal -->
 <div id="modal-ngoc" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
@@ -1053,6 +1061,7 @@ function toggleCard(card) {
         </div>
     </div>
 </section>
+
 
 
 
