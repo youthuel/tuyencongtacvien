@@ -350,7 +350,7 @@
                 <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
             </a>
             
-            <nav class="flex items-center space-x-8" id="main-nav">
+            <nav class="hidden md:flex items-center space-x-8" id="main-nav">
                 <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
                 <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
                 <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
@@ -368,6 +368,29 @@
             </div>
         </div>
     </header>
+<!-- Menu Mobile -->
+<div id="mobile-nav" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-6 text-lg font-semibold shadow-lg">
+  <a href="#gioithieu" class="nav-link">Giới thiệu</a>
+  <a href="#tochuc" class="nav-link">Tổ chức</a>
+  <a href="#hoat-dong" class="nav-link">Hoạt động</a>
+  <a href="#quy-trinh" class="nav-link">Ứng tuyển</a>
+  <a href="https://www.facebook.com/youth.uel" target="_blank">Liên hệ</a>
+</div>
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+  });
+
+  // Khi bấm link trong menu thì tự đóng
+  document.querySelectorAll('#mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+    });
+  });
+</script>
 
     <main id="app-container"></main>
 
@@ -1661,6 +1684,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
