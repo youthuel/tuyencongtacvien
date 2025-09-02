@@ -506,10 +506,8 @@
 
             <div class="flex items-center gap-4">
                 <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="hidden sm:block bg-blue-600 text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">Về với chúng mình</a>
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none z-20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                <button id="mobile-menu-button" class="md:hidden p-1.5 rounded-md hover:bg-gray-100 focus:outline-none z-20">
+                    <img src="pic/logo/logodt.png" alt="Mở menu" class="w-8 h-8" />
                 </button>
             </div>
         </div>
@@ -519,31 +517,7 @@
     <button id="fab-menu-open" class="fab-menu fixed bottom-4 right-4 md:hidden w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg z-50">
         <svg class="w-6 h-6 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-<!-- Mobile menu (ẩn mặc định) -->
-<div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden">
-  <div class="p-6 space-y-6">
-    <a href="#gioithieu" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Giới thiệu</a>
-    <a href="#tochuc" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Tổ chức</a>
-    <a href="#hoat-dong" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Hoạt động</a>
-    <a href="#quy-trinh" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Ứng tuyển</a>
-    <a href="https://www.facebook.com/youth.uel" target="_blank" class="block text-lg font-semibold text-gray-700 hover:text-blue-600">Liên hệ</a>
-    
-    <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" 
-       class="block text-center bg-blue-600 text-white font-bold py-3 rounded-full shadow hover:bg-blue-700 transition">
-       Đăng ký ngay
-    </a>
-  </div>
-</div>
-
-<script>
-const menuBtn = document.getElementById("mobile-menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
-
-menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("translate-x-full"); // ẩn/hiện menu
-});
-
-</script>
+<!-- Removed old mobile menu block to avoid duplicate IDs; using the panel-based menu below -->
 
     <main id="app-container"></main>
 
@@ -1620,6 +1594,34 @@ menuBtn.addEventListener("click", () => {
                     setTimeout(() => {
                         handwritingContainer.classList.add('drawn');
                     }, 100);
+                }
+
+                // 10. VIDEO MODAL (YouTube): mở/đóng khi nhúng qua SPA
+                const openVideoBtn = document.getElementById('openVideoBtn');
+                const videoModal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                if (openVideoBtn && videoModal) {
+                    openVideoBtn.addEventListener('click', () => {
+                        videoModal.classList.remove('hidden');
+                        videoModal.classList.add('flex');
+                        if (videoFrame) {
+                            const currentSrc = videoFrame.getAttribute('src') || '';
+                            if (!/autoplay=1/.test(currentSrc)) {
+                                const sep = currentSrc.includes('?') ? '&' : '?';
+                                videoFrame.setAttribute('src', `${currentSrc}${sep}autoplay=1`);
+                            }
+                        }
+                    });
+                    videoModal.addEventListener('click', (e) => {
+                        if (e.target.id === 'closeVideoBtn' || e.target === videoModal) {
+                            videoModal.classList.remove('flex');
+                            videoModal.classList.add('hidden');
+                            if (videoFrame) {
+                                // reset để dừng phát
+                                videoFrame.src = videoFrame.src;
+                            }
+                        }
+                    });
                 }
             };
 
