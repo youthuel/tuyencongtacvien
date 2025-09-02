@@ -427,6 +427,12 @@
             .swiper-slide img { height: 200px !important; }
         }
         
+        /* Small Phones (max-width: 640px): hide header, show FAB */
+        @media (max-width: 640px) {
+            #header { display: none; }
+            .fab-menu { display: flex !important; }
+        }
+
         /* Extra Small Screens (max-width: 480px) */
         @media (max-width: 480px) {
             .container { padding-left: 0.75rem; padding-right: 0.75rem; }
@@ -465,9 +471,7 @@
                 padding: 1rem;
             }
 
-            /* Hide fixed header on very small phones to free space */
-            #header { display: none; }
-            /* Show FAB menu button */
+            /* Keep FAB visible as well */
             .fab-menu { display: flex !important; }
         }
         
