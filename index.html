@@ -624,6 +624,7 @@
                         console.log('Swiper tsmt initialized with custom navigation');
                     }
                     
+                    // HMTN
                     if (document.querySelector('.gallerySwiper-hmtn')) {
                         console.log('Found gallerySwiper-hmtn, initializing...');
                         
@@ -662,6 +663,47 @@
                         // Store reference globally
                         window.swiperHmtn = swiperHmtn;
                         console.log('Swiper hmtn initialized with custom navigation');
+                    }
+                    
+                        // NCKH
+                        if (document.querySelector('.gallerySwiper-nckh')) {
+                        console.log('Found gallerySwiper-nckh, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipernckh && window.swiperHmtn.destroy) {
+                            window.swipernckh.destroy(true, true);
+                        }
+                        
+                        const swiperHmtn = new Swiper(".gallerySwiper-nckh", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnnckh = document.querySelector('.gallerySwiper-nckh .swiper-nav-next');
+                        const prevBtnnckh = document.querySelector('.gallerySwiper-nckh .swiper-nav-prev');
+                        
+                        if (nextBtnnckh) {
+                            nextBtnnckh.addEventListener('click', () => {
+                                swipernckh.slideNext();
+                            });
+                        }
+                        if (prevBtnnckh) {
+                            prevBtnnckh.addEventListener('click', () => {
+                                swipernckh.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipernckh = swipernckh;
+                        console.log('Swiper nckh initialized with custom navigation');
                     }
                     
                     console.log('All modal Swipers initialized with custom navigation');
@@ -1284,6 +1326,7 @@ initMovementCards();
 </body>
 
 </html>
+
 
 
 
