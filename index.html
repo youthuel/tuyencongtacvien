@@ -233,7 +233,7 @@
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */
   }
                           
-                           
+
         /* TỔ CHỨC */
         .member-card, .personnel-card { transition: all 0.3s ease-in-out; }
         .member-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
@@ -391,7 +391,8 @@
             #main-nav { display: none; }
             
             /* Hero section */
-            .hero-section h1 { font-size: 2.5rem; line-height: 1.2; }
+            .hero-section { overflow: visible !important; }
+            .hero-section h1 { font-size: 2.5rem; line-height: 1.25; }
             .hero-section p { font-size: 1rem; }
             
             /* Cards and grids */
@@ -463,6 +464,11 @@
                 margin: 0.5rem;
                 padding: 1rem;
             }
+
+            /* Hide fixed header on very small phones to free space */
+            #header { display: none; }
+            /* Show FAB menu button */
+            .fab-menu { display: flex !important; }
         }
         
         /* Landscape Mobile */
@@ -472,6 +478,8 @@
             
             .hero-section { min-height: 60vh; }
         }
+        /* Default hide FAB; will show on xs in media query */
+        .fab-menu { display: none; align-items: center; justify-content: center; }
     </style>
 </head>
 
@@ -503,6 +511,11 @@
             </div>
         </div>
     </header>
+
+    <!-- FAB menu (show only on very small phones) -->
+    <button id="fab-menu-open" class="fab-menu fixed bottom-4 right-4 md:hidden w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg z-50">
+        <svg class="w-6 h-6 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
 <!-- Mobile menu (ẩn mặc định) -->
 <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden">
   <div class="p-6 space-y-6">
@@ -1522,14 +1535,14 @@ menuBtn.addEventListener("click", () => {
                 //     });
                 // };
                 // initMovementCards();
-const initMovementCards = () => {
-  const container = document.getElementById('movement-cards-container');
-  if (!container) return;
+                const initMovementCards = () => {
+                    const container = document.getElementById('movement-cards-container');
+                    if (!container) return;
 
-  const cards = container.querySelectorAll('.movement-card');
-  const contents = document.querySelectorAll('.movement-content');
-  const mainSection = document.getElementById('phong-trao-section');
-  const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+                    const cards = container.querySelectorAll('.movement-card');
+                    const contents = document.querySelectorAll('.movement-content');
+                    const mainSection = document.getElementById('phong-trao-section');
+                    const bgClasses = Array.from(cards).map(c => c.dataset.bg);
 
   // 👉 Set mặc định card đầu tiên
   if (cards.length > 0) {
@@ -1543,25 +1556,25 @@ const initMovementCards = () => {
     }
   }
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
+                    cards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
 
-      const targetId = card.dataset.content;
-      contents.forEach(content => {
-        content.classList.toggle('hidden', content.id !== targetId);
-      });
+                            const targetId = card.dataset.content;
+                            contents.forEach(content => {
+                                content.classList.toggle('hidden', content.id !== targetId);
+                            });
 
-      if (mainSection) {
-        const newBg = card.dataset.bg;
-        mainSection.classList.remove(...bgClasses);
-        mainSection.classList.add(...newBg.split(' '));
-      }
-    });
-  });
-};
-initMovementCards();
+                            if (mainSection) {
+                                const newBg = card.dataset.bg;
+                                mainSection.classList.remove(...bgClasses);
+                                mainSection.classList.add(...newBg.split(' '));
+                            }
+                        });
+                    });
+                };
+                initMovementCards();
                 // 8. FAQ ACCORDION: Xử lý xổ ra/thu vào câu hỏi thường gặp
                 const initFAQ = () => {
                     const faqQuestions = document.querySelectorAll('.faq-question');
@@ -1667,6 +1680,12 @@ initMovementCards();
             document.getElementById('mobile-menu-close-button').addEventListener('click', closeMenu);
             document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
 
+            // FAB to open menu on very small phones (when header is hidden)
+            const fabBtn = document.getElementById('fab-menu-open');
+            if (fabBtn) {
+                fabBtn.addEventListener('click', openMenu);
+            }
+
             // === TẢI TRANG BAN ĐẦU ===
             // Tải trang dựa trên URL hash khi người dùng truy cập lần đầu.
             loadPage(location.hash.substring(1) || 'home');
@@ -1677,7 +1696,7 @@ initMovementCards();
     </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
+    <script>
   document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".movement-card");
     const contents = document.querySelectorAll(".movement-content");
@@ -1709,15 +1728,15 @@ initMovementCards();
 
         // Đổi nền section
         section.classList.add(bgClass);
-      });
-    });
+            });
+        });
 
     // Mặc định kích hoạt card đầu tiên
     if (cards.length > 0) {
       cards[0].click();
     }
   });
-</script>
+    </script>
     
 <script>
   AOS.init();
@@ -1814,7 +1833,7 @@ initMovementCards();
                 25% { transform: rotate(-10deg); }
                 75% { transform: rotate(10deg); }
             }
-
+            
         </style>
     </footer>
 
