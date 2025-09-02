@@ -801,10 +801,9 @@
 
     <!-- Nút xem thêm -->
     <div class="px-6 pb-4">
-      <button onclick="toggleDetail(this)"
-              class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
-        👉 Xem thêm
-      </button>
+         <button data-modal-target="#modal-hoc-thuat" class="modal-trigger px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow hover:scale-105 transition">
+           ✨ Mở ra
+         </button>
     </div>
 
     <!-- Nội dung chi tiết (ẩn ban đầu) -->
@@ -1061,6 +1060,7 @@ function toggleCard(card) {
         </div>
     </div>
 </section>
+
 
 
 
