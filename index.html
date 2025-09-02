@@ -119,15 +119,14 @@
         .animate-fadeIn { animation: fadeIn 0.4s ease; }
         /* Custom animation chậm */
         .animate-spin-slow {
-        animation: spin 6s linear infinite;
-                  .custom-stroke {
-    -webkit-text-stroke: 0.5px #1d4ed8; /* Viền xanh */
-/*     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */ */
-      }
-      .custom-stroketr {
-    -webkit-text-stroke: 0.5px #fff; /* Viền trắng */
-/*     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */ */
-      }
+            animation: spin 6s linear infinite;
+        }
+        .custom-stroke {
+            -webkit-text-stroke: 0.5px #1d4ed8; /* Viền xanh */
+        }
+        .custom-stroketr {
+            -webkit-text-stroke: 0.5px #fff; /* Viền trắng */
+        }
         /* === CSS TỪNG TRANG === */
         /* GIỚI THIỆU */
         .activity-card img { transition: transform 0.4s ease-out; }
@@ -136,7 +135,7 @@
         .activity-tab.active { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); color: white; }
         .stat-card { transition: all 0.3s ease-out; }
         .stat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .activity-content { animation: fadeIn-10 0.5s ease-in-out;   
+        .activity-content { animation: fadeIn-10 0.5s ease-in-out; }
         #videoModal {
   display: none;
 }
@@ -742,6 +741,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -783,6 +784,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -824,6 +827,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -864,6 +869,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -904,6 +911,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -945,6 +954,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -986,6 +997,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1027,6 +1040,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1068,6 +1083,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1109,6 +1126,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1150,6 +1169,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1191,6 +1212,8 @@ menuBtn.addEventListener("click", () => {
                             spaceBetween: 16, 
                             loop: true,
                             grabCursor: true,
+                            observer: true,
+                            observeParents: true,
                             autoplay: {
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -1204,7 +1227,7 @@ menuBtn.addEventListener("click", () => {
                         
                         if (nextBtnmy) {
                             nextBtnmy.addEventListener('click', () => {
-                                swiperthe.slideNext();
+                                swipermy.slideNext();
                             });
                         }
                         if (prevBtnmy) {
@@ -1254,6 +1277,8 @@ menuBtn.addEventListener("click", () => {
                                 if (targetContent) {
                                     targetContent.classList.remove('hidden');
                                     console.log('Showing content:', btn.dataset.target);
+                                    // Re-init Swipers to fix width calc when tab becomes visible
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
                                 } else {
                                     console.error('Target content not found:', btn.dataset.target);
                                 }
@@ -1295,6 +1320,8 @@ menuBtn.addEventListener("click", () => {
                                 if (targetContent) {
                                     targetContent.classList.remove('hidden');
                                     console.log('Showing hoc thuat content:', btn.dataset.target);
+                                    // Re-init Swipers to ensure proper sizing inside newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
                                 }
                             });
                         });
@@ -1334,6 +1361,8 @@ menuBtn.addEventListener("click", () => {
                                 if (targetContent) {
                                     targetContent.classList.remove('hidden');
                                     console.log('Showing VTM content:', btn.dataset.target);
+                                    // Re-init Swipers to ensure proper sizing inside newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
                                 }
                             });
                         });
@@ -1373,38 +1402,8 @@ menuBtn.addEventListener("click", () => {
                                 if (targetContent) {
                                     targetContent.classList.remove('hidden');
                                     console.log('Showing ly tuong content:', btn.dataset.target);
-                                    
-                                    // Khởi tạo lại Swiper cho tab mới được hiển thị
-                                    setTimeout(() => {
-                                        const swiperContainer = targetContent.querySelector('.swiper');
-                                        if (swiperContainer) {
-                                            const swiperClass = swiperContainer.className.split(' ').find(cls => cls.startsWith('swiper-'));
-                                            if (swiperClass) {
-                                                console.log('Reinitializing Swiper for:', swiperClass);
-                                                // Destroy existing Swiper if exists
-                                                const existingSwiper = window[swiperClass.replace('swiper-', 'swiper')];
-                                                if (existingSwiper && existingSwiper.destroy) {
-                                                    existingSwiper.destroy(true, true);
-                                                }
-                                                
-                                                // Initialize new Swiper
-                                                const newSwiper = new Swiper(`.${swiperClass}`, {
-                                                    slidesPerView: 1, spaceBetween: 24, loop: true, grabCursor: true,
-                                                    autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
-                                                    breakpoints: { 640: { slidesPerView: 1, spaceBetween: 32 }, 768: { slidesPerView: 1, spaceBetween: 40 }, 1024: { slidesPerView: 1, spaceBetween: 48 } }
-                                                });
-                                                
-                                                // Add navigation buttons
-                                                const nextBtn = targetContent.querySelector('.swiper-nav-next');
-                                                const prevBtn = targetContent.querySelector('.swiper-nav-prev');
-                                                if (nextBtn) nextBtn.addEventListener('click', () => newSwiper.slideNext());
-                                                if (prevBtn) prevBtn.addEventListener('click', () => newSwiper.slidePrev());
-                                                
-                                                // Store reference
-                                                window[swiperClass.replace('swiper-', 'swiper')] = newSwiper;
-                                            }
-                                        }
-                                    }, 100);
+                                    // Re-init all modal Swipers to ensure proper sizing in newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
                                 }
                             });
                         });
