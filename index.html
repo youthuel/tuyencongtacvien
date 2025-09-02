@@ -20,12 +20,6 @@
 
 
     <style>
-
-        @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-        
         /* === CSS CHUNG === */
         :root {
             --swiper-navigation-size: 18px;
@@ -76,6 +70,12 @@
         .modal.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
         .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
         .modal.is-open .modal-content { transform: scale(1); }
+        /* Kích thước modal gọn hơn và responsive */
+        .modal .modal-content { 
+            width: clamp(320px, 90vw, 720px);
+            max-height: 85vh;
+            padding: 1.25rem; /* ~ p-5 */
+        }
         
         /* CSS cho tabs */
         .hidden { display: none !important; }
@@ -1983,7 +1983,6 @@
 </body>
 
 </html>
-
 
 
 
