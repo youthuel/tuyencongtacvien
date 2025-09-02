@@ -8,23 +8,55 @@
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800">Hành Trình Trở Thành Mảnh Ghép</h1>
         <p class="max-w-2xl mx-auto mt-4 text-lg text-slate-600">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
 
-        <!-- Stepper nhanh -->
-        <div class="mt-10 max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-extrabold text-lg">01</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Điền đơn trực tuyến</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Thể hiện màu sắc cá nhân và nguyện vọng của bạn trong form đăng ký.</p>
+        <!-- Bố cục mới: Steps (trái) + CTA sticky (phải) -->
+        <div class="mt-10 grid lg:grid-cols-12 gap-8 max-w-6xl mx-auto text-left">
+            <!-- Steps trái -->
+            <div class="lg:col-span-7 space-y-4">
+                <div class="group rounded-2xl p-6 bg-white/85 backdrop-blur-sm border shadow-md hover:shadow-xl transition flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-extrabold text-lg shrink-0">01</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Điền đơn trực tuyến</h3>
+                        <p class="mt-1 text-slate-600 text-sm">Thể hiện màu sắc cá nhân và nguyện vọng của bạn trong form đăng ký.</p>
+                    </div>
                 </div>
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-extrabold text-lg">02</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Phỏng vấn thân thiện</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Trò chuyện để hiểu nhau hơn và chọn vị trí phù hợp nhất với bạn.</p>
+                <div class="group rounded-2xl p-6 bg-white/85 backdrop-blur-sm border shadow-md hover:shadow-xl transition flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-extrabold text-lg shrink-0">02</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Phỏng vấn thân thiện</h3>
+                        <p class="mt-1 text-slate-600 text-sm">Trò chuyện để hiểu nhau hơn và chọn vị trí phù hợp nhất với bạn.</p>
+                    </div>
                 </div>
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-extrabold text-lg">03</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Gia nhập & tỏa sáng</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Trải nghiệm thực tế, kết nối đồng đội và tạo dấu ấn thanh xuân.</p>
+                <div class="group rounded-2xl p-6 bg-white/85 backdrop-blur-sm border shadow-md hover:shadow-xl transition flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-extrabold text-lg shrink-0">03</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Gia nhập & tỏa sáng</h3>
+                        <p class="mt-1 text-slate-600 text-sm">Trải nghiệm thực tế, kết nối đồng đội và tạo dấu ấn thanh xuân.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA phải (sticky) -->
+            <div class="lg:col-span-5">
+                <div class="sticky top-28 rounded-3xl p-6 bg-white/90 backdrop-blur-md border shadow-2xl">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Mở đơn đến 14/09</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-pink-100 text-pink-700">Số lượng có hạn</span>
+                    </div>
+                    <h3 class="mt-4 text-2xl font-extrabold text-slate-800">Sẵn sàng trở thành một mảnh ghép?</h3>
+                    <p class="mt-2 text-slate-600">Hãy điền đơn ngay hôm nay để không bỏ lỡ cơ hội đồng hành cùng Tuổi Trẻ UEL. Chúng mình chờ bạn!
+                    </p>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Lịch hoạt động linh hoạt, ưu tiên việc học</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Được training kỹ năng mềm, tổ chức sự kiện</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Môi trường năng động, nhiều cơ hội tỏa sáng</li>
+                    </ul>
+                    <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="relative mt-6 block w-full">
+                        <span class="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 blur opacity-70 group-hover:opacity-90 transition"></span>
+                        <span class="relative overflow-hidden group w-full flex items-center justify-center gap-2 py-4 px-6 rounded-2xl font-extrabold text-white bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition">
+                            Điền đơn ngay
+                            <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
