@@ -779,19 +779,24 @@
     <div class="grid md:grid-cols-3 gap-10">
       
       <!-- Card -->
-<div class="scroll-animate" style="transition-delay: 100ms;">
-  <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-    
-    <!-- Cover -->
-    <div class="overflow-hidden">
-      <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
-           class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
-    </div>
+<div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden">
+  <!-- Cover -->
+  <div class="overflow-hidden">
+    <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
+         class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+  </div>
 
-    <!-- Thông tin ngắn -->
-    <div class="p-6 flex items-center">
+  <!-- Nội dung ngắn -->
+  <div class="p-8 flex flex-col flex-grow">
+    <p class="text-slate-600 flex-grow italic line-clamp-3">
+      Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình, hoạt động Đoàn – Hội...
+    </p>
+
+    <!-- Người gửi -->
+    <div class="flex items-center mt-6 pt-6 border-t border-gray-100">
       <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
-        <img src="pic/hoat-dong/ThanhNgoc.jpeg" class="w-full h-full rounded-full object-cover">
+        <img src="pic/hoat-dong/ThanhNgoc.jpeg" 
+             class="w-full h-full rounded-full object-cover">
       </div>
       <div class="ml-4">
         <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
@@ -799,25 +804,37 @@
       </div>
     </div>
 
-    <!-- Nút xem thêm -->
-    <div class="px-6 pb-4">
-         <button data-modal-target="#modal-ngoc" class="modal-trigger px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow hover:scale-105 transition">
-           ✨ Mở ra
-         </button>
-    </div>
+    <!-- Nút mở modal -->
+    <button data-modal-target="#modal-thanh-ngoc" 
+      class="modal-trigger mt-6 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-400 to-violet-500 text-white font-semibold py-2 rounded-full shadow hover:scale-105 transition">
+      ✨ Xem chi tiết
+    </button>
+  </div>
+</div>
+<div id="modal-thanh-ngoc" class="modal fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+  <div class="modal-content bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-8">
 
-    <!-- Nội dung chi tiết (ẩn ban đầu) -->
-    <div class="p-6 pt-0 hidden card-detail">
-      <p class="text-slate-600 italic">
-        “Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình,
-        hoạt động Đoàn – Hội. Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi
-        chuẩn bị hậu cần, cắm cọc tại hội trường, nhà kho, vật lộn với backdrop, bơi trong deadline
-        để chương trình diễn ra suôn sẻ. Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ,
-        và gắn kết với nhau nhiều hơn. Iu lắm lắm 💗💗”
+    <!-- Nút đóng -->
+    <button class="modal-close absolute top-4 right-4 bg-gray-200 hover:bg-gray-300 w-10 h-10 flex items-center justify-center rounded-full text-xl shadow">
+      ✕
+    </button>
+
+    <!-- Nội dung chi tiết -->
+    <div class="flex flex-col items-center text-center">
+      <img src="pic/hoat-dong/ThanhNgoc1.jpeg" class="rounded-2xl w-full max-h-72 object-cover shadow-md mb-6">
+      <h2 class="text-2xl font-extrabold text-cyan-700">Nguyễn Thị Thanh Ngọc</h2>
+      <p class="text-sm text-slate-500 mb-4">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
+      <p class="text-slate-600 leading-relaxed italic">
+        Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình, hoạt động Đoàn – Hội. 
+        Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi chuẩn bị hậu cần, cắm cọc tại hội trường, 
+        nhà kho, vật lộn với backdrop, bơi trong deadline để chương trình diễn ra suôn sẻ.  
+        Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ, và gắn kết với nhau nhiều hơn.  
+        <br>💗 Iu lắm lắm 💗
       </p>
     </div>
   </div>
 </div>
+
 
 
 <!-- Modal -->
@@ -1027,6 +1044,7 @@
         </div>
     </div>
 </section>
+
 
 
 
