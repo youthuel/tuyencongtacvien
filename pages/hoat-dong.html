@@ -801,7 +801,7 @@
 
     <!-- Nút xem thêm -->
     <div class="px-6 pb-4">
-         <button data-modal-target="#modal-hoc-thuat" class="modal-trigger px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow hover:scale-105 transition">
+         <button data-modal-target="#modal-ngoc" class="modal-trigger px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow hover:scale-105 transition">
            ✨ Mở ra
          </button>
     </div>
@@ -818,21 +818,6 @@
     </div>
   </div>
 </div>
-
-<script>
-function toggleDetail(btn) {
-  const card = btn.closest('.rounded-2xl');
-  const detail = card.querySelector('.card-detail');
-  
-  if (detail.classList.contains('hidden')) {
-    detail.classList.remove('hidden');
-    btn.textContent = "⬆️ Thu gọn";
-  } else {
-    detail.classList.add('hidden');
-    btn.textContent = "👉 Xem thêm";
-  }
-}
-</script>
 
 
 <!-- Modal -->
@@ -1045,7 +1030,35 @@ function toggleCard(card) {
     </div>
   </div>
 </section>
-
+      //Modal Thanh Ngọc
+         <div id="tab-vtm-1" class="tab-content-vtm">
+        <h2 class="text-3xl font-extrabold text-slate-800">Hội thao cán bộ Đoàn - Hội</h2>
+        <p class="mt-3 text-slate-600 leading-relaxed">
+          Sự kiện thể thao lớn nhất trong năm dành cho cán bộ Đoàn - Hội các khoa tranh tài ở nhiều bộ môn khác nhau. 
+          Hội thao không chỉ khuyến khích tinh thần rèn luyện thể chất mà còn là dịp để thể hiện sự đoàn kết.
+        </p>
+        
+        <!-- Swiper Gallery -->
+         <div class="swiper gallerySwiper-the mt-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pic/hoat-dong/hh-1.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/ht-2.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/ht-3.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/ht-4.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+            <div class="swiper-slide"><img src="pic/hoat-dong/ht-5.jpg" class="rounded-xl shadow-md object-cover w-full h-56"></div>
+          </div>
+          <div class="swiper-nav-btn swiper-nav-next">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="swiper-nav-btn swiper-nav-prev">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
     <div class="deco-shape w-64 h-64 bg-white/10 rounded-full -top-20 -left-20"></div>
@@ -1060,6 +1073,7 @@ function toggleCard(card) {
         </div>
     </div>
 </section>
+
 
 
 
