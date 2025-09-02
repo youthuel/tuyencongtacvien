@@ -1633,18 +1633,30 @@
                 }
 
                 // 9.1 CARD FLIP: click/touch để lật thẻ
-                document.querySelectorAll('.flip-card').forEach(card => {
+                const flipCards = document.querySelectorAll('.flip-card');
+                const closeAllFlipCards = () => flipCards.forEach(c => c.classList.remove('flipped'));
+                flipCards.forEach(card => {
                     // Tránh double-bind khi SPA reload
                     card.classList.add('flip-bind-ready');
+                    const toggleExclusive = () => {
+                        const wasOpen = card.classList.contains('flipped');
+                        closeAllFlipCards();
+                        if (!wasOpen) {
+                            card.classList.add('flipped');
+                            card.setAttribute('aria-pressed', 'true');
+                        } else {
+                            card.setAttribute('aria-pressed', 'false');
+                        }
+                    };
                     card.addEventListener('click', (e) => {
                         // Bỏ qua nếu click vào link bên trong
                         if (e.target.closest('a')) return;
-                        card.classList.toggle('flipped');
+                        toggleExclusive();
                     });
                     card.addEventListener('keypress', (e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
-                            card.classList.toggle('flipped');
+                            toggleExclusive();
                         }
                     });
                     card.setAttribute('tabindex', '0');
