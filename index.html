@@ -1,348 +1,1903 @@
-<!-- Banner ảnh bìa -->
-<section class="relative overflow-hidden">
-    <img src="pic/banner.png" alt="Banner Quy trình" class="w-full h-60 md:h-80 lg:h-96 object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent"></div>
-</section>
+<!DOCTYPE html>
+<html lang="vi">
 
-<section class="relative overflow-hidden pt-16 md:pt-24 pb-20 bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-100">
-    <div class="absolute -top-20 -left-24 w-[28rem] h-[28rem] rounded-full bg-sky-200/40 blur-3xl"></div>
-    <div class="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-purple-200/40 blur-3xl"></div>
-    <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-xl mb-6">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m10 4h-6V7m8 5a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800">Hành Trình Trở Thành Mảnh Ghép</h1>
-        <p class="max-w-2xl mx-auto mt-4 text-lg text-slate-600">Theo dõi các mốc quan trọng và chuẩn bị cho ngày bạn gia nhập ngôi nhà Tuổi Trẻ UEL.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoàn Trường ĐH Kinh tế - Luật</title>
 
-        <!-- Stepper nhanh -->
-        <div class="mt-10 max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-extrabold text-lg">01</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Điền đơn trực tuyến</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Thể hiện màu sắc cá nhân và nguyện vọng của bạn trong form đăng ký.</p>
-                </div>
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-extrabold text-lg">02</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Phỏng vấn thân thiện</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Trò chuyện để hiểu nhau hơn và chọn vị trí phù hợp nhất với bạn.</p>
-                </div>
-                <div class="group rounded-2xl p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-2xl transition">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-extrabold text-lg">03</div>
-                    <h3 class="mt-4 font-bold text-slate-800">Gia nhập & tỏa sáng</h3>
-                    <p class="mt-2 text-slate-600 text-sm">Trải nghiệm thực tế, kết nối đồng đội và tạo dấu ấn thanh xuân.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- wave decor -->
-    <svg class="absolute bottom-0 left-0 right-0" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#ffffff" d="M0,96L48,80C96,64,192,32,288,26.7C384,21,480,43,576,64C672,85,768,107,864,112C960,117,1056,107,1152,85.3C1248,64,1344,32,1392,16L1440,0L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/></svg>
-</section>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!--     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
-<section class="relative overflow-hidden py-20 md:py-28 bg-gradient-to-br from-slate-50 to-gray-100">
-    <div class="background-blob w-96 h-96 bg-rose-200 rounded-full top-1/2 -translate-y-1/2 -left-60"></div>
-    <div class="background-blob w-96 h-96 bg-purple-200 rounded-full top-1/2 -translate-y-1/2 -right-60"></div>
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="relative max-w-4xl mx-auto">
-            <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
 
-            <div class="timeline-item-container scroll-animate relative md:flex md:justify-end md:mr-auto mb-16">
-                <div class="md:w-1/2 md:pr-12">
-                    <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-blue-500/20 bg-gradient-to-br from-sky-100 to-blue-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30">
-                        <div class="absolute -top-10 -right-10 w-28 h-28 bg-sky-300/50 rounded-full filter blur-xl opacity-80"></div>
-                        <div class="relative z-10">
-                            <p class="text-sm font-semibold text-blue-600">VÒNG 01: DẤU ẤN CÁ NHÂN</p>
-                            <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Điền đơn đăng ký</h3>
-                            <div class="space-y-4 text-slate-700 mt-4">
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg></div><p>Đây là bước đầu tiên để chúng mình biết đến bạn. Hãy thể hiện màu sắc riêng, nguyện vọng và những mong muốn của bạn một cách chân thành nhất qua biểu mẫu đăng ký trực tuyến.</p></div>
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></div><p><strong class="font-semibold">Thời gian:</strong> 03/9 - 14/9/2025.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-blue-500 rounded-full border-4 border-white transition-transform duration-300"></div>
-            </div>
+    <style>
+        /* === CSS CHUNG === */
+        :root {
+            --swiper-navigation-size: 18px;
+        }
+        html, body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            width: 100%;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        main {
+        padding-top: 5rem;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .nav-active { color: #2563eb !important; font-weight: 700; }
+               
+        /* Đảm bảo navigation hiển thị */
+        #main-nav {
+            display: flex !important;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        #main-nav a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .scroll-animate.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+        .deco-shape { position: absolute; z-index: 0; animation: float 8s ease-in-out infinite; }
+        main:empty::before {
+            content: 'Đang tải trang...';
+            display: block;
+            text-align: center;
+            padding: 5rem;
+            font-size: 1.25rem;
+            color: #64748b;
+        }
+        .modal { visibility: hidden; opacity: 0; transition: visibility 0s 0.3s, opacity 0.3s ease; }
+        .modal.is-open { visibility: visible; opacity: 1; transition-delay: 0s; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        .modal.is-open .modal-content { transform: scale(1); }
+        
+        /* CSS cho tabs */
+        .hidden { display: none !important; }
+        .tab-content, .tab-content-hoc-thuat, .tab-content-vtm { display: block; }
+        .tab-content.hidden, .tab-content-hoc-thuat.hidden, .tab-content-vtm.hidden { display: none !important; }
+        
+        /* Đảm bảo tab buttons có style đúng */
+        .tab-btn, .tab-btn-hoc-thuat, .tab-btn-vtm {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover, .tab-btn-hoc-thuat:hover, .tab-btn-vtm:hover {
+            transform: scale(1.05);
+        }
+        #mobile-menu { visibility: hidden; transition: visibility 0.3s; }
+        #mobile-menu.is-open { visibility: visible; }
+        #mobile-menu-panel { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+        #mobile-menu.is-open #mobile-menu-panel { transform: translateX(0); }
+        #mobile-menu-backdrop { opacity: 0; transition: opacity 0.3s ease-in-out; }
+        #mobile-menu.is-open #mobile-menu-backdrop { opacity: 1; }
+        .header-gradient-text {
+            background-image: linear-gradient(to right, #3b82f6, #22d3ee, #3b82f6);
+            background-size: 200% auto; /* Thêm hoặc sửa lại dòng này */
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-pan 5s linear infinite;
+        }
+        .gradient-text {
+            display: inline-block;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+        }
+        .modal-trigger { cursor: pointer; }
+        .background-blob { position: absolute; opacity: 0.6; filter: blur(100px); z-index: 0; }
+        .animate-fadeIn { animation: fadeIn 0.4s ease; }
+        /* Custom animation chậm */
+        .animate-spin-slow {
+            animation: spin 6s linear infinite;
+        }
+        .custom-stroke {
+            -webkit-text-stroke: 0.5px #1d4ed8; /* Viền xanh */
+        }
+        .custom-stroketr {
+            -webkit-text-stroke: 0.5px #fff; /* Viền trắng */
+        }
+        /* === CSS TỪNG TRANG === */
+        /* GIỚI THIỆU */
+        .activity-card img { transition: transform 0.4s ease-out; }
+        .activity-card:hover img { transform: scale(1.1); }
+        .activity-tab { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .activity-tab.active { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); color: white; }
+        .stat-card { transition: all 0.3s ease-out; }
+        .stat-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .activity-content { animation: fadeIn-10 0.5s ease-in-out; }
+        #videoModal {
+  display: none;
+}
+#videoModal.active {
+  display: flex;
+}
+                           
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3.5s ease-in-out infinite;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  25% { transform: rotate(3deg) translateY(-3px); }
+  50% { transform: rotate(-2deg) translateY(2px); }
+  75% { transform: rotate(2deg) translateY(-2px); }
+}
+
+.tagline {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: wiggle 3s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+/* Rung nhẹ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+.animate-shake {
+  animation: shake 0.5s infinite;
+}
+/* Lắc lư */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wobble {
+  animation: wobble 1.5s infinite ease-in-out;
+}
+/* Trượt ngang */
+ @keyframes float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+/* Lượn sóng */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-wave {
+  animation: wave 2.5s infinite ease-in-out;
+}
+    .custom-stroke {
+    -webkit-text-stroke: 1px #fff; /* Viền trắng */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Đổ bóng để tách nền */
+  }
+                          
+
+        /* TỔ CHỨC */
+        .member-card, .personnel-card { transition: all 0.3s ease-in-out; }
+        .member-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .personnel-card:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .department-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .department-card:hover { transform: translateY(-12px); box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.15); }
+        .department-card:hover .card-bg-pattern { opacity: 0.1; transform: scale(1.1); }
+        .card-bg-pattern { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.05; background-size: cover; transition: opacity 0.3s ease, transform 0.5s ease; }
+        .card-icon { margin-bottom: 1.5rem; padding: 1rem; border-radius: 9999px; background-color: rgba(255, 255, 255, 0.2); display: inline-flex; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .card-icon svg { width: 2.5rem; height: 2.5rem; }
+        .card-slogan { font-size: 1.125rem; font-style: italic; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem; }
+        .card-tasks { list-style: none; padding: 0; text-align: left; width: 100%; }
+        .card-tasks li { display: flex; align-items: flex-start; margin-bottom: 0.75rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.95); }
+        .card-tasks li::before { content: '✓'; margin-right: 0.75rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); flex-shrink: 0; }
+        .handwriting-container svg { width: 100%; max-width: 600px; height: auto; }
+        .handwriting-text { font-family: 'Dancing Script', cursive; font-size: 100px; font-weight: 700; stroke: #1e3a8a; stroke-width: 1; fill: transparent; stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw-text 4s ease-in-out forwards; }
+        .handwriting-container.drawn .handwriting-text { animation: fill-text 1s forwards 3.5s; }
+
+        /* HOẠT ĐỘNG */
+        .category-card { transition: all 0.3s ease-in-out; }
+        .category-card:hover { transform: translateY(-10px) rotate(-2deg); box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.2); }
+        .swiper-container { width: 100%; padding: 50px 0; }
+        .swiper-slide { will-change: transform; width: 100%; height: auto; border-radius: 1.5rem; overflow: hidden; transition: transform 0.4s ease; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+        .movement-card { background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-color: transparent; }
+        .movement-card.active { transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); background-color: white; }
+        .movement-card[data-color="blue"].active { border-color: #3b82f6; }
+        .movement-card[data-color="rose"].active { border-color: #f43f5e; }
+        .movement-card[data-color="teal"].active { border-color: #14b8a6; }
+        .movement-content { animation: fadeIn-15 0.6s ease-in-out; }
+        .carousel-item { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; }
+        .carousel-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .carousel-control-prev, .carousel-control-next { z-index: 50; }
+        #activities-swiper { padding: 2.25rem 0; position: relative; }
+        #activities-swiper .section-title { text-align: center; margin-bottom: 1.75rem; }
+        #activities-swiper .swiper { width: 100%; box-sizing: border-box; }
+        #activities-swiper .swiper-slide { display: flex; justify-content: center; align-items: stretch; box-sizing: border-box; position: relative; }
+        #activities-swiper .activity-card { width: 100%; max-width: 360px; background: rgba(255, 255, 255, 0.85); border-radius: 14px; overflow: hidden; box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08); transition: transform .35s ease, box-shadow .35s ease; display: flex; flex-direction: column; }
+        #activities-swiper .activity-card:hover { transform: translateY(-6px); box-shadow: 0 22px 40px rgba(2, 6, 23, 0.12); }
+        #activities-swiper .activity-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        #activities-swiper .activity-card .body { padding: 1rem 1.15rem 1.25rem; }
+        #activities-swiper .swiper-button-next, #activities-swiper .swiper-button-prev { color: #0ea5a6; width: 44px; height: 44px; border-radius: 9999px; background: rgba(255, 255, 255, 0.95); box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06); top: 50%; transform: translateY(-50%); z-index: 30; }
+        #activities-swiper .swiper-button-next { right: 1rem; left: auto; }
+        #activities-swiper .swiper-button-prev { left: 1rem; right: auto; }
+        #activities-swiper .swiper-pagination-bullet { background: rgba(15, 23, 42, 0.15); }
+        #activities-swiper .swiper-pagination-bullet-active { background: #06b6d4; }
+
+        /* QUY TRÌNH & FAQ */
+        .timeline-item { display: grid; grid-template-columns: 70px 1fr; margin-bottom: 3rem; }
+        .timeline-marker { display: flex; justify-content: center; align-items: center; width: 64px; height: 64px; border-radius: 9999px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); transform: translateX(-50%); position: relative; left: -2px; z-index: 10; }
+        .timeline-card-new { background-image: linear-gradient(to right, var(--tw-gradient-stops)); padding: 2.5rem; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .timeline-item:hover .timeline-card-new { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .timeline-item-container { transition: all 0.4s ease; }
+        .timeline-item-container:hover .timeline-card { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.1); }
+        .timeline-item-container:hover .timeline-dot { transform: scale(1.2); }
+        .faq-question { cursor: pointer; }
+        .faq-question:hover { background-color: #f8fafc; }
+        .faq-arrow { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .faq-item.open .faq-answer { grid-template-rows: 1fr; }
+        .faq-answer > div { min-height: 0; }
+        .animated-gradient-ring { background-image: linear-gradient(-45deg, #f857a6, #ff5858, #ffc94e, #23d5ab, #23a6d5, #f857a6); background-size: 600% 600%; animation: gradient-pan 8s ease-in-out infinite; }
+        .animated-gradient-ring1 {
+  position: relative;
+  background: conic-gradient(
+    from 0deg,
+    #f97316,  /* cam */
+    #facc15,  /* vàng */
+    #22c55e,  /* xanh lá */
+    #3b82f6,  /* xanh dương */
+    #f97316   /* quay lại cam để mượt */
+  );
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+        /* === KEYFRAMES === */
+        @keyframes float { 50% { transform: translateY(-20px) rotate(10deg); } }
+        @keyframes gradient-pan { 50% { background-position: 100% 50%; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn-10 { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn-15 { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes draw-text { to { stroke-dashoffset: 0; } }
+        @keyframes fill-text { to { fill: #2563eb; } }
+
+        /* === RESPONSIVE OPTIMIZATION === */
+        
+        /* Extra Large Screens (1400px+) */
+        @media (min-width: 1400px) {
+            .container { max-width: 1320px; }
+            .text-4xl { font-size: 3rem; }
+            .text-5xl { font-size: 3.5rem; }
+            .text-6xl { font-size: 4rem; }
+            .py-20 { padding-top: 6rem; padding-bottom: 6rem; }
+            .py-24 { padding-top: 7rem; padding-bottom: 7rem; }
+        }
+        
+        /* Large Screens (1200px - 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .container { max-width: 1140px; }
+        }
+        
+        /* Medium Screens (992px - 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container { max-width: 960px; }
+            .text-4xl { font-size: 2.5rem; }
+            .text-5xl { font-size: 3rem; }
+            .text-6xl { font-size: 3.5rem; }
+        }
+        
+        /* Small Screens (768px - 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container { max-width: 720px; }
+            .text-4xl { font-size: 2.25rem; }
+            .text-5xl { font-size: 2.75rem; }
+            .text-6xl { font-size: 3rem; }
+            .py-20 { padding-top: 4rem; padding-bottom: 4rem; }
+            .py-24 { padding-top: 5rem; padding-bottom: 5rem; }
             
-            <div class="timeline-item-container scroll-animate relative md:flex md:justify-start md:ml-auto mb-16">
-                <div class="md:w-1/2 md:pl-12">
-                    <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-purple-500/20 bg-gradient-to-br from-fuchsia-100 to-purple-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30">
-                        <div class="absolute -top-4 -right-12 w-28 h-28 bg-fuchsia-300/50 rounded-full filter blur-xl"></div>
-                        <div class="relative z-10">
-                            <p class="text-sm font-semibold text-purple-600">VÒNG 02: KẾT NỐI & THẤU HIỂU</p>
-                            <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Phỏng vấn</h3>
-                            <div class="space-y-4 text-slate-700 mt-4">
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zM6 8a2 2 0 11-4 0 2 2 0 014 0zM1.49 15.326a.75.75 0 01-.318-1.464 3.5 3.5 0 016.652 0 .75.75 0 01-.318 1.464l-3.016-1.13A2.25 2.25 0 004.5 15.25v.75a.75.75 0 01-1.5 0v-.75a3.75 3.75 0 01-1.51-7.326zM18.51 15.326a.75.75 0 01-1.464-.318 3.5 3.5 0 00-6.652 0 .75.75 0 01-1.464.318l-1.13 3.016a.75.75 0 011.05 1.05l3.015-1.13a2.25 2.25 0 013.902 0l3.015 1.13a.75.75 0 011.05-1.05l-1.13-3.016z" /></svg></div><p>Cơ hội để chúng ta trò chuyện và hiểu nhau hơn. Hãy tự tin chia sẻ về bản thân, kinh nghiệm và đặt những câu hỏi bạn quan tâm. Chúng mình tìm kiếm những cộng tác viên phù hợp về cả năng lực và tinh thần.</p></div>
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></div><p><strong class="font-semibold">Thời gian:</strong> Dự kiến 18/9/2025.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-purple-500 rounded-full border-4 border-white transition-transform duration-300"></div>
-            </div>
-
-            <div class="timeline-item-container scroll-animate relative md:flex md:justify-end md:mr-auto">
-                <div class="md:w-1/2 md:pr-12">
-                    <div class="timeline-card p-6 lg:p-8 rounded-3xl shadow-xl shadow-orange-500/20 bg-gradient-to-br from-amber-100 to-orange-200 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30">
-                        <div class="absolute -bottom-12 -left-10 w-28 h-28 bg-amber-300/50 rounded-full filter blur-xl opacity-80"></div>
-                        <div class="relative z-10">
-                            <p class="text-sm font-semibold text-orange-600">VÒNG 03: HÒA NHỊP & CỐNG HIẾN</p>
-                            <h3 class="text-2xl font-bold text-slate-800 my-2">Vòng Trải nghiệm</h3>
-                            <div class="space-y-4 text-slate-700 mt-4">
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" /></svg></div><p>Bạn sẽ trở thành một "thành viên tập sự", cùng tham gia vào các công việc thực tế của Bộ phận mà bạn đã chọn. Đây là giai đoạn để bạn thể hiện khả năng làm việc nhóm, sự sáng tạo và tinh thần trách nhiệm.</p></div>
-                                <div class="flex items-start"><div class="flex-shrink-0 w-6 pt-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></div><p><strong class="font-semibold">Thời gian:</strong> 22/9 – 03/10/2025.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-dot absolute left-4 md:left-1/2 top-4 w-8 h-8 -translate-x-1/2 bg-orange-500 rounded-full border-4 border-white transition-transform duration-300"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-20 md:py-24 bg-slate-800 text-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Khám Phá Các Mảnh Ghép</h2>
-            <p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">Mỗi Bộ phận là một vũ trụ riêng với sứ mệnh độc đáo. Hãy tìm nơi bạn có thể tỏa sáng rực rỡ nhất!</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-            <div class="department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-sky-500 to-blue-600 scroll-animate">
-                <div class="card-bg-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
-                <div class="relative z-10 w-full flex flex-col items-center">
-                    <div class="card-icon text-4xl">📢</div>
-                    <h3 class="text-2xl font-bold mb-2">Bộ phận Truyền thông</h3>
-                    <p class="card-slogan">"Kiến tạo câu chuyện, lan tỏa giá trị"</p>
-                    <ul class="card-tasks">
-                        <li>Sản xuất các sản phẩm media (hình ảnh, video) và quản trị các kênh Fanpage, Website, Youtube.</li>
-                        <li>Lên kế hoạch và triển khai các chiến dịch truyền thông cho sự kiện.</li>
-                        <li>Phù hợp với các bạn yêu thích thiết kế, nhiếp ảnh, quay dựng, viết lách.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-rose-500 to-red-600 scroll-animate" style="transition-delay: 100ms;">
-                 <div class="card-bg-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');"></div>
-                 <div class="relative z-10 w-full flex flex-col items-center">
-                    <div class="card-icon text-4xl">🔥</div>
-                    <h3 class="text-2xl font-bold mb-2">Bộ phận Phong trào</h3>
-                    <p class="card-slogan">"Thổi bùng nhiệt huyết, kiến tạo thanh xuân"</p>
-                    <ul class="card-tasks">
-                        <li>Chịu trách nhiệm lan tỏa 3 phong trào hành động và 3 chương trình đồng hành.</li>
-                        <li>Tổ chức các sự kiện lớn, chiến dịch tình nguyện, sân chơi văn nghệ, thể thao.</li>
-                        <li>Dành cho những bạn năng động, nhiệt huyết, có khả năng tổ chức và kết nối.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-emerald-500 to-green-600 scroll-animate" style="transition-delay: 200ms;">
-                 <div class="card-bg-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/cross-dots.png');"></div>
-                 <div class="relative z-10 w-full flex flex-col items-center">
-                    <div class="card-icon text-4xl">⚙️</div>
-                    <h3 class="text-2xl font-bold mb-2">Bộ phận Tổ chức - Xây dựng Đoàn</h3>
-                    <p class="card-slogan">"Vững cấu trúc, mạnh phong trào"</p>
-                    <ul class="card-tasks">
-                        <li>Là "xương sống", phụ trách công tác quản lý, phát triển và giới thiệu đoàn viên ưu tú.</li>
-                        <li>Tham mưu về nhân sự, tổ chức các lớp tập huấn, hội thi cho cán bộ Đoàn.</li>
-                        <li>Dành cho các bạn có tư duy logic, cẩn thận và yêu thích công việc hệ thống.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-amber-500 to-yellow-600 scroll-animate" style="transition-delay: 300ms;">
-                 <div class="card-bg-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/tiny-grid.png');"></div>
-                 <div class="relative z-10 w-full flex flex-col items-center">
-                    <div class="card-icon text-4xl">💡</div>
-                    <h3 class="text-2xl font-bold mb-2">Bộ phận Tuyên giáo</h3>
-                    <p class="card-slogan">"Giữ lửa lý tưởng, lan tỏa tri thức"</p>
-                    <ul class="card-tasks">
-                        <li>Là "linh hồn" của Đoàn Trường, thực hiện công tác giáo dục chính trị, tư tưởng, lịch sử.</li>
-                        <li>Sáng tạo ấn phẩm, quản lý kênh Tik Tok "Vietnam Up" để lan tỏa giá trị tốt đẹp.</li>
-                        <li>Phù hợp với các bạn có kiến thức xã hội tốt và khả năng truyền đạt.</li>
-                    </ul>
-                </div>
-            </div>
+            /* Navigation adjustments */
+            #main-nav { gap: 1.5rem; }
+            #main-nav a { font-size: 0.9rem; }
+        }
+        
+        /* Mobile Screens (max-width: 767px) */
+        @media (max-width: 767px) {
+            .container { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
             
-            <div class="department-card rounded-2xl p-8 flex flex-col items-center text-center bg-gradient-to-br from-slate-500 to-gray-600 scroll-animate lg:col-span-2" style="transition-delay: 400ms;">
-                 <div class="card-bg-pattern" style="background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png');"></div>
-                 <div class="relative z-10 w-full flex flex-col items-center">
-                    <div class="card-icon text-4xl">📋</div>
-                    <h3 class="text-2xl font-bold mb-2">Văn phòng Đoàn Trường</h3>
-                    <p class="card-slogan">"Hậu phương vững chắc, vận hành trôi chảy"</p>
-                    <ul class="card-tasks">
-                        <li>Là trung tâm thông tin, đảm bảo công tác hành chính, hậu cần, tài chính.</li>
-                        <li>Công việc bao gồm quản trị cơ sở vật chất, xử lý giấy tờ, thanh quyết toán.</li>
-                        <li>Dành cho những bạn tỉ mỉ, có trách nhiệm, giỏi sắp xếp và quản lý công việc.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section class="relative overflow-hidden py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-    <div class="container mx-auto px-6">
-           <div class="text-center mb-16 scroll-animate">
-              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-              </div>
-              <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight mb-4">Giải Đáp Thắc Mắc</h2>
-              <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Những câu hỏi chúng mình thường gặp. Nếu bạn có thắc mắc khác, đừng ngần ngại liên hệ nhé! 💫</p>
-        </div>
-          
-          <div class="max-w-4xl mx-auto space-y-4 scroll-animate" style="transition-delay: 150ms;">
-              
-              <!-- Q item -->
-              <div class="faq-item bg-white rounded-2xl shadow-md border overflow-hidden">
-                     <button class="faq-question w-full flex items-center justify-between text-left p-5">
-                      <span class="font-semibold text-slate-800 pr-4">Em chưa có kinh nghiệm hoạt động Đoàn bao giờ, liệu có thể ứng tuyển không? 🤔</span>
-                      <span class="flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-100">
-                          <svg class="faq-arrow w-5 h-5 text-slate-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                      </span>
-             </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-5 pb-5 pt-0">
-                          <div class="rounded-xl bg-blue-50 p-4 text-slate-700">
-                              ✨ <strong>Hoàn toàn có thể!</strong> Kinh nghiệm là lợi thế nhưng không bắt buộc. Bạn sẽ được hướng dẫn và training đầy đủ trong quá trình hoạt động.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Thời gian hoạt động có ảnh hưởng đến việc học không? ⏰</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
-                      </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">📚 <strong>Đoàn trường luôn đặt việc học của sinh viên lên hàng đầu!</strong> Lịch hoạt động được sắp xếp linh hoạt, các bạn sẽ được chủ động trong việc sắp xếp lịch hoạt động tại Đoàn Trường nhé. Ngược lại, việc tham gia hoạt động còn giúp bạn rèn luyện kỹ năng quản lý thời gian hiệu quả hơn. 🎯</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Tham gia Đoàn trường em sẽ nhận được những quyền lợi gì? 🎁</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
-                      </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">🚀 <strong>Bạn sẽ được phát triển tốt nhất!</strong> Các kỹ năng mềm (lãnh đạo, làm việc nhóm, tổ chức sự kiện, giao tiếp), mở rộng mạng lưới quan hệ chất lượng, được ưu tiên tham gia các hoạt động, nhận giấy chứng nhận và đặc biệt là có được những kỷ niệm thanh xuân rực rỡ và ý nghĩa. 💫</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
+            /* Typography scaling */
+            .text-4xl { font-size: 2rem; }
+            .text-5xl { font-size: 2.25rem; }
+            .text-6xl { font-size: 2.5rem; }
+            .text-7xl { font-size: 2.75rem; }
             
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Hoạt động trong Đoàn có được cộng điểm rèn luyện không? 📊</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
-                      </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">🎯 <strong>Chắc chắn rồi!</strong> Việc tham gia tích cực và hoàn thành tốt nhiệm vụ trong các hoạt động của Đoàn trường là một tiêu chí quan trọng để được cộng điểm rèn luyện. Đây là quyền lợi thiết thực giúp bạn cải thiện kết quả học tập và có cơ hội nhận học bổng. 🏆</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
+            /* Spacing adjustments */
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .py-24 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .py-28 { padding-top: 4rem; padding-bottom: 4rem; }
+            
+            /* Header adjustments */
+            #header { padding: 0.5rem 1rem; }
+            #header .container { padding: 0; }
+            
+            /* Navigation */
+            #main-nav { display: none; }
+            
+            /* Hero section */
+            .hero-section { overflow: visible !important; }
+            .hero-section h1 { font-size: 2.5rem; line-height: 1.25; }
+            .hero-section p { font-size: 1rem; }
+            
+            /* Cards and grids */
+            .grid-cols-3 { grid-template-columns: 1fr; }
+            .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-cols-5 { grid-template-columns: repeat(2, 1fr); }
+            
+            /* Timeline adjustments */
+            .timeline-item { grid-template-columns: 50px 1fr; }
+            .timeline-marker { width: 48px; height: 48px; }
+            .timeline-marker svg { width: 1.5rem; height: 1.5rem; }
+            .timeline-card-new { padding: 1.5rem; }
+            
+            /* Activity cards */
+            #activities-swiper .activity-card { max-width: 92%; }
+            #activities-swiper .activity-card img { height: 140px; }
+            
+            /* Modal adjustments */
+            .modal-content { 
+                max-width: 95vw; 
+                max-height: 90vh; 
+                margin: 1rem;
+            }
+            
+            /* Button adjustments */
+            .cta-button { 
+                padding: 0.75rem 1.5rem; 
+                font-size: 1rem; 
+            }
+            
+            /* Image adjustments */
+            .swiper-slide img { height: 200px !important; }
+        }
+        
+        /* Small Phones (max-width: 640px): hide header, show FAB */
+        @media (max-width: 640px) {
+            #header { display: none; }
+            .fab-menu { display: flex !important; }
+        }
 
-              <div class="faq-item group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:bg-white/90">
-                  <button class="faq-question w-full flex justify-between items-center text-left p-6 font-bold text-slate-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 group-hover:shadow-sm">
-                      <span class="text-lg leading-relaxed pr-4">Em có thể ứng tuyển vào nhiều Bộ phận cùng một lúc không? 🎯</span>
-                      <div class="flex-shrink-0 ml-4">
-                          <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                              <svg class="faq-arrow w-5 h-5 text-white transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                              </svg>
-                          </div>
-                      </div>
-                </button>
-                  <div class="faq-answer hidden">
-                      <div class="px-6 pb-6">
-                          <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border-l-4 border-indigo-500">
-                              <p class="text-slate-700 leading-relaxed text-lg">💡 <strong>Chúng mình khuyến khích bạn nên tìm hiểu kỹ</strong> và tập trung ứng tuyển vào Bộ phận mà bạn cảm thấy yêu thích và phù hợp nhất. Điều này sẽ giúp bạn thể hiện tốt nhất nguyện vọng và sự quyết tâm của mình trong vòng phỏng vấn. Thông tin chi tiết về việc này sẽ được hướng dẫn cụ thể trong đơn đăng ký. 📝</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
+        /* Extra Small Screens (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+            
+            /* Typography */
+            .text-4xl { font-size: 1.75rem; }
+            .text-5xl { font-size: 2rem; }
+            .text-6xl { font-size: 2.25rem; }
+            .text-7xl { font-size: 2.5rem; }
+            
+            /* Spacing */
+            .py-20 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            .py-24 { padding-top: 3rem; padding-bottom: 3rem; }
+            
+            /* Grid adjustments */
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .grid-cols-4 { grid-template-columns: 1fr; }
+            .grid-cols-5 { grid-template-columns: 1fr; }
+            
+            /* Cards */
+            .glass-card { padding: 1rem; }
+            
+            /* Buttons */
+            .cta-button { 
+                padding: 0.625rem 1.25rem; 
+                font-size: 0.9rem; 
+            }
+            
+            /* Images */
+            .swiper-slide img { height: 180px !important; }
+            
+            /* Modal */
+            .modal-content { 
+                max-width: 98vw; 
+                margin: 0.5rem;
+                padding: 1rem;
+            }
 
-        </div>
-    </div>
-</section>
+            /* Keep FAB visible as well */
+            .fab-menu { display: flex !important; }
+        }
+        
+        /* Landscape Mobile */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+            .py-24 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            
+            .hero-section { min-height: 60vh; }
+        }
+        /* Default hide FAB; will show on xs in media query */
+        .fab-menu { display: none; align-items: center; justify-content: center; }
+    </style>
+</head>
 
-  
-  <section class="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100 py-20 md:py-24">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-12 scroll-animate">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight">Một Vài Lời Khuyên Vàng Từ Chúng Mình</h2>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Để hành trình của bạn suôn sẻ hơn, hãy ghi nhớ những điều này nhé!</p>
-        </div>
-        <div class="max-w-2xl mx-auto bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border scroll-animate" style="transition-delay: 150ms;">
-            <ul class="space-y-4">
-                <li class="flex items-center pb-4 border-b">
-                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">1</span>
-                    <div class="ml-4">
-                        <p class="font-semibold text-slate-800">Hãy là chính mình</p>
-                        <p class="text-sm text-slate-500">Chúng mình trân trọng sự chân thành và màu sắc cá nhân của bạn.</p>
-                    </div>
-                </li>
-                <li class="flex items-center pb-4 border-b">
-                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold">2</span>
-                    <div class="ml-4">
-                        <p class="font-semibold text-slate-800">Tìm hiểu về chúng mình</p>
-                        <p class="text-sm text-slate-500">Việc hiểu rõ về tổ chức cho thấy sự nghiêm túc và tâm huyết của bạn.</p>
-                    </div>
-                </li>
-                 <li class="flex items-center">
-                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold">3</span>
-                    <div class="ml-4">
-                        <p class="font-semibold text-slate-800">Chuẩn bị kỹ lưỡng</p>
-                        <p class="text-sm text-slate-500">Đọc kỹ các yêu cầu và chuẩn bị cho các câu hỏi phỏng vấn có thể gặp.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+<body class="flex flex-col min-h-screen">
 
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20">
-    <div class="deco-shape w-64 h-64 bg-white/10 rounded-full -top-20 -left-20"></div>
-    <div class="deco-shape w-80 h-80 bg-white/10 rounded-full -bottom-32 -right-20" style="animation-delay: -3s;"></div>
-    <div class="container mx-auto px-6 text-center relative z-10 scroll-animate">
-        <h2 class="text-3xl font-bold">Đã Nắm Rõ Lộ Trình?</h2>
-         <p class="max-w-xl mx-auto mt-3 text-purple-200">Hãy bắt đầu bước đầu tiên trên hành trình trở thành một mảnh ghép của Tuổi trẻ UEL!</p>
-        <div class="mt-8">
-            <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="bg-white text-blue-600 font-bold text-lg py-3 px-10 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-purple-500/30 inline-block">
-                Điền Đơn Ngay
+    <header id="header" class="fixed top-0 bg-white/90 backdrop-blur-lg left-0 right-0 z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#home" class="nav-trigger flex items-center space-x-2 z-20" data-page="home">
+                <img src="pic/logo/logodt.png" alt="Logo Đoàn Trường UEL" class="h-10 w-auto">
+                <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
             </a>
+            
+<nav class="flex items-center space-x-8" id="main-nav">
+                <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
+                <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
+                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
+                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="quy-trinh">Ứng tuyển</a>
+                <a href="https://www.facebook.com/youth.uel" target="_blank" class="text-gray-600 hover:text-blue-600 font-semibold">Liên hệ</a>
+            </nav>
+
+
+            <div class="flex items-center gap-4">
+                <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="hidden sm:block bg-blue-600 text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">Về với chúng mình</a>
+                <button id="mobile-menu-button" class="md:hidden p-1.5 rounded-md hover:bg-gray-100 focus:outline-none z-20">
+                    <img src="pic/logo/logodt.png" alt="Mở menu" class="w-8 h-8 object-contain" />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FAB menu (show only on very small phones) -->
+    <button id="fab-menu-open" class="fab-menu fixed bottom-4 right-4 md:hidden w-12 h-12 rounded-full bg-white shadow-lg z-50 ring-2 ring-blue-400 ring-offset-2 ring-offset-white">
+        <img src="pic/logo/logodt.png" alt="Mở menu" class="w-10 h-10 m-auto"/>
+    </button>
+<!-- Removed old mobile menu block to avoid duplicate IDs; using the panel-based menu below -->
+
+    <!-- Global audio and controls -->
+    <audio id="bg-audio" loop>
+        <source src="pic/audio/bg-music.mp3" type="audio/mpeg"/>
+    </audio>
+    <button id="music-toggle" class="fixed bottom-20 right-4 z-[60] w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center ring-2 ring-pink-400 ring-offset-2 ring-offset-white hover:scale-110 transition duration-300">
+        <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 18V5l12-2v13"></path><circle cx="9" cy="19" r="3"></circle><circle cx="21" cy="16" r="3"></circle>
+        </svg>
+    </button>
+
+    <main id="app-container"></main>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden">
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60"></div>
+        
+        <div id="mobile-menu-panel" class="relative z-50 bg-gradient-to-br from-blue-50 via-violet-50 to-pink-50 backdrop-blur-xl w-4/5 max-w-sm h-full ml-auto p-6 shadow-2xl flex flex-col rounded-l-3xl border-l border-slate-200">
+            <div class="flex items-center justify-between mb-6">
+                <a href="#home" data-page="home" class="nav-trigger flex items-center gap-3">
+                    <img src="pic/logo/logodt.png" alt="UEL" class="w-9 h-9 object-contain"/>
+                    <span class="font-extrabold text-slate-700">ĐOÀN TRƯỜNG UEL</span>
+                </a>
+                <button id="mobile-menu-close-button" class="p-2 rounded-full hover:bg-gray-100 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4 text-lg">
+                <a href="#gioithieu" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="gioithieu">Giới thiệu</a>
+                <a href="#tochuc" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="tochuc">Tổ chức</a>
+                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="hoat-dong">Hoạt động</a>
+                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="quy-trinh">Quy trình</a>
+                <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl">Liên hệ</a>
+            </nav>
+            <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="w-full mt-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all duration-300">Đăng ký Ngay</a>
         </div>
     </div>
-</section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // === KHU VỰC KHAI BÁO BIẾN VÀ ĐỊNH NGHĨA ROUTE ===
+            const appContainer = document.getElementById('app-container');
+            const routes = {
+                'home': { path: 'pages/home.html', title: 'Tuyển Cộng Tác Viên' },
+                'gioithieu': { path: 'pages/gioithieu.html', title: 'Giới Thiệu' },
+                'tochuc': { path: 'pages/tochuc.html', title: 'Cơ Cấu Tổ Chức' },
+                'hoat-dong': { path: 'pages/hoat-dong.html', title: 'Hoạt Động' },
+                'quy-trinh': { path: 'pages/quy-trinh.html', title: 'Quy Trình Ứng Tuyển' }
+            };
+            let countdownInterval;
+
+            const header = document.getElementById('header');
+            const mainContainer = document.getElementById('app-container');
+            function adjustMainPadding() {
+                if (header && mainContainer) {
+                    const headerHeight = header.offsetHeight;
+                    mainContainer.style.paddingTop = `${headerHeight}px`;
+                }
+            }
+            adjustMainPadding();
+            window.addEventListener('resize', adjustMainPadding);
+            
+            // === HÀM KHỞI TẠO CÁC SCRIPT CỦA TRANG CON (initializePageScripts) ===
+            // Hàm này sẽ được gọi mỗi khi một trang mới được tải vào #app-container.
+            // Nó chịu trách nhiệm kích hoạt lại các hiệu ứng (scroll, counter), slider,
+            // modal, tabs, FAQ... cho nội dung vừa được tải.
+            const initializePageScripts = () => {
+                if (countdownInterval) clearInterval(countdownInterval);
+
+                // 1. SCROLL ANIMATE: Hiệu ứng xuất hiện khi cuộn trang
+                document.querySelectorAll('.scroll-animate').forEach(el => {
+                    new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 }).observe(el);
+                });
+
+                // 2. MODAL HANDLERS: Xử lý đóng/mở các cửa sổ popup (modal)
+                const openModal = (modalId) => {
+                    const modal = document.querySelector(modalId);
+                    if (modal) {
+                        modal.classList.add('is-open');
+                        // Khởi tạo Swiper sau khi modal mở với delay dài hơn
+                        setTimeout(() => {
+                            console.log('Opening modal, initializing Swipers...');
+                            initializeModalSwipers();
+                        }, 500);
+                    }
+                };
+                const closeModal = (modal) => {
+                    if (modal) modal.classList.remove('is-open');
+                };
+                document.querySelectorAll('.modal-trigger').forEach(trigger => {
+                    trigger.addEventListener('click', () => {
+                        const modalId = trigger.getAttribute('data-modal-target');
+                        openModal(modalId);
+                    });
+                });
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal || e.target.closest('.modal-close')) {
+                            closeModal(modal);
+                        }
+                    });
+                });
+
+                // 2.1. TAB HANDLERS: Xử lý tabs trong các modal
+                // Khởi tạo trạng thái ban đầu cho tabs
+                function initializeTabs() {
+                    console.log('initializeTabs called');
+                    
+                    // Modal Tình Nguyện: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const tinhNguyenTabs = document.querySelectorAll('.tab-content');
+                    console.log('Found tinh nguyen tabs:', tinhNguyenTabs.length);
+                    tinhNguyenTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                            console.log('Showing first tab:', tab.id);
+                        } else {
+                            tab.classList.add('hidden');
+                            console.log('Hiding tab:', tab.id);
+                        }
+                    });
+
+                    // Modal Học Thuật: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const hocThuatTabs = document.querySelectorAll('.tab-content-hoc-thuat');
+                    console.log('Found hoc thuat tabs:', hocThuatTabs.length);
+                    hocThuatTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                        } else {
+                            tab.classList.add('hidden');
+                        }
+                    });
+
+                    // Modal Văn - Thể - Mỹ: Ẩn tất cả nội dung trừ tab đầu tiên
+                    const vtmTabs = document.querySelectorAll('.tab-content-vtm');
+                    console.log('Found VTM tabs:', vtmTabs.length);
+                    vtmTabs.forEach((tab, index) => {
+                        if (index === 0) {
+                            tab.classList.remove('hidden');
+                        } else {
+                            tab.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Khởi tạo Swiper cho các gallery trong modal
+                function initializeModalSwipers() {
+                    console.log('Initializing modal Swipers...');
+
+                        // Chính trị tư tưởng
+                        if (document.querySelector('.gallerySwiper-ct')) {
+                        console.log('Found gallerySwiper-ct, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperct && window.swiperct.destroy) {
+                            window.swiperct.destroy(true, true);
+                        }
+                        
+                        const swiperct = new Swiper(".gallerySwiper-ct", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnct = document.querySelector('.gallerySwiper-ct .swiper-nav-next');
+                        const prevBtnct = document.querySelector('.gallerySwiper-ct .swiper-nav-prev');
+                        
+                        if (nextBtnct) {
+                            nextBtnct.addEventListener('click', () => {
+                                swiperct.slideNext();
+                            });
+                        }
+                        if (prevBtnct) {
+                            prevBtnct.addEventListener('click', () => {
+                                swiperct.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperct = swiperct;
+                        console.log('Swiper ct initialized with custom navigation');
+                    }
+                    
+                        // Pháp luật
+                        if (document.querySelector('.gallerySwiper-pl')) {
+                        console.log('Found gallerySwiper-pl, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperpl && window.swiperpl.destroy) {
+                            window.swiperpl.destroy(true, true);
+                        }
+                        
+                        const swiperpl = new Swiper(".gallerySwiper-pl", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnpl = document.querySelector('.gallerySwiper-pl .swiper-nav-next');
+                        const prevBtnpl = document.querySelector('.gallerySwiper-pl .swiper-nav-prev');
+                        
+                        if (nextBtnpl) {
+                            nextBtnpl.addEventListener('click', () => {
+                                swiperpl.slideNext();
+                            });
+                        }
+                        if (prevBtnpl) {
+                            prevBtnpl.addEventListener('click', () => {
+                                swiperpl.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperpl = swiperpl;
+                        console.log('Swiper pl initialized with custom navigation');
+                    }
+                    
+                     // Đạo đức lối sống
+                        if (document.querySelector('.gallerySwiper-ddls')) {
+                        console.log('Found gallerySwiper-ddls, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperddls && window.swiperddls.destroy) {
+                            window.swiperddls.destroy(true, true);
+                        }
+                        
+                        const swiperddls = new Swiper(".gallerySwiper-ddls", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnddls = document.querySelector('.gallerySwiper-ddls .swiper-nav-next');
+                        const prevBtnddls = document.querySelector('.gallerySwiper-ddls .swiper-nav-prev');
+                        
+                        if (nextBtnddls) {
+                            nextBtnddls.addEventListener('click', () => {
+                                swiperddls.slideNext();
+                            });
+                        }
+                        if (prevBtnddls) {
+                            prevBtnddls.addEventListener('click', () => {
+                                swiperddls.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperddls = swiperddls;
+                        console.log('Swiper ddls initialized with custom navigation');
+                    }
+                    
+                    // Khởi tạo Swiper cho Modal Tình Nguyện
+                    if (document.querySelector('.gallerySwiper-xuan')) {
+                        console.log('Found gallerySwiper-xuan, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperXuan && window.swiperXuan.destroy) {
+                            window.swiperXuan.destroy(true, true);
+                        }
+                        
+                        const swiperXuan = new Swiper(".gallerySwiper-xuan", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnXuan = document.querySelector('.gallerySwiper-xuan .swiper-nav-next');
+                        const prevBtnXuan = document.querySelector('.gallerySwiper-xuan .swiper-nav-prev');
+                        
+                        if (nextBtnXuan) {
+                            nextBtnXuan.addEventListener('click', () => {
+                                swiperXuan.slideNext();
+                            });
+                        }
+                        if (prevBtnXuan) {
+                            prevBtnXuan.addEventListener('click', () => {
+                                swiperXuan.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperXuan = swiperXuan;
+                        console.log('Swiper xuan initialized with custom navigation');
+                    }
+                    
+                    if (document.querySelector('.gallerySwiper-mhx')) {
+                        console.log('Found gallerySwiper-mhx, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperMhx && window.swiperMhx.destroy) {
+                            window.swiperMhx.destroy(true, true);
+                        }
+                        
+                        const swiperMhx = new Swiper(".gallerySwiper-mhx", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnMhx = document.querySelector('.gallerySwiper-mhx .swiper-nav-next');
+                        const prevBtnMhx = document.querySelector('.gallerySwiper-mhx .swiper-nav-prev');
+                        
+                        if (nextBtnMhx) {
+                            nextBtnMhx.addEventListener('click', () => {
+                                swiperMhx.slideNext();
+                            });
+                        }
+                        if (prevBtnMhx) {
+                            prevBtnMhx.addEventListener('click', () => {
+                                swiperMhx.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperMhx = swiperMhx;
+                        console.log('Swiper mhx initialized with custom navigation');
+                    }
+                    
+                    if (document.querySelector('.gallerySwiper-tsmt')) {
+                        console.log('Found gallerySwiper-tsmt, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperTsmt && window.swiperTsmt.destroy) {
+                            window.swiperTsmt.destroy(true, true);
+                        }
+                        
+                        const swiperTsmt = new Swiper(".gallerySwiper-tsmt", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnTsmt = document.querySelector('.gallerySwiper-tsmt .swiper-nav-next');
+                        const prevBtnTsmt = document.querySelector('.gallerySwiper-tsmt .swiper-nav-prev');
+                        
+                        if (nextBtnTsmt) {
+                            nextBtnTsmt.addEventListener('click', () => {
+                                swiperTsmt.slideNext();
+                            });
+                        }
+                        if (prevBtnTsmt) {
+                            prevBtnTsmt.addEventListener('click', () => {
+                                swiperTsmt.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperTsmt = swiperTsmt;
+                        console.log('Swiper tsmt initialized with custom navigation');
+                    }
+                    
+                    // HMTN
+                    if (document.querySelector('.gallerySwiper-hmtn')) {
+                        console.log('Found gallerySwiper-hmtn, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperHmtn && window.swiperHmtn.destroy) {
+                            window.swiperHmtn.destroy(true, true);
+                        }
+                        
+                        const swiperHmtn = new Swiper(".gallerySwiper-hmtn", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnHmtn = document.querySelector('.gallerySwiper-hmtn .swiper-nav-next');
+                        const prevBtnHmtn = document.querySelector('.gallerySwiper-hmtn .swiper-nav-prev');
+                        
+                        if (nextBtnHmtn) {
+                            nextBtnHmtn.addEventListener('click', () => {
+                                swiperHmtn.slideNext();
+                            });
+                        }
+                        if (prevBtnHmtn) {
+                            prevBtnHmtn.addEventListener('click', () => {
+                                swiperHmtn.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperHmtn = swiperHmtn;
+                        console.log('Swiper hmtn initialized with custom navigation');
+                    }
+                    
+                        // NCKH
+                        if (document.querySelector('.gallerySwiper-nckh')) {
+                        console.log('Found gallerySwiper-nckh, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipernckh && window.swipernckh.destroy) {
+                            window.swipernckh.destroy(true, true);
+                        }
+                        
+                        const swipernckh = new Swiper(".gallerySwiper-nckh", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnnckh = document.querySelector('.gallerySwiper-nckh .swiper-nav-next');
+                        const prevBtnnckh = document.querySelector('.gallerySwiper-nckh .swiper-nav-prev');
+                        
+                        if (nextBtnnckh) {
+                            nextBtnnckh.addEventListener('click', () => {
+                                swipernckh.slideNext();
+                            });
+                        }
+                        if (prevBtnnckh) {
+                            prevBtnnckh.addEventListener('click', () => {
+                                swipernckh.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipernckh = swipernckh;
+                        console.log('Swiper nckh initialized with custom navigation');
+                    }
+                    
+                        // CuocThi
+                        if (document.querySelector('.gallerySwiper-cuocthi')) {
+                        console.log('Found gallerySwiper-cuocthi, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipercuocthi && window.swipercuocthi.destroy) {
+                            window.swipercuocthi.destroy(true, true);
+                        }
+                        
+                        const swipercuocthi = new Swiper(".gallerySwiper-cuocthi", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtncuocthi = document.querySelector('.gallerySwiper-cuocthi .swiper-nav-next');
+                        const prevBtncuocthi = document.querySelector('.gallerySwiper-cuocthi .swiper-nav-prev');
+                        
+                        if (nextBtncuocthi) {
+                            nextBtncuocthi.addEventListener('click', () => {
+                                swipercuocthi.slideNext();
+                            });
+                        }
+                        if (prevBtncuocthi) {
+                            prevBtncuocthi.addEventListener('click', () => {
+                                swipercuocthi.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipercuocthi = swipercuocthi;
+                        console.log('Swiper cuocthi initialized with custom navigation');
+                    }
+
+                        // TapHuan
+                        if (document.querySelector('.gallerySwiper-taphuan')) {
+                        console.log('Found gallerySwiper-taphuan, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipertaphuan && window.swipertaphuan.destroy) {
+                            window.swipertaphuan.destroy(true, true);
+                        }
+                        
+                        const swipertaphuan = new Swiper(".gallerySwiper-taphuan", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtntaphuan = document.querySelector('.gallerySwiper-taphuan .swiper-nav-next');
+                        const prevBtntaphuan = document.querySelector('.gallerySwiper-taphuan .swiper-nav-prev');
+                        
+                        if (nextBtntaphuan) {
+                            nextBtntaphuan.addEventListener('click', () => {
+                                swipertaphuan.slideNext();
+                            });
+                        }
+                        if (prevBtntaphuan) {
+                            prevBtntaphuan.addEventListener('click', () => {
+                                swipertaphuan.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipertaphuan = swipertaphuan;
+                        console.log('Swiper taphuan initialized with custom navigation');
+                    }
+
+                        // Văn
+                        if (document.querySelector('.gallerySwiper-van')) {
+                        console.log('Found gallerySwiper-van, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipervan && window.swipervan.destroy) {
+                            window.swipervan.destroy(true, true);
+                        }
+                        
+                        const swipervan = new Swiper(".gallerySwiper-van", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnvan = document.querySelector('.gallerySwiper-van .swiper-nav-next');
+                        const prevBtnvan = document.querySelector('.gallerySwiper-van .swiper-nav-prev');
+                        
+                        if (nextBtnvan) {
+                            nextBtnvan.addEventListener('click', () => {
+                                swipervan.slideNext();
+                            });
+                        }
+                        if (prevBtnvan) {
+                            prevBtnvan.addEventListener('click', () => {
+                                swipervan.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipervan = swipervan;
+                        console.log('Swiper van initialized with custom navigation');
+                    }
+
+                        // Thể
+                        if (document.querySelector('.gallerySwiper-the')) {
+                        console.log('Found gallerySwiper-the, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swiperthe && window.swiperthe.destroy) {
+                            window.swiperthe.destroy(true, true);
+                        }
+                        
+                        const swiperthe = new Swiper(".gallerySwiper-the", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnthe = document.querySelector('.gallerySwiper-the .swiper-nav-next');
+                        const prevBtnthe = document.querySelector('.gallerySwiper-the .swiper-nav-prev');
+                        
+                        if (nextBtnthe) {
+                            nextBtnthe.addEventListener('click', () => {
+                                swiperthe.slideNext();
+                            });
+                        }
+                        if (prevBtnthe) {
+                            prevBtnthe.addEventListener('click', () => {
+                                swiperthe.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swiperthe = swiperthe;
+                        console.log('Swiper the initialized with custom navigation');
+                    }
+
+                        // Mỹ
+                        if (document.querySelector('.gallerySwiper-my')) {
+                        console.log('Found gallerySwiper-my, initializing...');
+                        
+                        // Destroy existing Swiper instance if exists
+                        if (window.swipermy && window.swipermy.destroy) {
+                            window.swipermy.destroy(true, true);
+                        }
+                        
+                        const swipermy = new Swiper(".gallerySwiper-my", { 
+                            slidesPerView: 1, 
+                            spaceBetween: 16, 
+                            loop: true,
+                            grabCursor: true,
+                            observer: true,
+                            observeParents: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true
+                            }
+                        });
+                        
+                        // Thêm event listeners cho custom navigation buttons
+                        const nextBtnmy = document.querySelector('.gallerySwiper-my .swiper-nav-next');
+                        const prevBtnmy = document.querySelector('.gallerySwiper-my .swiper-nav-prev');
+                        
+                        if (nextBtnmy) {
+                            nextBtnmy.addEventListener('click', () => {
+                                swipermy.slideNext();
+                            });
+                        }
+                        if (prevBtnmy) {
+                            prevBtnmy.addEventListener('click', () => {
+                                swipermy.slidePrev();
+                            });
+                        }
+                        
+                        // Store reference globally
+                        window.swipermy = swipermy;
+                        console.log('Swiper the initialized with custom navigation');
+                    }
+                    
+                    console.log('All modal Swipers initialized with custom navigation');
+                }
+
+                // Xử lý Tabs cho Modal Tình Nguyện
+                function initializeTinhNguyenTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn');
+                    console.log('Found tinh nguyen tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-pink-500', 'to-orange-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing content:', btn.dataset.target);
+                                    // Re-init Swipers to fix width calc when tab becomes visible
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
+                                } else {
+                                    console.error('Target content not found:', btn.dataset.target);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Học Thuật
+                function initializeHocThuatTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-hoc-thuat');
+                    console.log('Found hoc thuat tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Hoc thuat tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-cyan-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-hoc-thuat').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing hoc thuat content:', btn.dataset.target);
+                                    // Re-init Swipers to ensure proper sizing inside newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Văn - Thể - Mỹ
+                function initializeVTMTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-vtm');
+                    console.log('Found VTM tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('VTM tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-vtm').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing VTM content:', btn.dataset.target);
+                                    // Re-init Swipers to ensure proper sizing inside newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Xử lý Tabs cho Modal Bồi Đắp Lý Tưởng
+                function initializeLyTuongTabs() {
+                    const tabButtons = document.querySelectorAll('.tab-btn-ly-tuong');
+                    console.log('Found ly tuong tab buttons:', tabButtons.length);
+                    
+                    if (tabButtons.length > 0) {
+                        tabButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                console.log('Ly tuong tab clicked:', btn.dataset.target);
+                                
+                                // Reset tất cả tabs
+                                tabButtons.forEach(b => {
+                                    b.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                    b.classList.add('bg-gray-200', 'text-slate-700');
+                                });
+                                
+                                // Active tab được click
+                                btn.classList.remove('bg-gray-200', 'text-slate-700');
+                                btn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-500', 'text-white');
+                                
+                                // Ẩn tất cả nội dung
+                                document.querySelectorAll('.tab-content-ly-tuong').forEach(tab => {
+                                    tab.classList.add('hidden');
+                                });
+                                
+                                // Hiện nội dung tương ứng
+                                const targetContent = document.querySelector(btn.dataset.target);
+                                if (targetContent) {
+                                    targetContent.classList.remove('hidden');
+                                    console.log('Showing ly tuong content:', btn.dataset.target);
+                                    // Re-init all modal Swipers to ensure proper sizing in newly shown tab
+                                    setTimeout(() => { try { initializeModalSwipers(); } catch(e){} }, 100);
+                                }
+                            });
+                        });
+                    }
+                }
+
+                // Khởi tạo tabs với delay để đảm bảo DOM đã sẵn sàng
+                setTimeout(() => {
+                    console.log('Initializing tabs with delay...');
+                    initializeTabs();
+                    initializeTinhNguyenTabs();
+                    initializeHocThuatTabs();
+                    initializeVTMTabs();
+                    initializeLyTuongTabs();
+                    console.log('Tabs initialization complete');
+                }, 300);
+
+                // 3. SWIPER SLIDER: Khởi tạo slider ảnh
+                if (document.querySelector('.mySwiper')) {
+                    new Swiper(".mySwiper", {
+                        effect: "cards",
+                        grabCursor: true,
+                        loop: false,
+                        speed: 800,
+                        autoplay: {
+                            delay: 3500,
+                            disableOnInteraction: false
+                        },
+                        cardsEffect: {
+                            slideShadows: false,
+                            perSlideRotate: 2,
+                            perSlideOffset: 8
+                        },
+                        on: {
+                            reachEnd: function() {
+                                setTimeout(() => {
+                                    this.slideTo(0, 800);
+                                }, 1000);
+                            }
+                        }
+                    });
+                }
+
+                // 4. ANIMATED COUNTER: Hiệu ứng đếm số
+                const statsContainer = document.getElementById('stats-container');
+                if (statsContainer) {
+                    new IntersectionObserver((entries, observer) => {
+                        if (entries[0].isIntersecting) {
+                            statsContainer.querySelectorAll('.stat-counter').forEach(counter => {
+                                const target = +counter.getAttribute('data-target');
+                                let current = 0;
+                                const increment = target / 100;
+                                const updateCounter = () => {
+                                    if (current < target) {
+                                        current += increment;
+                                        counter.innerText = Math.ceil(current).toLocaleString();
+                                        requestAnimationFrame(updateCounter);
+                                    } else {
+                                        counter.innerText = target.toLocaleString();
+                                    }
+                                };
+                                updateCounter();
+                            });
+                            observer.unobserve(statsContainer);
+                        }
+                    }, { threshold: 0.8 }).observe(statsContainer);
+                }
+
+                // 5. ACTIVITY TABS: Xử lý chuyển đổi tab nội dung
+                const tabsContainer = document.getElementById('activity-tabs');
+                if (tabsContainer) {
+                    const tabs = tabsContainer.querySelectorAll('.activity-tab');
+                    const contents = document.querySelectorAll('.activity-content');
+                    tabs.forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            const targetId = tab.getAttribute('data-target');
+                            tabs.forEach(item => item.classList.remove('active', 'bg-blue-500', 'bg-rose-500', 'bg-teal-500'));
+                            tab.classList.add('active', 'bg-blue-500');
+                            contents.forEach(content => content.classList.toggle('hidden', content.id !== targetId));
+                        });
+                    });
+                }
+
+                // 6. COUNTDOWN TIMER: Đồng hồ đếm ngược
+                const countdownElement = document.getElementById('countdown');
+                if (countdownElement) {
+                    const countdownDate = new Date("Sep 14, 2025 08:00:00").getTime();
+                    countdownInterval = setInterval(() => {
+                        const now = new Date().getTime();
+                        const distance = countdownDate - now;
+                        const D = (id, val) => {
+                            const el = document.getElementById(id);
+                            if (el) el.innerText = val;
+                        };
+                        D('days', Math.floor(distance / 86400000).toString().padStart(2, '0'));
+                        D('hours', Math.floor((distance % 86400000) / 3600000).toString().padStart(2, '0'));
+                        D('minutes', Math.floor((distance % 3600000) / 60000).toString().padStart(2, '0'));
+                        D('seconds', Math.floor((distance % 60000) / 1000).toString().padStart(2, '0'));
+                        if (distance < 0) {
+                            clearInterval(countdownInterval);
+                            countdownElement.innerHTML = "<p class='text-lg font-bold'>Sự kiện đã diễn ra!</p>";
+                        }
+                    }, 1000);
+                }
+                
+                // 7. MOVEMENT CARDS: Xử lý click và đổi nền cho phần Phong trào
+                // const initMovementCards = () => {
+                //     const container = document.getElementById('movement-cards-container');
+                //     if (!container) return;
+
+                //     const cards = container.querySelectorAll('.movement-card');
+                //     const contents = document.querySelectorAll('.movement-content');
+                //     const mainSection = document.getElementById('phong-trao-section');
+                //     const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+
+                //     cards.forEach(card => {
+                //         card.addEventListener('click', () => {
+                //             cards.forEach(c => c.classList.remove('active'));
+                //             card.classList.add('active');
+
+                //             const targetId = card.dataset.content;
+                //             contents.forEach(content => {
+                //                 content.classList.toggle('hidden', content.id !== targetId);
+                //             });
+
+                //             if (mainSection) {
+                //                 const newBg = card.dataset.bg;
+                //                 mainSection.classList.remove(...bgClasses);
+                //                 mainSection.classList.add(...newBg.split(' '));
+                //             }
+                //         });
+                //     });
+                // };
+                // initMovementCards();
+                const initMovementCards = () => {
+                    const container = document.getElementById('movement-cards-container');
+                    if (!container) return;
+
+                    const cards = container.querySelectorAll('.movement-card');
+                    const contents = document.querySelectorAll('.movement-content');
+                    const mainSection = document.getElementById('phong-trao-section');
+                    const bgClasses = Array.from(cards).map(c => c.dataset.bg);
+
+  // 👉 Set mặc định card đầu tiên
+  if (cards.length > 0) {
+    cards[0].classList.add('active'); 
+    const defaultContent = cards[0].dataset.content;
+    document.getElementById(defaultContent).classList.remove('hidden');
+
+    if (mainSection) {
+      const newBg = cards[0].dataset.bg;
+      mainSection.classList.add(...newBg.split(' '));
+    }
+  }
+
+                    cards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+
+                            const targetId = card.dataset.content;
+                            contents.forEach(content => {
+                                content.classList.toggle('hidden', content.id !== targetId);
+                            });
+
+                            if (mainSection) {
+                                const newBg = card.dataset.bg;
+                                mainSection.classList.remove(...bgClasses);
+                                mainSection.classList.add(...newBg.split(' '));
+                            }
+                        });
+                    });
+                };
+                initMovementCards();
+                // 8. FAQ ACCORDION: Xử lý xổ ra/thu vào câu hỏi thường gặp
+                const initFAQ = () => {
+                    const faqQuestions = document.querySelectorAll('.faq-question');
+                    
+                    faqQuestions.forEach(question => {
+                        question.addEventListener('click', function() {
+                            const faqItem = this.closest('.faq-item');
+                            const answer = faqItem.querySelector('.faq-answer');
+                            const arrow = this.querySelector('.faq-arrow');
+                            
+                            // Close others (accordion)
+                            faqQuestions.forEach(other => {
+                                if (other !== this) {
+                                    const item = other.closest('.faq-item');
+                                    const ans = item.querySelector('.faq-answer');
+                                    const arr = other.querySelector('.faq-arrow');
+                                    item.classList.remove('open');
+                                    ans.classList.add('hidden');
+                                    if (arr) arr.style.transform = 'rotate(0deg)';
+                                }
+                            });
+                            
+                            // Toggle current
+                            const willOpen = !faqItem.classList.contains('open');
+                            faqItem.classList.toggle('open', willOpen);
+                            answer.classList.toggle('hidden', !willOpen);
+                            arrow.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                        });
+                    });
+                };
+                initFAQ();
+                
+                // 9. HANDWRITING ANIMATION: Kích hoạt hiệu ứng viết tay
+                const handwritingContainer = document.getElementById('handwriting-svg-container');
+                if (handwritingContainer) {
+                    setTimeout(() => {
+                        handwritingContainer.classList.add('drawn');
+                    }, 100);
+                }
+
+                // 10. VIDEO MODAL (YouTube): mở/đóng khi nhúng qua SPA
+                const openVideoBtn = document.getElementById('openVideoBtn');
+                const videoModal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                if (openVideoBtn && videoModal) {
+                    openVideoBtn.addEventListener('click', () => {
+                        videoModal.classList.remove('hidden');
+                        videoModal.classList.add('flex');
+                        if (videoFrame) {
+                            const currentSrc = videoFrame.getAttribute('src') || '';
+                            if (!/autoplay=1/.test(currentSrc)) {
+                                const sep = currentSrc.includes('?') ? '&' : '?';
+                                videoFrame.setAttribute('src', `${currentSrc}${sep}autoplay=1`);
+                            }
+                        }
+                    });
+                    videoModal.addEventListener('click', (e) => {
+                        if (e.target.id === 'closeVideoBtn' || e.target === videoModal) {
+                            videoModal.classList.remove('flex');
+                            videoModal.classList.add('hidden');
+                            if (videoFrame) {
+                                // reset để dừng phát
+                                videoFrame.src = videoFrame.src;
+                            }
+                        }
+                    });
+                }
+            };
+
+            // === HÀM TẢI TRANG (loadPage) ===
+            // Chức năng cốt lõi của SPA. Tải nội dung từ file HTML tương ứng 
+            // và chèn vào #app-container, sau đó gọi hàm initializePageScripts().
+            const loadPage = async (pageKey = 'home') => {
+                const route = routes[pageKey];
+                if (!route) {
+                    appContainer.innerHTML = `<p class="text-center p-20">Lỗi 404</p>`;
+                    return;
+                }
+                try {
+                    const response = await fetch(route.path);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const content = await response.text();
+                    appContainer.innerHTML = content;
+                    window.scrollTo(0, 0);
+                    document.title = `${route.title} | Đoàn trường ĐH Kinh tế - Luật`;
+                    updateActiveNavLink(pageKey);
+                    console.log('Page loaded, calling initializePageScripts...');
+                    initializePageScripts(); // Rất quan trọng: Kích hoạt lại script cho nội dung mới
+                    console.log('initializePageScripts called');
+                } catch (error) {
+                    appContainer.innerHTML = `<p class="text-center p-20">Lỗi tải trang.</p>`;
+                }
+            };
+
+            // === CÁC HÀM TIỆN ÍCH VÀ LẮNG NGHE SỰ KIỆN ===
+            // Cập nhật trạng thái 'active' cho link điều hướng.
+            const updateActiveNavLink = (pageKey) => {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.toggle('nav-active', link.dataset.page === pageKey);
+                });
+            };
+
+            // Logic xử lý đóng/mở menu mobile.
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = () => mobileMenu.classList.remove('is-open');
+            const openMenu = () => mobileMenu.classList.add('is-open');
+
+            // Lắng nghe sự kiện click trên toàn bộ trang để xử lý điều hướng SPA.
+            document.body.addEventListener('click', (e) => {
+                const navTrigger = e.target.closest('.nav-trigger');
+                if (navTrigger && navTrigger.dataset.page) {
+                    e.preventDefault();
+                    const pageKey = navTrigger.dataset.page;
+                    if ((location.hash.substring(1) || 'home') !== pageKey) {
+                        history.pushState({ page: pageKey }, '', `#${pageKey}`);
+                        loadPage(pageKey);
+                    }
+                    closeMenu();
+                }
+            });
+
+            // Lắng nghe sự kiện popstate (khi người dùng nhấn nút back/forward của trình duyệt).
+            window.addEventListener('popstate', () => loadPage(location.hash.substring(1) || 'home'));
+
+            // Lắng nghe sự kiện cho các nút của menu mobile.
+            document.getElementById('mobile-menu-button').addEventListener('click', () => mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu());
+            document.getElementById('mobile-menu-close-button').addEventListener('click', closeMenu);
+            document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
+
+            // FAB to open menu on very small phones (when header is hidden)
+            const fabBtn = document.getElementById('fab-menu-open');
+            if (fabBtn) {
+                fabBtn.addEventListener('click', openMenu);
+            }
+
+            // === GLOBAL MUSIC TOGGLE ===
+            const audio = document.getElementById('bg-audio');
+            const toggleBtn = document.getElementById('music-toggle');
+            const icon = document.getElementById('music-icon');
+            if (audio && toggleBtn && icon) {
+                const saved = localStorage.getItem('bg-audio-playing');
+                if (saved === 'true') { audio.play().catch(()=>{}); }
+                const setIcon = (isPlaying) => {
+                    icon.innerHTML = isPlaying
+                      ? '<rect x="5" y="4" width="4" height="16"></rect><rect x="15" y="4" width="4" height="16"></rect>'
+                      : '<path d="M9 18V5l12-2v13"></path><circle cx="9" cy="19" r="3"></circle><circle cx="21" cy="16" r="3"></circle>';
+                };
+                setIcon(saved === 'true');
+                toggleBtn.addEventListener('click', async () => {
+                    try {
+                        if (audio.paused) {
+                            await audio.play();
+                            localStorage.setItem('bg-audio-playing', 'true');
+                            setIcon(true);
+                        } else {
+                            audio.pause();
+                            localStorage.setItem('bg-audio-playing', 'false');
+                            setIcon(false);
+                        }
+                    } catch(e) {}
+                });
+            }
+
+            // === TẢI TRANG BAN ĐẦU ===
+            // Tải trang dựa trên URL hash khi người dùng truy cập lần đầu.
+            loadPage(location.hash.substring(1) || 'home');
+        });
+    </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".movement-card");
+    const contents = document.querySelectorAll(".movement-content");
+    const section = document.getElementById("phong-trao-section");
+
+    cards.forEach(card => {
+      card.addEventListener("click", function () {
+        // Reset tất cả cards
+        cards.forEach(c => c.classList.remove("active", "bg-blue-100", "bg-rose-100", "bg-teal-100"));
+
+        // Ẩn hết content
+        contents.forEach(content => content.classList.add("hidden"));
+
+        // Xóa nền cũ của section
+        section.className = section.className
+          .replace(/bg-gradient-to-br from-\w+-50 to-\w+-100/g, "")
+          .trim();
+
+        // Lấy thông tin từ data-*
+        const contentId = this.getAttribute("data-content");
+        const bgClass = this.getAttribute("data-bg");
+        const color = this.getAttribute("data-color");
+
+        // Bật active card
+        this.classList.add("active", `bg-${color}-100`);
+
+        // Hiện content tương ứng
+        document.getElementById(contentId).classList.remove("hidden");
+
+        // Đổi nền section
+        section.classList.add(bgClass);
+            });
+        });
+
+    // Mặc định kích hoạt card đầu tiên
+    if (cards.length > 0) {
+      cards[0].click();
+    }
+  });
+    </script>
+    
+<script>
+  AOS.init();
+</script>
+    <footer class="relative bg-gradient-to-tr from-sky-100 via-purple-100 to-pink-100 text-slate-700">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <img src="pic/logo/logodt.png" alt="Logo Đoàn UEL" class="h-14 w-auto drop-shadow-md">
+                    <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
+                </div>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    🌟 Ngôi nhà tuổi trẻ – nơi thanh xuân trở nên rực rỡ 🌟
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-sky-700">Liên hệ</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li class="flex items-center space-x-2">
+                        <span class="text-sky-500">📍</span>
+                        <span>Văn phòng Đoàn - Hội (A.210)</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-sky-500">📞</span>
+                        <span>(028) 37244 555</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <span class="text-sky-500">✉️</span>
+                        <span>doanthanhnien@uel.edu.vn</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-4 text-sky-700">Kết nối</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/youth.uel" class="social-circle facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/youth.uel" class="social-circle instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/%40youthuelofficial3100" class="social-circle youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@teuthichdichoi" target="_blank" class="social-circle tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-white/60 text-center py-4 text-sm text-slate-600 border-t border-slate-200">
+            © 2025 Đoàn Trường Đại học Kinh tế - Luật. All rights reserved.
+        </div>
+
+        <style>
+            .social-circle {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                transition: all 0.3s ease;
+            }
+            .social-circle:hover {
+                transform: scale(1.15) rotate(-5deg);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+                filter: brightness(1.15);
+            }
+            .social-circle.facebook { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+            .social-circle.instagram { background: linear-gradient(135deg, #f43f5e, #f59e0b, #8b5cf6); }
+            .social-circle.youtube { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+            .social-circle.tiktok { background: linear-gradient(135deg, #000, #69C9D0, #EE1D52); }
+
+            .social-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 9999px;
+                color: white;
+                font-size: 1.125rem;
+                transition: all 0.3s ease;
+                transform-origin: center;
+            }
+            .social-icon:hover {
+                animation: wiggle 0.4s ease-in-out;
+                filter: brightness(1.2);
+                transform: scale(1.1) rotate(-5deg);
+            }
+            @keyframes wiggle {
+                0%, 100% { transform: rotate(0deg); }
+                25% { transform: rotate(-10deg); }
+                75% { transform: rotate(10deg); }
+            }
+            
+        </style>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
