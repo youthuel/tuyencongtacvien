@@ -329,19 +329,153 @@
         @keyframes draw-text { to { stroke-dashoffset: 0; } }
         @keyframes fill-text { to { fill: #2563eb; } }
 
-        /* === MEDIA QUERIES === */
-        @media (max-width: 768px) {
+        /* === RESPONSIVE OPTIMIZATION === */
+        
+        /* Extra Large Screens (1400px+) */
+        @media (min-width: 1400px) {
+            .container { max-width: 1320px; }
+            .text-4xl { font-size: 3rem; }
+            .text-5xl { font-size: 3.5rem; }
+            .text-6xl { font-size: 4rem; }
+            .py-20 { padding-top: 6rem; padding-bottom: 6rem; }
+            .py-24 { padding-top: 7rem; padding-bottom: 7rem; }
+        }
+        
+        /* Large Screens (1200px - 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .container { max-width: 1140px; }
+        }
+        
+        /* Medium Screens (992px - 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container { max-width: 960px; }
+            .text-4xl { font-size: 2.5rem; }
+            .text-5xl { font-size: 3rem; }
+            .text-6xl { font-size: 3.5rem; }
+        }
+        
+        /* Small Screens (768px - 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container { max-width: 720px; }
+            .text-4xl { font-size: 2.25rem; }
+            .text-5xl { font-size: 2.75rem; }
+            .text-6xl { font-size: 3rem; }
+            .py-20 { padding-top: 4rem; padding-bottom: 4rem; }
+            .py-24 { padding-top: 5rem; padding-bottom: 5rem; }
+            
+            /* Navigation adjustments */
+            #main-nav { gap: 1.5rem; }
+            #main-nav a { font-size: 0.9rem; }
+        }
+        
+        /* Mobile Screens (max-width: 767px) */
+        @media (max-width: 767px) {
+            .container { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
+            
+            /* Typography scaling */
+            .text-4xl { font-size: 2rem; }
+            .text-5xl { font-size: 2.25rem; }
+            .text-6xl { font-size: 2.5rem; }
+            .text-7xl { font-size: 2.75rem; }
+            
+            /* Spacing adjustments */
+            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .py-24 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .py-28 { padding-top: 4rem; padding-bottom: 4rem; }
+            
+            /* Header adjustments */
+            #header { padding: 0.5rem 1rem; }
+            #header .container { padding: 0; }
+            
+            /* Navigation */
+            #main-nav { display: none; }
+            
+            /* Hero section */
+            .hero-section h1 { font-size: 2.5rem; line-height: 1.2; }
+            .hero-section p { font-size: 1rem; }
+            
+            /* Cards and grids */
+            .grid-cols-3 { grid-template-columns: 1fr; }
+            .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-cols-5 { grid-template-columns: repeat(2, 1fr); }
+            
+            /* Timeline adjustments */
             .timeline-item { grid-template-columns: 50px 1fr; }
             .timeline-marker { width: 48px; height: 48px; }
             .timeline-marker svg { width: 1.5rem; height: 1.5rem; }
             .timeline-card-new { padding: 1.5rem; }
+            
+            /* Activity cards */
             #activities-swiper .activity-card { max-width: 92%; }
             #activities-swiper .activity-card img { height: 140px; }
+            
+            /* Modal adjustments */
+            .modal-content { 
+                max-width: 95vw; 
+                max-height: 90vh; 
+                margin: 1rem;
+            }
+            
+            /* Button adjustments */
+            .cta-button { 
+                padding: 0.75rem 1.5rem; 
+                font-size: 1rem; 
+            }
+            
+            /* Image adjustments */
+            .swiper-slide img { height: 200px !important; }
+        }
+        
+        /* Extra Small Screens (max-width: 480px) */
+        @media (max-width: 480px) {
+            .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+            
+            /* Typography */
+            .text-4xl { font-size: 1.75rem; }
+            .text-5xl { font-size: 2rem; }
+            .text-6xl { font-size: 2.25rem; }
+            .text-7xl { font-size: 2.5rem; }
+            
+            /* Spacing */
+            .py-20 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            .py-24 { padding-top: 3rem; padding-bottom: 3rem; }
+            
+            /* Grid adjustments */
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .grid-cols-4 { grid-template-columns: 1fr; }
+            .grid-cols-5 { grid-template-columns: 1fr; }
+            
+            /* Cards */
+            .glass-card { padding: 1rem; }
+            
+            /* Buttons */
+            .cta-button { 
+                padding: 0.625rem 1.25rem; 
+                font-size: 0.9rem; 
+            }
+            
+            /* Images */
+            .swiper-slide img { height: 180px !important; }
+            
+            /* Modal */
+            .modal-content { 
+                max-width: 98vw; 
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+        }
+        
+        /* Landscape Mobile */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+            .py-24 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            
+            .hero-section { min-height: 60vh; }
         }
     </style>
 </head>
 
-<body class="flex flex-col min-h-screen p-3 sm:p-6 lg:p-8 text-sm sm:text-base lg:text-lg">
+<body class="flex flex-col min-h-screen">
 
     <header id="header" class="fixed top-0 bg-white/90 backdrop-blur-lg left-0 right-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-2 flex justify-between items-center">
@@ -350,13 +484,13 @@
                 <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
             </a>
             
-<nav id="main-nav" class="hidden md:flex items-center space-x-8">
-  <a href="#gioithieu" class="nav-link">Giới thiệu</a>
-  <a href="#tochuc" class="nav-link">Tổ chức</a>
-  <a href="#hoat-dong" class="nav-link">Hoạt động</a>
-  <a href="#quy-trinh" class="nav-link">Ứng tuyển</a>
-  <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link">Liên hệ</a>
-</nav>
+<nav class="flex items-center space-x-8" id="main-nav">
+                <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
+                <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
+                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
+                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="quy-trinh">Ứng tuyển</a>
+                <a href="https://www.facebook.com/youth.uel" target="_blank" class="text-gray-600 hover:text-blue-600 font-semibold">Liên hệ</a>
+            </nav>
 
 
             <div class="flex items-center gap-4">
@@ -1687,7 +1821,6 @@ initMovementCards();
 </body>
 
 </html>
-
 
 
 
