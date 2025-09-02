@@ -1574,27 +1574,23 @@
                             const answer = faqItem.querySelector('.faq-answer');
                             const arrow = this.querySelector('.faq-arrow');
                             
-                            // Close all other answers first (accordion behavior)
-                            faqQuestions.forEach(otherQuestion => {
-                                if (otherQuestion !== this) {
-                                    const otherItem = otherQuestion.closest('.faq-item');
-                                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                                    const otherArrow = otherQuestion.querySelector('.faq-arrow');
-                                    
-                                    otherAnswer.classList.add('hidden');
-                                    otherArrow.style.transform = 'rotate(0deg)';
+                            // Close others (accordion)
+                            faqQuestions.forEach(other => {
+                                if (other !== this) {
+                                    const item = other.closest('.faq-item');
+                                    const ans = item.querySelector('.faq-answer');
+                                    const arr = other.querySelector('.faq-arrow');
+                                    item.classList.remove('open');
+                                    ans.classList.add('hidden');
+                                    if (arr) arr.style.transform = 'rotate(0deg)';
                                 }
                             });
                             
-                            // Toggle current answer
-                            answer.classList.toggle('hidden');
-                            
-                            // Rotate arrow
-                            if (answer.classList.contains('hidden')) {
-                                arrow.style.transform = 'rotate(0deg)';
-                            } else {
-                                arrow.style.transform = 'rotate(180deg)';
-                            }
+                            // Toggle current
+                            const willOpen = !faqItem.classList.contains('open');
+                            faqItem.classList.toggle('open', willOpen);
+                            answer.classList.toggle('hidden', !willOpen);
+                            arrow.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
                         });
                     });
                 };
