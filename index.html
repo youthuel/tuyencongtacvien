@@ -266,9 +266,8 @@
         .handwriting-container.drawn .handwriting-text { animation: fill-text 1s forwards 3.5s; }
 
         /* === CARD FLIP (generic) === */
-        .flip-card { perspective: 1200px; cursor: pointer; }
+        .flip-card { perspective: 1200px; cursor: pointer; position: relative; min-height: 320px; }
         .flip-card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
         .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 1rem; overflow: hidden; }
         .flip-card-back { transform: rotateY(180deg); }
@@ -1622,6 +1621,26 @@
                         handwritingContainer.classList.add('drawn');
                     }, 100);
                 }
+
+                // 9.1 CARD FLIP: click/touch để lật thẻ
+                document.querySelectorAll('.flip-card').forEach(card => {
+                    // Tránh double-bind khi SPA reload
+                    card.classList.add('flip-bind-ready');
+                    card.addEventListener('click', (e) => {
+                        // Bỏ qua nếu click vào link bên trong
+                        if (e.target.closest('a')) return;
+                        card.classList.toggle('flipped');
+                    });
+                    card.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            card.classList.toggle('flipped');
+                        }
+                    });
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('role', 'button');
+                    card.setAttribute('aria-pressed', 'false');
+                });
 
                 // 10. VIDEO MODAL (YouTube): mở/đóng khi nhúng qua SPA
                 const openVideoBtn = document.getElementById('openVideoBtn');
