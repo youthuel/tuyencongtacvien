@@ -804,10 +804,36 @@
 </div>
 
 <!-- Modal -->
+<!-- Card -->
+<div class="scroll-animate" style="transition-delay: 100ms;">
+  <div onclick="openModal('modal-ngoc')"
+       class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden cursor-pointer">
+    
+    <!-- Cover -->
+    <div class="overflow-hidden">
+      <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
+           class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+    </div>
+
+    <!-- Thông tin ngắn -->
+    <div class="p-6 flex items-center">
+      <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
+        <img src="pic/hoat-dong/ThanhNgoc.jpeg" class="w-full h-full rounded-full object-cover">
+      </div>
+      <div class="ml-4">
+        <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
+        <p class="text-sm text-slate-500">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
 <div id="modal-ngoc" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
   <div class="bg-white rounded-2xl max-w-2xl w-full p-6 relative">
     <!-- Nút đóng -->
-    <button onclick="closeModal('modal-ngoc')" class="absolute top-3 right-3 text-gray-500 hover:text-red-500">✖</button>
+    <button onclick="closeModal('modal-ngoc')" 
+            class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">✖</button>
 
     <!-- Nội dung chi tiết -->
     <img src="pic/hoat-dong/ThanhNgoc1.jpeg" class="w-full h-60 object-cover rounded-xl mb-4" />
@@ -823,14 +849,17 @@
 
 <script>
 function openModal(id) {
-  document.getElementById(id).classList.remove('hidden');
-  document.getElementById(id).classList.add('flex');
+  const modal = document.getElementById(id);
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
 }
 function closeModal(id) {
-  document.getElementById(id).classList.add('hidden');
-  document.getElementById(id).classList.remove('flex');
+  const modal = document.getElementById(id);
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
 }
 </script>
+
 
 
       <div class="scroll-animate" style="transition-delay: 100ms;">
@@ -964,39 +993,48 @@ function closeModal(id) {
         </div>
       </div>
 
-         <div class="scroll-animate" style="transition-delay: 100ms;">
-        <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col overflow-hidden">
-          <!-- Cover -->
-          <div class="overflow-hidden">
-            <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
-                 class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
-          </div>
-          <!-- Nội dung -->
-          <div class="p-8 flex flex-col flex-grow">
-            <p class="text-slate-600 flex-grow italic relative">
-              <span class="text-4xl text-pink-400 absolute -left-3 -top-2">“</span>
-              Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình, hoạt động Đoàn – Hội. 
-              Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi chuẩn bị hậu cần, cắm cọc tại hội trường, 
-              nhà kho, vật lộn với backdrop, bơi trong deadline để chương trình diễn ra suôn sẻ. 
-              Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ, và gắn kết với nhau nhiều hơn. 
-              Iu lắm lắm 💗💗
-              <span class="text-4xl text-pink-400 absolute -right-3 -bottom-6">”</span>
-            </p>
+<!-- Card Toggle -->
+<div class="scroll-animate" style="transition-delay: 100ms;">
+  <div class="rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
+       onclick="toggleCard(this)">
+    
+    <!-- Cover -->
+    <div class="overflow-hidden">
+      <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
+           class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+    </div>
 
-            <!-- Người gửi -->
-            <div class="flex items-center mt-8 pt-6 border-t border-gray-100">
-              <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
-                <img src="pic/hoat-dong/ThanhNgoc.jpeg" 
-                     class="w-full h-full rounded-full object-cover">
-              </div>
-              <div class="ml-4">
-                <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
-                <p class="text-sm text-slate-500">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Thông tin ngắn -->
+    <div class="p-6 flex items-center">
+      <div class="w-14 h-14 rounded-full p-1 bg-gradient-to-tr from-cyan-400 to-blue-600">
+        <img src="pic/hoat-dong/ThanhNgoc.jpeg" class="w-full h-full rounded-full object-cover">
       </div>
+      <div class="ml-4">
+        <p class="font-bold text-cyan-700">Nguyễn Thị Thanh Ngọc</p>
+        <p class="text-sm text-slate-500">K20, Nguyên Phó Chánh Văn phòng Đoàn Trường</p>
+      </div>
+    </div>
+
+    <!-- Nội dung chi tiết (ẩn ban đầu) -->
+    <div class="p-6 hidden card-detail">
+      <p class="text-slate-600 italic">
+        “Trong Đoàn Trường, công việc thường xuyên phải trải qua là tổ chức các chương trình,
+        hoạt động Đoàn – Hội. Cùng với các bạn trong Đoàn Trường, mình đã trải qua những buổi
+        chuẩn bị hậu cần, cắm cọc tại hội trường, nhà kho, vật lộn với backdrop, bơi trong deadline
+        để chương trình diễn ra suôn sẻ. Dù vậy, cả nhóm vẫn bày trò chọc nhau, cười nói vui vẻ,
+        và gắn kết với nhau nhiều hơn. Iu lắm lắm 💗💗”
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleCard(card) {
+  const detail = card.querySelector('.card-detail');
+  detail.classList.toggle('hidden');
+}
+</script>
+
     </div>
   </div>
 </section>
@@ -1015,6 +1053,7 @@ function closeModal(id) {
         </div>
     </div>
 </section>
+
 
 
 
