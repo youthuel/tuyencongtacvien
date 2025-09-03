@@ -569,10 +569,14 @@
                 margin: 0.5rem;
                 padding: 1rem;
             }
-
-            /* Keep FAB visible as well */
-            .fab-menu { display: flex !important; }
-        }
+            
+            @media (max-width: 640px) {
+                #header { display: none; }
+                .fab-menu { display: flex !important; }
+            }
+                /* Keep FAB visible as well */
+                .fab-menu { display: flex !important; }
+            }
         
         /* Landscape Mobile */
         @media (max-width: 767px) and (orientation: landscape) {
@@ -2038,6 +2042,7 @@
 </body>
 
 </html>
+
 
 
 
