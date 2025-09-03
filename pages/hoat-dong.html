@@ -555,7 +555,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 position: relative !important;
 width: 100% !important;
 height: auto !important;
-min-height: 300px !important;
+min-height: 280px !important;
 /* Căn giữa khung hình ảnh */
 display: flex !important;
 justify-content: center !important;
@@ -660,6 +660,9 @@ height: 320px !important; /* Desktop: 320px */
 .swiper-wrapper {
 max-width: 800px !important;
 }
+.swiper {
+min-height: 320px !important;
+}
 }
 
 @media (min-width: 1024px) {
@@ -668,6 +671,9 @@ height: 360px !important; /* Desktop lớn: 360px */
 }
 .swiper-wrapper {
 max-width: 900px !important;
+}
+.swiper {
+min-height: 360px !important;
 }
 }
 </style>
@@ -809,7 +815,7 @@ max-width: 900px !important;
 <!-- Cover -->
 <div class="overflow-hidden">
 <img src="pic/hoat-dong/ThanhNgoc1.jpeg"
-  class="w-full h-full object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
+  class="w-full aspect-[16/9] object-cover rounded-t-2xl transform hover:scale-105 transition duration-500" />
                         </div>
 
 <!-- Nội dung ngắn -->
@@ -1389,8 +1395,6 @@ Xem thêm
     </div>
   </div>
 </section>
-
-
 
 
 
