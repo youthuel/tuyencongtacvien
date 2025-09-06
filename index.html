@@ -58,7 +58,7 @@
         }
         .scroll-animate.is-visible { opacity: 1; transform: translateY(0) scale(1); }
         .deco-shape { position: absolute; z-index: 0; animation: float 8s ease-in-out infinite; }
-        main:empty::before {
+        main.is-loading::before {
             content: 'Đang tải trang...';
             display: block;
             text-align: center;
@@ -803,7 +803,7 @@
                     <a href="#gioithieu" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="gioithieu">Giới thiệu</a>
                     <a href="#tochuc" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="tochuc">Tổ chức</a>
                     <a href="#hoat-dong" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="hoat-dong">Hoạt động</a>
-                    <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="quy-trinh">Ứng tuyển</a>
+                    <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="quy-trinh">Quy trình</a>
                     <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200">Liên hệ</a>
                 </nav>
                 <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="w-full mt-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 cta-button">Đăng ký Ngay</a>
@@ -830,7 +830,7 @@
                 <a href="#gioithieu" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="gioithieu">Giới thiệu</a>
                 <a href="#tochuc" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="tochuc">Tổ chức</a>
                 <a href="#hoat-dong" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="hoat-dong">Hoạt động</a>
-                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="quy-trinh">Ứng tuyển</a>
+                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl" data-page="quy-trinh">Quy trình</a>
                 <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl">Liên hệ</a>
             </nav>
             <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="w-full mt-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all duration-300">Đăng ký Ngay</a>
@@ -1998,28 +1998,32 @@
                 }
             };
 
-            // === HÀM TẢI TRANG (loadPage) ===
-            // Chức năng cốt lõi của SPA. Tải nội dung từ file HTML tương ứng 
-            // và chèn vào #app-container, sau đó gọi hàm initializePageScripts().
+            // === HÀM TẢI TRANG (loadPage) - ĐÃ SỬA LỖI HIỂN THỊ "ĐANG TẢI TRANG" ===
             const loadPage = async (pageKey = 'home') => {
+                const appContainer = document.getElementById('app-container');
+                appContainer.classList.add('is-loading'); // Thêm class để hiện chữ "Đang tải trang..."
+                appContainer.innerHTML = ''; // Xóa nội dung cũ ngay lập tức
+
                 const route = routes[pageKey];
                 if (!route) {
                     appContainer.innerHTML = `<p class="text-center p-20">Lỗi 404</p>`;
+                    appContainer.classList.remove('is-loading'); // Xóa class sau khi báo lỗi
                     return;
                 }
                 try {
                     const response = await fetch(route.path);
                     if (!response.ok) throw new Error('Network response was not ok');
                     const content = await response.text();
-                    appContainer.innerHTML = content;
+                    appContainer.innerHTML = content; // Đưa nội dung mới vào
                     window.scrollTo(0, 0);
                     document.title = `${route.title} | Đoàn trường ĐH Kinh tế - Luật`;
                     updateActiveNavLink(pageKey);
-                    console.log('Page loaded, calling initializePageScripts...');
-                    initializePageScripts(); // Rất quan trọng: Kích hoạt lại script cho nội dung mới
-                    console.log('initializePageScripts called');
+                    initializePageScripts();
                 } catch (error) {
+                    console.error('Lỗi tải trang:', error);
                     appContainer.innerHTML = `<p class="text-center p-20">Lỗi tải trang.</p>`;
+                } finally {
+                    appContainer.classList.remove('is-loading'); // Luôn xóa class sau khi tải xong (kể cả khi lỗi)
                 }
             };
 
@@ -2276,7 +2280,6 @@
 </body>
 
 </html>
-
 
 
 
