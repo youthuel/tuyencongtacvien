@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -645,52 +644,172 @@
             transform: scale(1);
         }
     
+        /* === NÚT LOGO NỔI (FAB) - PHIÊN BẢN NÂNG CẤP CUỐI CÙNG === */
+
+        #fab-menu-open {
+            /* --- CÀI ĐẶT CƠ BẢN --- */
+            position: fixed;
+            bottom: 1.5rem; /* Đẩy lên cao hơn một chút */
+            right: 1.5rem;
+            z-index: 50;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex; /* Ghi đè để luôn hiển thị trên mobile */
+            align-items: center;
+            justify-content: center;
+            
+            /* --- NỀN TRONG SUỐT & HIỆU ỨNG KÍNH MỜ --- */
+            background: rgba(255, 255, 255, 0.25); /* Nền trắng mờ 25% */
+            backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Viền trắng mờ */
+
+            /* --- HIỆU ỨNG & CHUYỂN ĐỘNG --- */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3); /* Đổ bóng xanh-tím mềm mại */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden; /* Che các hiệu ứng bên ngoài nút */
+            transform: scale(1); /* Giá trị ban đầu cho animation */
+        }
+
+        /* --- SỬA LỖI ẢNH BỊ MÉO & THÊM HIỆU ỨNG CHO LOGO --- */
+        #fab-menu-open img {
+            width: 100%; /* Tăng kích thước logo lên 90% */
+            height: 100%; /* Tăng kích thước logo lên 90% */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        /* --- HIỆU ỨNG THU HÚT NGƯỜI DÙNG NHẤN VÀO --- */
+
+        /* 1. Hiệu ứng "Thở" (Breathing Effect) để thu hút sự chú ý */
+        @keyframes fab-breathing {
+            0% { transform: scale(1); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 40px 0 rgba(59, 130, 246, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3); }
+        }
+        #fab-menu-open {
+            animation: fab-breathing 3s infinite ease-in-out;
+        }
+
+        /* 2. Hiệu ứng Shine Effect tự động sau mỗi 3 giây */
+        @keyframes auto-shine-effect {
+            0% {
+                left: -150%; /* Bắt đầu từ ngoài bên trái */
+            }
+            40% {
+                left: 150%; /* Lướt qua hết bên phải */
+            }
+            100% {
+                left: 150%; /* Giữ ở ngoài để tạo khoảng nghỉ */
+            }
+        }
+
+        #fab-menu-open::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            
+            /* Thay thế 'transition' bằng 'animation' */
+            animation-name: auto-shine-effect;
+            animation-duration: 3s; /* Thời gian lặp lại là 3 giây */
+            animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+            animation-iteration-count: infinite; /* Lặp lại vô hạn */
+            animation-delay: 0.5s; /* Chạy sau hiệu ứng thở 0.5s để tự nhiên hơn */
+        }
+        /* Không cần #fab-menu-open:hover::after nữa */
+
+        /* 3. Hiệu ứng khi nhấn xuống (Active State) */
+        #fab-menu-open:active {
+            transform: scale(0.9) !important; /* Thu nhỏ lại khi nhấn, quan trọng để ghi đè animation */
+            transition: transform 0.1s ease;
+            animation: none; /* Tạm dừng animation thở khi nhấn */
+        }
+        #fab-menu-open:active img {
+            transform: scale(0.9);
+        }
+
+        /* --- RESPONSIVE --- */
+        /* Ẩn nút trên màn hình lớn hơn điện thoại (giữ nguyên logic cũ) */
+        @media (min-width: 768px) {
+            #fab-menu-open {
+                display: none !important;
+            }
+        }
+        /* Hiển thị trên màn hình điện thoại (ghi đè logic cũ có thể ẩn nó) */
+        @media (max-width: 767px) {
+            #fab-menu-open {
+                display: flex !important;
+            }
+        }
+
     </style>
 </head>
 
 <body class="flex flex-col min-h-screen">
 
     <header id="header" class="fixed top-0 bg-white/90 backdrop-blur-lg left-0 right-0 z-50 shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-            <a href="#home" class="nav-trigger flex items-center space-x-2 z-20" data-page="home">
-                <img src="pic/logo/logodt.png" alt="Logo Đoàn Trường UEL" class="h-10 w-auto">
-                <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
-            </a>
-            
-            <nav class="hidden md:flex items-center space-x-8" id="main-nav">
-                <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
-                <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
-                <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
-                <a href="#quy-trinh" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="quy-trinh">Ứng tuyển</a>
-                <a href="https://www.facebook.com/youth.uel" target="_blank" class="text-gray-600 hover:text-blue-600 font-semibold">Liên hệ</a>
-            </nav>
+            <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+                <a href="#home" class="nav-trigger flex items-center space-x-2 z-20" data-page="home">
+                    <img src="pic/logo/logodt.png" alt="Logo Đoàn Trường UEL" class="h-10 w-auto">
+                    <span class="text-xl font-extrabold tracking-tight header-gradient-text">ĐOÀN TRƯỜNG UEL</span>
+                </a>
+                
+                <nav class="hidden md:flex items-center space-x-8" id="main-nav">
+                    <a href="#gioithieu" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="gioithieu">Giới thiệu</a>
+                    <a href="#tochuc" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="tochuc">Tổ chức</a>
+                    <a href="#hoat-dong" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="hoat-dong">Hoạt động</a>
+                    <a href="#quy-trinh" class="nav-trigger nav-link text-gray-600 hover:text-blue-600 font-semibold" data-page="quy-trinh">Ứng tuyển</a>
+                    <a href="https://www.facebook.com/youth.uel" target="_blank" class="text-gray-600 hover:text-blue-600 font-semibold">Liên hệ</a>
+                </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="hidden sm:block bg-blue-600 text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">Về với chúng mình</a>
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none z-20">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+                <div class="flex items-center gap-4">
+                    <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="hidden sm:block bg-blue-600 text-white font-bold py-2.5 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">Về với chúng mình</a>
+                    
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none z-[60]">
+                        <div class="w-6 h-6 relative">
+                            <span class="hamburger-line top"></span>
+                            <span class="hamburger-line middle"></span>
+                            <span class="hamburger-line bottom"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <button id="fab-menu-open" class="fab-menu fixed bottom-4 right-4 md:hidden w-12 h-12 rounded-full z-50">
+            <img src="pic/logo/logodt.png" alt="Mở menu" class="w-10 h-10 m-auto object-contain"/>
+        </button>
+
+        <main id="app-container"></main>
+
+        <div id="mobile-menu" class="fixed inset-0 z-[55] md:hidden">
+            <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50"></div>
+            
+            <div id="mobile-menu-panel" class="relative z-50 bg-white w-4/5 max-w-sm h-full ml-auto p-6 shadow-2xl flex flex-col rounded-l-3xl">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="#home" data-page="home" class="nav-trigger flex items-center gap-3">
+                        <img src="pic/logo/logodt.png" alt="UEL" class="w-10 h-10 object-contain"/>
+                        <span class="font-extrabold text-slate-700">ĐOÀN TRƯỜNG UEL</span>
+                    </a>
+                </div>
+                <nav class="flex flex-col space-y-2 text-lg">
+                    <a href="#gioithieu" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="gioithieu">Giới thiệu</a>
+                    <a href="#tochuc" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="tochuc">Tổ chức</a>
+                    <a href="#hoat-dong" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="hoat-dong">Hoạt động</a>
+                    <a href="#quy-trinh" class="nav-trigger nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200" data-page="quy-trinh">Quy trình</a>
+                    <a href="https://www.facebook.com/youth.uel" target="_blank" class="nav-link text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-semibold py-3 px-3 rounded-xl transition-all duration-200">Liên hệ</a>
+                </nav>
+                <a href="https://forms.gle/BH22QpPCdN2LJd8d7" target="_blank" class="w-full mt-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all duration-300 cta-button">Đăng ký Ngay</a>
             </div>
         </div>
-    </header>
 
-    <!-- FAB menu (show only on very small phones) -->
-    <button id="fab-menu-open" class="fab-menu fixed bottom-4 right-4 md:hidden w-12 h-12 rounded-full bg-white shadow-lg z-50 ring-2 ring-blue-400 ring-offset-2 ring-offset-white">
-        <img src="pic/logo/logodt.png" alt="Mở menu" class="w-10 h-10 m-auto"/>
-    </button>
-<!-- Removed old mobile menu block to avoid duplicate IDs; using the panel-based menu below -->
-
-    <!-- Global audio and controls -->
-<!--     <audio id="bg-audio" loop>
-        <source src="pic/audio/bg-music.mp3" type="audio/mpeg"/>
-    </audio>
-    <button id="music-toggle" class="fixed bottom-20 right-4 z-[60] w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center ring-2 ring-pink-400 ring-offset-2 ring-offset-white hover:scale-110 transition duration-300">
-        <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 18V5l12-2v13"></path><circle cx="9" cy="19" r="3"></circle><circle cx="21" cy="16" r="3"></circle>
-        </svg>
-    </button> -->
 
     <main id="app-container"></main>
 
@@ -1912,11 +2031,6 @@
                 });
             };
 
-            // Logic xử lý đóng/mở menu mobile.
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeMenu = () => mobileMenu.classList.remove('is-open');
-            const openMenu = () => mobileMenu.classList.add('is-open');
-
             // Lắng nghe sự kiện click trên toàn bộ trang để xử lý điều hướng SPA.
             document.body.addEventListener('click', (e) => {
                 const navTrigger = e.target.closest('.nav-trigger');
@@ -1934,16 +2048,54 @@
             // Lắng nghe sự kiện popstate (khi người dùng nhấn nút back/forward của trình duyệt).
             window.addEventListener('popstate', () => loadPage(location.hash.substring(1) || 'home'));
 
-            // Lắng nghe sự kiện cho các nút của menu mobile.
-            document.getElementById('mobile-menu-button').addEventListener('click', () => mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu());
-            document.getElementById('mobile-menu-close-button').addEventListener('click', closeMenu);
-            document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
+            /// Logic xử lý đóng/mở menu mobile và điều hướng (PHIÊN BẢN CUỐI CÙNG)
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const fabButton = document.getElementById('fab-menu-open');
 
-            // FAB to open menu on very small phones (when header is hidden)
-            const fabBtn = document.getElementById('fab-menu-open');
-            if (fabBtn) {
-                fabBtn.addEventListener('click', openMenu);
+            const toggleMenu = () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                mobileMenuButton.classList.toggle('is-open', isOpen);
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.remove('is-open');
+                mobileMenuButton.classList.remove('is-open');
+            };
+
+            if (mobileMenu && mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', toggleMenu);
+                document.getElementById('mobile-menu-backdrop').addEventListener('click', closeMenu);
             }
+            if (fabButton) {
+                fabButton.addEventListener('click', () => {
+                     mobileMenu.classList.add('is-open');
+                     mobileMenuButton.classList.add('is-open');
+                });
+            }
+
+            // Lắng nghe sự kiện click trên toàn bộ trang để xử lý điều hướng SPA.
+            document.body.addEventListener('click', (e) => {
+                const navTrigger = e.target.closest('.nav-trigger');
+                if (navTrigger && navTrigger.dataset.page) {
+                    e.preventDefault();
+                    const pageKey = navTrigger.dataset.page;
+                    if ((location.hash.substring(1) || 'home') !== pageKey) {
+                        history.pushState({ page: pageKey }, '', `#${pageKey}`);
+                        loadPage(pageKey);
+                    }
+                    if (mobileMenu.classList.contains('is-open')) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            // Lắng nghe sự kiện popstate (khi người dùng nhấn nút back/forward của trình duyệt).
+            window.addEventListener('popstate', () => loadPage(location.hash.substring(1) || 'home'));
+
+            // Xóa các event listener cũ cho nút close và backdrop nếu còn
+            const oldCloseButton = document.getElementById('mobile-menu-close-button');
+            if(oldCloseButton) oldCloseButton.style.display = 'none'; // Ẩn nút close cũ nếu còn tồn tại
 
             // === GLOBAL MUSIC TOGGLE ===
             const audio = document.getElementById('bg-audio');
