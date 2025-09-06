@@ -587,6 +587,64 @@
         }
         /* Default hide FAB; will show on xs in media query */
         .fab-menu { display: none; align-items: center; justify-content: center; }
+    
+        /* CSS for Marquee Scroller */
+        .scroller {
+            max-width: 100%;
+        }
+
+        .scroller__inner {
+            padding-block: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.5rem;
+        }
+
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            flex-wrap: nowrap;
+            animation: scroll 40s linear infinite;
+        }
+
+        .scroller:hover .scroller__inner {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 0.75rem));
+            }
+        }
+
+        /* Style for card in the scroller */
+        .scroller .member-card {
+            width: 360px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Style for achievement pop-up */
+        .achievement-modal .modal-content {
+            transform: scale(0.9);
+            transition: transform 0.3s ease-out;
+        }
+        .modal.is-open .achievement-modal .modal-content {
+            transform: scale(1);
+        }
+    
     </style>
 </head>
 
@@ -691,6 +749,29 @@
             const initializePageScripts = () => {
                 if (countdownInterval) clearInterval(countdownInterval);
 
+                // 11. MARQUEE SCROLLER INITIALIZER (NEW)
+                const scrollers = document.querySelectorAll(".scroller");
+                if (scrollers.length > 0) {
+                    scrollers.forEach((scroller) => {
+                        // Prevent re-initializing on page re-renders
+                        if (scroller.hasAttribute("data-animated")) return;
+
+                        scroller.setAttribute("data-animated", "true");
+
+                        const scrollerInner = scroller.querySelector(".scroller__inner");
+                        const scrollerContent = Array.from(scrollerInner.children);
+
+                        // Duplicate items to create the seamless loop
+                        if (scrollerContent.length > 0) {
+                            scrollerContent.forEach(item => {
+                                const duplicatedItem = item.cloneNode(true);
+                                duplicatedItem.setAttribute("aria-hidden", true);
+                                scrollerInner.appendChild(duplicatedItem);
+                            });
+                        }
+                    });
+                }
+                
                 // 1. SCROLL ANIMATE: Hiệu ứng xuất hiện khi cuộn trang
                 document.querySelectorAll('.scroll-animate').forEach(el => {
                     new IntersectionObserver((entries, observer) => {
