@@ -332,79 +332,598 @@
 </section>
 
 <section class="py-12 bg-gradient-to-br from-blue-100 via-indigo-100 to-pink-100">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-extrabold text-center 
-      bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 
-      text-transparent bg-clip-text mb-6">
-      🌟 Gương Cán Bộ Đoàn Tiêu Biểu
-    </h2>
- <div class="flex justify-center mt-0 mb-8">
-    <span class="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-100 via-pink-100 to-purple-100 
-       text-slate-700 font-medium italic shadow-sm 
-       hover:shadow-lg hover:scale-105 transition-all duration-300">
-      💖 Góc flex "Trai tài – Gái giỏi" nhà Đoàn UEL 💖
-    </span>
-  </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-2 ">
-
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
-        <div class="flex items-center space-x-4">
-          <img src="pic/tochuc/phamvandu.png" 
-               class="w-20 h-20 rounded-full object-cover border-4 border-pink-300 shadow">
-          <div>
-            <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-blue-400 text-transparent bg-clip-text">
-              Đ/c Phạm Văn Dư
-            </h3>
-            <p class="text-sm text-slate-600">Nguyên Ủy viên Ban Thường vụ Đoàn Trường</p>
-          </div>
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center 
+        bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 
+        text-transparent bg-clip-text mb-6">
+            🌟 Gương Cán Bộ Đoàn Tiêu Biểu
+        </h2>
+        <div class="flex justify-center mt-0 mb-8">
+            <span class="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-100 via-pink-100 to-purple-100 
+            text-slate-700 font-medium italic shadow-sm 
+            hover:shadow-lg hover:scale-105 transition-all duration-300">
+                💖 Góc flex "Trai tài – Gái giỏi" nhà Đoàn UEL 💖
+            </span>
         </div>
-        <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
-          <p>✨ Giải Ba cuộc thi Bí thư Đoàn cơ sở giỏi TP. HCM năm 2023</p>
-          <p>🌱 Nhận nhiều Bằng khen, giấy khen trong công tác</p>
-        </ul>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
-        <div class="flex items-center space-x-4">
-          <img src="pic/tochuc/tranletrongvan.png" 
-               class="w-20 h-20 rounded-full object-cover border-4 border-indigo-300 shadow">
-          <div>
-            <h3 class="text-xl font-bold bg-gradient-to-r from-pink-500 to-orange-400 text-transparent bg-clip-text">
-              Đ/c Trần Lê Trọng Văn
-            </h3>
-            <p class="text-sm text-slate-600">Ủy viên Ban Thường vụ Đoàn Trường</p>
-          </div>
-        </div>
-        <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
-          <p>🏅 Sinh viên 5 tốt cấp Trung ương năm 2024</p>
-          <p>☀️ Giải Nhất cuộc thi Bản lĩnh Cán bộ Đoàn năm 2023</p>
-        </ul>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
-        <div class="flex items-center space-x-4">
-          <img src="pic/tochuc/lethihaiyen.png" 
-               class="w-20 h-20 rounded-full object-cover border-4 border-teal-300 shadow">
-          <div>
-            <h3 class="text-xl font-bold bg-gradient-to-r from-green-500 to-teal-400 text-transparent bg-clip-text">
-              Đ/c Lê Thị Hải Yến
-            </h3>
-            <p class="text-sm text-slate-600">Ủy viên Ủy ban Kiểm tra Đoàn Trường</p>
-          </div>
-        </div>
-        <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
-          <p>🌍 Giải Nhì Cuộc thi "Trường học không ma túy" cấp Thành</p>
-          <p>⭐ Gương Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác năm 2025</p>
-        </ul>
-      </div>
-
     </div>
-  </div>
+
+    <!-- Dải chạy chữ (Marquee) -->
+    <div class="scroller">
+        <div class="scroller__inner">
+            <!-- Hoàng Hải Dương -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/gioithieu/hoanghaiduong.png" class="w-20 h-20 rounded-full object-cover border-4 border-sky-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-sky-500 to-blue-400 text-transparent bg-clip-text">Hoàng Hải Dương</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu “Thanh niên tiên tiến làm theo lời Bác” giai đoạn 2021 - 2025.</li>
+                        <li>🥈 Đạt giải Nhì Cuộc thi "Trường học không ma túy" năm 2024.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-hoang-hai-duong" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Nguyễn Hồng Anh -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/hoat-dong/HongAnh1.JPG" class="w-20 h-20 rounded-full object-cover border-4 border-rose-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-rose-500 to-pink-400 text-transparent bg-clip-text">Nguyễn Hồng Anh</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>☀️ Đóng góp xuất sắc trong các chiến dịch tình nguyện hè ĐHQG-HCM năm 2025.</li>
+                        <li>☀️ Mùa hè xanh trong 02 năm liên tục.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-hong-anh" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Nguyễn Anh Duy -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <img src="pic/tochuc/nguyenanhduy.png" class="w-20 h-20 rounded-full object-cover border-4 border-indigo-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-400 text-transparent bg-clip-text">Nguyễn Anh Duy</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                        <li>🏆 Khen thưởng của Hiệu trưởng về thành tích xuất sắc trong công tác Đoàn năm học 2023 – 2024.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-anh-duy" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Nguyễn Ngọc Ái Thiện -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/gioithieu/nguyenngocaithien.png" class="w-20 h-20 rounded-full object-cover border-4 border-teal-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-teal-500 to-green-400 text-transparent bg-clip-text">Nguyễn Ngọc Ái Thiện</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                        <li>☀️ Đóng góp xuất sắc trong các chiến dịch tình nguyện hè ĐHQG-HCM năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-ngoc-ai-thien" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+            
+            <!-- Nguyễn Thị Ngọc Quỳnh -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <img src="pic/tochuc/nguyenthingocquynh.png" class="w-20 h-20 rounded-full object-cover border-4 border-yellow-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-yellow-500 to-orange-400 text-transparent bg-clip-text">Nguyễn Thị Ngọc Quỳnh</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>🏅 Đạt danh hiệu “Đảng viên trẻ tiêu biểu năm 2025”.</li>
+                        <li>🏅 Đạt danh hiệu “Sinh viên 5 tốt” Trường Đại học Kinh tế - Luật năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-thi-ngoc-quynh" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Lê Thị Hải Yến -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <img src="pic/tochuc/lethihaiyen.png" class="w-20 h-20 rounded-full object-cover border-4 border-pink-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-pink-500 to-red-400 text-transparent bg-clip-text">Lê Thị Hải Yến</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>🏅 Hoàn thành tốt nhiệm vụ chiến dịch tình nguyện hè tại Lào năm 2025.</li>
+                        <li>🏆 Bằng khen của HSV TP.HCM về thành tích xuất sắc trong Mùa hè xanh 2024.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-le-thi-hai-yen-new" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Bùi Thanh Phúc -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                         <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/gioithieu/buithanhphuc.png" class="w-20 h-20 rounded-full object-cover border-4 border-blue-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">Bùi Thanh Phúc</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 - 2025.</li>
+                        <li>🏅 Đạt danh hiệu “Đảng viên trẻ tiêu biểu” năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-bui-thanh-phuc" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Đặng Quỳnh Châu -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                         <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/gioithieu/dangquynhchau.png" class="w-20 h-20 rounded-full object-cover border-4 border-purple-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-violet-400 text-transparent bg-clip-text">Đặng Quỳnh Châu</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>🎓 Học bổng Hyundai Motor Chung Mong-Koo (trao đổi tại Hanyang University).</li>
+                        <li>⭐ Đạt danh hiệu "Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác" giai đoạn 2021 - 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-dang-quynh-chau" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+            
+            <!-- Nguyễn Thị Trần Vy -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                         <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/gioithieu/nguyenthitranvy.png" class="w-20 h-20 rounded-full object-cover border-4 border-rose-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-rose-500 to-red-400 text-transparent bg-clip-text">Nguyễn Thị Trần Vy</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu "Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác" giai đoạn 2021-2025.</li>
+                        <li>🏅 Đạt danh hiệu "Đảng viên trẻ tiêu biểu" năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-thi-tran-vy" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Dương Quốc Ấn -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                         <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/hoat-dong/QuocAn.JPG" class="w-20 h-20 rounded-full object-cover border-4 border-green-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-400 text-transparent bg-clip-text">Dương Quốc Ấn</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>⭐ Đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                        <li>🏅 Đạt danh hiệu “Đảng viên trẻ tiêu biểu” năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-duong-quoc-an" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Nguyễn Diệu Linh -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                         <!-- TODO: Cập nhật ảnh đại diện -->
+                        <img src="pic/hoat-dong/DieuLinh.jpeg" class="w-20 h-20 rounded-full object-cover border-4 border-orange-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-orange-500 to-amber-400 text-transparent bg-clip-text">Nguyễn Diệu Linh</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>🏆 Top 10 thí sinh xuất sắc nhất cuộc thi “Bản lĩnh cán bộ Đoàn” năm 2023.</li>
+                        <li>⭐ Đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-dieu-linh" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+
+            <!-- Nguyễn Nhã Trang -->
+            <div class="member-card">
+                <div>
+                    <div class="flex items-center space-x-4">
+                        <img src="pic/hoat-dong/NhaTrang.jpg" class="w-20 h-20 rounded-full object-cover border-4 border-cyan-300 shadow">
+                        <div>
+                            <h3 class="text-xl font-bold bg-gradient-to-r from-cyan-500 to-sky-400 text-transparent bg-clip-text">Nguyễn Nhã Trang</h3>
+                            <p class="text-sm text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                        </div>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-6">
+                        <li>🏅 Đạt danh hiệu "Sinh viên 5 tốt" cấp Khoa Kinh tế Đối ngoại năm học 2024.</li>
+                        <li>🥇 Đạt giải Nhất vòng 2 "Thước phim thời đại" thuộc chương trình "Vang vọng tháng tư".</li>
+                    </ul>
+                </div>
+                <button data-modal-target="#modal-nguyen-nha-trang" class="modal-trigger mt-4 w-full bg-blue-50 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-100 transition-colors">Xem thêm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nơi chứa các POP-UP (MODAL) chi tiết -->
+    <!-- Modal Hoàng Hải Dương -->
+    <div id="modal-hoang-hai-duong" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/gioithieu/hoanghaiduong.png" class="w-24 h-24 rounded-full object-cover border-4 border-sky-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-sky-500 to-blue-400 text-transparent bg-clip-text">Hoàng Hải Dương</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Đạt giải Nhì Cuộc thi "Trường học không ma túy" năm 2024.</li>
+                    <li>Giấy chứng nhận của Ban cán sự Đoàn ĐHQG-HCM về việc đạt danh hiệu “Thanh niên tiên tiến làm theo lời Bác” giai đoạn 2021 - 2025.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn Đại học Quốc gia Thành phố Hồ Chí Minh vì đã có đóng góp tích cực cho công tác Đoàn và phong trào thanh niên ĐHQG-HCM năm học 2024-2025.</li>
+                    <li>Giấy khen của BCH Đoàn trường Đại học Kinh tế - Luật về việc đạt Giải nhì bảng A Hội thi Tìm hiểu truyền thống văn hóa lịch sử “Tự hào trang sử Việt” lần VI năm 2024.</li>
+                    <li>Giải Khuyến khích Hội thi "Tự hào trang sử Việt" năm 2024.</li>
+                    <li>Giấy khen của BCH Đoàn trường Đại học Kinh tế - Luật về thành tích tốt trong Tháng Thanh niên năm 2024.</li>
+                    <li>Giấy khen của UBND xã Phú Long, tỉnh Bến Tre về việc hoàn thành tốt nhiệm vụ trong Chiến dịch thanh niên tình nguyện hè năm 2024.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM về việc có đóng góp tích cực cho Chiến dịch tình nguyện hè ĐHQG-HCM năm 2024.</li>
+                    <li>Giấy khen của BCH Đoàn trường Đại học Kinh tế - Luật về việc có nhiều đóng góp tốt trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 – 2024.</li>
+                    <li>Giấy khen của BCH Đoàn trường Đại học Kinh tế - Luật về việc đạt danh hiệu “Cán bộ Đoàn – Hội tiêu biểu” năm 2025.</li>
+                    <li>Giấy khen của BCH Đoàn trường Đại học Kinh tế - Luật về việc đã có thành tích tốt trong Tháng Thanh niên năm 2025.</li>
+                    <li>Giấy chứng nhận của BCH Đảng bộ trường Đại học Kinh tế - Luật về việc đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Giấy khen của Hội Sinh viên trường "Đã hoàn thành tốt nhiệm vụ 2 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh Trường Đại học Kinh tế - Luật, ĐHQG-HCM".</li>
+                    <li>Giải Ba cuộc thi “Đấu trường công lý – Justice Battle” lần thứ IX năm 2025.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Hồng Anh -->
+    <div id="modal-nguyen-hong-anh" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/hoat-dong/HongAnh1.JPG" class="w-24 h-24 rounded-full object-cover border-4 border-rose-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-rose-500 to-pink-400 text-transparent bg-clip-text">Nguyễn Hồng Anh</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy khen của Ban Cán sự Đoàn Đại học Quốc gia Thành phố Hồ Chí Minh vì đã có đóng góp xuất sắc trong các chiến dịch tình nguyện hè ĐHQG-HCM năm 2025.</li>
+                    <li>Giấy khen của Ban Chấp hành Hội Sinh viên Trường Đại học Kinh tế - Luật vì đã hoàn thành xuất sắc nhiệm vụ trong Chương trình Tiếp sức mùa thi năm 2025.</li>
+                    <li>Giấy khen của Ban Chấp hành Hội Sinh viên Trường Đại học Kinh tế - Luật vì đã hoàn thành tốt nhiệm vụ 02 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh năm 2025.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Anh Duy -->
+    <div id="modal-nguyen-anh-duy" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/tochuc/nguyenanhduy.png" class="w-24 h-24 rounded-full object-cover border-4 border-indigo-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-purple-400 text-transparent bg-clip-text">Nguyễn Anh Duy</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy chứng nhận của Ban cán sự Đoàn Đại học Quốc gia Thành phố Hồ Chí Minh đạt danh hiệu “Thanh niên tiên tiến Đại học Quốc gia Thành phố Hồ Chí Minh làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn Đại học Quốc gia Thành phố Hồ Chí Minh vì đã có đóng góp tích cực cho công tác Đoàn và phong trào thanh niên ĐHQG-HCM năm học 2024-2025.</li>
+                    <li>Giấy khen của Chủ tịch Ủy ban nhân dân xã Phú Túc vì hoàn thành tốt nhiệm vụ trong chiến dịch Thanh niên tình nguyện hè năm 2025 tại xã Phú Túc – tỉnh Vĩnh Long.</li>
+                    <li>Giấy khen của Ban Chấp hành Đoàn Trường Đại học Kinh tế - Luật vì đã có thành tích tốt trong Tháng Thanh niên năm 2024.</li>
+                    <li>Giấy khen của Hiệu trưởng Trường Đại học Kinh tế - Luật vì đã có thành tích xuất sắc trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 – 2024.</li>
+                    <li>Giấy chứng nhận của Ban Chấp hành Đảng bộ Trường Đại học Kinh tế - Luật đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Giấy khen của Hiệu trưởng Trường Đại học Kinh tế - Luật vì đã có nhiều đóng góp tích cực trong Tháng Thanh niên năm 2025.</li>
+                    <li>Giấy khen của Hiệu trưởng Trường Đại học Kinh tế - Luật vì đã có đóng góp tích cực trong chiến dịch Xuân tình nguyện năm 2025.</li>
+                    <li>Giấy khen của Ban Chấp hành Đoàn Trường Đại học Kinh tế - Luật đạt danh hiệu “Cán bộ Đoàn – Hội tiêu biểu” năm 2025.</li>
+                    <li>Giấy khen của Ban Chấp hành Hội sinh viên trường Đại học Kinh tế - Luật vì đã hoàn thành tốt nhiệm vụ 02 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Ngọc Ái Thiện -->
+    <div id="modal-nguyen-ngoc-ai-thien" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/gioithieu/nguyenngocaithien.png" class="w-24 h-24 rounded-full object-cover border-4 border-teal-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-teal-500 to-green-400 text-transparent bg-clip-text">Nguyễn Ngọc Ái Thiện</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy chứng nhận đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                    <li>Giấy khen vì đã có đóng góp tích cực trong công tác Đoàn và phong trào thanh niên ĐHQG-HCM năm học 2024 - 2025.</li>
+                    <li>Giấy khen vì đã có đóng góp xuất sắc trong các chiến dịch tình nguyện hè ĐHQG-HCM năm 2025.</li>
+                    <li>Giấy khen vì đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 - 2024.</li>
+                    <li>Giấy khen đạt danh hiệu “Đoàn viên tiêu biểu” năm 2025.</li>
+                    <li>Giấy khen vì đã có thành tích tốt trong Tháng Thanh niên năm 2025.</li>
+                    <li>Giấy chứng nhận “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Giấy khen vì đã hoàn thành tốt nhiệm vụ 02 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh Trường Đại học Kinh tế - Luật, ĐHQG-HCM.</li>
+                    <li>Giấy khen vì đã có đóng góp tích cực trong chiến dịch tình nguyện Mùa hè xanh Xã Sơn Mỹ năm 2025.</li>
+                    <li>Giấy khen vì đã hoàn thành xuất sắc nhiệm vụ học tập và rèn luyện tại Trung tâm Giáo dục Quốc phòng và An ninh Đại học Quốc gia TP. Hồ Chí Minh.</li>
+                    <li>Cá nhân có thành tích xuất sắc trong hoạt động Kết nối viên năm 2024.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Thị Ngọc Quỳnh -->
+    <div id="modal-nguyen-thi-ngoc-quynh" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/tochuc/nguyenthingocquynh.png" class="w-24 h-24 rounded-full object-cover border-4 border-yellow-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-yellow-500 to-orange-400 text-transparent bg-clip-text">Nguyễn Thị Ngọc Quỳnh</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM “Đã có đóng góp tích cực cho Chiến dịch tình nguyện hè ĐHQG-HCM năm 2024”.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM “Đã có đóng góp tích cực cho công tác Đoàn và phong trào thanh niên ĐHQG-HCM năm học 2024 - 2025”.</li>
+                    <li>Đạt danh hiệu “Đảng viên trẻ tiêu biểu năm 2025”.</li>
+                    <li>Đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác năm 2025”.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 tốt” Trường Đại học Kinh tế - Luật năm 2025.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật “Đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 - 2024”.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật “Đạt danh hiệu Cán bộ Đoàn - Hội tiêu biểu năm 2025”.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật vì “Đã có thành tích tốt trong Tháng thanh niên năm 2025”.</li>
+                    <li>Giải Khuyến khích Hội thi "Tự hào trang sử Việt" năm 2024.</li>
+                    <li>Giấy khen của Hội Sinh viên trường "Đã hoàn thành tốt nhiệm vụ 2 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh Trường Đại học Kinh tế - Luật, ĐHQG-HCM".</li>
+                    <li>Giải Ba cuộc thi “Đấu trường công lý – Justice Battle” lần thứ IX năm 2025.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Lê Thị Hải Yến -->
+    <div id="modal-le-thi-hai-yen-new" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/tochuc/lethihaiyen.png" class="w-24 h-24 rounded-full object-cover border-4 border-pink-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-400 text-transparent bg-clip-text">Lê Thị Hải Yến</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy chứng nhận của Ban Thường vụ Thành Đoàn là chiến sĩ đã hoàn thành tốt nhiệm vụ trong chiến dịch tình nguyện hè tại nước Cộng hòa Dân chủ Nhân dân Lào năm 2025.</li>
+                    <li>Bằng khen của Hội Sinh viên Việt Nam TP. Hồ Chí Minh vì đã có thành tích xuất sắc trong Chiến dịch tình nguyện Mùa hè xanh năm 2024.</li>
+                    <li>Bằng khen của BCH Đoàn Thanh niên Cộng sản Hồ Chí Minh Thành phố Hồ Chí Minh vì đã có thành tích xuất sắc trong Tháng thanh niên năm 2025.</li>
+                    <li>Đạt danh hiệu "Thanh niên Đại học Quốc gia Thành phố Hồ Chí Minh làm theo lời Bác" giai đoạn 2021 - 2025.</li>
+                    <li>Đạt giải Khuyến khích Cuộc thi "Bản lĩnh Cán bộ Đoàn" năm 2023.</li>
+                    <li>Đạt giải Khuyến khích Cuộc thi "Tự hào trang sử Việt" năm 2024.</li>
+                    <li>Đạt giải Nhì Cuộc thi "Trường học không ma túy" năm 2024.</li>
+                    <li>Đạt giải Nhất Cuộc thi "Dấu ấn lịch sử" năm 2025.</li>
+                    <li>Đạt giải Ba Cuộc thi "Đấu trường công lý" năm 2025.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Bùi Phúc -->
+    <div id="modal-bui-thanh-phuc" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/gioithieu/buithanhphuc.png" class="w-24 h-24 rounded-full object-cover border-4 border-blue-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">Bùi Thanh Phúc</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Đạt danh hiệu “Thanh niên tiên tiến Đại học Quốc gia Thành phố Hồ Chí Minh làm theo lời Bác” giai đoạn 2021 - 2025.</li>
+                    <li>Giấy khen của Ban Cán sự Đoàn ĐHQG-HCM “Đã có đóng góp xuất sắc trong các Chiến dịch tình nguyện hè Đại học Quốc gia Thành phố Hồ Chí Minh năm 2025”.</li>
+                    <li>Giấy khen của Ban Cán sự Đoàn ĐHQG-HCM “Đóng góp tích cực cho công tác Đoàn và phong trào thanh niên của ĐHQG - HCM năm học 2024 - 2025”.</li>
+                    <li>Đạt danh hiệu “Đảng viên trẻ tiêu biểu” năm 2025.</li>
+                    <li>Đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Đạt danh hiệu “Cán bộ Đoàn - Hội tiêu biểu” năm 2025.</li>
+                    <li>Giấy khen của Chủ tịch UBND xã Sơn Mỹ (Lâm Đồng) “Đã có đóng góp tích cực trong Chiến dịch tình nguyện Mùa hè Xanh xã Sơn Mỹ năm 2025”.</li>
+                    <li>Giấy khen của Hiệu trưởng “Đã có nhiều đóng góp tích cực trong Tháng Thanh niên năm 2025”.</li>
+                    <li>Giấy khen của Ban Cán sự Đoàn ĐHQG-HCM “Đã có đóng góp tích cực cho Chiến dịch tình nguyện hè Đại học Quốc gia Thành phố Hồ Chí Minh năm 2024”.</li>
+                    <li>Giấy khen của BCH Đoàn trường ĐH Kinh tế - Luật “Đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 - 2024”.</li>
+                    <li>Giấy khen của BCH Hội Sinh viên trường ĐH Kinh tế - Luật “Đã hoàn thành tốt nhiệm vụ 02 năm liên tục trong Chiến dịch tình nguyện Mùa hè Xanh”.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 Tốt” khoa Kinh tế đối ngoại năm học 2023 - 2024.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Đặng Quỳnh Châu -->
+    <div id="modal-dang-quynh-chau" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/gioithieu/dangquynhchau.png" class="w-24 h-24 rounded-full object-cover border-4 border-purple-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-violet-400 text-transparent bg-clip-text">Đặng Quỳnh Châu</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy chứng nhận Học bổng Hyundai Motor Chung Mong-Koo (cho kỳ trao đổi tại Hanyang University).</li>
+                    <li>Đại biểu Đông Nam Á Chương trình National Young Leaders Fellowship 2024.</li>
+                    <li>Giấy Chứng nhận đạt danh hiệu "Thanh niên tiên tiến Đại học Quốc gia Thành phố Hồ chí Minh làm theo lời Bác" giai đoạn 2021 - 2025.</li>
+                    <li>Giấy Khen "Hoàn thành tốt nhiệm vụ 02 năm liên tục trong chiến dịch tình nguyện Mùa hè xanh, Trường đại học Kinh tế - Luật, ĐHQG-HCM".</li>
+                    <li>Giấy Chứng nhận Giải Nhất Cuộc thi Đấu trường tài chính 2025.</li>
+                    <li>Giấy Chứng nhận đạt danh hiệu "Thanh niên Kinh tế - Luật làm theo lời Bác" năm 2025.</li>
+                    <li>Giấy Khen đạt danh hiệu "Cán bộ Đoàn - Hội tiêu biểu" năm 2025.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 Tốt” cấp Trường Đại học Kinh tế - Luật, ĐHQG-HCM năm học 2023-2024.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 Tốt” cấp Khoa Tài chính - Ngân hàng năm học 2023-2024.</li>
+                    <li>Giấy khen "Đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường" năm học 2023 - 2024.</li>
+                    <li>Giấy chứng nhận "Đã có đóng góp tích cực trong chương trình TechYouth Incubator 2024".</li>
+                    <li>Giấy khen "Đạt thành tích xuất sắc trong Chiến dịch tình nguyện Mùa hè xanh phường Thới An năm 2024", cấp Phường.</li>
+                    <li>Giấy khen "Đã có đóng góp tích cực cho Chiến dịch tình nguyện hè Đại học Quốc gia Thành phố Hồ Chí Minh năm 2024".</li>
+                    <li>Giấy khen "Đã có thành tích xuất sắc trong Chiến dịch tình nguyện Mùa hè xanh năm 2024", cấp Quận.</li>
+                    <li>Giấy khen "Đã có thành tích tốt trong Tháng Thanh niên năm 2024", cấp Trường Đại học Kinh tế - Luật, ĐHQG-HCM.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Thị Trần Vy -->
+    <div id="modal-nguyen-thi-tran-vy" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/gioithieu/nguyenthitranvy.png" class="w-24 h-24 rounded-full object-cover border-4 border-rose-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-rose-500 to-red-400 text-transparent bg-clip-text">Nguyễn Thị Trần Vy</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Đạt danh hiệu "Thanh niên tiên tiến Đại học Quốc gia Thành phố Hồ Chí Minh làm theo lời Bác" giai đoạn 2021-2025 (Cấp ĐHQG).</li>
+                    <li>Đạt danh hiệu "Đảng viên trẻ tiêu biểu" năm 2025.</li>
+                    <li>Đạt danh hiệu ”Sinh viên 5 tốt" cấp Trường năm 2024.</li>
+                    <li>Đạt danh hiệu "Cán bộ Đoàn - Hội tiêu biểu" năm 2025.</li>
+                    <li>Giấy khen "Chiến sĩ đã hoàn thành tốt nhiệm vụ 2 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh Trường Đại học Kinh tế - Luật, ĐHQG-HCM".</li>
+                    <li>Giấy khen "Chiến sĩ có đóng góp tích cực trong Chiến dịch tình nguyện Mùa hè xanh Trường ĐH Kinh tế - Luật, ĐHQG-HCM lần thứ XXIV, năm 2025".</li>
+                    <li>Đạt giải Nhì cuộc thi “Dấu ấn lịch sử” năm 2025.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 Tốt” cấp Khoa Luật kinh tế năm 2024.</li>
+                    <li>Đạt danh hiệu "Thanh niên Kinh tế - Luật làm theo lời Bác" năm 2025 (Cấp trường).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Dương Quốc Ấn -->
+    <div id="modal-duong-quoc-an" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/hoat-dong/QuocAn.JPG" class="w-24 h-24 rounded-full object-cover border-4 border-green-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-400 text-transparent bg-clip-text">Dương Quốc Ấn</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Đạt danh hiệu “Thanh niên tiên tiến ĐHQG-HCM làm theo lời Bác” giai đoạn 2021 – 2025.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM vì đã có đóng góp tích cực cho công tác Đoàn và phong trào thanh niên ĐHQG-HCM, năm học 2024 – 2025.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM vì đã có đóng góp tích cực cho chiến dịch tình nguyện hè ĐHQG-HCM năm 2024.</li>
+                    <li>Đạt danh hiệu “Đảng viên trẻ tiêu biểu” năm 2025.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 tốt” cấp Trường năm 2024.</li>
+                    <li>Đạt danh hiệu “Sinh viên 5 tốt” cấp Khoa năm 2024.</li>
+                    <li>Đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Đạt danh hiệu “Cán bộ Đoàn - Hội tiêu biểu” năm 2025.</li>
+                    <li>Quán quân cuộc thi “Sail Your Ship VIII” năm 2025.</li>
+                    <li>Giải nhất cuộc thi “Sắt son niềm tin với Đảng” năm 2025.</li>
+                    <li>Giải nhì cuộc thi “Tìm hiểu pháp luật và quy chế, quy định dành cho sinh viên” năm 2024.</li>
+                    <li>Giải khuyến khích hội thi “Tự hào trang sử Việt” lần thứ VI, năm 2024.</li>
+                    <li>Giấy khen của BCH Đoàn Trường vì đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 – 2024.</li>
+                    <li>Giấy khen của BCH Đoàn Trường vì đã có thành tích tốt trong Tháng Thanh niên năm 2025.</li>
+                    <li>Giấy khen của BCH Hội Sinh viên Trường vì đã hoàn thành tốt nhiệm vụ 02 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh.</li>
+                    <li>Giấy khen của BCH Hội Sinh viên Trường vì đã hoàn thành xuất sắc nhiệm vụ trong Chiến dịch Xuân tình nguyện lần thứ XV – năm 2025.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Diệu Linh -->
+    <div id="modal-nguyen-dieu-linh" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/hoat-dong/DieuLinh.jpeg" class="w-24 h-24 rounded-full object-cover border-4 border-orange-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-amber-400 text-transparent bg-clip-text">Nguyễn Diệu Linh</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Tham gia Cuộc thi "Trường học không ma túy" do Bộ Công An, Bộ Giáo dục và Đào tạo phối hợp với Đài Truyền hình Việt Nam tổ chức.</li>
+                    <li>Giấy khen của Ban cán sự Đoàn ĐHQG-HCM vì đã có đóng góp tích cực cho công tác Đoàn và phong trào thanh niên ĐHQG-HCM năm học 2024-2025.</li>
+                    <li>Giấy khen vì có đóng góp xuất sắc trong các chiến dịch tình nguyện hè ĐHQG-HCM năm 2025.</li>
+                    <li>Giấy khen của Ban Chấp hành Đoàn Trường Kinh tế - Luật; top 10 thí sinh xuất sắc nhất cuộc thi “Bản lĩnh cán bộ Đoàn” năm 2023 chủ đề “Thành phố Hồ Chí Minh - Thành phố tôi yêu”.</li>
+                    <li>Giấy khen đạt giải Ba Cuộc thi tìm hiểu pháp luật và quy chế, quy định “Sinh viên chuẩn” năm 2023.</li>
+                    <li>Giấy khen của Ban Chấp hành Đoàn trường Đại học Kinh tế - Luật; Đạt giải Khuyến khích bảng B Hội thi Tìm hiểu truyền thống lịch sử, văn hóa dân tộc “Tự hào trang sử Việt” lần VI - năm 2024.</li>
+                    <li>Giấy khen của Ban Chấp hành Hội Sinh viên Trường Đại học Kinh tế - Luật; Đã hoàn thành xuất sắc nhiệm vụ trong Chiến dịch tình nguyện Mùa hè xanh lần thứ XXII, năm 2024.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật; Đã có nhiều đóng góp trong công tác Đoàn và phong trào thanh niên Trường năm học 2023 - 2024.</li>
+                    <li>Giấy chứng nhận của BCH Đảng bộ Trường Đại học Kinh tế - Luật; Đạt danh hiệu “Thanh niên Kinh tế - Luật làm theo lời Bác” năm 2025.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật; Đạt danh hiệu “Cán bộ Đoàn - Hội tiêu biểu” năm 2025.</li>
+                    <li>Giấy khen của BCH Đoàn Trường Đại học Kinh tế - Luật; Đã có thành tích tốt trong Tháng Thanh niên năm 2025.</li>
+                    <li>Giấy khen vì có đóng góp xuất sắc trong chiến dịch Mùa hè xanh ở tỉnh Sơn Mỹ.</li>
+                    <li>Giấy khen vì đã hoàn thành tốt nhiệm vụ 2 năm liên tục trong Chiến dịch tình nguyện Mùa hè xanh Trường Đại học Kinh tế - Luật, ĐHQG-HCM.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Nguyễn Nhã Trang -->
+    <div id="modal-nguyen-nha-trang" class="modal achievement-modal fixed inset-0 bg-black/60 z-[999] flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] shadow-2xl relative">
+            <button class="modal-close absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 w-8 h-8 flex items-center justify-center rounded-full text-lg z-10">&times;</button>
+            <div class="p-8 overflow-y-auto max-h-[80vh]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <img src="pic/hoat-dong/NhaTrang.jpg" class="w-24 h-24 rounded-full object-cover border-4 border-cyan-300 shadow">
+                    <div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-sky-400 text-transparent bg-clip-text">Nguyễn Nhã Trang</h3>
+                        <p class="text-md text-slate-600">Cán bộ Đoàn Tiêu biểu</p>
+                    </div>
+                </div>
+                <h4 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Thành tích nổi bật:</h4>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Giấy khen của BCH Đoàn quận Tân Bình vì đã tích cực tham gia các hoạt động trong Chiến dịch Xuân Tình Nguyện lần thứ 17 - năm 2025.</li>
+                    <li>Giấy khen của Chủ tịch UBND xã Phú Túc vì đã hoàn thành tốt nhiệm vụ trong chiến dịch Thanh niên tình nguyện hè năm 2025.</li>
+                    <li>Giấy khen của BCH Đoàn trường vì đã có thành tích tốt trong Tháng Thanh niên năm 2025.</li>
+                    <li>Đạt giải Nhất vòng 2 "Thước phim thời đại" thuộc chương trình "Vang vọng tháng tư".</li>
+                    <li>Đạt giải Nhì vòng chung kết cuộc thi "Dấu ấn lịch sử".</li>
+                    <li>Đạt danh hiệu "Sinh viên 5 tốt" cấp Khoa Kinh tế Đối ngoại năm học 2024.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 
 
